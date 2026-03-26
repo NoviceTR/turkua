@@ -1,0 +1,3348 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ukrayna-Rusya savaşı bitiş olasılığı takibi, Türkiye-Ukrayna üniversite, vize ve ticaret rehberi.">
+<meta name="keywords" content="ukrayna rusya savaş, türkiye ukrayna vize, ukrayna üniversite, türkiye ukrayna ticaret, STA">
+<title>TürkUA — Türkiye & Ukrayna Bilgi Merkezi</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --neon-blue: #00f3ff;
+  --neon-green: #00ff88;
+  --neon-orange: #ff8c00;
+  --neon-red: #ff2442;
+  --bg-dark: #060610;
+  --bg-card: #0d0d20;
+  --bg-card2: #111128;
+  --border: rgba(0,243,255,0.12);
+  --text: #e0e0f0;
+  --text-muted: rgba(200,200,255,0.5);
+  --accent-tr: #E30A17;
+  --accent-ua: #005BBB;
+  --accent-ua2: #FFD500;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: 'Inter', 'Rajdhani', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse at 15% 15%, rgba(0,80,200,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(0,200,100,0.03) 0%, transparent 55%);
+}
+
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(rgba(0,243,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,243,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events:none; z-index:0;
+}
+
+/* ── LANGUAGE ELEMENTS ── */
+[data-tr], [data-ua] { display: none; }
+html[data-lang="tr"] [data-tr] { display: revert; }
+html[data-lang="ua"] [data-ua] { display: revert; }
+
+/* ── NAVBAR ── */
+nav {
+  position: sticky; top:0; z-index:200;
+  background: rgba(6,6,16,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex; align-items: center;
+  height: 60px; gap: 20px;
+}
+
+.nav-logo {
+  font-family: 'Orbitron', monospace;
+  font-size: 16px; font-weight:900;
+  background: linear-gradient(90deg, #fff, var(--neon-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex; gap:6px; flex:1;
+  list-style: none; overflow-x: auto;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 12px; letter-spacing:1px;
+  text-transform: uppercase;
+  padding: 6px 10px; border-radius:6px;
+  white-space: nowrap;
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover { color: var(--neon-blue); background: rgba(0,243,255,0.06); }
+
+/* Language toggle */
+.lang-toggle {
+  display: flex; gap:6px; margin-left:auto; flex-shrink:0;
+}
+
+.lang-btn {
+  padding: 5px 14px; border-radius:6px; border:none;
+  font-size:12px; font-weight:600; letter-spacing:1px;
+  cursor:pointer; transition: all .2s;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-muted);
+}
+
+.lang-btn.tr { border: 1px solid rgba(227,10,23,0.3); }
+.lang-btn.ua { border: 1px solid rgba(0,91,187,0.3); }
+.lang-btn.active.tr { background: rgba(227,10,23,0.2); color:#ff6b6b; border-color: rgba(227,10,23,0.6); }
+.lang-btn.active.ua { background: rgba(0,91,187,0.2); color:#5ba3ff; border-color: rgba(0,91,187,0.6); }
+
+/* ── LAYOUT ── */
+.container { position:relative; z-index:1; max-width:1140px; margin:0 auto; padding:0 20px; }
+
+section { padding: 60px 0; }
+section + section { border-top: 1px solid var(--border); }
+
+/* ── AD SLOTS ── */
+.ad-slot {
+  background: rgba(255,255,255,0.02);
+  border: 1px dashed rgba(255,255,255,0.08);
+  border-radius: 10px;
+  display: flex; align-items:center; justify-content:center;
+  color: rgba(255,255,255,0.15);
+  font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  min-height: 90px; width:100%;
+  margin: 24px 0;
+}
+.ad-slot-leaderboard { min-height:90px; }
+.ad-slot-rectangle { min-height:260px; max-width:336px; }
+.ad-slot-banner { min-height: 60px; }
+
+/* ══════════════════════════════════════════
+   HERO — WAR TRACKER
+══════════════════════════════════════════ */
+#tracker { padding-top:40px; }
+
+.hero-label {
+  text-align:center;
+  font-family:'Orbitron',monospace;
+  font-size:10px; letter-spacing:6px;
+  color: var(--neon-blue); opacity:.7;
+  margin-bottom:12px;
+}
+
+.hero-title {
+  text-align:center;
+  font-family:'Orbitron',monospace;
+  font-size: clamp(16px,3vw,26px);
+  font-weight:900; letter-spacing:2px; line-height:1.3;
+  background: linear-gradient(135deg,#fff,var(--neon-blue));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text; margin-bottom:8px;
+}
+
+.hero-sub {
+  text-align:center;
+  font-size:13px; color:var(--text-muted); letter-spacing:2px;
+  margin-bottom:36px;
+}
+
+.tracker-grid {
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:24px; align-items:start;
+}
+@media(max-width:700px){ .tracker-grid{ grid-template-columns:1fr; } }
+
+/* Tube */
+.tube-panel {
+  background:var(--bg-card);
+  border:1px solid var(--border); border-radius:16px;
+  padding:24px 16px;
+  display:flex; flex-direction:column; align-items:center; gap:16px;
+  box-shadow: 0 0 40px rgba(0,243,255,0.04);
+}
+
+.tube-title {
+  font-family:'Orbitron',monospace;
+  font-size:9px; letter-spacing:4px;
+  color:var(--text-muted); text-transform:uppercase;
+}
+
+.tube-wrapper {
+  position:relative; width:56px; height:280px;
+  display:flex; align-items:flex-end; justify-content:center;
+}
+
+.tube-outer {
+  position:absolute; inset:0;
+  border:2px solid rgba(0,243,255,0.3);
+  border-radius:28px;
+  background:rgba(0,10,30,0.8);
+  overflow:hidden;
+  box-shadow: 0 0 16px rgba(0,243,255,0.08), inset 0 0 12px rgba(0,0,0,0.5);
+}
+
+.tube-fill {
+  position:absolute; bottom:0; left:0; right:0;
+  transition: height 2s cubic-bezier(.4,0,.2,1);
+}
+
+.tube-fill::after {
+  content:''; position:absolute; top:0; left:0; right:0;
+  height:3px; background:rgba(255,255,255,0.5); border-radius:2px;
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer{ 0%,100%{opacity:.3} 50%{opacity:.9} }
+
+.tube-highlight {
+  position:absolute; top:0; left:7px; width:7px; bottom:0;
+  background:linear-gradient(to right,rgba(255,255,255,0.07),transparent);
+  border-radius:4px; pointer-events:none;
+}
+
+.scale-labels {
+  position:absolute; right:-42px; top:0; height:100%;
+  display:flex; flex-direction:column; justify-content:space-between; padding:2px 4px;
+}
+.scale-label { font-family:'Orbitron',monospace; font-size:7px; color:rgba(0,243,255,0.35); }
+
+.prob-number {
+  font-family:'Orbitron',monospace;
+  font-size:48px; font-weight:900; line-height:1;
+  color:var(--neon-green);
+  text-shadow: 0 0 20px var(--neon-green), 0 0 40px rgba(0,255,136,.3);
+}
+
+.prob-label { font-size:11px; color:var(--text-muted); letter-spacing:2px; text-transform:uppercase; }
+.prob-desc { font-size:11px; color:rgba(255,200,100,.7); text-align:center; font-style:italic; max-width:140px; line-height:1.5; }
+.last-update { font-family:'Orbitron',monospace; font-size:8px; color:rgba(0,243,255,.35); letter-spacing:1px; text-align:center; }
+
+
+/* ── 3 ZAMAN DİLİMLİ OLASILILIK KARTLARI ── */
+.prob-3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+@media(max-width:700px){ .prob-3-grid { grid-template-columns: 1fr; gap:14px; } }
+
+.prob-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 14px 18px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  box-shadow: 0 0 30px rgba(0,243,255,0.03);
+  position: relative; overflow: hidden;
+  transition: border-color .3s, box-shadow .3s;
+}
+.prob-card::before {
+  content:''; position:absolute; inset:0; opacity:0; transition:opacity .3s;
+  background: radial-gradient(ellipse at top, rgba(0,243,255,0.06), transparent 60%);
+  pointer-events:none;
+}
+.prob-card:hover::before { opacity:1; }
+.prob-card:hover { border-color:rgba(0,243,255,0.22); box-shadow:0 0 28px rgba(0,243,255,0.08); }
+
+.prob-card-badge {
+  font-family:'Orbitron',monospace;
+  font-size:8px; letter-spacing:4px; text-transform:uppercase;
+  color: var(--neon-blue); opacity:.85;
+}
+.prob-card-tube-wrap {
+  position:relative; width:46px; height:180px;
+  display:flex; align-items:flex-end; justify-content:center;
+}
+.prob-card-tube-outer {
+  position:absolute; inset:0;
+  border:2px solid rgba(0,243,255,0.25); border-radius:23px;
+  background:rgba(0,10,30,0.85); overflow:hidden;
+  box-shadow:0 0 12px rgba(0,243,255,0.06), inset 0 0 10px rgba(0,0,0,0.5);
+}
+.prob-card-fill {
+  position:absolute; bottom:0; left:0; right:0;
+  transition:height 2.2s cubic-bezier(.4,0,.2,1);
+}
+.prob-card-fill::after {
+  content:''; position:absolute; top:0; left:0; right:0;
+  height:3px; background:rgba(255,255,255,0.5); border-radius:2px;
+  animation:shimmer 2s infinite;
+}
+.prob-card-shine {
+  position:absolute; top:0; left:6px; width:6px; bottom:0;
+  background:linear-gradient(to right,rgba(255,255,255,0.07),transparent);
+  border-radius:3px; pointer-events:none;
+}
+.prob-card-scale {
+  position:absolute; right:-28px; top:0; height:100%;
+  display:flex; flex-direction:column; justify-content:space-between; padding:2px 4px;
+}
+.prob-card-scale span { font-family:'Orbitron',monospace; font-size:6px; color:rgba(0,243,255,0.28); }
+
+.prob-card-num {
+  font-family:'Orbitron',monospace;
+  font-size:38px; font-weight:900; line-height:1;
+  text-shadow:0 0 16px currentColor;
+}
+.prob-card-sublabel { font-size:9px; color:var(--text-muted); letter-spacing:2px; text-transform:uppercase; }
+.prob-card-reason {
+  font-size:10px; color:rgba(255,200,100,.65);
+  text-align:center; font-style:italic;
+  line-height:1.4; max-width:130px; min-height:28px;
+}
+.full-panels { display:flex; flex-direction:column; gap:16px; }
+
+/* Right panel cards */
+.right-panel { display:flex; flex-direction:column; gap:16px; }
+
+.card {
+  background:var(--bg-card);
+  border:1px solid var(--border); border-radius:12px;
+  padding:20px;
+  box-shadow: 0 0 16px rgba(0,243,255,0.02);
+}
+
+.card-title {
+  font-family:'Orbitron',monospace;
+  font-size:9px; letter-spacing:4px;
+  color:var(--neon-blue); text-transform:uppercase;
+  margin-bottom:14px; display:flex; align-items:center; gap:8px;
+}
+
+.card-title::before {
+  content:''; width:5px; height:5px; background:var(--neon-blue);
+  border-radius:50%; box-shadow:0 0 6px var(--neon-blue);
+  animation:pulse 2s infinite; flex-shrink:0;
+}
+@keyframes pulse{ 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.7)} }
+
+.status-bar { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+
+.status-item {
+  background:rgba(0,243,255,.03); border:1px solid rgba(0,243,255,.08);
+  border-radius:8px; padding:12px 8px; text-align:center;
+}
+
+.status-value {
+  font-family:'Orbitron',monospace; font-size:13px; font-weight:700;
+  color:var(--neon-blue); margin-bottom:4px;
+}
+
+.status-key { font-size:9px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; }
+
+.dev-list { display:flex; flex-direction:column; gap:8px; }
+
+.dev-item {
+  display:flex; gap:10px; align-items:flex-start;
+  padding:10px; background:rgba(255,255,255,.015); border-radius:8px;
+  border-left:3px solid var(--item-color, rgba(0,243,255,.2));
+}
+.dev-item.negative { --item-color: rgba(255,36,66,.5); }
+.dev-item.neutral  { --item-color: rgba(255,140,0,.4); }
+.dev-item.positive { --item-color: rgba(0,255,136,.5); }
+
+.dev-impact {
+  font-family:'Orbitron',monospace; font-size:10px; font-weight:700;
+  min-width:36px; text-align:center; padding:2px 4px;
+  border-radius:4px; margin-top:2px;
+}
+.dev-item.negative .dev-impact { color:var(--neon-red); background:rgba(255,36,66,.1); }
+.dev-item.neutral  .dev-impact { color:var(--neon-orange); background:rgba(255,140,0,.1); }
+.dev-item.positive .dev-impact { color:var(--neon-green); background:rgba(0,255,136,.1); }
+
+.dev-date { font-size:9px; color:var(--text-muted); letter-spacing:1px; margin-bottom:3px; }
+.dev-text { font-size:12px; line-height:1.5; color:rgba(220,220,255,.8); }
+
+.reasoning-text { font-size:13px; line-height:1.8; color:rgba(200,200,255,.7); }
+
+.trend-row { display:flex; align-items:center; gap:10px; margin-top:10px; }
+.trend-bar { flex:1; height:3px; background:rgba(255,255,255,.05); border-radius:2px; overflow:hidden; }
+.trend-fill { height:100%; background:linear-gradient(to right,var(--neon-green),var(--neon-blue)); border-radius:2px; transition:width 1.5s ease; }
+.trend-label { font-size:10px; color:var(--text-muted); min-width:70px; }
+
+.conf-row { display:flex; align-items:center; gap:10px; margin-top:10px; }
+.conf-lbl { font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; min-width:50px; }
+.conf-dots { display:flex; gap:4px; }
+.conf-dot { width:7px; height:7px; border-radius:50%; background:rgba(0,243,255,.1); border:1px solid rgba(0,243,255,.15); }
+.conf-dot.active { background:var(--neon-blue); box-shadow:0 0 5px var(--neon-blue); border-color:var(--neon-blue); }
+
+/* ══════════════════════════════════════════
+   SECTION HEADERS
+══════════════════════════════════════════ */
+.section-header { margin-bottom:36px; }
+
+.section-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:10px; letter-spacing:4px; text-transform:uppercase;
+  color:var(--neon-blue); margin-bottom:12px; opacity:.8;
+}
+
+.section-badge .dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--neon-blue); box-shadow:0 0 8px var(--neon-blue);
+}
+
+.section-title {
+  font-size: clamp(22px,3.5vw,32px); font-weight:700;
+  line-height:1.2; margin-bottom:10px;
+}
+
+.section-sub { font-size:14px; color:var(--text-muted); line-height:1.7; max-width:640px; }
+
+/* ══════════════════════════════════════════
+   UNİVERSİTE SECTION
+══════════════════════════════════════════ */
+.cards-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;
+  margin-top:28px;
+}
+
+.info-card {
+  background:var(--bg-card); border:1px solid var(--border); border-radius:14px;
+  padding:24px; transition:border-color .3s, box-shadow .3s;
+}
+.info-card:hover { border-color:rgba(0,243,255,.3); box-shadow:0 0 24px rgba(0,243,255,.06); }
+
+.info-card-icon { font-size:28px; margin-bottom:14px; }
+
+.info-card h3 { font-size:16px; font-weight:600; margin-bottom:10px; }
+
+.info-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
+
+.step-list { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:8px; }
+
+.step-list li {
+  display:flex; gap:10px; align-items:flex-start;
+  font-size:13px; color:rgba(200,200,255,.75); line-height:1.5;
+}
+
+.step-num {
+  background:linear-gradient(135deg,var(--neon-blue),var(--neon-green));
+  color:#000; font-weight:700; font-size:10px;
+  min-width:20px; height:20px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; margin-top:2px;
+}
+
+.tag-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+
+.tag {
+  font-size:10px; padding:4px 10px; border-radius:20px;
+  background:rgba(0,243,255,.07); border:1px solid rgba(0,243,255,.15);
+  color:var(--neon-blue); letter-spacing:1px;
+}
+
+.tag.warn { background:rgba(255,140,0,.08); border-color:rgba(255,140,0,.2); color:var(--neon-orange); }
+.tag.ok { background:rgba(0,255,136,.07); border-color:rgba(0,255,136,.15); color:var(--neon-green); }
+
+.highlight-box {
+  background:rgba(0,243,255,.04); border:1px solid rgba(0,243,255,.12);
+  border-radius:10px; padding:16px 18px; margin-top:16px;
+  font-size:13px; color:rgba(200,200,255,.8); line-height:1.7;
+}
+
+.highlight-box strong { color:var(--neon-blue); }
+
+/* ══════════════════════════════════════════
+   VİZE SECTION
+══════════════════════════════════════════ */
+.visa-hero {
+  background: linear-gradient(135deg, rgba(0,91,187,.1), rgba(255,213,0,.05));
+  border:1px solid rgba(0,91,187,.2); border-radius:14px;
+  padding:24px; margin-bottom:28px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+
+.visa-flags { font-size:40px; letter-spacing:4px; }
+
+.visa-free-badge {
+  display:inline-block;
+  background:linear-gradient(135deg,rgba(0,255,136,.15),rgba(0,255,136,.05));
+  border:1px solid rgba(0,255,136,.3); border-radius:8px;
+  padding:6px 16px; font-size:12px; font-weight:600;
+  color:var(--neon-green); letter-spacing:2px; text-transform:uppercase;
+  margin-top:8px;
+}
+
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media(max-width:640px){ .two-col{ grid-template-columns:1fr; } }
+
+.visa-card {
+  background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:20px;
+}
+
+.visa-card-flag { font-size:24px; margin-bottom:10px; }
+.visa-card h3 { font-size:15px; font-weight:600; margin-bottom:14px; }
+
+.info-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 0; border-bottom:1px solid rgba(255,255,255,.04);
+  font-size:12px;
+}
+.info-row:last-child { border-bottom:none; }
+.info-row .lbl { color:var(--text-muted); }
+.info-row .val { color:var(--text); font-weight:500; }
+.info-row .val.ok { color:var(--neon-green); }
+.info-row .val.warn { color:var(--neon-orange); }
+
+/* ══════════════════════════════════════════
+   TİCARET SECTION
+══════════════════════════════════════════ */
+.trade-stats {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px;
+  margin-bottom:28px;
+}
+
+.stat-card {
+  background:var(--bg-card); border:1px solid var(--border); border-radius:12px;
+  padding:20px; text-align:center;
+}
+
+.stat-number {
+  font-family:'Orbitron',monospace; font-size:28px; font-weight:900;
+  background:linear-gradient(135deg,var(--neon-blue),var(--neon-green));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text; margin-bottom:6px;
+}
+
+.stat-label { font-size:11px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase; line-height:1.4; }
+
+.sector-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px;
+  margin-top:20px;
+}
+
+.sector-item {
+  background:rgba(0,243,255,.03); border:1px solid rgba(0,243,255,.08);
+  border-radius:8px; padding:12px; text-align:center;
+  font-size:12px; color:rgba(200,200,255,.75);
+}
+
+.sector-item .icon { font-size:20px; margin-bottom:6px; display:block; }
+
+/* ══════════════════════════════════════════
+   DANIŞMANLIK / CONSULTATION
+══════════════════════════════════════════ */
+#contact { background: radial-gradient(ellipse at 50% 0%, rgba(0,243,255,.04), transparent 70%); }
+
+.contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:32px; align-items:start; }
+@media(max-width:768px){ .contact-grid{ grid-template-columns:1fr; } }
+
+.contact-info h3 { font-size:18px; font-weight:600; margin-bottom:12px; }
+.contact-info p { font-size:13px; color:var(--text-muted); line-height:1.8; margin-bottom:20px; }
+
+.service-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+
+.service-list li {
+  display:flex; gap:10px; align-items:center;
+  font-size:13px; color:rgba(200,200,255,.8);
+}
+
+.service-list li::before {
+  content:'✓'; color:var(--neon-green);
+  font-weight:700; font-size:12px; flex-shrink:0;
+}
+
+.contact-form {
+  background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:28px;
+}
+
+.form-group { margin-bottom:16px; }
+
+.form-group label {
+  display:block; font-size:11px; color:var(--text-muted);
+  text-transform:uppercase; letter-spacing:2px; margin-bottom:7px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width:100%; background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1); border-radius:8px;
+  padding:10px 14px; color:var(--text);
+  font-family:'Inter',sans-serif; font-size:13px;
+  transition:border-color .2s;
+  outline:none;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color:rgba(0,243,255,.4);
+}
+
+.form-group select option { background:#111128; }
+.form-group textarea { resize:vertical; min-height:90px; }
+
+.btn-submit {
+  width:100%; padding:13px;
+  background:linear-gradient(135deg,rgba(0,243,255,.15),rgba(0,255,136,.1));
+  border:1px solid rgba(0,243,255,.3); border-radius:8px;
+  color:var(--neon-blue); font-size:13px; font-weight:600;
+  letter-spacing:2px; text-transform:uppercase; cursor:pointer;
+  transition:all .2s;
+}
+.btn-submit:hover { background:linear-gradient(135deg,rgba(0,243,255,.25),rgba(0,255,136,.15)); border-color:rgba(0,243,255,.5); }
+
+.telegram-btn {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background:rgba(38,161,220,.12); border:1px solid rgba(38,161,220,.3);
+  border-radius:8px; padding:12px; margin-top:12px;
+  color:#29a8e8; font-size:13px; font-weight:600; text-decoration:none;
+  transition:all .2s; cursor:pointer;
+}
+.telegram-btn:hover { background:rgba(38,161,220,.2); }
+
+/* ══════════════════════════════════════════
+   SPONSORED
+══════════════════════════════════════════ */
+.sponsored-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+
+.sponsor-slot {
+  background:var(--bg-card); border:1px dashed rgba(255,255,255,.1);
+  border-radius:12px; padding:20px; text-align:center;
+  min-height:120px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:8px;
+}
+
+.sponsor-slot .slot-icon { font-size:28px; }
+.sponsor-slot .slot-title { font-size:13px; font-weight:600; color:rgba(200,200,255,.6); }
+.sponsor-slot .slot-sub { font-size:11px; color:rgba(200,200,255,.3); }
+
+.sponsor-contact {
+  text-align:center; margin-top:20px;
+  font-size:13px; color:var(--text-muted);
+}
+.sponsor-contact a { color:var(--neon-blue); }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer {
+  border-top:1px solid var(--border);
+  padding:32px 0; text-align:center;
+  font-size:11px; color:rgba(200,200,255,.2); letter-spacing:2px;
+}
+
+footer a { color:var(--text-muted); text-decoration:none; }
+
+.scanline {
+  position:fixed; inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.02) 2px,rgba(0,0,0,.02) 4px);
+  pointer-events:none; z-index:500;
+}
+
+
+
+
+/* ── Navbar sağ grup ── */
+.nav-right-group {
+  display: flex; align-items: center; gap: 10px;
+  margin-left: auto; flex-shrink: 0;
+}
+
+.lang-toggle { margin-left: 0; }
+
+.nav-ad-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 8px;
+  border: 1px solid rgba(255,140,0,0.3);
+  background: rgba(255,140,0,0.07);
+  text-decoration: none; cursor: pointer;
+  transition: all .2s; white-space: nowrap;
+}
+.nav-ad-btn:hover {
+  background: rgba(255,140,0,0.16);
+  border-color: rgba(255,140,0,0.6);
+  box-shadow: 0 0 12px rgba(255,140,0,0.2);
+}
+.nav-ad-icon { font-size: 14px; }
+.nav-ad-text { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--neon-orange); text-transform: uppercase; }
+
+@media (max-width: 700px) {
+  .nav-ad-text { display: none; }
+  .nav-ad-btn { padding: 6px 8px; }
+}
+
+
+/* ── İkili mid reklam ── */
+.ad-slot-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.ad-slot-mid-half {
+  min-height: 250px;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .ad-slot-double { grid-template-columns: 1fr; }
+}
+
+
+/* ══════════════════════════════════════════
+   REKLAM BAŞVURU SİSTEMİ
+══════════════════════════════════════════ */
+
+/* Ad slot tıklanabilir overlay */
+.ad-slot {
+  position: relative;
+  cursor: pointer;
+  transition: border-color .25s, box-shadow .25s;
+}
+.ad-slot:hover {
+  border-color: rgba(255,140,0,.5);
+  box-shadow: 0 0 20px rgba(255,140,0,.12);
+}
+.ad-slot .ad-overlay {
+  position: absolute; inset: 0;
+  border-radius: 10px;
+  background: rgba(255,140,0,.05);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+  opacity: 0; transition: opacity .25s;
+  pointer-events: none;
+}
+.ad-slot:hover .ad-overlay { opacity: 1; }
+.ad-overlay-btn {
+  background: rgba(255,140,0,.18);
+  border: 1px solid rgba(255,140,0,.5);
+  border-radius: 8px; padding: 7px 18px;
+  color: var(--neon-orange); font-size: 12px;
+  font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  pointer-events: none;
+}
+.ad-overlay-size {
+  font-family: 'Orbitron', monospace;
+  font-size: 9px; color: rgba(255,140,0,.5);
+  letter-spacing: 2px;
+}
+
+/* Modal backdrop */
+.ad-modal-backdrop {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s;
+}
+.ad-modal-backdrop.open {
+  opacity: 1; pointer-events: all;
+}
+
+/* Modal kutu */
+.ad-modal {
+  background: #0d0d20;
+  border: 1px solid rgba(0,243,255,.15);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%; max-width: 520px;
+  box-shadow: 0 0 60px rgba(0,0,0,.6);
+  transform: translateY(20px);
+  transition: transform .25s;
+  max-height: 90vh; overflow-y: auto;
+}
+.ad-modal-backdrop.open .ad-modal {
+  transform: translateY(0);
+}
+
+.ad-modal-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 22px;
+}
+.ad-modal-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 14px; font-weight: 700;
+  background: linear-gradient(135deg,#fff,var(--neon-orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1.3;
+}
+.ad-modal-sub {
+  font-size: 12px; color: var(--text-muted); margin-top: 4px;
+}
+.ad-modal-close {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 16px; color: var(--text-muted);
+  flex-shrink: 0; margin-left: 16px; transition: all .2s;
+}
+.ad-modal-close:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+/* Boyut bilgi kutusu */
+.ad-slot-info {
+  background: rgba(255,140,0,.06);
+  border: 1px solid rgba(255,140,0,.2);
+  border-radius: 8px; padding: 12px 14px;
+  margin-bottom: 20px;
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+}
+.ad-slot-badge {
+  font-family: 'Orbitron', monospace; font-size: 10px;
+  color: var(--neon-orange); letter-spacing: 2px;
+  background: rgba(255,140,0,.1); border: 1px solid rgba(255,140,0,.25);
+  border-radius: 6px; padding: 4px 10px;
+}
+.ad-slot-desc { font-size: 11px; color: var(--text-muted); }
+
+/* Form içi */
+.ad-modal .form-group { margin-bottom: 14px; }
+.ad-modal .form-group label {
+  display: block; font-size: 10px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;
+}
+.ad-modal .form-group input,
+.ad-modal .form-group textarea,
+.ad-modal .form-group select {
+  width: 100%; background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1); border-radius: 8px;
+  padding: 9px 13px; color: var(--text);
+  font-family: 'Inter', sans-serif; font-size: 13px; outline: none;
+  transition: border-color .2s;
+}
+.ad-modal .form-group input:focus,
+.ad-modal .form-group textarea:focus { border-color: rgba(255,140,0,.4); }
+.ad-modal .form-group textarea { resize: vertical; min-height: 70px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+/* Logo yükleme alanı */
+.logo-upload-area {
+  border: 1px dashed rgba(255,255,255,.15); border-radius: 8px;
+  padding: 16px; text-align: center; cursor: pointer;
+  transition: all .2s; background: rgba(255,255,255,.02);
+}
+.logo-upload-area:hover { border-color: rgba(255,140,0,.4); background: rgba(255,140,0,.04); }
+.logo-upload-area input[type="file"] { display: none; }
+.logo-upload-icon { font-size: 24px; margin-bottom: 6px; }
+.logo-upload-text { font-size: 11px; color: var(--text-muted); }
+.logo-preview {
+  max-width: 80px; max-height: 60px; border-radius: 6px;
+  margin: 8px auto 0; display: none;
+}
+
+/* Submit */
+.ad-modal-submit {
+  width: 100%; padding: 12px;
+  background: linear-gradient(135deg,rgba(255,140,0,.2),rgba(255,36,66,.1));
+  border: 1px solid rgba(255,140,0,.4); border-radius: 8px;
+  color: var(--neon-orange); font-size: 12px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
+  transition: all .2s; margin-top: 6px;
+}
+.ad-modal-submit:hover {
+  background: linear-gradient(135deg,rgba(255,140,0,.32),rgba(255,36,66,.18));
+  border-color: rgba(255,140,0,.7);
+}
+
+.ad-modal-note {
+  font-size: 11px; color: var(--text-muted); text-align: center;
+  margin-top: 12px; line-height: 1.6;
+}
+.ad-modal-note a { color: var(--neon-blue); }
+
+/* Başarı mesajı */
+.ad-success {
+  display: none; text-align: center; padding: 20px 0;
+}
+.ad-success-icon { font-size: 48px; margin-bottom: 12px; }
+.ad-success-title { font-size: 16px; font-weight: 600; color: var(--neon-green); margin-bottom: 8px; }
+.ad-success-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+
+/* ══════════════════════════════════════════
+   SAVAŞ GELİŞMELERİ — NEWS SECTION
+══════════════════════════════════════════ */
+#news-section { padding: 60px 0; }
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.news-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: border-color .3s, box-shadow .3s;
+  position: relative; overflow: hidden;
+}
+.news-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--nc, rgba(0,243,255,.4));
+  border-radius: 0 2px 2px 0;
+}
+.news-card.military   { --nc: var(--neon-red); }
+.news-card.diplomatic { --nc: var(--neon-blue); }
+.news-card.economic   { --nc: var(--neon-green); }
+.news-card.humanitarian { --nc: var(--neon-orange); }
+.news-card:hover { border-color: rgba(0,243,255,.22); box-shadow: 0 0 24px rgba(0,243,255,.06); }
+
+.news-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+.news-cat {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 20px; font-weight: 600;
+  border: 1px solid currentColor;
+}
+.news-card.military   .news-cat { color: var(--neon-red);    background: rgba(255,36,66,.08); }
+.news-card.diplomatic .news-cat { color: var(--neon-blue);   background: rgba(0,243,255,.07); }
+.news-card.economic   .news-cat { color: var(--neon-green);  background: rgba(0,255,136,.07); }
+.news-card.humanitarian .news-cat { color: var(--neon-orange); background: rgba(255,140,0,.07); }
+
+.news-date { font-family: 'Orbitron', monospace; font-size: 8px; color: var(--text-muted); letter-spacing: 1px; }
+
+.news-title {
+  font-size: 14px; font-weight: 600; line-height: 1.4;
+  color: rgba(220,220,255,.92);
+}
+
+.news-body {
+  font-size: 12px; color: var(--text-muted); line-height: 1.7;
+}
+
+.news-impact {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: 'Orbitron', monospace; font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px; align-self: flex-start;
+}
+.news-impact.pos { color: var(--neon-green); background: rgba(0,255,136,.08); }
+.news-impact.neg { color: var(--neon-red);   background: rgba(255,36,66,.08); }
+.news-impact.neu { color: var(--neon-orange); background: rgba(255,140,0,.08); }
+
+.news-filter-row {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;
+}
+.news-filter-btn {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(0,243,255,.15);
+  background: transparent; color: var(--text-muted); cursor: pointer;
+  transition: all .2s; font-family: 'Orbitron', monospace;
+}
+.news-filter-btn:hover,
+.news-filter-btn.active { background: rgba(0,243,255,.1); color: var(--neon-blue); border-color: rgba(0,243,255,.35); }
+.news-filter-btn.military.active   { background: rgba(255,36,66,.1);  color: var(--neon-red);    border-color: rgba(255,36,66,.4); }
+.news-filter-btn.diplomatic.active { background: rgba(0,243,255,.1);  color: var(--neon-blue);   border-color: rgba(0,243,255,.4); }
+.news-filter-btn.economic.active   { background: rgba(0,255,136,.1);  color: var(--neon-green);  border-color: rgba(0,255,136,.4); }
+.news-filter-btn.humanitarian.active { background: rgba(255,140,0,.1); color: var(--neon-orange); border-color: rgba(255,140,0,.4); }
+
+
+/* ══════════════════════════════════════════
+   PARA TRANSFERİ SECTION
+══════════════════════════════════════════ */
+.money-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.money-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  transition: border-color .3s, box-shadow .3s;
+}
+.money-card:hover {
+  border-color: rgba(0,243,255,.25);
+  box-shadow: 0 0 24px rgba(0,243,255,.05);
+}
+
+.money-card-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.money-card-icon { font-size: 28px; }
+.money-card-title { font-size: 15px; font-weight: 600; }
+.money-card-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.money-limit-box {
+  background: rgba(0,255,136,.06);
+  border: 1px solid rgba(0,255,136,.15);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.money-limit-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 22px; font-weight: 900;
+  color: var(--neon-green);
+  text-shadow: 0 0 12px rgba(0,255,136,.4);
+  white-space: nowrap;
+}
+.money-limit-label { font-size: 11px; color: rgba(200,200,255,.7); line-height: 1.5; }
+
+.money-warn-box {
+  background: rgba(255,140,0,.06);
+  border: 1px solid rgba(255,140,0,.15);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 11px;
+  color: rgba(255,180,80,.8);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+
+.money-method-list {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.money-method {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 8px;
+  font-size: 12px;
+  transition: border-color .2s;
+}
+.money-method:hover { border-color: rgba(0,243,255,.15); }
+.money-method-name { font-weight: 600; color: rgba(220,220,255,.9); flex: 1; }
+.money-method-detail { font-size: 10px; color: var(--text-muted); }
+.money-method-badge {
+  font-size: 9px; padding: 2px 7px; border-radius: 10px;
+  letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+}
+.badge-fast  { background: rgba(0,255,136,.1); color: var(--neon-green); border: 1px solid rgba(0,255,136,.2); }
+.badge-bank  { background: rgba(0,243,255,.08); color: var(--neon-blue); border: 1px solid rgba(0,243,255,.2); }
+.badge-limit { background: rgba(255,140,0,.1); color: var(--neon-orange); border: 1px solid rgba(255,140,0,.2); }
+.badge-warn  { background: rgba(255,36,66,.1); color: var(--neon-red); border: 1px solid rgba(255,36,66,.2); }
+
+.money-rate-box {
+  background: rgba(0,243,255,.04);
+  border: 1px solid rgba(0,243,255,.1);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+.money-rate-title { font-size: 9px; letter-spacing: 3px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 8px; }
+.money-rate-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,.04); font-size: 12px; }
+.money-rate-row:last-child { border-bottom: none; }
+.money-rate-pair { color: rgba(200,200,255,.7); }
+.money-rate-val { font-family: 'Orbitron', monospace; font-size: 11px; color: var(--neon-green); }
+
+.money-tip {
+  display: flex; gap: 8px; align-items: flex-start;
+  padding: 10px 12px;
+  background: rgba(0,243,255,.03);
+  border-radius: 8px;
+  font-size: 11px;
+  color: rgba(180,180,230,.7);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+
+/* Ad modal iletişim seçici */
+.ad-contact-group { display: flex; flex-direction: column; gap: 8px; }
+.ad-contact-tabs  { display: flex; gap: 6px; flex-wrap: wrap; }
+.ad-contact-tab {
+  padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(0,243,255,.15);
+  background: transparent; color: var(--text-muted);
+  font-size: 11px; cursor: pointer; transition: all .2s;
+}
+.ad-contact-tab.active { background: rgba(0,243,255,.12); color: var(--neon-blue); border-color: rgba(0,243,255,.4); }
+.ad-contact-input-wrap { position: relative; }
+.ad-contact-prefix {
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  font-size: 12px; color: var(--text-muted); pointer-events: none;
+  white-space: nowrap;
+}
+.ad-contact-input-wrap input { padding-left: 90px !important; }
+.ad-contact-hint { font-size: 10px; color: var(--text-muted); opacity: .7; margin-top: 3px; }
+
+/* ══ HABER BANDI (TICKER) ══════════════════════════════════ */
+.news-ticker-wrap {
+  position: sticky; top: 60px; z-index: 190;
+  background: rgba(4,4,12,0.97);
+  border-bottom: 1px solid rgba(255,36,66,0.35);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; height: 38px;
+  overflow: hidden;
+}
+.ticker-badge {
+  flex-shrink: 0;
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 14px;
+  height: 100%;
+  background: #cc0022;
+  font-family: 'Orbitron', monospace;
+  font-size: 10px; font-weight: 900; letter-spacing: 2px;
+  color: #fff;
+  white-space: nowrap;
+  position: relative;
+}
+.ticker-badge::after {
+  content: '';
+  position: absolute; right: -8px; top: 0; bottom: 0; width: 8px;
+  background: linear-gradient(90deg, #cc0022, transparent);
+}
+.ticker-live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #fff;
+  animation: tickerPulse 1s ease-in-out infinite;
+}
+@keyframes tickerPulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.4;transform:scale(.7);} }
+
+.ticker-track {
+  flex: 1; overflow: hidden; position: relative;
+}
+.ticker-inner {
+  display: flex; align-items: center;
+  white-space: nowrap;
+  animation: tickerScroll 60s linear infinite;
+  will-change: transform;
+}
+.ticker-inner:hover { animation-play-state: paused; }
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 28px; font-size: 12px; color: rgba(220,220,255,.85);
+  cursor: pointer; transition: color .2s;
+}
+.ticker-item:hover { color: var(--neon-blue); }
+.ticker-item-sep { color: rgba(255,36,66,.5); font-size: 14px; }
+.ticker-item-cat {
+  font-size: 9px; font-family: 'Orbitron', monospace; letter-spacing: 1px;
+  padding: 1px 5px; border-radius: 3px; font-weight: 700;
+}
+.ticker-item-cat.diplomatic { background: rgba(0,100,255,.25); color: #5bbfff; }
+.ticker-item-cat.military   { background: rgba(255,36,66,.2);  color: #ff6080; }
+.ticker-item-cat.humanitarian { background: rgba(0,200,100,.2); color: #40e090; }
+.ticker-item-cat.economic   { background: rgba(255,180,0,.2);  color: #ffcc40; }
+.ticker-item-cat.general    { background: rgba(150,150,255,.15); color: #aab0ff; }
+
+/* ══ GÜNDEM BÖLÜMÜ ═════════════════════════════════════════ */
+#gundem { padding: 60px 0 50px; }
+
+.gundem-header-row {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 32px;
+}
+.gundem-live-badge {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 14px; border-radius: 20px;
+  background: rgba(200,0,30,.15);
+  border: 1px solid rgba(200,0,30,.4);
+  font-family: 'Orbitron', monospace;
+  font-size: 10px; letter-spacing: 2px; color: #ff4060;
+}
+.gundem-live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ff2442;
+  box-shadow: 0 0 8px #ff2442;
+  animation: tickerPulse .9s ease-in-out infinite;
+}
+.gundem-update-info {
+  font-size: 11px; color: var(--text-muted); letter-spacing: 1px;
+}
+
+/* Feature card (büyük) */
+.gundem-featured {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;
+}
+@media(max-width:720px){ .gundem-featured{ grid-template-columns:1fr; } }
+
+.gundem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  position: relative; overflow: hidden;
+  text-decoration: none; display: block; color: var(--text);
+}
+.gundem-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--neon-red), var(--neon-blue));
+  opacity: 0; transition: opacity .25s;
+}
+.gundem-card:hover { transform: translateY(-3px); border-color: rgba(0,243,255,.3); box-shadow: 0 8px 32px rgba(0,0,0,.4); }
+.gundem-card:hover::before { opacity: 1; }
+
+.gundem-card.featured {
+  grid-column: span 1;
+  border-color: rgba(0,243,255,.18);
+  background: linear-gradient(135deg, rgba(0,20,50,.95), var(--bg-card));
+}
+.gundem-card-top {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+}
+.gundem-cat {
+  font-size: 9px; font-family: 'Orbitron', monospace; letter-spacing: 1.5px;
+  font-weight: 700; padding: 3px 8px; border-radius: 4px;
+}
+.gundem-cat.diplomatic   { background: rgba(0,100,255,.2);  color: #5bbfff; border: 1px solid rgba(0,100,255,.25); }
+.gundem-cat.military     { background: rgba(255,36,66,.15); color: #ff6080; border: 1px solid rgba(255,36,66,.25); }
+.gundem-cat.humanitarian { background: rgba(0,200,100,.15); color: #40e090; border: 1px solid rgba(0,200,100,.25); }
+.gundem-cat.economic     { background: rgba(255,180,0,.15); color: #ffcc40; border: 1px solid rgba(255,180,0,.25); }
+.gundem-cat.general      { background: rgba(150,150,255,.1); color: #aab0ff; border: 1px solid rgba(150,150,255,.2); }
+
+.gundem-card-date { font-size: 10px; color: var(--text-muted); }
+.gundem-card-title {
+  font-size: 15px; font-weight: 600; line-height: 1.45;
+  margin-bottom: 10px; color: var(--text);
+}
+.gundem-card.featured .gundem-card-title { font-size: 17px; }
+.gundem-card-body { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.gundem-card-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 12px; font-size: 10px; color: var(--neon-blue);
+  font-family: 'Orbitron', monospace; letter-spacing: 1px;
+  opacity: .7; transition: opacity .2s;
+}
+.gundem-card:hover .gundem-card-link { opacity: 1; }
+
+/* Alt grid */
+.gundem-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 14px;
+}
+@media(max-width:900px){ .gundem-grid{ grid-template-columns: repeat(2,1fr); } }
+@media(max-width:580px){ .gundem-grid{ grid-template-columns: 1fr; } }
+
+.gundem-skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,.04) 25%, rgba(255,255,255,.07) 50%, rgba(255,255,255,.04) 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 10px; height: 130px;
+}
+@keyframes shimmer { 0%{background-position:100% 0} 100%{background-position:-100% 0} }
+
+.gundem-source-bar {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+.gundem-source-txt { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
+.gundem-refresh-btn {
+  background: rgba(0,243,255,.08); border: 1px solid rgba(0,243,255,.2);
+  color: var(--neon-blue); font-size: 10px; font-family: 'Orbitron', monospace;
+  letter-spacing: 1px; padding: 5px 12px; border-radius: 6px; cursor: pointer;
+  transition: all .2s;
+}
+.gundem-refresh-btn:hover { background: rgba(0,243,255,.15); }
+
+</style>
+</head>
+<body>
+
+<div class="scanline"></div>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <div class="nav-logo">TürkUA</div>
+  <ul class="nav-links">
+    <li><a href="#tracker" data-tr>📡 Savaş Takip</a><a href="#tracker" data-ua>📡 Відстеження</a></li>
+    <li><a href="#gundem" data-tr>🔴 Gündem</a><a href="#gundem" data-ua>🔴 Новини</a></li>
+    <li><a href="#university" data-tr>🎓 Üniversite</a><a href="#university" data-ua>🎓 Університет</a></li>
+    <li><a href="#visa" data-tr>🛂 Vize</a><a href="#visa" data-ua>🛂 Віза</a></li>
+    <li><a href="#trade" data-tr>🤝 Ticaret</a><a href="#trade" data-ua>🤝 Торгівля</a></li>
+        <li><a href="#money" data-tr>💸 Para Transferi</a><a href="#money" data-ua>💸 Переказ Грошей</a></li>
+    <li><a href="#contact" data-tr>💬 Danışmanlık</a><a href="#contact" data-ua>💬 Консультація</a></li>
+  </ul>
+  <div class="nav-right-group">
+    <!-- Reklam iş birliği butonu -->
+    <a href="#contact" class="nav-ad-btn">
+      <span class="nav-ad-icon">📢</span>
+      <span class="nav-ad-text" data-tr>Reklam İş Birliği</span>
+      <span class="nav-ad-text" data-ua>Реклама</span>
+    </a>
+
+    <!-- Dil toggle -->
+    <div class="lang-toggle">
+    <button class="lang-btn tr active" onclick="setLang('tr')">🇹🇷 TR</button>
+    <button class="lang-btn ua" onclick="setLang('ua')">🇺🇦 UA</button>
+    </div><!-- /lang-toggle -->
+  </div><!-- /nav-right-group -->
+</nav>
+
+
+<!-- ══ HABER BANDI ══ -->
+<div class="news-ticker-wrap" id="newsTicker">
+  <div class="ticker-badge">
+    <div class="ticker-live-dot"></div>
+    <span data-tr>GÜNDEM</span><span data-ua>НОВИНИ</span>
+  </div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <span class="ticker-item"><span class="ticker-item-cat general">CANLI</span><span data-tr>Ukrayna haberleri yükleniyor…</span><span data-ua>Завантаження новин України…</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOP AD ══ -->
+<div class="container">
+  <div class="ad-slot ad-slot-leaderboard" onclick="openAdModal('Üst Şerit','728×90 px','Sayfanın en üstünde, ziyaretçinin ilk gördüğü alan — maksimum görünürlük')">
+    <!-- AdSense alanı: yayın sonrası aktif edilecek -->
+    <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">728 × 90 px</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HERO — WAR TRACKER
+══════════════════════════════════════════ -->
+<section id="tracker">
+<div class="container">
+
+  <div class="hero-label" data-tr>▶ CANLI TAKİP SİSTEMİ — HER 6 SAATTE GÜNCELLENİR ◀</div>
+  <div class="hero-label" data-ua>▶ СИСТЕМА ВІДСТЕЖЕННЯ В РЕАЛЬНОМУ ЧАСІ — ОНОВЛЕННЯ КОЖНІ 6 ГОДИН ◀</div>
+
+  <h1 class="hero-title" data-tr>UKRAYNA–RUSYA SAVAŞI<br>ATEŞKES & BİTİŞ OLASILIĞI</h1>
+  <h1 class="hero-title" data-ua>ВІЙНА УКРАЇНА–РОСІЯ<br>ЙМОВІРНІСТЬ ЗАВЕРШЕННЯ</h1>
+
+  <p class="hero-sub" data-tr>YARIN • 1 AY • 1 YIL — CANLI TAHMİN</p>
+  <p class="hero-sub" data-ua>ЗАВТРА • 1 МІСЯЦЬ • 1 РІК — ЖИВИЙ ПРОГНОЗ</p>
+
+  <!-- ── 3 ZAMAN DİLİMLİ OLASILILIK KARTLARI ── -->
+  <div class="prob-3-grid">
+
+    <!-- YARIN -->
+    <div class="prob-card">
+      <div class="prob-card-badge" data-tr>YARIN</div>
+      <div class="prob-card-badge" data-ua>ЗАВТРА</div>
+      <div class="prob-card-tube-wrap">
+        <div class="prob-card-tube-outer">
+          <div class="prob-card-fill" id="fill1d" style="height:0%"></div>
+          <div class="prob-card-shine"></div>
+        </div>
+        <div class="prob-card-scale">
+          <span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span>
+        </div>
+      </div>
+      <div class="prob-card-num" id="num1d">0%</div>
+      <div class="prob-card-sublabel" data-tr>Yarın Olasılığı</div>
+      <div class="prob-card-sublabel" data-ua>Ймовірність на завтра</div>
+      <div class="prob-card-reason" id="reason1d">—</div>
+    </div>
+
+    <!-- 1 AY -->
+    <div class="prob-card">
+      <div class="prob-card-badge" data-tr>1 AY İÇİNDE</div>
+      <div class="prob-card-badge" data-ua>ЗА 1 МІСЯЦЬ</div>
+      <div class="prob-card-tube-wrap">
+        <div class="prob-card-tube-outer">
+          <div class="prob-card-fill" id="fill1m" style="height:0%"></div>
+          <div class="prob-card-shine"></div>
+        </div>
+        <div class="prob-card-scale">
+          <span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span>
+        </div>
+      </div>
+      <div class="prob-card-num" id="num1m">0%</div>
+      <div class="prob-card-sublabel" data-tr>1 Ay İçin Olasılık</div>
+      <div class="prob-card-sublabel" data-ua>Ймовірність за місяць</div>
+      <div class="prob-card-reason" id="reason1m">—</div>
+    </div>
+
+    <!-- 1 YIL -->
+    <div class="prob-card">
+      <div class="prob-card-badge" data-tr>1 YIL İÇİNDE</div>
+      <div class="prob-card-badge" data-ua>ЗА 1 РІК</div>
+      <div class="prob-card-tube-wrap">
+        <div class="prob-card-tube-outer">
+          <div class="prob-card-fill" id="fill1y" style="height:0%"></div>
+          <div class="prob-card-shine"></div>
+        </div>
+        <div class="prob-card-scale">
+          <span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span>
+        </div>
+      </div>
+      <div class="prob-card-num" id="num1y">0%</div>
+      <div class="prob-card-sublabel" data-tr>1 Yıl İçin Olasılık</div>
+      <div class="prob-card-sublabel" data-ua>Ймовірність за рік</div>
+      <div class="prob-card-reason" id="reason1y">—</div>
+    </div>
+
+  </div><!-- /prob-3-grid -->
+
+  <div class="last-update" id="lastUpdateDisplay" style="text-align:center;margin-bottom:14px;">—</div>
+
+  <!-- DURUM PANELLER -->
+  <div class="full-panels">
+      <div class="card">
+        <div class="card-title" data-tr>Durum Göstergeleri</div>
+        <div class="card-title" data-ua>Показники Стану</div>
+        <div class="status-bar">
+          <div class="status-item">
+            <div class="status-value" id="statusSavas">—</div>
+            <div class="status-key" data-tr>Savaş Durumu</div>
+            <div class="status-key" data-ua>Стан Війни</div>
+          </div>
+          <div class="status-item">
+            <div class="status-value" id="statusMuzakere">—</div>
+            <div class="status-key" data-tr>Müzakereler</div>
+            <div class="status-key" data-ua>Переговори</div>
+          </div>
+          <div class="status-item">
+            <div class="status-value" id="statusGun">—</div>
+            <div class="status-key" data-tr>Süre</div>
+            <div class="status-key" data-ua>Тривалість</div>
+          </div>
+        </div>
+        <div class="conf-row">
+          <span class="conf-lbl" data-tr>Güven:</span>
+          <span class="conf-lbl" data-ua>Впевненість:</span>
+          <div class="conf-dots" id="confDots">
+            <div class="conf-dot"></div><div class="conf-dot"></div>
+            <div class="conf-dot"></div><div class="conf-dot"></div>
+            <div class="conf-dot"></div>
+          </div>
+          <span style="font-size:10px;color:var(--text-muted);" id="confLabel">— / 5</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title" data-tr>Son Gelişmeler</div>
+        <div class="card-title" data-ua>Останні Події</div>
+        <div class="dev-list" id="devList"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title" data-tr>Analiz & Gerekçe</div>
+        <div class="card-title" data-ua>Аналіз та Обґрунтування</div>
+        <div class="reasoning-text" id="reasoningText">—</div>
+        <div class="trend-row">
+          <span class="trend-label" data-tr>Trend:</span>
+          <span class="trend-label" data-ua>Тренд:</span>
+          <div class="trend-bar"><div class="trend-fill" id="trendFill" style="width:0%"></div></div>
+          <span class="trend-label" id="trendLabel">—</span>
+        </div>
+      </div>
+  </div><!-- /full-panels -->
+
+</div>
+</section>
+
+<!-- ══ MID AD (2'li) ══ -->
+<div class="container">
+  <div class="ad-slot-double">
+    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Orta Sol','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
+      <!-- AdSense alanı: yayın sonrası aktif edilecek -->
+      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+    </div>
+    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Orta Sağ','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
+      <!-- AdSense alanı: yayın sonrası aktif edilecek -->
+      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     UKRAYNA GÜNDEMİ — CANLI HABERLER
+══════════════════════════════════════════ -->
+<section id="gundem">
+<div class="container">
+
+  <div class="gundem-header-row">
+    <div>
+      <div class="section-badge" style="margin-bottom:10px;">
+        <span class="dot"></span>
+        <span data-tr>CANLI GÜNDEM</span>
+        <span data-ua>АКТУАЛЬНІ НОВИНИ</span>
+      </div>
+      <h2 class="section-title" data-tr>Ukrayna Gündemi</h2>
+      <h2 class="section-title" data-ua>Актуальні Новини України</h2>
+      <p class="section-sub" data-tr>Ukrinform resmi haber ajansından anlık gelişmeler. 6 saatte bir otomatik güncellenir.</p>
+      <p class="section-sub" data-ua>Актуальні події від офіційного агентства Укрінформ. Автоматичне оновлення кожні 6 годин.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+      <div class="gundem-live-badge">
+        <div class="gundem-live-dot"></div>
+        <span data-tr>CANLI</span><span data-ua>НАЖИВО</span>
+      </div>
+      <div class="gundem-update-info" id="gundemUpdateInfo">—</div>
+    </div>
+  </div>
+
+  <!-- İskelet (loading) -->
+  <div id="gundemLoading">
+    <div class="gundem-featured">
+      <div class="gundem-skeleton"></div>
+      <div class="gundem-skeleton"></div>
+    </div>
+    <div class="gundem-grid">
+      <div class="gundem-skeleton"></div>
+      <div class="gundem-skeleton"></div>
+      <div class="gundem-skeleton"></div>
+    </div>
+  </div>
+
+  <!-- Haberler buraya doldurulur -->
+  <div id="gundemFeatured" class="gundem-featured" style="display:none;"></div>
+  <div id="gundemGrid"     class="gundem-grid"     style="display:none;"></div>
+
+  <div class="gundem-source-bar">
+    <span class="gundem-source-txt">
+      <span data-tr>Kaynak: Ukrinform Haber Ajansı (ukrinform.net)</span>
+      <span data-ua>Джерело: Агентство новин Укрінформ (ukrinform.net)</span>
+    </span>
+    <button class="gundem-refresh-btn" onclick="fetchGundem(true)">
+      <span data-tr>↻ GÜNCELLE</span><span data-ua>↻ ОНОВИТИ</span>
+    </button>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SAVAŞ GELİŞMELERİ / ВОЄННІ НОВИНИ
+══════════════════════════════════════════ -->
+<section id="news-section">
+<div class="container">
+
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span>
+      <span data-tr>CEPHE & DİPLOMASİ</span>
+      <span data-ua>ФРОНТ І ДИПЛОМАТІЯ</span>
+    </div>
+    <h2 class="section-title" data-tr>Son Savaş Gelişmeleri</h2>
+    <h2 class="section-title" data-ua>Останні Воєнні Новини</h2>
+    <p class="section-sub" data-tr>Cephe hattı, müzakereler ve insani duruma ilişkin en güncel gelişmeler. Her 6 saatte bir güncellenir.</p>
+    <p class="section-sub" data-ua>Найсвіжіші новини про лінію фронту, переговори та гуманітарну ситуацію. Оновлення кожні 6 годин.</p>
+
+  <div style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 14px;background:rgba(0,243,255,0.04);border:1px solid rgba(0,243,255,0.1);border-radius:8px;flex-wrap:wrap;">
+    <span style="font-size:10px;color:var(--neon-green);">✓</span>
+    <span style="font-size:11px;color:var(--text-muted);" data-tr>Tüm haberler yalnızca resmi açıklamalar ve uluslararası haber ajanslarından derlenmektedir. Askeri konum veya operasyonel bilgi içermez.</span>
+    <span style="font-size:11px;color:var(--text-muted);" data-ua>Усі новини взяті лише з офіційних заяв та міжнародних агентств. Не містить військових позицій або оперативних даних.</span>
+  </div>
+  </div>
+
+  <!-- Filtre butonları -->
+  <div class="news-filter-row" id="newsFilters">
+    <button class="news-filter-btn active" data-filter="all" onclick="filterNews('all')">
+      <span data-tr>Tümü</span><span data-ua>Всі</span>
+    </button>
+    <button class="news-filter-btn military" data-filter="military" onclick="filterNews('military')">
+      <span data-tr>🔴 Askeri</span><span data-ua>🔴 Військове</span>
+    </button>
+    <button class="news-filter-btn diplomatic" data-filter="diplomatic" onclick="filterNews('diplomatic')">
+      <span data-tr>🔵 Diplomatik</span><span data-ua>🔵 Дипломатія</span>
+    </button>
+    <button class="news-filter-btn economic" data-filter="economic" onclick="filterNews('economic')">
+      <span data-tr>🟢 Ekonomik</span><span data-ua>🟢 Економіка</span>
+    </button>
+    <button class="news-filter-btn humanitarian" data-filter="humanitarian" onclick="filterNews('humanitarian')">
+      <span data-tr>🟡 İnsani</span><span data-ua>🟡 Гуманітарне</span>
+    </button>
+  </div>
+
+  <div class="news-grid" id="newsGrid">
+    <!-- JS ile doldurulur -->
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ÜNİVERSİTE
+══════════════════════════════════════════ -->
+<section id="university">
+<div class="container">
+
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span><span data-tr>ÜNİVERSİTE REHBERİ</span><span data-ua>УНІВЕРСИТЕТСЬКИЙ ПУТІВНИК</span></div>
+    <h2 class="section-title" data-tr>Türkiye & Ukrayna<br>Üniversite İşlemleri</h2>
+    <h2 class="section-title" data-ua>Туреччина та Україна<br>Університетські Процедури</h2>
+    <p class="section-sub" data-tr>Ukraynalı öğrenciler için Türk üniversitelerine başvuru rehberi ve Türk öğrenciler için Ukrayna üniversiteleri hakkında kapsamlı bilgi.</p>
+    <p class="section-sub" data-ua>Посібник для українських студентів щодо вступу до турецьких університетів та інформація для турецьких студентів про українські університети.</p>
+  </div>
+
+  <!-- Ukraynalılar → Türkiye -->
+  <div class="info-card" style="margin-bottom:20px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="font-size:28px;">🇺🇦→🇹🇷</span>
+      <h3 style="font-size:17px;" data-tr>Ukraynalı Öğrenciler için Türkiye Üniversiteleri</h3>
+      <h3 style="font-size:17px;" data-ua>Турецькі університети для українських студентів</h3>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:14px;" data-tr>
+          Ukraynalı öğrenciler Türkiye'deki devlet ve vakıf üniversitelerine başvurabilir. Savaş döneminde özel kolaylıklar tanınmıştır.
+        </p>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:14px;" data-ua>
+          Українські студенти можуть подати заявки до державних і приватних університетів Туреччини. У воєнний час запроваджено спеціальні пільги.
+        </p>
+        <ol class="step-list" data-tr>
+          <li><span class="step-num">1</span>YÖK Atlas veya üniversite web sitesinden program seç</li>
+          <li><span class="step-num">2</span>Lise/üniversite transkriptini Türkçe'ye tercüme ettir ve noter onaylat</li>
+          <li><span class="step-num">3</span>YÖS sınavına gir (devlet üniv.) veya üniversite sınavına başvur</li>
+          <li><span class="step-num">4</span>Kabul mektubu al, öğrenci vizesi başvurusu yap</li>
+          <li><span class="step-num">5</span>Türkiye'ye geldikten sonra İkamet İzni başvurusu yap</li>
+        </ol>
+        <ol class="step-list" data-ua>
+          <li><span class="step-num">1</span>Обери програму через YÖK Atlas або сайт університету</li>
+          <li><span class="step-num">2</span>Перекладіть та нотаріально завірте шкільний/університетський транскрипт турецькою</li>
+          <li><span class="step-num">3</span>Складіть іспит YÖS (держ. ун-т) або вступний іспит університету</li>
+          <li><span class="step-num">4</span>Отримай лист про зарахування, подайся на студентську візу</li>
+          <li><span class="step-num">5</span>Після приїзду до Туреччини — заявка на посвідку на проживання</li>
+        </ol>
+      </div>
+      <div>
+        <div class="highlight-box" data-tr>
+          <strong>📌 Türkiye Bursları (YTB):</strong> Her yıl yabancı öğrencilere burs verilir. Burs kapsamı: aylık burs + yurt + sağlık sigortası + Türkçe dil kursu. Başvuru: <strong>turkiyeburslari.gov.tr</strong>
+        </div>
+        <div class="highlight-box" data-ua>
+          <strong>📌 Стипендії Туреччини (YTB):</strong> Щороку іноземні студенти отримують стипендії. Покриття: щомісячна стипендія + гуртожиток + медичне страхування + курс турецької мови. Сайт: <strong>turkiyeburslari.gov.tr</strong>
+        </div>
+        <div class="tag-row" style="margin-top:16px;">
+          <span class="tag ok" data-tr>Burs İmkânı</span>
+          <span class="tag ok" data-ua>Стипендія</span>
+          <span class="tag" data-tr>YÖS Sınavı</span>
+          <span class="tag" data-ua>Іспит YÖS</span>
+          <span class="tag warn" data-tr>Apostil Şart</span>
+          <span class="tag warn" data-ua>Потрібен Апостиль</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YÖK Denklik -->
+  <div class="cards-grid">
+    <div class="info-card">
+      <div class="info-card-icon">🏛️</div>
+      <h3 data-tr>YÖK Denklik İşlemi</h3>
+      <h3 data-ua>Нострифікація YÖK</h3>
+      <p data-tr>Ukrayna'da alınan diplomaların Türkiye'de tanınması için YÖK'e denklik başvurusu yapılmalıdır.</p>
+      <p data-ua>Для визнання дипломів, отриманих в Україні в Туреччині, необхідно подати заяву на нострифікацію до YÖK.</p>
+      <ol class="step-list" style="margin-top:12px;">
+        <li><span class="step-num">1</span><span data-tr>Diploma + transkript Apostil onaylı olmalı</span><span data-ua>Диплом + транскрипт мають бути з апостилем</span></li>
+        <li><span class="step-num">2</span><span data-tr>Yeminli tercüman ile Türkçe'ye çevir</span><span data-ua>Перекладіть турецькою присяжним перекладачем</span></li>
+        <li><span class="step-num">3</span><span data-tr>denklik.yok.gov.tr üzerinden e-başvuru</span><span data-ua>Електронна заявка через denklik.yok.gov.tr</span></li>
+        <li><span class="step-num">4</span><span data-tr>Tıp/diş/eczacılık için STS sınavı zorunlu</span><span data-ua>Для медицини/стоматології — іспит STS обов'язковий</span></li>
+      </ol>
+      <div class="tag-row">
+        <span class="tag warn" data-tr>3–6 Ay Süreç</span>
+        <span class="tag warn" data-ua>3–6 Місяців</span>
+        <span class="tag" data-tr>Online Başvuru</span>
+        <span class="tag" data-ua>Онлайн Заявка</span>
+      </div>
+
+      <!-- Savaş uyarısı + YÖK iletişim -->
+      <div class="highlight-box" style="margin-top:16px; border-color:rgba(255,140,0,.35); background:rgba(255,140,0,.06);" data-tr>
+        ⚠️ <strong>Savaş Nedeniyle Önemli Uyarı:</strong> Ukrayna'daki kurumlarla iletişim kurmanın güç olduğu durumlarda belge temininde gecikmeler yaşanabilir. Sürecinizi hızlandırmak için <strong>YÖK'ü doğrudan Türkiye'den aramanız</strong> önerilir.<br><br>
+        📞 <strong>YÖK Denklik Birimi:</strong> <a href="tel:+903122982000" style="color:var(--neon-blue);">+90 (312) 298 20 00</a><br>
+        🌐 <a href="https://denklik.yok.gov.tr" target="_blank" style="color:var(--neon-blue);">denklik.yok.gov.tr</a>
+      </div>
+      <div class="highlight-box" style="margin-top:16px; border-color:rgba(255,140,0,.35); background:rgba(255,140,0,.06);" data-ua>
+        ⚠️ <strong>Важливе попередження через війну:</strong> Через труднощі зв'язку з українськими установами можливі затримки в отриманні документів. Для пришвидшення процесу рекомендується <strong>безпосередньо зв'язатися з YÖK з Туреччини</strong>.<br><br>
+        📞 <strong>Відділ нострифікації YÖK:</strong> <a href="tel:+903122982000" style="color:var(--neon-blue);">+90 (312) 298 20 00</a><br>
+        🌐 <a href="https://denklik.yok.gov.tr" target="_blank" style="color:var(--neon-blue);">denklik.yok.gov.tr</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-icon">🇹🇷→🇺🇦</div>
+      <h3 data-tr>Türk Öğrenciler için Ukrayna Üniversiteleri</h3>
+      <h3 data-ua>Українські університети для турецьких студентів</h3>
+      <p data-tr>Ukrayna'daki üniversiteler Türk öğrencilere düşük maliyetli tıp, mühendislik ve hukuk eğitimi sunmaktadır.</p>
+      <p data-ua>Університети України пропонують турецьким студентам доступну медичну, інженерну та юридичну освіту.</p>
+      <ol class="step-list" style="margin-top:12px;">
+        <li><span class="step-num">1</span><span data-tr>90 güne kadar vizesiz giriş (çipli kimlik yeterli)</span><span data-ua>Безвізовий в'їзд до 90 днів (достатньо чіпованого посвідчення)</span></li>
+        <li><span class="step-num">2</span><span data-tr>Üniversiteye kabul mektubunu al</span><span data-ua>Отримай лист про зарахування від університету</span></li>
+        <li><span class="step-num">3</span><span data-tr>90 gün sonrası için D tipi öğrenci vizesi başvur</span><span data-ua>Для перебування понад 90 днів — подайся на студентську візу типу D</span></li>
+        <li><span class="step-num">4</span><span data-tr>Türkiye'ye döndükten sonra YÖK denklik başvurusu yap</span><span data-ua>Після повернення до Туреччини — заявка на нострифікацію YÖK</span></li>
+      </ol>
+      <div class="highlight-box" data-tr>
+        ⚠️ <strong>Dikkat:</strong> Savaş nedeniyle bazı şehirlerde eğitim sekteye uğrayabilir. Başvurmadan önce üniversitenin güncel durumunu kontrol edin.
+      </div>
+      <div class="highlight-box" data-ua>
+        ⚠️ <strong>Увага:</strong> Через війну навчання в деяких містах може бути порушено. Перевіряйте актуальний стан університету перед подачею заяви.
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══ RECTANGLE ADS (2'li) ══ -->
+<div class="container">
+  <div class="ad-slot-double">
+    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Vize Sol','300×250 px','Vize & ikamet bölümünün hemen üstünde — vize danışmanları ve avukatlar için ideal konum')">
+      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+    </div>
+    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Vize Sağ','300×250 px','Vize & ikamet bölümünün hemen üstünde — sigorta, muhasebe ve hukuk firmaları için ideal konum')">
+      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VİZE
+══════════════════════════════════════════ -->
+<section id="visa">
+<div class="container">
+
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span><span data-tr>VİZE & İKAMET REHBERİ</span><span data-ua>ПУТІВНИК З ВІЗИ ТА ПРОЖИВАННЯ</span></div>
+    <h2 class="section-title" data-tr>Vize &amp; İkamet İşlemleri</h2>
+    <h2 class="section-title" data-ua>Оформлення Візи та Проживання</h2>
+  </div>
+
+  <!-- Free zone box -->
+  <div class="visa-hero">
+    <div class="visa-flags">🇹🇷 🤝 🇺🇦</div>
+    <div>
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:6px;" data-tr>Türkiye ↔ Ukrayna Vizesiz Anlaşma</h3>
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:6px;" data-ua>Безвізовий режим Туреччина ↔ Україна</h3>
+      <p style="font-size:13px;color:var(--text-muted);" data-tr>17 Şubat 2012 tarihli anlaşma ile her iki ülke vatandaşları 180 günde 90 güne kadar vizesiz giriş yapabilmektedir.</p>
+      <p style="font-size:13px;color:var(--text-muted);" data-ua>Відповідно до угоди від 17 лютого 2012 р. громадяни обох країн можуть перебувати до 90 днів протягом 180 днів без візи.</p>
+      <div class="visa-free-badge" data-tr>✅ VİZESİZ — 90 GÜN</div>
+      <div class="visa-free-badge" data-ua>✅ БЕЗ ВІЗИ — 90 ДНІВ</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- Ukraynalılar için -->
+    <div class="visa-card">
+      <div class="visa-card-flag">🇺🇦 → 🇹🇷</div>
+      <h3 data-tr>Ukraynalılar için Türkiye</h3>
+      <h3 data-ua>Туреччина для Українців</h3>
+      <div class="info-row"><span class="lbl" data-tr>Kısa Ziyaret</span><span class="lbl" data-ua>Коротке Перебування</span><span class="val ok" data-tr>90 gün</span><span class="val ok" data-ua>90 днів</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Uzun Kalış</span><span class="lbl" data-ua>Тривале Перебування</span><span class="val warn" data-tr>İkamet İzni Gerekli</span><span class="val warn" data-ua>Потрібний Дозвіл</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Öğrenci İzni</span><span class="lbl" data-ua>Студентський Дозвіл</span><span class="val" data-tr>Üniv. kabul + başvuru</span><span class="val" data-ua>Зарахування + заявка</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Çalışma İzni</span><span class="lbl" data-ua>Дозвіл на Роботу</span><span class="val" data-tr>İşveren başvurusu</span><span class="val" data-ua>Заявка роботодавця</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Geçici Koruma</span><span class="lbl" data-ua>Тимчасовий Захист</span><span class="val ok" data-tr>Savaş dönemi hakkı</span><span class="val ok" data-ua>Право воєнного часу</span></div>
+      <div class="highlight-box" style="margin-top:14px;" data-tr>
+        <strong>📋 İkamet İzni için:</strong> İl Göç İdaresi Müdürlüğü'ne başvur. Gerekli: pasaport, kira sözleşmesi, sağlık sigortası, fotoğraf, başvuru harcı.
+      </div>
+      <div class="highlight-box" style="margin-top:14px;" data-ua>
+        <strong>📋 Для посвідки на проживання:</strong> Звернись до Провінційного управління з питань міграції. Потрібно: паспорт, договір оренди, медичне страхування, фото, збір за подачу.
+      </div>
+    </div>
+
+    <!-- Türkler için -->
+    <div class="visa-card">
+      <div class="visa-card-flag">🇹🇷 → 🇺🇦</div>
+      <h3 data-tr>Türkler için Ukrayna</h3>
+      <h3 data-ua>Україна для Турків</h3>
+      <div class="info-row"><span class="lbl" data-tr>Kısa Ziyaret</span><span class="lbl" data-ua>Коротке Перебування</span><span class="val ok" data-tr>90 gün (çipli kimlik)</span><span class="val ok" data-ua>90 днів (посвідчення з чіпом)</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Pasaport</span><span class="lbl" data-ua>Паспорт</span><span class="val warn" data-tr>⚠️ Savaş dönemi — pasaport tavsiye edilir</span><span class="val warn" data-ua>⚠️ Воєнний час — паспорт рекомендований</span></div>
+      <div class="highlight-box" style="margin-top:10px;border-color:rgba(255,140,0,0.4);background:rgba(255,100,0,0.07);" data-tr>
+        🪪 <strong>Kimlik & Pasaport Uyarısı:</strong> Normal koşullarda Türk kimliği (çipli) Ukrayna girişi için yeterlidir. Ancak savaş dolayısıyla alınan olağanüstü tedbirler kapsamında sınır kapılarında ek kontroller uygulanabilmektedir. Güvenli geçiş için <strong>pasaportunuzu yanınızda bulundurmanız kesinlikle tavsiye edilir.</strong> Güncel bilgi için T.C. Büyükelçiliği'ni (Kyiv) arayın.
+      </div>
+      <div class="highlight-box" style="margin-top:10px;border-color:rgba(255,140,0,0.4);background:rgba(255,100,0,0.07);" data-ua>
+        🪪 <strong>Попередження щодо посвідчення особи та паспорта:</strong> За звичайних умов для в'їзду до України достатньо турецького посвідчення (з чіпом). Однак у зв'язку з надзвичайними заходами воєнного часу на кордонних пунктах можуть проводитися додаткові перевірки. Для безпечного перетину <strong>настійно рекомендується мати при собі паспорт.</strong> За актуальною інформацією звертайтесь до Посольства Туреччини (Київ).
+      </div>
+      <div class="info-row"><span class="lbl" data-tr>Uzun Kalış</span><span class="lbl" data-ua>Тривале Перебування</span><span class="val warn" data-tr>D tipi uzun süreli vize</span><span class="val warn" data-ua>Довгострокова віза типу D</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Öğrenci Vizesi</span><span class="lbl" data-ua>Студентська Віза</span><span class="val" data-tr>D tipi — konsolosluktan öğrenin</span><span class="val" data-ua>Тип D — уточніть у консульстві</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Savaş Etkisi</span><span class="lbl" data-ua>Вплив Війни</span><span class="val warn" data-tr>Bazı bölgeler kısıtlı</span><span class="val warn" data-ua>Деякі регіони обмежені</span></div>
+      <div class="highlight-box" style="margin-top:14px;" data-tr>
+        ⚠️ <strong>Önemli:</strong> Aktif çatışma bölgelerine seyahat etmeyiniz. Seyahat öncesi T.C. Dışişleri Bakanlığı'nın güncel seyahat uyarılarını kontrol edin.
+      </div>
+      <div class="highlight-box" style="margin-top:14px;" data-ua>
+        ⚠️ <strong>Важливо:</strong> Не їздіть до зон активних бойових дій. Перевіряйте актуальні попередження МЗС Туреччини перед поїздкою.
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TİCARET
+══════════════════════════════════════════ -->
+<section id="trade">
+<div class="container">
+
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span><span data-tr>TİCARİ İLİŞKİLER</span><span data-ua>ТОРГОВЕЛЬНІ ВІДНОСИНИ</span></div>
+    <h2 class="section-title" data-tr>Türkiye–Ukrayna Ticaret Anlaşmaları</h2>
+    <h2 class="section-title" data-ua>Торговельні Угоди Туреччина–Україна</h2>
+    <p class="section-sub" data-tr>4 Ekim 2024'te yürürlüğe giren Serbest Ticaret Anlaşması ile iki ülke arasındaki ticaret yeni bir döneme girdi.</p>
+    <p class="section-sub" data-ua>Угода про вільну торгівлю, що набула чинності 4 жовтня 2024 р., відкрила нову еру в торгівлі між двома країнами.</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="trade-stats">
+    <div class="stat-card">
+      <div class="stat-number">$7.5B</div>
+      <div class="stat-label" data-tr>2024 Ticaret Hacmi</div>
+      <div class="stat-label" data-ua>Обсяг торгівлі 2024</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">$10B</div>
+      <div class="stat-label" data-tr>Hedef Ticaret Hacmi</div>
+      <div class="stat-label" data-ua>Цільовий Обсяг</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">4 Eki</div>
+      <div class="stat-label" data-tr>STA Yürürlük Tarihi<br>2024</div>
+      <div class="stat-label" data-ua>Набуття Чинності УВТ<br>2024</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">0%</div>
+      <div class="stat-label" data-tr>Pek Çok Üründe<br>Gümrük Vergisi</div>
+      <div class="stat-label" data-ua>Мито на Більшість<br>Товарів</div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards-grid">
+    <div class="info-card">
+      <div class="info-card-icon">📜</div>
+      <h3 data-tr>Serbest Ticaret Anlaşması (STA)</h3>
+      <h3 data-ua>Угода про Вільну Торгівлю (УВТ)</h3>
+      <p data-tr>3 Şubat 2022'de imzalanan STA, 4 Ekim 2024'te yürürlüğe girdi. Türk ihracatçılar AB'li rakipleriyle aynı koşullarda Ukrayna pazarına girebiliyor.</p>
+      <p data-ua>УВТ підписана 3 лютого 2022 р. та набула чинності 4 жовтня 2024 р. Турецькі експортери отримали рівні умови з конкурентами з ЄС на ринку України.</p>
+      <div class="highlight-box" style="margin-top:14px;" data-tr><strong>Kapsam:</strong> Tekstil, otomotiv, beyaz eşya, tarım ürünleri, kimya — gümrük vergisi ve kota engelleri kaldırıldı.</div>
+      <div class="highlight-box" style="margin-top:14px;" data-ua><strong>Охоплення:</strong> Текстиль, автомобілі, побутова техніка, сільгоспродукти, хімікати — усунуто мита та квоти.</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-icon">🏭</div>
+      <h3 data-tr>Öne Çıkan Sektörler</h3>
+      <h3 data-ua>Провідні Сектори</h3>
+      <p data-tr style="margin-bottom:12px;">İki ülke arasında en fazla ticaret yapılan sektörler:</p>
+      <p data-ua style="margin-bottom:12px;">Найбільш активні сектори торгівлі між двома країнами:</p>
+      <div class="sector-grid">
+        <div class="sector-item"><span class="icon">👗</span><span data-tr>Tekstil &amp; Hazır Giyim</span><span data-ua>Текстиль</span></div>
+        <div class="sector-item"><span class="icon">🚗</span><span data-tr>Otomotiv</span><span data-ua>Автомобілі</span></div>
+        <div class="sector-item"><span class="icon">🌾</span><span data-tr>Tarım &amp; Gıda</span><span data-ua>Сільгосп</span></div>
+        <div class="sector-item"><span class="icon">⚙️</span><span data-tr>Makina &amp; Ekipman</span><span data-ua>Обладнання</span></div>
+        <div class="sector-item"><span class="icon">🧪</span><span data-tr>Kimya</span><span data-ua>Хімія</span></div>
+        <div class="sector-item"><span class="icon">🏗️</span><span data-tr>İnşaat</span><span data-ua>Будівництво</span></div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-icon">💡</div>
+      <h3 data-tr>İş Dünyası için Fırsatlar</h3>
+      <h3 data-ua>Можливості для Бізнесу</h3>
+      <ul class="step-list" data-tr>
+        <li><span class="step-num">▸</span data-tr>Ukrayna'nın yeniden yapılanması sürecinde inşaat ve altyapı yatırımları</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);line-height:1.5;" data-ua>Інвестиції в будівництво та інфраструктуру в процесі відновлення України</li>
+        <li><span class="step-num">▸</span data-tr>STA ile tekstil ve hazır giyimde yeni ihracat kapıları</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);line-height:1.5;" data-ua>Нові експортні можливості у текстилі та одязі завдяки УВТ</li>
+        <li><span class="step-num">▸</span data-tr>Tarım ürünleri ve gıda ticaretinde büyüme potansiyeli</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);line-height:1.5;" data-ua>Потенціал зростання торгівлі сільськогосподарською продукцією та продовольством</li>
+        <li><span class="step-num">▸</span data-tr>Ukraynalı şirketler için Türkiye üzerinden üçüncü ülkelere erişim</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);line-height:1.5;" data-ua>Доступ українських компаній до третіх країн через Туреччину</li>
+        <li><span class="step-num">▸</span data-tr>Ortak lojistik ve taşımacılık projeleri</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);line-height:1.5;" data-ua>Спільні логістичні та транспортні проекти</li>
+      </ul>
+      <ul class="step-list" data-ua>
+        <li><span class="step-num">▸</span>Інвестиції в будівництво та інфраструктуру в рамках відбудови України</li>
+        <li><span class="step-num">▸</span>Нові можливості для текстильного та швейного експорту завдяки УВТ</li>
+        <li><span class="step-num">▸</span>Потенціал зростання в торгівлі сільгосппродуктами та продовольством</li>
+        <li><span class="step-num">▸</span>Доступ до третіх країн через Туреччину для українських компаній</li>
+        <li><span class="step-num">▸</span>Спільні логістичні та транспортні проекти</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PARA TRANSFERİ / ГРОШОВІ ПЕРЕКАЗИ
+══════════════════════════════════════════ -->
+<section id="money">
+<div class="container">
+
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span>
+      <span data-tr>FİNANSAL REHBER</span>
+      <span data-ua>ФІНАНСОВИЙ ПУТІВНИК</span>
+    </div>
+    <h2 class="section-title" data-tr>Para Transferi & Nakit Kuralları</h2>
+    <h2 class="section-title" data-ua>Грошові Перекази та Готівкові Правила</h2>
+    <p class="section-sub" data-tr>Türkiye ↔ Ukrayna arasında para taşıma sınırları, banka transferi seçenekleri ve pratik tavsiyeler.</p>
+    <p class="section-sub" data-ua>Ліміти перевезення грошей між Туреччиною та Україною, варіанти банківських переказів і практичні поради.</p>
+  </div>
+
+  <div class="money-grid">
+
+    <!-- UKRAYNA'YA NAKİT GÖTÜRME -->
+    <div class="money-card">
+      <div class="money-card-header">
+        <div class="money-card-icon">🇺🇦</div>
+        <div>
+          <div class="money-card-title" data-tr>Ukrayna'ya Nakit Götürme</div>
+          <div class="money-card-title" data-ua>Ввезення Готівки до України</div>
+          <div class="money-card-sub" data-tr>Gümrük sınırı & beyan zorunluluğu</div>
+          <div class="money-card-sub" data-ua>Митний ліміт та вимоги декларування</div>
+        </div>
+      </div>
+
+      <div class="money-limit-box">
+        <div class="money-limit-num">10.000 €</div>
+        <div class="money-limit-label" data-tr>Eşdeğerine kadar beyan zorunluluğu yok. Bu tutarın üzerinde gümrükte yazılı beyan şart.</div>
+        <div class="money-limit-label" data-ua>До еквіваленту декларування не потрібно. Понад цю суму — письмова декларація на митниці обов'язкова.</div>
+      </div>
+
+      <div class="money-warn-box">
+        <span>⚠️</span>
+        <span data-tr>Savaş dönemi kısıtlaması: Ukrayna gümrüğü yabancı döviz çıkışını sıkı denetlemektedir. Giriş serbest ancak çıkışta bankadan alınan dekont veya döviz bozdurma belgesi istenebilir.</span>
+        <span data-ua>Обмеження воєнного часу: митниця України суворо контролює вивезення іноземної валюти. Ввезення вільне, але при виїзді можуть вимагати банківські виписки або документи про обмін валюти.</span>
+      </div>
+
+      <div class="money-method-list">
+        <div class="money-method">
+          <span>💵</span>
+          <span class="money-method-name" data-tr>USD / EUR nakit</span>
+          <span class="money-method-name" data-ua>Готівка USD / EUR</span>
+          <span class="money-method-detail" data-tr>10.000 €'ya kadar serbest</span>
+          <span class="money-method-detail" data-ua>До 10.000 € вільно</span>
+          <span class="money-method-badge badge-fast">✓ OK</span>
+        </div>
+        <div class="money-method">
+          <span>🇹🇷</span>
+          <span class="money-method-name" data-tr>Türk Lirası</span>
+          <span class="money-method-name" data-ua>Турецька Ліра</span>
+          <span class="money-method-detail" data-tr>Ukrayna'da kabul sınırlı, dövize çevir</span>
+          <span class="money-method-detail" data-ua>В Україні обмежено приймається, конвертуй у валюту</span>
+          <span class="money-method-badge badge-limit"><span data-tr>DİKKAT</span><span data-ua>УВАГА</span></span>
+        </div>
+        <div class="money-method">
+          <span>📋</span>
+          <span class="money-method-name" data-tr>10.000 € üzeri</span>
+          <span class="money-method-name" data-ua>Понад 10.000 €</span>
+          <span class="money-method-detail" data-tr>Gümrük CD formu zorunlu</span>
+          <span class="money-method-detail" data-ua>Обов'язкова форма митної декларації</span>
+          <span class="money-method-badge badge-warn"><span data-tr>BEYAN</span><span data-ua>ДЕКЛАРАЦІЯ</span></span>
+        </div>
+      </div>
+
+      <div class="money-tip">
+        <span>💡</span>
+        <span data-tr>Tavsiye: Büyük miktarı nakit taşımak yerine banka kartı (Visa/Mastercard) ya da Western Union kullanmak hem daha güvenli hem de gümrük sorunu yaratmaz.</span>
+        <span data-ua>Порада: Замість перевезення великих сум готівки краще використовувати банківську карту (Visa/Mastercard) або Western Union — це безпечніше і не створює митних проблем.</span>
+      </div>
+    </div>
+
+    <!-- TÜRKİYE → UKRAYNA BANKA TRANSFERİ -->
+    <div class="money-card">
+      <div class="money-card-header">
+        <div class="money-card-icon">🏦</div>
+        <div>
+          <div class="money-card-title" data-tr>Türkiye → Ukrayna Transfer</div>
+          <div class="money-card-title" data-ua>Туреччина → Україна Переказ</div>
+          <div class="money-card-sub" data-tr>Banka & dijital yöntemler</div>
+          <div class="money-card-sub" data-ua>Банківські та цифрові методи</div>
+        </div>
+      </div>
+
+      <div class="money-method-list">
+        <div class="money-method">
+          <span>⚡</span>
+          <span class="money-method-name" data-tr>Uluslararası Para Transferi (Nakit)</span>
+          <span class="money-method-name" data-ua>Міжнародний переказ (готівка)</span>
+          <span class="money-method-detail" data-tr>Türkiye'den nakit gönder, Ukrayna'da nakit al</span>
+          <span class="money-method-detail" data-ua>Надсилай готівку з Туреччини, отримуй готівку в Україні</span>
+          <span class="money-method-badge badge-fast"><span data-tr>HIZLI</span><span data-ua>ШВИДКО</span></span>
+        </div>
+        <div class="money-method">
+          <span>💳</span>
+          <span class="money-method-name" data-tr>Dijital Transfer Servisi</span>
+          <span class="money-method-name" data-ua>Цифровий сервіс переказу</span>
+          <span class="money-method-detail" data-tr>Düşük komisyon, UAH hesabına aktarım</span>
+          <span class="money-method-detail" data-ua>Низька комісія, переказ на рахунок у гривнях</span>
+          <span class="money-method-badge badge-fast"><span data-tr>DÜŞÜK MALİYET</span><span data-ua>НИЗЬКА ВАРТІСТЬ</span></span>
+        </div>
+        <div class="money-method">
+          <span>🏛️</span>
+          <span class="money-method-name" data-tr>SWIFT Banka Havalesi</span>
+          <span class="money-method-name" data-ua>SWIFT-переказ</span>
+          <span class="money-method-detail" data-tr>Türk banka → Ukrayna bankası (2-5 iş günü)</span>
+          <span class="money-method-detail" data-ua>Турецький банк → Український банк (2-5 робочих днів)</span>
+          <span class="money-method-badge badge-bank">SWIFT</span>
+        </div>
+        <div class="money-method">
+          <span>📱</span>
+          <span class="money-method-name" data-tr>PTT Para Gönderme</span>
+          <span class="money-method-name" data-ua>Відправка через відділення PTT</span>
+          <span class="money-method-detail" data-tr>PTT şubeleri üzerinden gönderi</span>
+          <span class="money-method-detail" data-ua>Переказ через відділення PTT</span>
+          <span class="money-method-badge badge-fast">OK</span>
+        </div>
+        <div class="money-method">
+          <span>🔴</span>
+          <span class="money-method-name" data-tr>Türk banka kartı (Ukrayna ATM)</span>
+          <span class="money-method-name" data-ua>Турецька картка (банкомат в Україні)</span>
+          <span class="money-method-detail" data-tr>Visa/MC çekimlerde ~%3-4 komisyon</span>
+          <span class="money-method-detail" data-ua>Зняття Visa/MC ~3-4% комісія</span>
+          <span class="money-method-badge badge-limit"><span data-tr>KOMİSYON</span><span data-ua>КОМІСІЯ</span></span>
+        </div>
+      </div>
+
+      <div class="money-rate-box" id="liveRateBox">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+          <div class="money-rate-title">💱 <span data-tr>Canlı Döviz Kuru</span><span data-ua>Курс Валют Онлайн</span></div>
+          <div id="rateStatus" style="font-size:10px;color:var(--text-muted);letter-spacing:1px;"></div>
+        </div>
+        <div class="money-rate-row">
+          <span class="money-rate-pair">TL → UAH</span>
+          <span class="money-rate-val" id="rate-TRY-UAH" style="color:var(--neon-blue);font-weight:600;">—</span>
+        </div>
+        <div class="money-rate-row">
+          <span class="money-rate-pair">UAH → TL</span>
+          <span class="money-rate-val" id="rate-UAH-TRY" style="color:var(--neon-blue);font-weight:600;">—</span>
+        </div>
+        <div class="money-rate-row">
+          <span class="money-rate-pair">UAH → USD</span>
+          <span class="money-rate-val" id="rate-UAH-USD" style="color:var(--neon-green);font-weight:600;">—</span>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:var(--text-muted);">
+          <span data-tr>Kaynak: open.er-api.com · 6 saatte bir güncellenir</span>
+          <span data-ua>Джерело: open.er-api.com · оновлення кожні 6 годин</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- UKRAYNA → TÜRKİYE TRANSFERİ -->
+    <div class="money-card">
+      <div class="money-card-header">
+        <div class="money-card-icon">🔄</div>
+        <div>
+          <div class="money-card-title" data-tr>Ukrayna → Türkiye Transfer</div>
+          <div class="money-card-title" data-ua>Україна → Туреччина Переказ</div>
+          <div class="money-card-sub" data-tr>Savaş dönemi kısıtlamaları dahil</div>
+          <div class="money-card-sub" data-ua>Включно з обмеженнями воєнного часу</div>
+        </div>
+      </div>
+
+      <div class="money-warn-box">
+        <span>⚠️</span>
+        <span data-tr>Savaş dönemi: Ukrayna Merkez Bankası (NBU) yurt dışına döviz transferini kısıtlamıştır. Bireysel transferlerde limit uygulanmakta olup güncel NBU duyurularını takip edin.</span>
+        <span data-ua>Воєнний час: НБУ обмежив переказ іноземної валюти за кордон. На індивідуальні перекази діють ліміти — слідкуйте за актуальними оголошеннями НБУ.</span>
+      </div>
+
+      <div class="money-method-list">
+        <div class="money-method">
+          <span>🟡</span>
+          <span class="money-method-name">PrivatBank / Monobank</span>
+          <span class="money-method-detail" data-tr>Ukrayna'dan uluslararası Visa kart gönderimi</span>
+          <span class="money-method-detail" data-ua>Міжнародний переказ карткою Visa з України</span>
+          <span class="money-method-badge badge-limit"><span data-tr>LİMİTLİ</span><span data-ua>ОБМЕЖЕНО</span></span>
+        </div>
+        <div class="money-method">
+          <span>⚡</span>
+          <span class="money-method-name">Western Union</span>
+          <span class="money-method-detail" data-tr>Ukrayna şubelerinden Türkiye'ye nakit gönderim</span>
+          <span class="money-method-detail" data-ua>З відділень в Україні готівкою до Туреччини</span>
+          <span class="money-method-badge badge-fast"><span data-tr>MEVCUT</span><span data-ua>ДОСТУПНО</span></span>
+        </div>
+        <div class="money-method">
+          <span>🏛️</span>
+          <span class="money-method-name" data-tr>SWIFT (NBU izinli)</span>
+          <span class="money-method-name" data-ua>SWIFT (за дозволом НБУ)</span>
+          <span class="money-method-detail" data-tr>Belirli tutarlar için NBU onayı gerekebilir</span>
+          <span class="money-method-detail" data-ua>Для певних сум може знадобитися дозвіл НБУ</span>
+          <span class="money-method-badge badge-warn"><span data-tr>ONAY GEREKLİ</span><span data-ua>ПОТРІБЕН ДОЗВІЛ</span></span>
+        </div>
+        <div class="money-method">
+          <span>💳</span>
+          <span class="money-method-name" data-tr>Ukrayna kartıyla Türkiye ATM</span>
+          <span class="money-method-name" data-ua>Карта України в банкоматі Туреччини</span>
+          <span class="money-method-detail" data-tr>PrivatBank Visa Türkiye'de çalışır (~%2-3 komisyon)</span>
+          <span class="money-method-detail" data-ua>PrivatBank Visa працює в Туреччині (~2-3% комісія)</span>
+          <span class="money-method-badge badge-fast"><span data-tr>ÇALIŞIYOR</span><span data-ua>ПРАЦЮЄ</span></span>
+        </div>
+      </div>
+
+      <div class="money-tip">
+        <span>💡</span>
+        <span data-tr>Tavsiye: NBU'nun güncel transfer limitlerini öğrenmek için <strong style="color:var(--neon-blue)">bank.gov.ua</strong> adresini veya PrivatBank/Monobank müşteri hizmetlerini arayın. Limitler sık değişiyor.</span>
+        <span data-ua>Порада: Для отримання актуальних лімітів переказів НБУ відвідайте <strong style="color:var(--neon-blue)">bank.gov.ua</strong> або зателефонуйте на гарячу лінію PrivatBank/Monobank. Ліміти часто змінюються.</span>
+      </div>
+    </div>
+
+  </div><!-- /money-grid -->
+
+  <!-- ÖNEMLI UYARILAR -->
+  <div class="highlight-box" style="margin-top:24px;">
+    <strong data-tr>📌 Önemli Hatırlatmalar</strong>
+    <strong data-ua>📌 Важливі Нагадування</strong>
+    <ul style="margin-top:10px;padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-tr>Ukrayna'ya getirilen dövizi döviz bürosunda (обмінник) bozdurun — banka kuru daha düşük olabilir</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-ua>Обмінюйте іноземну валюту в обмінниках, а не в банках — курс може бути вигіднішим</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-tr>Rubl kabul edilmez — Ukrayna'da Rus rublesi işlem görmez</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-ua>Рублі не приймаються — російський рубль не є платіжним засобом в Україні</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-tr>Transfer belgelerini saklayın — gümrükte veya hesap açılışında istenebilir</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-ua>Зберігайте документи про перекази — можуть знадобитися на митниці або при відкритті рахунку</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-tr>Bu bilgiler genel rehber niteliğindedir — güncel limitler için NBU ve resmi banka kanallarını takip edin</li>
+      <li style="font-size:13px;color:rgba(200,200,255,.75);" data-ua>Ця інформація є загальним посібником — для актуальних лімітів слідкуйте за НБУ та офіційними банківськими каналами</li>
+    </ul>
+  </div>
+
+</div>
+</section>
+
+<!-- ══ SPONSORED CONTENT ══ -->
+<section id="sponsored" style="padding:40px 0;">
+<div class="container">
+  <div class="section-badge" style="margin-bottom:20px;"><span class="dot"></span><span data-tr>SPONSORLU İÇERİK</span><span data-ua>СПОНСОРОВАНИЙ ВМІСТ</span></div>
+  <div class="sponsored-grid">
+    <div class="sponsor-slot bus-ad-slot" style="border-color:rgba(0,243,255,0.35);background:linear-gradient(135deg,rgba(0,20,50,0.9),rgba(0,10,30,0.95));">
+      <span class="slot-icon">🚌</span>
+      <div class="slot-title" data-tr style="color:var(--neon-blue);font-size:15px;">Türkiye ↔ Ukrayna Otobüs</div>
+      <div class="slot-title" data-ua style="color:var(--neon-blue);font-size:15px;">Туреччина ↔ Україна Автобус</div>
+      <div class="slot-sub" data-tr style="color:rgba(200,230,255,0.8);margin:6px 0;">İstanbul · Ankara · Odessa · Kyiv</div>
+      <div class="slot-sub" data-ua style="color:rgba(200,230,255,0.8);margin:6px 0;">Стамбул · Анкара · Одеса · Київ</div>
+      <div style="margin-top:10px;padding:8px 14px;background:rgba(0,243,255,0.1);border:1px solid rgba(0,243,255,0.25);border-radius:8px;display:inline-block;">
+        <span data-tr style="font-size:11px;color:var(--neon-blue);letter-spacing:1px;font-family:'Orbitron',monospace;">REKLAM ALANI</span>
+        <span data-ua style="font-size:11px;color:var(--neon-blue);letter-spacing:1px;font-family:'Orbitron',monospace;">РЕКЛАМНА ПЛОЩА</span>
+      </div>
+      <div class="slot-sub" data-tr style="margin-top:8px;font-size:11px;">Firma iletişimi için formu doldurun ↓</div>
+      <div class="slot-sub" data-ua style="margin-top:8px;font-size:11px;">Заповніть форму для зв'язку з компанією ↓</div>
+    </div>
+    <div class="sponsor-slot">
+      <span class="slot-icon">✈️</span>
+      <div class="slot-title" data-tr>Vize &amp; Göç Acentesi</div>
+      <div class="slot-title" data-ua>Візове &amp; міграційне агентство</div>
+      <div class="slot-sub" data-tr>Sponsor alanı</div>
+      <div class="slot-sub" data-ua>Спонсорська площа</div>
+    </div>
+    <div class="sponsor-slot">
+      <span class="slot-icon">🤝</span>
+      <div class="slot-title" data-tr>Ticaret / Lojistik Firması</div>
+      <div class="slot-title" data-ua>Торговельна / логістична компанія</div>
+      <div class="slot-sub" data-tr>Sponsor alanı</div>
+      <div class="slot-sub" data-ua>Спонсорська площа</div>
+    </div>
+  </div>
+  <p class="sponsor-contact" data-tr>Sponsorluk için: <a href="#contact">iletişim formunu</a> doldurun veya WhatsApp ile ulaşın.</p>
+  <p class="sponsor-contact" data-ua>Для спонсорства: заповніть <a href="#contact">форму контакту</a> або напишіть у WhatsApp.</p>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     DANIŞMANLIK FORMU
+══════════════════════════════════════════ -->
+<section id="contact">
+<div class="container">
+
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span><span data-tr>ÜCRETLİ DANIŞMANLIK</span><span data-ua>ПЛАТНА КОНСУЛЬТАЦІЯ</span></div>
+    <h2 class="section-title" data-tr>Hukuk, Tercüme &amp; Bürokratik Destek</h2>
+    <h2 class="section-title" data-ua>Юридична, Перекладацька &amp; Бюрократична Підтримка</h2>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3 data-tr>Size Yardımcı Olabiliriz</h3>
+      <h3 data-ua>Ми Можемо Вам Допомогти</h3>
+      <p data-tr>Türkiye ve Ukrayna'da yaşadığınız hukuki, bürokratik ve dil engellerinde yanınızdayız. Avukat yönlendirmesinden belge çevirisine, ehliyetten oturma iznine kadar her adımda destek sağlıyoruz.</p>
+      <p data-ua>Ми поруч із вами при юридичних, бюрократичних та мовних труднощах у Туреччині та Україні. Від направлення до адвоката до перекладу документів, від посвідчення водія до дозволу на проживання — підтримка на кожному кроці.</p>
+      <ul class="service-list">
+        <li data-tr>⚖️ Türkiye'de hukuki destek — avukat yönlendirme ve danışmanlık</li>
+        <li data-ua>⚖️ Юридична підтримка в Туреччині — направлення до адвоката та консультації</li>
+        <li data-tr>⚖️ Ukrayna'da hukuki destek — yerel avukat ve hukuk rehberliği</li>
+        <li data-ua>⚖️ Юридична підтримка в Україні — місцевий адвокат та правове керівництво</li>
+        <li data-tr>🌐 Resmi belge ve yazışmalar için tercüme yardımı (Türkçe ↔ Ukraynaca)</li>
+        <li data-ua>🌐 Допомога з перекладом офіційних документів та листування (турецька ↔ українська)</li>
+        <li data-tr>🏠 Ukrayna'da süresiz oturum başvurusu — yanında tercümanlık desteği</li>
+        <li data-ua>🏠 Заявка на безстрокове проживання в Україні — супровід з перекладачем</li>
+        <li data-tr>🚗 Ukrayna'da Türk ehliyeti çevirisi ve dönüşüm süreçlerinde destek</li>
+        <li data-ua>🚗 Переклад турецьких водійських прав в Україні та підтримка у процесі обміну</li>
+        <li data-tr>🆘 Türkiye veya Ukrayna'da karşılaşılan bürokratik sorunlarda bilgi ve yönlendirme desteği</li>
+        <li data-ua>🆘 Інформаційна та довідкова підтримка при бюрократичних труднощах у Туреччині або Україні</li>
+        <li data-tr>🚗 Türkiye ve Ukrayna'da araç sigortası ve kasko süreçlerinde rehberlik ve hizmet desteği</li>
+        <li data-ua>🚗 Підтримка та консультації щодо автострахування та КАСКО в Туреччині та Україні</li>
+        <li data-tr>🧾 Ukrayna'da muhasebe hizmeti — mali kayıtlar, raporlama ve danışmanlık</li>
+        <li data-ua>🧾 Бухгалтерські послуги в Україні — фінансовий облік, звітність та консультації</li>
+        <li data-tr>🏢 Ukrayna'da şirket kuruluşu — tescil, izinler ve resmi süreç takibi</li>
+        <li data-ua>🏢 Відкриття компанії в Україні — реєстрація, дозволи та офіційний супровід</li>
+        <li data-tr>🔒 Ukrayna'da şirket kapanışı — tasfiye, belge ve yasal süreç yönetimi</li>
+        <li data-ua>🔒 Закриття компанії в Україні — ліквідація, документи та правове супроводження</li>
+        <li data-tr>🔄 Şirket süreç takibi — başvuru, onay ve resmi işlemlerin takip desteği</li>
+        <li data-ua>🔄 Супровід процесів компанії — відстеження заявок, дозволів та офіційних процедур</li>
+        <li data-tr>🔍 Ukrayna'da vergi borcu sorgusu — borcunuz var mı? Kontrol ve bilgilendirme desteği</li>
+        <li data-ua>🔍 Перевірка податкової заборгованості в Україні — чи є борги? Підтримка у перевірці та інформуванні</li>
+        <li data-tr>📢 Sponsorlu içerik ve reklam yerleşimi</li>
+        <li data-ua>📢 Спонсорський контент та розміщення реклами</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="contact-form">
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:20px;" data-tr>İletişim Formu</h3>
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:20px;" data-ua>Форма Контакту</h3>
+
+        <div class="form-group">
+          <label data-tr>Ad Soyad / İsim</label>
+          <label data-ua>Ім'я та прізвище</label>
+          <input type="text" placeholder="..." id="f-name">
+        </div>
+        <div class="form-group">
+          <label data-tr>E-posta / Email</label>
+          <label data-ua>Електронна пошта</label>
+          <input type="email" placeholder="ornek@firma.com" id="f-email">
+        </div>
+        <div class="form-group">
+          <label data-tr>Konu</label>
+          <label data-ua>Тема</label>
+          <select id="f-topic-tr" data-tr>
+            <option value="">— Seçiniz —</option>
+            <option value="law-tr">⚖️ Türkiye'de Hukuki Destek</option>
+            <option value="law-ua">⚖️ Ukrayna'da Hukuki Destek</option>
+            <option value="translate">🌐 Tercüme Yardımı</option>
+            <option value="residence">🏠 Ukrayna'da Oturum Başvurusu</option>
+            <option value="license">🚗 Ehliyet Çevirisi / Dönüşümü</option>
+            <option value="bureaucracy">🆘 Bürokratik Sorun / Bilgi Desteği</option>
+            <option value="insurance">🚗 Sigorta / Kasko Desteği</option>
+            <option value="accounting">🧾 Muhasebe Hizmeti</option>
+            <option value="company-open">🏢 Şirket Kuruluşu</option>
+            <option value="company-close">🔒 Şirket Kapanışı</option>
+            <option value="tax">🔍 Vergi Borcu Sorgusu</option>
+            <option value="sponsor">📢 Sponsorluk / Reklam</option>
+            <option value="other">💬 Diğer</option>
+          </select>
+          <select id="f-topic-ua" data-ua>
+            <option value="">— Оберіть —</option>
+            <option value="law-tr">⚖️ Юридична підтримка в Туреччині</option>
+            <option value="law-ua">⚖️ Юридична підтримка в Україні</option>
+            <option value="translate">🌐 Допомога з перекладом</option>
+            <option value="residence">🏠 Заявка на проживання в Україні</option>
+            <option value="license">🚗 Переклад / обмін водійських прав</option>
+            <option value="bureaucracy">🆘 Бюрократичні труднощі / Інформація</option>
+            <option value="insurance">🚗 Страхування / КАСКО</option>
+            <option value="accounting">🧾 Бухгалтерські послуги</option>
+            <option value="company-open">🏢 Відкриття компанії</option>
+            <option value="company-close">🔒 Закриття компанії</option>
+            <option value="tax">🔍 Перевірка податкового боргу</option>
+            <option value="sponsor">📢 Спонсорство / Реклама</option>
+            <option value="other">💬 Інше</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-tr>Mesajınız</label>
+          <label data-ua>Ваше повідомлення</label>
+          <textarea id="f-msg" placeholder="..." rows="4"></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm()" data-tr>GÖNDER →</button>
+        <button class="btn-submit" onclick="submitForm()" data-ua>НАДІСЛАТИ →</button>
+        <a class="telegram-btn" href="https://t.me/TurkUA_destek" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span data-tr>Telegram ile Ulaşın</span>
+          <span data-ua>Написати у Telegram</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══ BOTTOM AD ══ -->
+<div class="container">
+  <div class="ad-slot ad-slot-leaderboard" onclick="openAdModal('Alt Şerit','728×90 px','Sayfanın altında, içeriği okuduktan sonra harekete geçen ziyaretçi hedefler')">
+    <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">728 × 90 px</div></div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+<div class="container">
+  <p style="margin-bottom:8px;">TürkUA &nbsp;·&nbsp; <span data-tr>Türkiye & Ukrayna Bilgi Merkezi</span><span data-ua>Інформаційний центр Туреччина & Україна</span></p>
+  <p data-tr>Savaş olasılık tahminleri her 6 saatte güncellenir &nbsp;·&nbsp; Bu site bilgi amaçlıdır, resmi tavsiye değildir</p>
+  <p data-ua>Прогнози імовірності оновлюються кожні 6 годин &nbsp;·&nbsp; Цей сайт є інформаційним, а не офіційною порадою</p>
+</div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+// ============================================
+// DATA_START — Bu bölüm otomatik olarak güncellenir
+const WAR_DATA = {
+  "prob1d": 2,
+  "prob1m": 8,
+  "prob1y": 34,
+  "confidence": 3,
+  "lastUpdate": "2026-03-25T12:00:00",
+  "trendPct": 30,
+  "statusSavas": {
+    "tr": "AKTİF",
+    "ua": "АКТИВНА"
+  },
+  "statusMuzakere": {
+    "tr": "ASKIDA",
+    "ua": "ПРИЗУПИНЕНО"
+  },
+  "trend": {
+    "tr": "düşük / sabit",
+    "ua": "низький / стабільний"
+  },
+  "label1d": {
+    "tr": "Müzakereler askıda, çatışma sürüyor",
+    "ua": "Переговори на паузі, бої тривають"
+  },
+  "label1m": {
+    "tr": "Sınırlı diplomatik momentum",
+    "ua": "Обмежений дипломатичний поступ"
+  },
+  "label1y": {
+    "tr": "Trump & AB baskısı, olası pencere",
+    "ua": "Тиск Трампа і ЄС, можливе вікно"
+  },
+  "reasoning": {
+    "tr": "Kremlin, Amerikalı müzakerecilerin önceliklerinin değiştiğini gerekçe göstererek üçlü formatı dondurdu. Avrupa Konseyi 19 Mart'ta Rusya'yı tam ve koşulsuz ateşkese çağırdı. İngiltere ve Fransa olası barış durumunda Ukrayna topraklarına askeri üsler kurmayı taahhüt etti. Polymarket'te Mart sonuna kadar ateşkes olasılığı %1'in altında. Esir değişimleri devam ediyor ancak toprak sorunu çıkmazda.",
+    "ua": "Кремль заморозив тристоронній формат, посилаючись на зміну пріоритетів американських переговорників. Єврорада 19 березня закликала Росію до повного та безумовного припинення вогню. Великобританія і Франція зобов'язалися розмістити військові хаби на території України в разі миру. На Polymarket шанс на припинення вогню до кінця березня менше 1%. Обмін полоненими триває, але територіальне питання в глухому куті."
+  },
+  "developments": [
+    {
+      "date": {
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
+      },
+      "text": {
+        "tr": "Kremlin sözcüsü Peskov: Üçlü müzakereler geçici olarak askıya alındı, Amerikalı müzakerecilerin öncelikleri değişti.",
+        "ua": "Речник Кремля Пєсков: Тристоронні переговори тимчасово призупинені, пріоритети американських переговорників змінилися."
+      },
+      "impact": -2,
+      "type": "negative"
+    },
+    {
+      "date": {
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
+      },
+      "text": {
+        "tr": "Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese çağırdı ve anlamlı müzakerelere katılmaya davet etti.",
+        "ua": "Європейська Рада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "date": {
+        "tr": "15 Mart 2026",
+        "ua": "15 березня 2026"
+      },
+      "text": {
+        "tr": "Kiev, Rusya ile daha fazla müzakere olasılığını değerlendireceğini açıkladı.",
+        "ua": "Київ заявив, що оцінюватиме можливість подальших переговорів з Росією."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "date": {
+        "tr": "10 Mart 2026",
+        "ua": "10 березня 2026"
+      },
+      "text": {
+        "tr": "Cephe hattında her iki taraf da ilerleme iddia ediyor. Putin, Rus kuvvetlerinin 'başarıyla ilerlediğini' söyledi.",
+        "ua": "На лінії фронту обидві сторони заявляють про просування. Путін заявив, що російські війська 'успішно просуваються'."
+      },
+      "impact": -1,
+      "type": "negative"
+    },
+    {
+      "date": {
+        "tr": "24 Şubat 2026",
+        "ua": "24 лютого 2026"
+      },
+      "text": {
+        "tr": "BM Genel Kurulu, savaşın 4. yıldönümünde acil ve koşulsuz ateşkes çağrısı yapan karar tasarısını kabul etti.",
+        "ua": "Генасамблея ООН ухвалила резолюцію з вимогою негайного та безумовного припинення вогню на 4-ту річницю війни."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "date": {
+        "tr": "3 Şubat 2026",
+        "ua": "3 лютого 2026"
+      },
+      "text": {
+        "tr": "Ukrayna, Batılı ortaklarla çok aşamalı ateşkes planı üzerinde anlaştı.",
+        "ua": "Україна узгодила з західними партнерами багаторівневий план припинення вогню."
+      },
+      "impact": 2,
+      "type": "positive"
+    }
+  ],
+  "newsItems": [
+    {
+      "category": "diplomatic",
+      "date": {
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
+      },
+      "title": {
+        "tr": "ABD-Rusya-Ukrayna üçlü görüşmeleri askıya alındı",
+        "ua": "Тристоронні переговори США-Росія-Україна призупинені"
+      },
+      "body": {
+        "tr": "Kremlin sözcüsü Peskov, Amerikalı müzakerecilerin önceliklerinin değiştiğini öne sürerek üçlü görüşme formatını geçici olarak dondurduklarını açıkladı. Esir değişimi tek taraflı sürecek.",
+        "ua": "Речник Кремля Пєсков заявив, що тристоронній формат переговорів тимчасово заморожений через зміну пріоритетів американських переговорників. Обмін полоненими продовжиться."
+      },
+      "impact": -2,
+      "type": "negative"
+    },
+    {
+      "category": "diplomatic",
+      "date": {
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
+      },
+      "title": {
+        "tr": "AB Rusya'ya tam ve koşulsuz ateşkes çağrısı yaptı",
+        "ua": "ЄС закликав Росію до повного та безумовного припинення вогню"
+      },
+      "body": {
+        "tr": "Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese davet ederek anlamlı müzakerelere katılması çağrısında bulundu. Fransa ve İngiltere, olası barış durumunda Ukrayna'da askeri üs kurmayı taahhüt etti.",
+        "ua": "Єврорада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах. Франція і Великобританія зобов'язалися розмістити військові бази в Україні у разі миру."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": {
+        "tr": "10 Mart 2026",
+        "ua": "10 березня 2026"
+      },
+      "title": {
+        "tr": "Cephe hattında her iki taraf da ilerleme iddiasında",
+        "ua": "Обидві сторони заявляють про просування на лінії фронту"
+      },
+      "body": {
+        "tr": "Rus ve Ukraynalı yetkililer aynı anda cephe hattında ilerleme iddiasında bulundu. Ukrayna bazı bölgelerde Rusya'nın geri çekildiğini söylerken Kremlin Donetsk ekseninde kazanım elde ettiğini açıkladı.",
+        "ua": "Російські та українські посадовці одночасно заявили про просування на лінії фронту. Україна повідомила про відступ Росії в деяких районах, тоді як Кремль оголосив про здобутки на донецькому напрямку."
+      },
+      "impact": -1,
+      "type": "negative"
+    },
+    {
+      "category": "diplomatic",
+      "date": {
+        "tr": "24 Şubat 2026",
+        "ua": "24 лютого 2026"
+      },
+      "title": {
+        "tr": "BM: Savaşın 4. yılında acil ateşkes çağrısı",
+        "ua": "ООН: Заклик до негайного припинення вогню на 4-й рік війни"
+      },
+      "body": {
+        "tr": "BM Genel Kurulu, Rusya'nın Ukrayna'yı işgalinin 4. yıldönümünde acil ve koşulsuz ateşkes talep eden karar tasarısını kabul etti. Karar bağlayıcı nitelik taşımıyor ancak uluslararası baskıyı artıracak.",
+        "ua": "Генасамблея ООН ухвалила резолюцію з вимогою негайного та безумовного припинення вогню на 4-ту річницю вторгнення Росії. Резолюція не є обов'язковою, але посилить міжнародний тиск."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "economic",
+      "date": {
+        "tr": "3 Şubat 2026",
+        "ua": "3 лютого 2026"
+      },
+      "title": {
+        "tr": "Ukrayna ve Batı çok aşamalı ateşkes planında uzlaştı",
+        "ua": "Україна і Захід узгодили багаторівневий план припинення вогню"
+      },
+      "body": {
+        "tr": "Ukrayna, Batılı ortaklarla müzakere edilen çok aşamalı ateşkes planını onayladı. Olası Rus ihlallerinde koordineli askeri yanıt mekanizması kurulacak. Plan ayrıca yeniden yapılanma finansmanı taahhütlerini de içeriyor.",
+        "ua": "Україна схвалила багаторівневий план припинення вогню, узгоджений із західними партнерами. У разі можливих порушень Росією буде створено механізм скоординованої військової відповіді. План також включає зобов'язання щодо фінансування відновлення."
+      },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "humanitarian",
+      "date": {
+        "tr": "15 Mart 2026",
+        "ua": "15 березня 2026"
+      },
+      "title": {
+        "tr": "Ukrayna'da 6 milyon yerinden edilmiş kişi geri dönmek istiyor",
+        "ua": "6 мільйонів переміщених осіб в Україні хочуть повернутися"
+      },
+      "body": {
+        "tr": "BM mülteci ajansı raporuna göre Ukrayna'dan göç eden 6 milyonun üzerinde kişi kalıcı ateşkes sağlanması durumunda ülkelerine dönmeyi planladıklarını belirtti. Türkiye'deki Ukraynalıların %38'i bu grupta yer alıyor.",
+        "ua": "Згідно зі звітом агентства ООН у справах біженців, понад 6 мільйонів осіб, що виїхали з України, заявили про намір повернутися у разі досягнення стійкого миру. 38% українців у Туреччині входять до цієї групи."
+      },
+      "impact": 0,
+      "type": "neutral"
+    }
+  ],
+  "gundemNews": [
+    {
+      "category": "parliamentary",
+      "date": {
+        "tr": "25 Mart 2026",
+        "ua": "25 березня 2026"
+      },
+      "title": {
+        "tr": "Rada: Ulusal Direniş eğitimi yasalaştı",
+        "ua": "Рада ухвалила закон про національний спротив"
+      },
+      "body": {
+        "tr": "Verkhovna Rada, okul ve üniversitelerde 'Ulusal Direniş Temelleri' dersini zorunlu kılan yasayı kabul etti. Kaynak: rada.gov.ua",
+        "ua": "Верховна Рада ухвалила закон, що вводить обов'язковий предмет «Основи національного спротиву» в школах і університетах. Джерело: rada.gov.ua"
+      },
+      "url": "https://www.rada.gov.ua/en/news/News//191082.html",
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "parliamentary",
+      "date": {
+        "tr": "23 Mart 2026",
+        "ua": "23 березня 2026"
+      },
+      "title": {
+        "tr": "Rada: Özel üniversite bursları Eylül'de başlıyor",
+        "ua": "Рада: стипендії в приватних університетах з вересня"
+      },
+      "body": {
+        "tr": "Verkhovna Rada, devlet destekli öğrencilerin özel üniversitelerde Eylül 2026'dan itibaren burs almasını sağlayan yasal düzenlemeyi onayladı. Kaynak: rada.gov.ua",
+        "ua": "Верховна Рада затвердила поправку, що дозволяє держбюджетникам у приватних університетах отримувати стипендії з вересня 2026 р. Джерело: rada.gov.ua"
+      },
+      "url": "https://www.rada.gov.ua/en",
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": {
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
+      },
+      "title": {
+        "tr": "AB zirvesi: Ukrayna'ya 90 milyar Euro kredi askıda",
+        "ua": "Саміт ЄС: кредит €90 млрд для України заблоковано"
+      },
+      "body": {
+        "tr": "AB Konseyi zirvesinde Macaristan ve Slovakya'nın vetosunu aşmak mümkün olmadı. 90 milyar Euro'luk destek kredisinin serbest bırakılması ertelendi. Kaynak: consilium.europa.eu",
+        "ua": "На саміті Єврорада не змогла подолати вето Угорщини та Словаччини. Розблокування кредиту €90 млрд для України відкладено. Джерело: consilium.europa.eu"
+      },
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/03/19/european-council-19-march-2026-ukraine/",
+      "impact": -1,
+      "type": "negative"
+    },
+    {
+      "category": "economic",
+      "date": {
+        "tr": "5 Mart 2026",
+        "ua": "5 березня 2026"
+      },
+      "title": {
+        "tr": "AB: Ukrayna'ya 1,5 milyar Euro yatırım paketi",
+        "ua": "ЄС: інвестиційний пакет €1,5 млрд для України"
+      },
+      "body": {
+        "tr": "Avrupa Komisyonu, enerji, eğitim, tarım ve KOBİ sektörlerine yönelik 8 programdan oluşan 1,5 milyar Euro'luk paket açıkladı. Kaynak: ec.europa.eu",
+        "ua": "Єврокомісія оголосила пакет із 8 програм на €1,5 млрд для енергетики, освіти, сільського господарства та малого бізнесу. Джерело: ec.europa.eu"
+      },
+      "url": "https://enlargement.ec.europa.eu/news/eu-unveils-new-eu15-billion-investment-boost-drive-ukraines-recovery-reconstruction-and-2026-03-05_en",
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": {
+        "tr": "18 Mart 2026",
+        "ua": "18 березня 2026"
+      },
+      "title": {
+        "tr": "İspanya Zelensky ile görüştü, 200 milyon Euro taahhüt",
+        "ua": "Іспанія зустрілась із Зеленським, обіцяє €200 млн"
+      },
+      "body": {
+        "tr": "İspanya Başbakanı Sanchez, Zelensky ile görüşmede enerji bağımsızlığını öncelik olarak belirledi ve yeniden yapılanma için 200 milyon Euro taahhüt etti. Kaynak: lamoncloa.gob.es",
+        "ua": "Прем'єр Іспанії Санчес на зустрічі із Зеленським визначив пріоритетом енергонезалежність і пообіцяв €200 млн на відновлення. Джерело: lamoncloa.gob.es"
+      },
+      "url": "https://www.lamoncloa.gob.es/lang/en/presidente/news/Paginas/2026/20260318-sanchez-zelenski-meeting.aspx",
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "humanitarian",
+      "date": {
+        "tr": "Ocak 2026",
+        "ua": "Січень 2026"
+      },
+      "title": {
+        "tr": "BM: 10,8 milyon kişi insani yardıma muhtaç",
+        "ua": "ООН: 10,8 млн людей потребують гуманітарної допомоги"
+      },
+      "body": {
+        "tr": "BM 2026 İnsani Yardım Planı'na göre Ukrayna'da 10,8 milyon kişi yardıma muhtaç; 3,7 milyon kişi ülke içinde yerinden edilmiş durumda. Kaynak: reliefweb.int",
+        "ua": "Згідно з Гуманітарним планом ООН на 2026 р., 10,8 млн людей в Україні потребують допомоги; 3,7 млн — внутрішньо переміщені. Джерело: reliefweb.int"
+      },
+      "url": "https://reliefweb.int/report/ukraine/ukraine-humanitarian-needs-and-response-plan-2026-january-2026-enuk",
+      "impact": -1,
+      "type": "negative"
+    },
+    {
+      "category": "humanitarian",
+      "date": {
+        "tr": "2026",
+        "ua": "2026"
+      },
+      "title": {
+        "tr": "BMMYK: Ukrayna mültecileri için 614 milyon dolar",
+        "ua": "УВКБ ООН: $614 млн для біженців з України"
+      },
+      "body": {
+        "tr": "BM Mülteciler Yüksek Komiserliği, 2026 yılı için Ukrayna'daki savaştan etkilenen nüfus ve komşu ülkelerdeki mülteciler için 614 milyon dolarlık çağrı başlattı. Kaynak: unhcr.org",
+        "ua": "УВКБ ООН оголосило запит на $614 млн для постраждалого населення в Україні та біженців у сусідніх країнах у 2026 р. Джерело: unhcr.org"
+      },
+      "url": "https://data.unhcr.org/en/documents/download/120716",
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "economic",
+      "date": {
+        "tr": "Şubat 2026",
+        "ua": "Лютий 2026"
+      },
+      "title": {
+        "tr": "Ukrayna yeniden yapılanma maliyeti 588 milyar dolar",
+        "ua": "Вартість відновлення України — $588 млрд"
+      },
+      "body": {
+        "tr": "AB-Dünya Bankası güncellenmiş raporuna göre Ukrayna'nın on yıllık yeniden yapılanma maliyeti 588 milyar dolara ulaştı; bu rakam ülkenin 2025 GSYİH'sının yaklaşık 3 katı. Kaynak: ec.europa.eu",
+        "ua": "Оновлений звіт ЄС-Світового банку: вартість десятирічного відновлення України досягла $588 млрд — близько 3 ВВП країни за 2025 р. Джерело: ec.europa.eu"
+      },
+      "url": "https://enlargement.ec.europa.eu/news/updated-ukraine-recovery-and-reconstruction-needs-assessment-released-2026-02-23_en",
+      "impact": -1,
+      "type": "negative"
+    },
+    {
+      "category": "economic",
+      "date": {
+        "tr": "Mart 2026",
+        "ua": "Березень 2026"
+      },
+      "title": {
+        "tr": "AB: Ukrayna enerji sektörü yeniden inşasına katılım",
+        "ua": "ЄС: участь у відновленні енергетики України"
+      },
+      "body": {
+        "tr": "Zelensky'nin resmi sitesine göre AB, Ukrayna'nın enerji sektörünün yeniden inşasına ve kış hazırlığına katılacak; ortak strateji hazırlıkları başladı. Kaynak: president.gov.ua",
+        "ua": "За даними офіційного сайту Зеленського, ЄС візьме участь у відновленні та захисті енергосектору України; підготовка спільної стратегії розпочата. Джерело: president.gov.ua"
+      },
+      "url": "https://www.president.gov.ua/en/news/yevrosoyuz-bratime-uchast-u-vidnovlenni-ta-onovlenni-zahistu-103109",
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "humanitarian",
+      "date": {
+        "tr": "2026",
+        "ua": "2026"
+      },
+      "title": {
+        "tr": "IOM: 2025'te 1 milyon kişiye ulaşıldı",
+        "ua": "МОМ: у 2025 р. допомогу отримав 1 млн людей"
+      },
+      "body": {
+        "tr": "Uluslararası Göç Örgütü, 2025 yılında Ukrayna ve komşu ülkelerde 1 milyondan fazla kişiye ulaştığını bildirdi; 11 milyon kişi hâlâ yardıma muhtaç. Kaynak: iom.int",
+        "ua": "Міжнародна організація з міграції повідомила, що у 2025 р. надала допомогу понад 1 млн осіб в Україні та сусідніх країнах; ще 11 млн потребують підтримки. Джерело: iom.int"
+      },
+      "url": "https://www.iom.int/news/over-1m-supported-2025-nearly-11m-still-need-assistance-ukraine",
+      "impact": 0,
+      "type": "neutral"
+    }
+  ],
+  "gundemLastUpdate": "2026-03-26T01:16:45"
+};
+// DATA_END
+// ============================================
+
+// setLang defined below at init block
+
+// ── Tube color ──
+function getProbColor(p) {
+  if (p <= 10) return { b:'#00ff44', t:'#00ccff', g:'rgba(0,255,68,.6)' };
+  if (p <= 25) return { b:'#aaff00', t:'#00ff88', g:'rgba(170,255,0,.5)' };
+  if (p <= 50) return { b:'#ffcc00', t:'#ff8800', g:'rgba(255,200,0,.5)' };
+  if (p <= 75) return { b:'#ff6600', t:'#ff3300', g:'rgba(255,100,0,.5)' };
+  return { b:'#ff2442', t:'#ff0088', g:'rgba(255,36,66,.6)' };
+}
+
+// ── War duration (auto-calculated) ──
+function getWarDuration(lang) {
+  const start = new Date('2022-02-24T00:00:00');
+  const now   = new Date();
+  const diffMs  = now - start;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const years   = Math.floor(diffDays / 365);
+  const days    = diffDays % 365;
+
+  if (lang === 'ua') {
+    // Ukrainian: рік/роки/років, день/дні/днів
+    const yWord = years === 1 ? 'рік' : (years >= 2 && years <= 4 ? 'роки' : 'років');
+    const dWord = days  === 1 ? 'день': (days  >= 2 && days  <= 4 ? 'дні' : 'днів');
+    return `${years} ${yWord} ${days} ${dWord}`;
+  } else {
+    // Turkish: yıl, gün
+    return `${years} yıl ${days} gün`;
+  }
+}
+
+// ── Render ──
+function t(field, lang) {
+  if (!field) return '';
+  if (typeof field === 'object') return field[lang] || field.tr || '';
+  return field;
+}
+
+
+// ── News Section ──
+const CAT_LABELS = {
+  military:     { tr: 'ASKERİ',    ua: 'ВІЙСЬКОВЕ' },
+  diplomatic:   { tr: 'DİPLOMASİ', ua: 'ДИПЛОМАТІЯ' },
+  economic:     { tr: 'EKONOMİ',   ua: 'ЕКОНОМІКА' },
+  humanitarian: { tr: 'İNSANİ',    ua: 'ГУМАНІТАРНЕ' }
+};
+
+let _newsFilter = 'all';
+
+function filterNews(cat) {
+  _newsFilter = cat;
+  document.querySelectorAll('.news-filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === cat);
+  });
+  renderNews();
+}
+
+function renderNews() {
+  const lang = document.documentElement.getAttribute('data-lang') || 'tr';
+  const grid = document.getElementById('newsGrid');
+  if (!grid) return;
+  const items = (WAR_DATA.newsItems || []).filter(n =>
+    _newsFilter === 'all' || n.category === _newsFilter
+  );
+  grid.innerHTML = '';
+  items.forEach(n => {
+    const catLabel = (CAT_LABELS[n.category] || {})[lang] || n.category.toUpperCase();
+    const impactVal = n.impact || 0;
+    const impactCls = impactVal > 0 ? 'pos' : (impactVal < 0 ? 'neg' : 'neu');
+    const impactTxt = impactVal > 0 ? '+' + impactVal + '%' : (impactVal < 0 ? impactVal + '%' : '—');
+    const card = document.createElement('div');
+    card.className = 'news-card ' + (n.category || '');
+    card.innerHTML = `
+      <div class="news-card-top">
+        <span class="news-cat">${catLabel}</span>
+        <span class="news-date">${t(n.date, lang)}</span>
+      </div>
+      <div class="news-title">${t(n.title, lang)}</div>
+      <div class="news-body">${t(n.body, lang)}</div>
+      <span class="news-impact ${impactCls}">${impactTxt} <span style="font-size:8px;opacity:.7">${lang==='tr'?'olasılık etkisi':'вплив на ймов.'}</span></span>
+    `;
+    grid.appendChild(card);
+  });
+  if (items.length === 0) {
+    grid.innerHTML = `<div style="color:var(--text-muted);font-size:13px;padding:20px 0;">${lang==='tr'?'Bu kategoride gelişme yok.':'Новини у цій категорії відсутні.'}</div>`;
+  }
+}
+
+function setCardProb(fillId, numId, labelId, prob, labelText) {
+  const c = getProbColor(prob);
+  const fill = document.getElementById(fillId);
+  if (fill) {
+    fill.style.height = prob + '%';
+    fill.style.background = `linear-gradient(to top, ${c.b}, ${c.t})`;
+    fill.style.boxShadow = `0 0 16px ${c.g}`;
+  }
+  const num = document.getElementById(numId);
+  if (num) {
+    num.textContent = prob + '%';
+    num.style.color = c.b;
+    num.style.textShadow = `0 0 16px ${c.g}, 0 0 32px ${c.g}`;
+  }
+  const lbl = document.getElementById(labelId);
+  if (lbl) lbl.textContent = labelText || '—';
+}
+
+function render() {
+  const lang = document.documentElement.getAttribute('data-lang') || 'tr';
+  const d = WAR_DATA;
+
+  // 3 time-frame tubes
+  setCardProb('fill1d','num1d','reason1d', d.prob1d || 0, t(d.label1d, lang));
+  setCardProb('fill1m','num1m','reason1m', d.prob1m || 0, t(d.label1m, lang));
+  setCardProb('fill1y','num1y','reason1y', d.prob1y || 0, t(d.label1y, lang));
+
+  // Status bar
+  document.getElementById('statusSavas').textContent    = t(d.statusSavas, lang)    || '—';
+  document.getElementById('statusMuzakere').textContent = t(d.statusMuzakere, lang) || '—';
+  document.getElementById('statusGun').textContent      = getWarDuration(lang);
+
+  document.querySelectorAll('.conf-dot').forEach((dot, i) =>
+    dot.classList.toggle('active', i < d.confidence));
+  document.getElementById('confLabel').textContent = (d.confidence || 0) + ' / 5';
+
+  const dt = new Date(d.lastUpdate);
+  const locale   = lang === 'ua' ? 'uk-UA' : 'tr-TR';
+  const prefix   = lang === 'ua' ? 'ОСТАННЄ ОНОВЛЕННЯ: ' : 'SON GÜNCELLEME: ';
+  document.getElementById('lastUpdateDisplay').textContent =
+    prefix + dt.toLocaleString(locale,
+      {year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit'});
+
+  const devList = document.getElementById('devList');
+  devList.innerHTML = '';
+  (d.developments || []).forEach(dev => {
+    const el = document.createElement('div');
+    el.className = 'dev-item ' + dev.type;
+    const sign = dev.impact > 0 ? '+' : '';
+    el.innerHTML = `
+      <div class="dev-impact">${sign}${dev.impact}%</div>
+      <div class="dev-content">
+        <div class="dev-date">${t(dev.date, lang)}</div>
+        <div class="dev-text">${t(dev.text, lang)}</div>
+      </div>`;
+    devList.appendChild(el);
+  });
+
+  document.getElementById('reasoningText').textContent = t(d.reasoning, lang);
+  renderNews();
+  document.getElementById('trendFill').style.width = (d.trendPct || 30) + '%';
+  document.getElementById('trendLabel').textContent = t(d.trend, lang);
+}
+
+// ── Form ──
+function submitForm() {
+  const name  = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const lang = document.documentElement.getAttribute('data-lang') || 'tr';
+  const topic = (document.getElementById('f-topic-' + lang) || {}).value || '';
+  const msg   = document.getElementById('f-msg').value.trim();
+  if (!name || !email || !msg) {
+    alert('Lütfen tüm alanları doldurunuz. / Будь ласка, заповніть усі поля.'); return;
+  }
+  // Replace with real form handler (Formspree, EmailJS, etc.)
+  alert('Mesajınız alındı! En kısa sürede dönüş yapacağız.\nПовідомлення отримано! Ми зв\'яжемося з вами найближчим часом.');
+}
+
+// ── Lang switcher – re-render on change ──
+// ── Init – auto-detect browser language ──
+window.addEventListener('load', () => {
+  const saved = localStorage.getItem('turkua-lang');
+  if (saved) {
+    setLang(saved);
+  } else {
+    const bl = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
+    setLang(bl.startsWith('uk') ? 'ua' : 'tr');
+  }
+  setTimeout(render, 150);
+});
+
+// Re-render when language changes
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'ua' ? 'uk' : 'tr');
+  // Navbar butonları
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector('.lang-btn.' + lang);
+  if (btn) btn.classList.add('active');
+
+  localStorage.setItem('turkua-lang', lang);
+  render();
+}
+
+// ── Reklam Modal ──
+function openAdModal(name, size, desc) {
+  document.getElementById('modalSlotName').textContent = name + ' — ' + size;
+  document.getElementById('modalSlotBadge').textContent = size;
+  document.getElementById('modalSlotDesc').textContent = desc;
+  document.getElementById('adFormSection').style.display = '';
+  document.getElementById('adSuccess').style.display = 'none';
+  document.getElementById('adModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAdModal(e) {
+  if (e.target === document.getElementById('adModal')) closeAdModalDirect();
+}
+function closeAdModalDirect() {
+  document.getElementById('adModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function previewLogo(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById('logoPreview');
+    img.src = e.target.result;
+    img.style.display = 'block';
+    document.querySelector('.logo-upload-icon').textContent = '✅';
+  };
+  reader.readAsDataURL(file);
+}
+
+// İletişim tab seçici
+let _adContactType = 'telegram';
+const _contactMeta = {
+  telegram:  { prefix: 't.me/',           ph: 'kullaniciadi',        hint_tr: 'Telegram kullanıcı adınızı girin (@ olmadan)', hint_ua: 'Введіть ім\'я користувача Telegram (без @)' },
+  instagram: { prefix: 'instagram.com/',  ph: 'kullaniciadi',        hint_tr: 'Instagram kullanıcı adınızı girin (@ olmadan)', hint_ua: 'Введіть ім\'я користувача Instagram (без @)' },
+  website:   { prefix: 'https://',        ph: 'siteniz.com',         hint_tr: 'Web sitenizin tam adresini girin', hint_ua: 'Введіть повну адресу вашого сайту' },
+  whatsapp:  { prefix: '+',               ph: '905XXXXXXXXX',        hint_tr: 'WhatsApp numaranızı ülke koduyla girin', hint_ua: 'Введіть номер WhatsApp з кодом країни' },
+};
+function selectContactTab(type, btn) {
+  _adContactType = type;
+  document.querySelectorAll('.ad-contact-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const meta = _contactMeta[type];
+  document.getElementById('ad-contact-prefix').textContent = meta.prefix;
+  document.getElementById('ad-contact-value').placeholder  = meta.ph;
+  const lang = document.documentElement.getAttribute('data-lang') || 'tr';
+  document.getElementById('ad-contact-hint').textContent    = meta.hint_tr;
+  document.getElementById('ad-contact-hint-ua').textContent = meta.hint_ua;
+  document.getElementById('ad-contact-value').value = '';
+}
+
+function submitAdForm() {
+  const name    = document.getElementById('ad-name').value.trim();
+  const email   = document.getElementById('ad-email').value.trim();
+  const contact = document.getElementById('ad-contact-value').value.trim();
+  const _lang   = document.documentElement.getAttribute('data-lang') || 'tr';
+  const sector  = (document.getElementById('ad-sector-' + _lang) || {}).value || '';
+  const message = document.getElementById('ad-message').value.trim();
+  const slot    = document.getElementById('modalSlotName').textContent;
+  const meta    = _contactMeta[_adContactType];
+  const contactLine = _adContactType.charAt(0).toUpperCase() + _adContactType.slice(1) + ': ' + meta.prefix + contact;
+
+  if (!name || !email) {
+    alert('Lütfen Ad ve E-posta alanlarını doldurunuz. / Будь ласка, заповніть ім\'я та email.'); return;
+  }
+  if (!contact) {
+    alert('Lütfen en az bir iletişim kanalı girin. / Будь ласка, вкажіть хоча б один канал зв\'язку.'); return;
+  }
+
+  const body = encodeURIComponent(
+    'Reklam Başvurusu\n' +
+    '================\n' +
+    'Konum: ' + slot + '\n' +
+    'Firma: ' + name + '\n' +
+    'Sektör: ' + sector + '\n' +
+    'E-posta: ' + email + '\n' +
+    contactLine + '\n\n' +
+    'Mesaj:\n' + message
+  );
+
+  window.open(
+    'mailto:demirgardas06@gmail.com?subject=' +
+    encodeURIComponent('Reklam Başvurusu — ' + slot) +
+    '&body=' + body,
+    '_blank'
+  );
+
+  document.getElementById('adFormSection').style.display = 'none';
+  document.getElementById('adSuccess').style.display = 'block';
+}
+
+
+// ── Canlı Döviz Kuru (6 saatte bir) ──────────────────────────
+(function() {
+  const CACHE_KEY = 'turkua_rates';
+  const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 saat ms
+
+  function setRateUI(tryUah, uahTry, uahUsd, fetchedAt) {
+    const fmt = (v, dec) => v != null ? v.toFixed(dec) : '—';
+    const el = id => document.getElementById(id);
+    if (el('rate-TRY-UAH')) el('rate-TRY-UAH').textContent = '1 TL = ' + fmt(tryUah, 4) + ' ₴';
+    if (el('rate-UAH-TRY')) el('rate-UAH-TRY').textContent = '1 ₴ = ' + fmt(uahTry, 4) + ' ₺';
+    if (el('rate-UAH-USD')) el('rate-UAH-USD').textContent = '1 ₴ = ' + fmt(uahUsd, 5) + ' $';
+    if (el('rateStatus')) {
+      const d = new Date(fetchedAt);
+      const lang = document.documentElement.getAttribute('data-lang') || 'tr';
+      const label = lang === 'ua' ? 'оновлено' : 'güncellendi';
+      el('rateStatus').textContent = d.toLocaleTimeString(lang === 'ua' ? 'uk-UA' : 'tr-TR', {hour:'2-digit',minute:'2-digit'}) + ' ' + label;
+    }
+  }
+
+  async function fetchRates() {
+    try {
+      // UAH bazlı çek → UAH/TRY ve UAH/USD
+      const r = await fetch('https://open.er-api.com/v6/latest/UAH');
+      const d = await r.json();
+      if (!d || d.result !== 'success') throw new Error('API hatası');
+      const uahTry = d.rates['TRY'];
+      const uahUsd = d.rates['USD'];
+      const tryUah = uahTry ? 1 / uahTry : null;
+      const now = Date.now();
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ tryUah, uahTry, uahUsd, fetchedAt: now }));
+      setRateUI(tryUah, uahTry, uahUsd, now);
+    } catch(e) {
+      const el = document.getElementById('rateStatus');
+      if (el) el.textContent = 'kur alınamadı';
+    }
+  }
+
+  function loadRates() {
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const c = JSON.parse(cached);
+        if (Date.now() - c.fetchedAt < CACHE_TTL) {
+          setRateUI(c.tryUah, c.uahTry, c.uahUsd, c.fetchedAt);
+          // Bir sonraki güncelleme için zamanlayıcı
+          setTimeout(fetchRates, CACHE_TTL - (Date.now() - c.fetchedAt));
+          return;
+        }
+      }
+    } catch(e) {}
+    fetchRates();
+    setInterval(fetchRates, CACHE_TTL);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadRates);
+  } else {
+    loadRates();
+  }
+})();
+
+
+// ── Nav aktif bölüm vurgulama ──────────────────────────────────
+(function() {
+  const sections = ['tracker','news-section','university','visa','trade','money','contact'];
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  function setActive(id) {
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === '#' + id) {
+        a.style.color = 'var(--neon-blue)';
+        a.style.background = 'rgba(0,243,255,0.08)';
+      } else {
+        a.style.color = '';
+        a.style.background = '';
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) setActive(e.target.id);
+    });
+  }, { rootMargin: '-60px 0px -60% 0px', threshold: 0 });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  });
+})();
+
+
+// ══ UKRAYNA GÜNDEMİ — CANLI HABERLER ══════════════════════════
+// Kaynaklar: Ukrinform (genel + siyaset) + WAR_DATA.gundemNews (ajan ekler)
+(function() {
+  const RSS_SOURCES = [
+    'https://www.ukrinform.net/rss/block-lastnews',
+    'https://www.ukrinform.net/rss/block-politics'
+  ];
+  const CACHE_KEY = 'turkua_gundem_v2';
+  const CACHE_TTL = 6 * 60 * 60 * 1000;
+
+  function detectCat(title, desc) {
+    const t = (title + ' ' + (desc||'')).toLowerCase();
+    if (/rada|parliament|verkhovna|law|legislation|deputy|vote|bill|мп|закон|рада|парламент/i.test(t)) return 'parliamentary';
+    if (/peace|ceasefire|negotiat|diplomat|summit|minister|sanction|deal|talk|мир|перемир/i.test(t)) return 'diplomatic';
+    if (/aid|humanitarian|refugee|civilian|evacuat|hospital|food|child|гуманітар|біженц/i.test(t)) return 'humanitarian';
+    if (/economy|gdp|budget|trade|energy|grain|market|reconstruct|економ|бюджет/i.test(t)) return 'economic';
+    return 'general';
+  }
+
+  const CAT_TR = { parliamentary:'MECLİS', diplomatic:'DİPLOMASİ', military:'ASKERİ', humanitarian:'İNSANİ', economic:'EKONOMİ', general:'GÜNDEM' };
+  const CAT_UA = { parliamentary:'ПАРЛАМЕНТ', diplomatic:'ДИПЛОМАТІЯ', military:'ВІЙСЬКОВЕ', humanitarian:'ГУМАНІТАРНЕ', economic:'ЕКОНОМІКА', general:'НОВИНИ' };
+
+  const CAT_STYLE = {
+    parliamentary: 'background:rgba(160,0,255,.15);color:#cc88ff;border:1px solid rgba(160,0,255,.3);',
+    diplomatic:    'background:rgba(0,100,255,.2);color:#5bbfff;border:1px solid rgba(0,100,255,.3);',
+    military:      'background:rgba(255,36,66,.15);color:#ff6080;border:1px solid rgba(255,36,66,.3);',
+    humanitarian:  'background:rgba(0,200,100,.15);color:#40e090;border:1px solid rgba(0,200,100,.3);',
+    economic:      'background:rgba(255,180,0,.15);color:#ffcc40;border:1px solid rgba(255,180,0,.3);',
+    general:       'background:rgba(150,150,255,.1);color:#aab0ff;border:1px solid rgba(150,150,255,.2);'
+  };
+
+  function getLang() { return document.documentElement.getAttribute('data-lang') || 'tr'; }
+
+  function fmtDate(str, lang) {
+    try {
+      const d = new Date(str);
+      return d.toLocaleDateString(lang==='ua'?'uk-UA':'tr-TR',{day:'numeric',month:'long'}) +
+             ' ' + d.toLocaleTimeString(lang==='ua'?'uk-UA':'tr-TR',{hour:'2-digit',minute:'2-digit'});
+    } catch(e) { return str||''; }
+  }
+
+  function shortText(raw, max) {
+    const t = (raw||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+    return t.length > max ? t.substring(0, max).replace(/\s\S*$/,'')+'…' : t;
+  }
+
+  function buildCard(it, featured, lang) {
+    const cat = it._cat || detectCat(it.title||'', it.description||'');
+    const style = CAT_STYLE[cat] || CAT_STYLE.general;
+    const catTxt = (lang==='ua' ? CAT_UA : CAT_TR)[cat];
+    const title  = lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||'');
+    const body   = lang==='ua' && it._body_ua  ? it._body_ua  : (it._body_tr||shortText(it.description, featured?130:90));
+    const dateStr= lang==='ua' && it._date_ua  ? it._date_ua  : (it._date_tr||fmtDate(it.pubDate||'', lang));
+    return `<a href="${it.link||it.url||'#'}" target="_blank" rel="noopener" class="gundem-card${featured?' featured':''}">
+      <div class="gundem-card-top">
+        <span class="gundem-cat ${cat}" style="${style}">${catTxt}</span>
+        <span class="gundem-card-date">${dateStr}</span>
+      </div>
+      <div class="gundem-card-title" style="font-size:${featured?'16px':'13px'};">${title}</div>
+      <div class="gundem-card-body" style="font-size:${featured?'12px':'11px'};">${body}</div>
+      <span class="gundem-card-link" style="font-size:9px;display:none;"></span>
+    </a>`;
+  }
+
+  function buildTickerHTML(items) {
+    const lang = getLang();
+    const half = items.slice(0,18).map(it => {
+      const cat = it._cat || detectCat(it.title||'', it.description||'');
+      const catTxt = (lang==='ua' ? CAT_UA : CAT_TR)[cat];
+      const style = CAT_STYLE[cat] || CAT_STYLE.general;
+      const title = lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||'');
+      return `<span class="ticker-item" onclick="window.open('${it.link||it.url||'#'}','_blank')">` +
+        `<span class="ticker-item-cat ${cat}" style="${style}">${catTxt}</span>` +
+        `<span>${title.substring(0,85)}${title.length>85?'…':''}</span>` +
+        `</span><span class="ticker-item-sep">◆</span>`;
+    }).join('');
+    return half + half;
+  }
+
+  function getAgentItems() {
+    if (typeof WAR_DATA === 'undefined' || !WAR_DATA.gundemNews) return [];
+    return WAR_DATA.gundemNews.map(n => ({
+      _cat: n.category,
+      _title_tr: n.title && n.title.tr, _title_ua: n.title && n.title.ua,
+      _body_tr:  n.body  && n.body.tr,  _body_ua:  n.body  && n.body.ua,
+      _date_tr:  n.date  && n.date.tr,  _date_ua:  n.date  && n.date.ua,
+      link: n.url || '#', title: (n.title && n.title.tr) || '', pubDate: ''
+    }));
+  }
+
+  function renderGundem(rssItems) {
+    const lang = getLang();
+    const items = [...getAgentItems(), ...rssItems].slice(0,20);
+    const featEl = document.getElementById('gundemFeatured');
+    const gridEl = document.getElementById('gundemGrid');
+    const loadEl = document.getElementById('gundemLoading');
+    const tickEl = document.getElementById('tickerInner');
+    const infoEl = document.getElementById('gundemUpdateInfo');
+    if (featEl) { featEl.innerHTML = items.slice(0,2).map(it=>buildCard(it,true,lang)).join(''); featEl.style.display=''; }
+    if (gridEl) { gridEl.innerHTML = items.slice(2,12).map(it=>buildCard(it,false,lang)).join(''); gridEl.style.display=''; }
+    if (loadEl) { loadEl.style.display = 'none'; }
+    if (tickEl) { tickEl.innerHTML = buildTickerHTML(items); }
+    if (infoEl) {
+      const d = new Date();
+      infoEl.textContent = (lang==='ua'?'оновлено: ':'güncellendi: ') +
+        d.toLocaleTimeString(lang==='ua'?'uk-UA':'tr-TR',{hour:'2-digit',minute:'2-digit'});
+    }
+  }
+
+  async function fetchOne(url) {
+    const api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&count=12';
+    const r = await fetch(api);
+    const d = await r.json();
+    return (d && d.items) ? d.items : [];
+  }
+
+  window.fetchGundem = async function(force) {
+    // 1. ÖNCE: WAR_DATA'daki haberleri hemen göster (RSS bekleme yok)
+    const agentItems = getAgentItems();
+    if (agentItems.length > 0) {
+      renderGundem([]); // agentItems getAgentItems() içinden gelir
+    }
+
+    // 2. Önbellekte taze veri varsa RSS'e gitme
+    if (!force) {
+      try {
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+          const c = JSON.parse(cached);
+          if (Date.now() - c.ts < CACHE_TTL) {
+            renderGundem(c.items);
+            setTimeout(() => window.fetchGundem(true), CACHE_TTL - (Date.now() - c.ts));
+            return;
+          }
+        }
+      } catch(e) {}
+    }
+
+    // 3. RSS'ten yeni veri çekmeyi dene (arka planda)
+    try {
+      const results = await Promise.allSettled(RSS_SOURCES.map(fetchOne));
+      const seen = new Set();
+      const merged = results
+        .filter(r => r.status==='fulfilled')
+        .flatMap(r => r.value)
+        .filter(it => { if(seen.has(it.title)) return false; seen.add(it.title); return true; })
+        .sort((a,b) => new Date(b.pubDate||0) - new Date(a.pubDate||0))
+        .slice(0, 20);
+      if (merged.length) {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items: merged }));
+        renderGundem(merged); // WAR_DATA + RSS birleşik göster
+      }
+      if (force) setTimeout(() => window.fetchGundem(true), CACHE_TTL);
+    } catch(e) {
+      // RSS başarısız — WAR_DATA haberleri zaten gösteriliyor, hata mesajı yok
+      if (agentItems.length === 0) {
+        const l = document.getElementById('gundemLoading');
+        if (l && l.style.display !== 'none') {
+          l.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text-muted);font-size:13px;">
+            <div style="font-size:24px;margin-bottom:8px;">📡</div>
+            <span data-tr>Haberler yüklenemedi — lütfen daha sonra deneyin.</span>
+            <span data-ua>Новини не завантажились — спробуйте пізніше.</span>
+          </div>`;
+        }
+      }
+    }
+  };
+
+  const _orig = window.setLang;
+  if (typeof _orig === 'function') {
+    window.setLang = function(lang) {
+      _orig(lang);
+      try { const c = localStorage.getItem(CACHE_KEY); if(c) renderGundem(JSON.parse(c).items); } catch(e) {}
+    };
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.fetchGundem(false));
+  else window.fetchGundem(false);
+})();
+
+</script>
+
+<!-- ══ REKLAM BAŞVURU MODAL ══ -->
+<div class="ad-modal-backdrop" id="adModal" onclick="closeAdModal(event)">
+  <div class="ad-modal">
+
+    <div class="ad-modal-header">
+      <div>
+        <div class="ad-modal-title"><span data-tr>📢 Reklam İş Birliği Başvurusu</span><span data-ua>📢 Заявка на Рекламну Співпрацю</span></div>
+        <div class="ad-modal-sub" id="modalSlotName">—</div>
+      </div>
+      <div class="ad-modal-close" onclick="closeAdModalDirect()">✕</div>
+    </div>
+
+    <div id="adFormSection">
+      <!-- Seçilen slot bilgisi -->
+      <div class="ad-slot-info">
+        <span class="ad-slot-badge" id="modalSlotBadge">—</span>
+        <span class="ad-slot-desc" id="modalSlotDesc">—</span>
+      </div>
+
+      <!-- Form -->
+      <div class="form-row">
+        <div class="form-group">
+          <label data-tr>Firma / Kişi Adı</label><label data-ua>Компанія / Ім'я</label>
+          <input type="text" id="ad-name" placeholder="Şirket veya Ad Soyad" data-tr-placeholder="Şirket veya Ad Soyad" data-ua-placeholder="Компанія або Ім'я Прізвище">
+        </div>
+        <div class="form-group">
+          <label data-tr>Sektör</label><label data-ua>Сектор</label>
+          <select id="ad-sector-tr" data-tr>
+            <option value="">— Seçiniz —</option>
+            <option>🎓 Eğitim / Üniversite</option>
+            <option>✈️ Vize / Göç Acentesi</option>
+            <option>🤝 Ticaret / Lojistik</option>
+            <option>🏥 Sağlık</option>
+            <option>🏠 Emlak</option>
+            <option>💼 Diğer</option>
+          </select>
+          <select id="ad-sector-ua" data-ua>
+            <option value="">— Оберіть —</option>
+            <option>🎓 Освіта / Університет</option>
+            <option>✈️ Візи / Міграція</option>
+            <option>🤝 Торгівля / Логістика</option>
+            <option>🏥 Медицина</option>
+            <option>🏠 Нерухомість</option>
+            <option>💼 Інше</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label data-tr>E-posta Adresi <span style="color:var(--neon-red);font-size:10px;">*</span></label>
+        <label data-ua>Електронна пошта <span style="color:var(--neon-red);font-size:10px;">*</span></label>
+        <input type="email" id="ad-email" placeholder="ornek@firma.com">
+      </div>
+
+      <div class="form-group ad-contact-group">
+        <label data-tr>İletişim Kanalı <span style="color:var(--neon-red);font-size:10px;">* (en az 1)</span></label>
+        <label data-ua>Канал зв'язку <span style="color:var(--neon-red);font-size:10px;">* (мінімум 1)</span></label>
+        <div class="ad-contact-tabs">
+          <button type="button" class="ad-contact-tab active" onclick="selectContactTab('telegram',this)">✈️ Telegram</button>
+          <button type="button" class="ad-contact-tab" onclick="selectContactTab('instagram',this)">📸 Instagram</button>
+          <button type="button" class="ad-contact-tab" onclick="selectContactTab('website',this)">🌐 Web Sitesi</button>
+          <button type="button" class="ad-contact-tab" onclick="selectContactTab('whatsapp',this)">💬 WhatsApp</button>
+        </div>
+        <div class="ad-contact-input-wrap">
+          <span class="ad-contact-prefix" id="ad-contact-prefix">t.me/</span>
+          <input type="text" id="ad-contact-value" placeholder="kullaniciadi">
+        </div>
+        <div class="ad-contact-hint" id="ad-contact-hint" data-tr>Telegram kullanıcı adınızı girin (@ olmadan)</div>
+        <div class="ad-contact-hint" id="ad-contact-hint-ua" data-ua>Введіть ім'я користувача Telegram (без @)</div>
+      </div>
+
+      <!-- Logo yükleme -->
+      <div class="form-group">
+        <label><span data-tr>Firma Logosu / Görseli</span><span data-ua>Логотип / Зображення Компанії</span></label>
+        <div class="logo-upload-area" onclick="document.getElementById('ad-logo').click()">
+          <input type="file" id="ad-logo" accept="image/*" onchange="previewLogo(this)">
+          <div class="logo-upload-icon">🖼️</div>
+          <div class="logo-upload-text"><span data-tr>Logo veya görsel seçmek için tıklayın</span><span data-ua>Натисніть, щоб вибрати лого або зображення</span><br><span style="font-size:10px;opacity:.6;">PNG, JPG, SVG — maks. 2MB</span></div>
+          <img class="logo-preview" id="logoPreview" alt="Logo önizleme">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Mesaj / Notlar</label>
+        <textarea id="ad-message" placeholder="Reklamınız hakkında ek bilgi, hedef kitle, yayın süresi vb."></textarea>
+      </div>
+
+      <button class="ad-modal-submit" onclick="submitAdForm()"><span data-tr>BAŞVURUYU GÖNDER →</span><span data-ua>НАДІСЛАТИ ЗАЯВКУ →</span></button>
+
+      <p class="ad-modal-note">
+        Başvurunuz e-posta ile iletilecektir. Logo dosyasını ayrıca
+        <a href="https://t.me/TurkUA_destek" target="_blank">Telegram</a> üzerinden de gönderebilirsiniz.<br>
+        En geç <strong>24 saat</strong> içinde dönüş yapılacaktır.
+      </p>
+    </div>
+
+    <!-- Başarı mesajı -->
+    <div class="ad-success" id="adSuccess">
+      <div class="ad-success-icon">✅</div>
+      <div class="ad-success-title"><span data-tr>Başvurunuz Alındı!</span><span data-ua>Вашу Заявку Отримано!</span></div>
+      <div class="ad-success-text">
+        Kısa süre içinde sizinle iletişime geçeceğiz.<br>
+        Logo dosyanızı <a href="https://t.me/TurkUA_destek" target="_blank" style="color:var(--neon-blue)">Telegram</a> üzerinden de iletebilirsiniz.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
