@@ -1356,9 +1356,10 @@ footer a { color:var(--text-muted); text-decoration:none; }
   .contact-grid { grid-template-columns: 1fr !important; }
   .form-row { grid-template-columns: 1fr !important; }
 
-  /* AD SLOTS */
-  .ad-slot-leaderboard { display: none; }
-  .ad-slot-double { display: none; }
+  /* AD SLOTS - mobilde de görünür kalır */
+  .ad-slot-leaderboard { min-height: 70px; }
+  .ad-slot-double { grid-template-columns: 1fr; }
+  .ad-slot-mid-half { min-height: 180px; }
 }
 
 @media (max-width: 420px) {
