@@ -2,9 +2,14 @@
 <html lang="tr" data-lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="Ukrayna-Rusya savaşı bitiş olasılığı takibi, Türkiye-Ukrayna üniversite, vize ve ticaret rehberi.">
 <meta name="keywords" content="ukrayna rusya savaş, türkiye ukrayna vize, ukrayna üniversite, türkiye ukrayna ticaret, STA">
+<meta name="theme-color" content="#060610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TürkUA">
+<link rel="manifest" href="manifest.json">
 <title>TürkUA — Türkiye & Ukrayna Bilgi Merkezi</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap');
@@ -1367,6 +1372,72 @@ footer a { color:var(--text-muted); text-decoration:none; }
   .sector-grid { grid-template-columns: 1fr; }
   .visa-flags { font-size: 22px; }
   .prob-card-num, .stat-number { font-size: 28px; }
+}
+
+/* ══════════════════════════════════════════
+   ALT NAVİGASYON (MOBİL)
+══════════════════════════════════════════ */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 300;
+  background: rgba(6,6,16,0.97);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(0,243,255,0.15);
+  padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+  justify-content: space-around;
+  align-items: center;
+}
+.bottom-nav a {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 3px;
+  color: rgba(200,200,255,0.5);
+  text-decoration: none;
+  font-size: 9px; letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transition: color .2s, background .2s;
+  min-width: 52px; text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.bottom-nav a .bn-icon { font-size: 20px; line-height: 1; }
+.bottom-nav a:active,
+.bottom-nav a.active { color: var(--neon-blue); background: rgba(0,243,255,0.08); }
+
+@media (max-width: 768px) {
+  .bottom-nav { display: flex; }
+  body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+  /* Üst hamburger menüyü gizle, alt nav yeterli */
+  .hamburger { display: none !important; }
+  nav .nav-links { display: none !important; }
+  nav { height: 52px; padding: 0 16px; }
+}
+
+/* ══ AĞIR EFEKTLERİ MOBİLDE KAPAT ══ */
+@media (max-width: 768px) {
+  nav { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(6,6,16,0.98); }
+  .bottom-nav { backdrop-filter: blur(8px); }
+  .scanline { display: none; }
+  * { animation-duration: 0.01ms !important; }
+  .news-ticker-wrap { animation: none !important; }
+  .ticker-inner { animation: ticker-scroll 40s linear infinite !important; }
+}
+
+/* ══ BÜYÜK DOKUNMA HEDEFLERİ ══ */
+@media (max-width: 768px) {
+  .gundem-refresh-btn,
+  .news-filter-btn,
+  .lang-btn,
+  .btn-submit { min-height: 44px; min-width: 44px; }
+  input, select, textarea { font-size: 16px !important; } /* iOS zoom engelle */
+}
+
+/* ══ AZALTILMIŞ HAREKETLİLİK ══ */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .ticker-inner { animation: none !important; }
 }
 </style>
 </head>
@@ -2953,6 +3024,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ══ ALT NAV AKTİF DURUM ══
+function setBottomActive(el) {
+  document.querySelectorAll('.bottom-nav a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+// Scroll ile alt nav aktif güncelle
+window.addEventListener('scroll', () => {
+  const sections = ['tracker','gundem','visa','trade','money','contact'];
+  let current = 'tracker';
+  for (const id of sections) {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 120) current = id;
+  }
+  document.querySelectorAll('.bottom-nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+
+// ══ SERVICE WORKER KAYDI ══
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+
 // Re-render when language changes
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
@@ -3445,6 +3541,34 @@ function submitAdForm() {
 
   </div>
 </div>
+
+<!-- ══ ALT NAVİGASYON (MOBİL) ══ -->
+<nav class="bottom-nav" id="bottomNav">
+  <a href="#tracker" onclick="setBottomActive(this)">
+    <span class="bn-icon">📡</span>
+    <span data-tr>Savaş</span><span data-ua>Війна</span>
+  </a>
+  <a href="#gundem" onclick="setBottomActive(this)">
+    <span class="bn-icon">🔴</span>
+    <span data-tr>Gündem</span><span data-ua>Новини</span>
+  </a>
+  <a href="#visa" onclick="setBottomActive(this)">
+    <span class="bn-icon">🛂</span>
+    <span data-tr>Vize</span><span data-ua>Віза</span>
+  </a>
+  <a href="#trade" onclick="setBottomActive(this)">
+    <span class="bn-icon">🤝</span>
+    <span data-tr>Ticaret</span><span data-ua>Торгівля</span>
+  </a>
+  <a href="#money" onclick="setBottomActive(this)">
+    <span class="bn-icon">💸</span>
+    <span data-tr>Para</span><span data-ua>Гроші</span>
+  </a>
+  <a href="#contact" onclick="setBottomActive(this)">
+    <span class="bn-icon">💬</span>
+    <span data-tr>İletişim</span><span data-ua>Контакт</span>
+  </a>
+</nav>
 
 </body>
 </html>
