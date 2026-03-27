@@ -1246,6 +1246,127 @@ footer a { color:var(--text-muted); text-decoration:none; }
 }
 .gundem-refresh-btn:hover { background: rgba(0,243,255,.15); }
 
+
+/* ══════════════════════════════════════════
+   MOBİL OPTİMİZASYON
+══════════════════════════════════════════ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px 6px;
+  background: none;
+  border: none;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--neon-blue);
+  border-radius: 2px;
+  transition: all .3s;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 7px); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -7px); }
+
+@media (max-width: 768px) {
+  /* NAV */
+  .hamburger { display: flex; }
+  nav { flex-wrap: wrap; height: auto; padding: 10px 16px; gap: 8px; align-items: center; }
+  .nav-logo { font-size: 14px; }
+  .nav-links {
+    display: none; flex-direction: column; width: 100%;
+    order: 4; gap: 2px; padding: 6px 0 4px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block; width: 100%; font-size: 13px;
+    padding: 10px 14px; border-radius: 8px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid transparent;
+  }
+  .nav-links a:hover { border-color: rgba(0,243,255,.15); }
+  .nav-right-group { margin-left: 0; gap: 6px; }
+  .nav-ad-btn { display: none; }
+  .lang-btn { padding: 5px 10px; font-size: 11px; }
+
+  /* SECTIONS */
+  section { padding: 32px 0; }
+  .container { padding: 0 14px; }
+
+  /* HERO */
+  .hero-label { font-size: 8px; letter-spacing: 3px; }
+  .hero-title { font-size: clamp(13px, 4vw, 20px); }
+  .hero-sub { font-size: 11px; letter-spacing: 1px; }
+
+  /* TRACKER */
+  .tracker-grid { grid-template-columns: 1fr !important; }
+  .prob-3-grid { grid-template-columns: 1fr !important; }
+  .stat-number { font-size: 20px; }
+
+  /* SECTION HEADER */
+  .section-title { font-size: clamp(18px, 5vw, 26px) !important; }
+  .section-badge { font-size: 8px; letter-spacing: 2px; }
+
+  /* GÜNDEM */
+  .gundem-featured { grid-template-columns: 1fr !important; }
+  .gundem-grid { grid-template-columns: 1fr !important; }
+  .gundem-card { padding: 16px; }
+  .gundem-refresh-btn { font-size: 11px; padding: 6px 12px; }
+  .news-filter-btn { font-size: 10px; padding: 5px 10px; }
+
+  /* NEWS TICKER */
+  .news-ticker-wrap { top: auto; position: relative; }
+  .ticker-badge { display: none; }
+
+  /* VİZE */
+  .two-col { grid-template-columns: 1fr !important; }
+  .visa-hero { padding: 20px 16px; }
+  .visa-flags { font-size: 28px; }
+  .info-row { flex-wrap: wrap; gap: 6px; }
+  .lbl { min-width: unset; }
+  .val { font-size: 12px; }
+  .info-card { padding: 16px; }
+
+  /* TİCARET */
+  .trade-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-card { padding: 14px; }
+  .sector-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* PARA TRANSFERİ */
+  .money-grid { grid-template-columns: 1fr !important; }
+  .money-card { padding: 18px; }
+  .money-limit-num { font-size: 18px; }
+  .money-method { flex-wrap: wrap; gap: 4px; }
+
+  /* KURLAR */
+  #liveRateBox { padding: 16px; }
+  #liveRateBox .rate-row { flex-wrap: wrap; gap: 8px; }
+
+  /* SPONSORLU */
+  .sponsored-grid { grid-template-columns: 1fr !important; }
+  .sponsor-slot { padding: 16px; }
+
+  /* İLETİŞİM */
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+
+  /* AD SLOTS */
+  .ad-slot-leaderboard { display: none; }
+  .ad-slot-double { display: none; }
+}
+
+@media (max-width: 420px) {
+  .trade-stats { grid-template-columns: 1fr; }
+  .sector-grid { grid-template-columns: 1fr; }
+  .visa-flags { font-size: 22px; }
+  .prob-card-num, .stat-number { font-size: 28px; }
+}
 </style>
 </head>
 <body>
@@ -1255,7 +1376,10 @@ footer a { color:var(--text-muted); text-decoration:none; }
 <!-- ══ NAVBAR ══ -->
 <nav>
   <div class="nav-logo">TürkUA</div>
-  <ul class="nav-links">
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menü" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#tracker" data-tr>📡 Savaş Takip</a><a href="#tracker" data-ua>📡 Відстеження</a></li>
     <li><a href="#gundem" data-tr>🔴 Gündem</a><a href="#gundem" data-ua>🔴 Новини</a></li>
     <li><a href="#university" data-tr>🎓 Üniversite</a><a href="#university" data-ua>🎓 Університет</a></li>
@@ -2840,6 +2964,22 @@ window.addEventListener('load', () => {
     setLang(bl.startsWith('uk') ? 'ua' : 'tr');
   }
   setTimeout(render, 150);
+});
+
+// ══ MOBİL HAMBURGER MENÜ ══
+function toggleMobileMenu() {
+  const btn = document.getElementById('hamburgerBtn');
+  const links = document.getElementById('navLinks');
+  btn.classList.toggle('open');
+  links.classList.toggle('open');
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('hamburgerBtn').classList.remove('open');
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
 });
 
 // Re-render when language changes
