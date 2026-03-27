@@ -243,7 +243,7 @@ section + section { border-top: 1px solid var(--border); }
   gap: 20px;
   margin-bottom: 24px;
 }
-@media(max-width:700px){ .prob-3-grid { grid-template-columns: 1fr; gap:14px; } }
+@media(max-width:700px){ .prob-3-grid { grid-template-columns: repeat(3,1fr); gap:8px; } }
 
 .prob-card {
   background: var(--bg-card);
@@ -1325,7 +1325,12 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
   /* TRACKER */
   .tracker-grid { grid-template-columns: 1fr !important; }
-  .prob-3-grid { grid-template-columns: 1fr !important; }
+  .prob-3-grid { grid-template-columns: repeat(3,1fr) !important; gap: 8px; }
+  .prob-card { padding: 12px 6px 10px; gap: 6px; }
+  .prob-card-num { font-size: 26px; }
+  .prob-card-reason { font-size: 9px; max-width: 100%; }
+  .prob-card-sublabel { font-size: 8px; letter-spacing: 1px; }
+  .prob-card-tube-outer { height: 80px; }
   .stat-number { font-size: 20px; }
 
   /* SECTION HEADER */
@@ -3137,37 +3142,46 @@ function selectContactTab(type, btn) {
 }
 
 function submitAdForm() {
-  const name    = document.getElementById('ad-name').value.trim();
-  const email   = document.getElementById('ad-email').value.trim();
-  const contact = document.getElementById('ad-contact-value').value.trim();
-  const _lang   = document.documentElement.getAttribute('data-lang') || 'tr';
-  const sector  = (document.getElementById('ad-sector-' + _lang) || {}).value || '';
-  const message = document.getElementById('ad-message').value.trim();
-  const slot    = document.getElementById('modalSlotName').textContent;
-  const meta    = _contactMeta[_adContactType];
-  const contactLine = _adContactType.charAt(0).toUpperCase() + _adContactType.slice(1) + ': ' + meta.prefix + contact;
+  const name      = document.getElementById('ad-name').value.trim();
+  const whatsapp  = document.getElementById('ad-whatsapp').value.trim();
+  const viber     = document.getElementById('ad-viber').value.trim();
+  const telegram  = document.getElementById('ad-telegram').value.trim();
+  const email     = document.getElementById('ad-email').value.trim();
+  const _lang     = document.documentElement.getAttribute('data-lang') || 'tr';
+  const sector    = (document.getElementById('ad-sector-' + _lang) || {}).value || '';
+  const message   = document.getElementById('ad-message').value.trim();
+  const slot      = document.getElementById('modalSlotName').textContent;
+  const errBox    = document.getElementById('ad-contact-error');
 
-  if (!name || !email) {
-    alert('Lütfen Ad ve E-posta alanlarını doldurunuz. / Будь ласка, заповніть ім\'я та email.'); return;
+  // En az 2 iletişim kanalı zorunlu
+  const filled = [whatsapp, viber, telegram, email].filter(v => v.length > 0);
+  if (!name) { alert('Lütfen adınızı girin. / Будь ласка, введіть ім\'я.'); return; }
+  if (filled.length < 2) {
+    errBox.style.display = 'block';
+    errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
   }
-  if (!contact) {
-    alert('Lütfen en az bir iletişim kanalı girin. / Будь ласка, вкажіть хоча б один канал зв\'язку.'); return;
-  }
+  errBox.style.display = 'none';
+
+  const contactLines = [];
+  if (whatsapp)  contactLines.push('WhatsApp: ' + whatsapp);
+  if (viber)     contactLines.push('Viber: '    + viber);
+  if (telegram)  contactLines.push('Telegram: ' + telegram);
+  if (email)     contactLines.push('E-posta: '  + email);
 
   const body = encodeURIComponent(
-    'Reklam Başvurusu\n' +
+    'Reklam Basvurusu\n' +
     '================\n' +
     'Konum: ' + slot + '\n' +
-    'Firma: ' + name + '\n' +
-    'Sektör: ' + sector + '\n' +
-    'E-posta: ' + email + '\n' +
-    contactLine + '\n\n' +
+    'Firma: '  + name + '\n' +
+    'Sektor: ' + sector + '\n' +
+    contactLines.join('\n') + '\n\n' +
     'Mesaj:\n' + message
   );
 
   window.open(
     'mailto:demirgardas06@gmail.com?subject=' +
-    encodeURIComponent('Reklam Başvurusu — ' + slot) +
+    encodeURIComponent('Reklam Basvurusu — ' + slot) +
     '&body=' + body,
     '_blank'
   );
@@ -3325,15 +3339,14 @@ function submitAdForm() {
     const title  = lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||'');
     const body   = lang==='ua' && it._body_ua  ? it._body_ua  : (it._body_tr||shortText(it.description, featured?130:90));
     const dateStr= lang==='ua' && it._date_ua  ? it._date_ua  : (it._date_tr||fmtDate(it.pubDate||'', lang));
-    return `<a href="${it.link||it.url||'#'}" target="_blank" rel="noopener" class="gundem-card${featured?' featured':''}">
+    return `<div class="gundem-card${featured?' featured':''}">
       <div class="gundem-card-top">
         <span class="gundem-cat ${cat}" style="${style}">${catTxt}</span>
         <span class="gundem-card-date">${dateStr}</span>
       </div>
       <div class="gundem-card-title" style="font-size:${featured?'16px':'13px'};">${title}</div>
       <div class="gundem-card-body" style="font-size:${featured?'12px':'11px'};">${body}</div>
-      <span class="gundem-card-link" style="font-size:9px;display:none;"></span>
-    </a>`;
+    </div>`;
   }
 
   function buildTickerHTML(items) {
@@ -3343,7 +3356,7 @@ function submitAdForm() {
       const catTxt = (lang==='ua' ? CAT_UA : CAT_TR)[cat];
       const style = CAT_STYLE[cat] || CAT_STYLE.general;
       const title = lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||'');
-      return `<span class="ticker-item" onclick="window.open('${it.link||it.url||'#'}','_blank')">` +
+      return `<span class="ticker-item">` +
         `<span class="ticker-item-cat ${cat}" style="${style}">${catTxt}</span>` +
         `<span>${title.substring(0,85)}${title.length>85?'…':''}</span>` +
         `</span><span class="ticker-item-sep">◆</span>`;
@@ -3460,30 +3473,38 @@ function submitAdForm() {
 
     <div class="ad-modal-header">
       <div>
-        <div class="ad-modal-title"><span data-tr>📢 Reklam İş Birliği Başvurusu</span><span data-ua>📢 Заявка на Рекламну Співпрацю</span></div>
+        <div class="ad-modal-title"><span data-tr>📢 Reklam İş Birliği</span><span data-ua>📢 Рекламна Співпраця</span></div>
         <div class="ad-modal-sub" id="modalSlotName">—</div>
       </div>
       <div class="ad-modal-close" onclick="closeAdModalDirect()">✕</div>
     </div>
 
     <div id="adFormSection">
-      <!-- Seçilen slot bilgisi -->
+      <!-- Slot bilgisi -->
       <div class="ad-slot-info">
         <span class="ad-slot-badge" id="modalSlotBadge">—</span>
         <span class="ad-slot-desc" id="modalSlotDesc">—</span>
       </div>
 
+      <!-- Açıklama kutusu -->
+      <div style="background:rgba(0,243,255,.05);border:1px solid rgba(0,243,255,.12);border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:12px;line-height:1.7;color:rgba(200,200,255,.8);">
+        <span data-tr>TürkUA, Türkiye ile Ukrayna arasında bilgi arayan on binlerce kişiye ulaşan bir platformdur. Reklam alanı satın alarak hedef kitlenize doğrudan ulaşabilirsiniz.<br>Başvuru formunu doldurun, <strong style="color:var(--neon-blue)">24 saat</strong> içinde size dönelim.</span>
+        <span data-ua>TürkUA — це платформа, яка охоплює десятки тисяч людей, що шукають інформацію між Туреччиною та Україною. Придбайте рекламний простір і напряму зв\'яжіться з вашою аудиторією.<br>Заповніть форму — ми відповімо протягом <strong style="color:var(--neon-blue)">24 годин</strong>.</span>
+      </div>
+
       <!-- Form -->
       <div class="form-row">
         <div class="form-group">
-          <label data-tr>Firma / Kişi Adı</label><label data-ua>Компанія / Ім'я</label>
-          <input type="text" id="ad-name" placeholder="Şirket veya Ad Soyad" data-tr-placeholder="Şirket veya Ad Soyad" data-ua-placeholder="Компанія або Ім'я Прізвище">
+          <label data-tr>Firma / Kişi Adı <span style="color:var(--neon-red)">*</span></label>
+          <label data-ua>Компанія / Ім\'я <span style="color:var(--neon-red)">*</span></label>
+          <input type="text" id="ad-name" placeholder="Şirket veya Ad Soyad">
         </div>
         <div class="form-group">
           <label data-tr>Sektör</label><label data-ua>Сектор</label>
           <select id="ad-sector-tr" data-tr>
             <option value="">— Seçiniz —</option>
             <option>🎓 Eğitim / Üniversite</option>
+            <option>🚌 Otobüs / Taşımacılık</option>
             <option>✈️ Vize / Göç Acentesi</option>
             <option>🤝 Ticaret / Lojistik</option>
             <option>🏥 Sağlık</option>
@@ -3493,6 +3514,7 @@ function submitAdForm() {
           <select id="ad-sector-ua" data-ua>
             <option value="">— Оберіть —</option>
             <option>🎓 Освіта / Університет</option>
+            <option>🚌 Автобус / Перевезення</option>
             <option>✈️ Візи / Міграція</option>
             <option>🤝 Торгівля / Логістика</option>
             <option>🏥 Медицина</option>
@@ -3502,51 +3524,62 @@ function submitAdForm() {
         </div>
       </div>
 
-      <div class="form-group">
-        <label data-tr>E-posta Adresi <span style="color:var(--neon-red);font-size:10px;">*</span></label>
-        <label data-ua>Електронна пошта <span style="color:var(--neon-red);font-size:10px;">*</span></label>
-        <input type="email" id="ad-email" placeholder="ornek@firma.com">
+      <!-- İletişim başlığı -->
+      <div style="font-size:12px;font-weight:600;color:rgba(200,200,255,.9);margin-bottom:8px;margin-top:4px;">
+        <span data-tr>📞 İletişim Bilgileri <span style="color:var(--neon-red);font-weight:400;font-size:11px;">* En az 2 kanal zorunlu</span></span>
+        <span data-ua>📞 Контактні Дані <span style="color:var(--neon-red);font-weight:400;font-size:11px;">* Мінімум 2 канали обов\'язково</span></span>
       </div>
 
-      <div class="form-group ad-contact-group">
-        <label data-tr>İletişim Kanalı <span style="color:var(--neon-red);font-size:10px;">* (en az 1)</span></label>
-        <label data-ua>Канал зв'язку <span style="color:var(--neon-red);font-size:10px;">* (мінімум 1)</span></label>
-        <div class="ad-contact-tabs">
-          <button type="button" class="ad-contact-tab active" onclick="selectContactTab('telegram',this)">✈️ Telegram</button>
-          <button type="button" class="ad-contact-tab" onclick="selectContactTab('instagram',this)">📸 Instagram</button>
-          <button type="button" class="ad-contact-tab" onclick="selectContactTab('website',this)">🌐 Web Sitesi</button>
-          <button type="button" class="ad-contact-tab" onclick="selectContactTab('whatsapp',this)">💬 WhatsApp</button>
+      <!-- 4 iletişim alanı -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+        <div class="form-group" style="margin:0;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">💬</span> WhatsApp</label>
+          <input type="tel" id="ad-whatsapp" placeholder="+90 5XX XXX XX XX" style="font-size:13px;">
+          <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>Ülke koduyla yazın (+90, +380)</span><span data-ua>З кодом країни (+90, +380)</span></div>
         </div>
-        <div class="ad-contact-input-wrap">
-          <span class="ad-contact-prefix" id="ad-contact-prefix">t.me/</span>
-          <input type="text" id="ad-contact-value" placeholder="kullaniciadi">
+        <div class="form-group" style="margin:0;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">📱</span> Viber</label>
+          <input type="tel" id="ad-viber" placeholder="+38 0XX XXX XX XX" style="font-size:13px;">
+          <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>Ülke koduyla yazın (+90, +380)</span><span data-ua>З кодом країни (+90, +380)</span></div>
         </div>
-        <div class="ad-contact-hint" id="ad-contact-hint" data-tr>Telegram kullanıcı adınızı girin (@ olmadan)</div>
-        <div class="ad-contact-hint" id="ad-contact-hint-ua" data-ua>Введіть ім'я користувача Telegram (без @)</div>
+        <div class="form-group" style="margin:0;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">✈️</span> Telegram</label>
+          <input type="text" id="ad-telegram" placeholder="@kullaniciadi" style="font-size:13px;">
+          <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>@ ile başlayan kullanıcı adı</span><span data-ua>Ім\'я користувача з @</span></div>
+        </div>
+        <div class="form-group" style="margin:0;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">✉️</span> E-posta</label>
+          <input type="email" id="ad-email" placeholder="ornek@firma.com" style="font-size:13px;">
+          <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>İş e-posta adresiniz</span><span data-ua>Ваша робоча електронна пошта</span></div>
+        </div>
+      </div>
+
+      <div id="ad-contact-error" style="display:none;color:var(--neon-red);font-size:11px;margin-bottom:10px;padding:8px 12px;background:rgba(255,36,66,.08);border-radius:8px;border:1px solid rgba(255,36,66,.2);">
+        <span data-tr>⚠️ En az 2 iletişim kanalı doldurmanız gerekiyor.</span>
+        <span data-ua>⚠️ Необхідно заповнити мінімум 2 канали зв\'язку.</span>
       </div>
 
       <!-- Logo yükleme -->
       <div class="form-group">
-        <label><span data-tr>Firma Logosu / Görseli</span><span data-ua>Логотип / Зображення Компанії</span></label>
+        <label><span data-tr>Firma Logosu / Görseli (isteğe bağlı)</span><span data-ua>Логотип / Зображення (необов\'язково)</span></label>
         <div class="logo-upload-area" onclick="document.getElementById('ad-logo').click()">
           <input type="file" id="ad-logo" accept="image/*" onchange="previewLogo(this)">
           <div class="logo-upload-icon">🖼️</div>
-          <div class="logo-upload-text"><span data-tr>Logo veya görsel seçmek için tıklayın</span><span data-ua>Натисніть, щоб вибрати лого або зображення</span><br><span style="font-size:10px;opacity:.6;">PNG, JPG, SVG — maks. 2MB</span></div>
-          <img class="logo-preview" id="logoPreview" alt="Logo önizleme">
+          <div class="logo-upload-text"><span data-tr>Tıklayarak görsel seçin</span><span data-ua>Натисніть, щоб вибрати зображення</span><br><span style="font-size:10px;opacity:.6;">PNG, JPG, SVG — maks. 2MB</span></div>
+          <img class="logo-preview" id="logoPreview" alt="Logo">
         </div>
       </div>
 
       <div class="form-group">
-        <label>Mesaj / Notlar</label>
-        <textarea id="ad-message" placeholder="Reklamınız hakkında ek bilgi, hedef kitle, yayın süresi vb."></textarea>
+        <label><span data-tr>Notlar / Mesaj</span><span data-ua>Нотатки / Повідомлення</span></label>
+        <textarea id="ad-message" placeholder="Hedef kitle, yayın süresi, bütçe vb. / Цільова аудиторія, термін розміщення, бюджет тощо"></textarea>
       </div>
 
       <button class="ad-modal-submit" onclick="submitAdForm()"><span data-tr>BAŞVURUYU GÖNDER →</span><span data-ua>НАДІСЛАТИ ЗАЯВКУ →</span></button>
 
-      <p class="ad-modal-note">
-        Başvurunuz e-posta ile iletilecektir. Logo dosyasını ayrıca
-        <a href="https://t.me/TurkUA_destek" target="_blank">Telegram</a> üzerinden de gönderebilirsiniz.<br>
-        En geç <strong>24 saat</strong> içinde dönüş yapılacaktır.
+      <p class="ad-modal-note" style="text-align:center;">
+        <span data-tr>En geç <strong>24 saat</strong> içinde dönüş yapılacaktır.</span>
+        <span data-ua>Ми відповімо протягом <strong>24 годин</strong>.</span>
       </p>
     </div>
 
@@ -3555,8 +3588,8 @@ function submitAdForm() {
       <div class="ad-success-icon">✅</div>
       <div class="ad-success-title"><span data-tr>Başvurunuz Alındı!</span><span data-ua>Вашу Заявку Отримано!</span></div>
       <div class="ad-success-text">
-        Kısa süre içinde sizinle iletişime geçeceğiz.<br>
-        Logo dosyanızı <a href="https://t.me/TurkUA_destek" target="_blank" style="color:var(--neon-blue)">Telegram</a> üzerinden de iletebilirsiniz.
+        <span data-tr>Kısa süre içinde sizinle iletişime geçeceğiz.</span>
+        <span data-ua>Ми зв\'яжемося з вами найближчим часом.</span>
       </div>
     </div>
 
