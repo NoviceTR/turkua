@@ -1713,8 +1713,6 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
   <div class="gundem-source-bar">
     <span class="gundem-source-txt">
-      <span data-tr>Kaynak: Ukrinform Haber Ajansı (ukrinform.net)</span>
-      <span data-ua>Джерело: Агентство новин Укрінформ (ukrinform.net)</span>
     </span>
     <button class="gundem-refresh-btn" onclick="fetchGundem(true)">
       <span data-tr>↻ GÜNCELLE</span><span data-ua>↻ ОНОВИТИ</span>
@@ -2300,41 +2298,45 @@ footer a { color:var(--text-muted); text-decoration:none; }
 </div>
 </section>
 
-<!-- ══ SPONSORED CONTENT ══ -->
+<!-- ══ REKLAM ALANLARI ══ -->
 <section id="sponsored" style="padding:40px 0;">
 <div class="container">
-  <div class="section-badge" style="margin-bottom:20px;"><span class="dot"></span><span data-tr>SPONSORLU İÇERİK</span><span data-ua>СПОНСОРОВАНИЙ ВМІСТ</span></div>
+  <div class="section-header" style="margin-bottom:24px;">
+    <div class="section-badge"><span class="dot"></span><span data-tr>REKLAM ALANLARI</span><span data-ua>РЕКЛАМНІ ПЛОЩІ</span></div>
+    <h2 class="section-title" data-tr>Hedef Kitlenize Doğrudan Ulaşın</h2>
+    <h2 class="section-title" data-ua>Зв'яжіться Напряму з Вашою Аудиторією</h2>
+    <p class="section-sub" data-tr>Türkiye ve Ukrayna arasında bilgi arayan binlerce ziyaretçiye ulaşın. Aşağıdaki alanlara tıklayarak başvurun.</p>
+    <p class="section-sub" data-ua>Охопіть тисячі відвідувачів, які шукають інформацію між Туреччиною та Україною. Натисніть на площу нижче, щоб подати заявку.</p>
+  </div>
   <div class="sponsored-grid">
-    <div class="sponsor-slot bus-ad-slot" style="border-color:rgba(0,243,255,0.35);background:linear-gradient(135deg,rgba(0,20,50,0.9),rgba(0,10,30,0.95));">
-      <span class="slot-icon">🚌</span>
-      <div class="slot-title" data-tr style="color:var(--neon-blue);font-size:15px;">Türkiye ↔ Ukrayna Otobüs</div>
-      <div class="slot-title" data-ua style="color:var(--neon-blue);font-size:15px;">Туреччина ↔ Україна Автобус</div>
-      <div class="slot-sub" data-tr style="color:rgba(200,230,255,0.8);margin:6px 0;">İstanbul · Ankara · Odessa · Kyiv</div>
-      <div class="slot-sub" data-ua style="color:rgba(200,230,255,0.8);margin:6px 0;">Стамбул · Анкара · Одеса · Київ</div>
-      <div style="margin-top:10px;padding:8px 14px;background:rgba(0,243,255,0.1);border:1px solid rgba(0,243,255,0.25);border-radius:8px;display:inline-block;">
-        <span data-tr style="font-size:11px;color:var(--neon-blue);letter-spacing:1px;font-family:'Orbitron',monospace;">REKLAM ALANI</span>
-        <span data-ua style="font-size:11px;color:var(--neon-blue);letter-spacing:1px;font-family:'Orbitron',monospace;">РЕКЛАМНА ПЛОЩА</span>
+    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 1','Otobüs / Taşımacılık','Türkiye-Ukrayna arası otobüs, taşımacılık ve lojistik firmaları için ideal konum')">
+      <span style="font-size:32px;">🚌</span>
+      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Otobüs / Taşımacılık</div>
+      <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Автобус / Перевезення</div>
+      <div style="padding:6px 14px;background:rgba(0,243,255,0.08);border:1px solid rgba(0,243,255,0.2);border-radius:20px;">
+        <span data-tr style="font-size:11px;color:var(--neon-blue);">📢 Reklam Ver</span>
+        <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
       </div>
-      <div class="slot-sub" data-tr style="margin-top:8px;font-size:11px;">Firma iletişimi için formu doldurun ↓</div>
-      <div class="slot-sub" data-ua style="margin-top:8px;font-size:11px;">Заповніть форму для зв'язку з компанією ↓</div>
     </div>
-    <div class="sponsor-slot">
-      <span class="slot-icon">✈️</span>
-      <div class="slot-title" data-tr>Vize &amp; Göç Acentesi</div>
-      <div class="slot-title" data-ua>Візове &amp; міграційне агентство</div>
-      <div class="slot-sub" data-tr>Sponsor alanı</div>
-      <div class="slot-sub" data-ua>Спонсорська площа</div>
+    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 2','Vize & Göç Acentesi','Vize danışmanları, göç acenteleri ve hukuk büroları için özel konum')">
+      <span style="font-size:32px;">✈️</span>
+      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Vize &amp; Göç Acentesi</div>
+      <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Візове &amp; Міграційне Агентство</div>
+      <div style="padding:6px 14px;background:rgba(0,243,255,0.08);border:1px solid rgba(0,243,255,0.2);border-radius:20px;">
+        <span data-tr style="font-size:11px;color:var(--neon-blue);">📢 Reklam Ver</span>
+        <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
+      </div>
     </div>
-    <div class="sponsor-slot">
-      <span class="slot-icon">🤝</span>
-      <div class="slot-title" data-tr>Ticaret / Lojistik Firması</div>
-      <div class="slot-title" data-ua>Торговельна / логістична компанія</div>
-      <div class="slot-sub" data-tr>Sponsor alanı</div>
-      <div class="slot-sub" data-ua>Спонсорська площа</div>
+    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 3','Ticaret / Lojistik','İki ülke arasında ticaret ve lojistik hizmeti veren firmalar için')">
+      <span style="font-size:32px;">🤝</span>
+      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Ticaret / Lojistik</div>
+      <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Торгівля / Логістика</div>
+      <div style="padding:6px 14px;background:rgba(0,243,255,0.08);border:1px solid rgba(0,243,255,0.2);border-radius:20px;">
+        <span data-tr style="font-size:11px;color:var(--neon-blue);">📢 Reklam Ver</span>
+        <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
+      </div>
     </div>
   </div>
-  <p class="sponsor-contact" data-tr>Sponsorluk için: <a href="#contact">iletişim formunu</a> doldurun veya WhatsApp ile ulaşın.</p>
-  <p class="sponsor-contact" data-ua>Для спонсорства: заповніть <a href="#contact">форму контакту</a> або напишіть у WhatsApp.</p>
 </div>
 </section>
 
@@ -2456,12 +2458,6 @@ footer a { color:var(--text-muted); text-decoration:none; }
 </div>
 </section>
 
-<!-- ══ BOTTOM AD ══ -->
-<div class="container">
-  <div class="ad-slot ad-slot-leaderboard" onclick="openAdModal('Alt Şerit','728×90 px','Sayfanın altında, içeriği okuduktan sonra harekete geçen ziyaretçi hedefler')">
-    <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">728 × 90 px</div></div>
-  </div>
-</div>
 
 <!-- ══ FOOTER ══ -->
 <footer>
