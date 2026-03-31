@@ -1,23 +1,28 @@
 {
   "name": "TürkUA — Türkiye & Ukrayna Bilgi Merkezi",
   "short_name": "TürkUA",
-  "description": "Ukrayna-Rusya savaşı takibi, Türkiye-Ukrayna vize, ticaret ve gündem rehberi.",
-  "start_url": "/turkua/",
-  "scope": "/turkua/",
+  "description": "Ukrayna-Rusya savaş takibi, vize rehberi, döviz kurları ve güncel haberler.",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
   "background_color": "#060610",
   "theme_color": "#060610",
+  "orientation": "portrait-primary",
   "lang": "tr",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%23060610'/><text x='96' y='130' text-anchor='middle' font-size='110' font-family='Arial'>🇹🇷🇺🇦</text></svg>",
+      "src": "favicon.png",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["news", "education"],
-  "screenshots": [],
-  "related_applications": [],
-  "prefer_related_applications": false
+  "categories": ["news", "education", "travel"],
+  "screenshots": []
 }

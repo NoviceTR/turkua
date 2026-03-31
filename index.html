@@ -3,14 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="Ukrayna-Rusya savaşı bitiş olasılığı takibi, Türkiye-Ukrayna üniversite, vize ve ticaret rehberi.">
-<meta name="keywords" content="ukrayna rusya savaş, türkiye ukrayna vize, ukrayna üniversite, türkiye ukrayna ticaret, STA">
+
+<!-- ═══ SEO ═══ -->
+<title>TürkUA — Türkiye & Ukrayna Bilgi Merkezi | Vize, Savaş, Gündem</title>
+<meta name="description" content="TürkUA: Ukrayna-Rusya savaş takibi, Türkiye-Ukrayna vize rehberi, döviz kurları, güncel haberler ve üniversite bilgileri. Türkçe ve Ukraynaca.">
+<meta name="keywords" content="ukrayna rusya savaş, türkiye ukrayna vize, ukrayna üniversite, türkiye ukrayna ticaret, ukrayna döviz kuru, ukrayna haberleri, türkçe ukrayna, lviv, kyiv türkler, ukrayna vize başvuru">
+<meta name="author" content="TürkUA">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.turkua.net/">
+
+<!-- ═══ OPEN GRAPH (Sosyal Medya) ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.turkua.net/">
+<meta property="og:title" content="TürkUA — Türkiye & Ukrayna Bilgi Merkezi">
+<meta property="og:description" content="Ukrayna-Rusya savaş takibi, vize rehberi, döviz kurları ve güncel haberler. Türkçe ve Ukraynaca tek platform.">
+<meta property="og:image" content="https://www.turkua.net/og-image.png">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="TürkUA">
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TürkUA — Türkiye & Ukrayna Bilgi Merkezi">
+<meta name="twitter:description" content="Ukrayna-Rusya savaş takibi, vize rehberi, döviz kurları ve güncel haberler.">
+<meta name="twitter:image" content="https://www.turkua.net/og-image.png">
+
+<!-- ═══ PWA ═══ -->
 <meta name="theme-color" content="#060610">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="TürkUA">
 <link rel="manifest" href="manifest.json">
-<title>TürkUA — Türkiye & Ukrayna Bilgi Merkezi</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -56,8 +80,9 @@ body::before {
 }
 
 /* ── LANGUAGE ELEMENTS ── */
-[data-tr], [data-ua] { display: none; }
-html[data-lang="tr"] [data-tr] { display: revert; }
+/* Türkçe varsayılan olarak görünür; UA seçilince değişir */
+[data-ua] { display: none; }
+html[data-lang="ua"] [data-tr] { display: none; }
 html[data-lang="ua"] [data-ua] { display: revert; }
 
 /* ── NAVBAR ── */
@@ -121,9 +146,9 @@ section { padding: 60px 0; }
 section + section { border-top: 1px solid var(--border); }
 
 /* ── AD SLOTS ── */
-.ad-slot {
-  background: rgba(255,255,255,0.02);
-  border: 1px dashed rgba(255,255,255,0.08);
+.promo-slot {
+  background: rgba(255,140,0,0.03);
+  border: 1px dashed rgba(255,140,0,0.25);
   border-radius: 10px;
   display: flex; align-items:center; justify-content:center;
   color: rgba(255,255,255,0.15);
@@ -131,9 +156,9 @@ section + section { border-top: 1px solid var(--border); }
   min-height: 90px; width:100%;
   margin: 24px 0;
 }
-.ad-slot-leaderboard { min-height:90px; }
-.ad-slot-rectangle { min-height:260px; max-width:336px; }
-.ad-slot-banner { min-height: 60px; }
+.promo-leaderboard { min-height:90px; }
+.promo-rectangle { min-height:260px; max-width:336px; }
+.promo-banner { min-height: 60px; }
 
 /* ══════════════════════════════════════════
    HERO — WAR TRACKER
@@ -542,7 +567,6 @@ section + section { border-top: 1px solid var(--border); }
 /* ══════════════════════════════════════════
    DANIŞMANLIK / CONSULTATION
 ══════════════════════════════════════════ */
-#contact { background: radial-gradient(ellipse at 50% 0%, rgba(0,243,255,.04), transparent 70%); }
 
 .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:32px; align-items:start; }
 @media(max-width:768px){ .contact-grid{ grid-template-columns:1fr; } }
@@ -658,7 +682,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 .lang-toggle { margin-left: 0; }
 
-.nav-ad-btn {
+.nav-promo-btn {
   display: flex; align-items: center; gap: 6px;
   padding: 6px 12px; border-radius: 8px;
   border: 1px solid rgba(255,140,0,0.3);
@@ -666,33 +690,33 @@ footer a { color:var(--text-muted); text-decoration:none; }
   text-decoration: none; cursor: pointer;
   transition: all .2s; white-space: nowrap;
 }
-.nav-ad-btn:hover {
+.nav-promo-btn:hover {
   background: rgba(255,140,0,0.16);
   border-color: rgba(255,140,0,0.6);
   box-shadow: 0 0 12px rgba(255,140,0,0.2);
 }
-.nav-ad-icon { font-size: 14px; }
-.nav-ad-text { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--neon-orange); text-transform: uppercase; }
+.nav-promo-icon { font-size: 14px; }
+.nav-promo-text { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--neon-orange); text-transform: uppercase; }
 
 @media (max-width: 700px) {
-  .nav-ad-text { display: none; }
-  .nav-ad-btn { padding: 6px 8px; }
+  .nav-promo-text { display: none; }
+  .nav-promo-btn { padding: 6px 8px; }
 }
 
 
 /* ── İkili mid reklam ── */
-.ad-slot-double {
+.promo-double {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin: 24px 0;
 }
-.ad-slot-mid-half {
+.promo-mid-half {
   min-height: 250px;
   margin: 0;
 }
 @media (max-width: 600px) {
-  .ad-slot-double { grid-template-columns: 1fr; }
+  .promo-double { grid-template-columns: 1fr; }
 }
 
 
@@ -701,27 +725,27 @@ footer a { color:var(--text-muted); text-decoration:none; }
 ══════════════════════════════════════════ */
 
 /* Ad slot tıklanabilir overlay */
-.ad-slot {
+.promo-slot {
   position: relative;
   cursor: pointer;
   transition: border-color .25s, box-shadow .25s;
 }
-.ad-slot:hover {
+.promo-slot:hover {
   border-color: rgba(255,140,0,.5);
   box-shadow: 0 0 20px rgba(255,140,0,.12);
 }
-.ad-slot .ad-overlay {
+.promo-slot .promo-overlay {
   position: absolute; inset: 0;
   border-radius: 10px;
-  background: rgba(255,140,0,.05);
+  background: rgba(255,140,0,.04);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 8px;
-  opacity: 0; transition: opacity .25s;
+  opacity: 0.85; transition: opacity .25s, background .25s;
   pointer-events: none;
 }
-.ad-slot:hover .ad-overlay { opacity: 1; }
-.ad-overlay-btn {
+.promo-slot:hover .promo-overlay { opacity: 1; background: rgba(255,140,0,.09); }
+.promo-cta-btn {
   background: rgba(255,140,0,.18);
   border: 1px solid rgba(255,140,0,.5);
   border-radius: 8px; padding: 7px 18px;
@@ -729,7 +753,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
   pointer-events: none;
 }
-.ad-overlay-size {
+.promo-size-tag {
   font-family: 'Orbitron', monospace;
   font-size: 9px; color: rgba(255,140,0,.5);
   letter-spacing: 2px;
@@ -789,20 +813,20 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .ad-modal-close:hover { background: rgba(255,255,255,.12); color: #fff; }
 
 /* Boyut bilgi kutusu */
-.ad-slot-info {
+.promo-info-box {
   background: rgba(255,140,0,.06);
   border: 1px solid rgba(255,140,0,.2);
   border-radius: 8px; padding: 12px 14px;
   margin-bottom: 20px;
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
 }
-.ad-slot-badge {
+.promo-badge {
   font-family: 'Orbitron', monospace; font-size: 10px;
   color: var(--neon-orange); letter-spacing: 2px;
   background: rgba(255,140,0,.1); border: 1px solid rgba(255,140,0,.25);
   border-radius: 6px; padding: 4px 10px;
 }
-.ad-slot-desc { font-size: 11px; color: var(--text-muted); }
+.promo-desc { font-size: 11px; color: var(--text-muted); }
 
 /* Form içi */
 .ad-modal .form-group { margin-bottom: 14px; }
@@ -1311,7 +1335,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   }
   .nav-links a:active { background: rgba(0,243,255,0.08); border-color: rgba(0,243,255,.2); }
   .nav-right-group { margin-left: auto; gap: 6px; flex-shrink: 0; }
-  .nav-ad-btn { display: none; }
+  .nav-promo-btn { display: none; }
   .lang-btn { padding: 5px 10px; font-size: 11px; }
 
   /* SECTIONS */
@@ -1381,9 +1405,9 @@ footer a { color:var(--text-muted); text-decoration:none; }
   .form-row { grid-template-columns: 1fr !important; }
 
   /* AD SLOTS - mobilde de görünür kalır */
-  .ad-slot-leaderboard { min-height: 70px; }
-  .ad-slot-double { grid-template-columns: 1fr; }
-  .ad-slot-mid-half { min-height: 180px; }
+  .promo-leaderboard { min-height: 70px; }
+  .promo-double { grid-template-columns: 1fr; }
+  .promo-mid-half { min-height: 180px; }
 }
 
 @media (max-width: 420px) {
@@ -1486,15 +1510,15 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <li><a href="#visa" data-tr>🛂 Vize</a><a href="#visa" data-ua>🛂 Віза</a></li>
     <li><a href="#trade" data-tr>🤝 Ticaret</a><a href="#trade" data-ua>🤝 Торгівля</a></li>
         <li><a href="#money" data-tr>💸 Para Transferi</a><a href="#money" data-ua>💸 Переказ Грошей</a></li>
-    <li><a href="#contact" data-tr>💬 Danışmanlık</a><a href="#contact" data-ua>💬 Консультація</a></li>
+    <li><a href="#hakkimizda" data-tr>ℹ️ Hakkımızda</a><a href="#hakkimizda" data-ua>ℹ️ Про Нас</a></li>
   </ul>
   <div class="nav-right-group">
     <!-- Reklam iş birliği butonu -->
-    <a href="#contact" class="nav-ad-btn">
-      <span class="nav-ad-icon">📢</span>
-      <span class="nav-ad-text" data-tr>Reklam İş Birliği</span>
-      <span class="nav-ad-text" data-ua>Реклама</span>
-    </a>
+    <button onclick="openAdModal('Reklam Başvurusu','','',false)" class="nav-promo-btn" style="font-family:inherit;font-size:inherit;">
+      <span class="nav-promo-icon">📢</span>
+      <span class="nav-promo-text" data-tr>Reklam İş Birliği</span>
+      <span class="nav-promo-text" data-ua>Реклама</span>
+    </button>
 
     <!-- Dil toggle -->
     <div class="lang-toggle">
@@ -1520,9 +1544,9 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 <!-- ══ TOP AD ══ -->
 <div class="container">
-  <div class="ad-slot ad-slot-leaderboard" onclick="openAdModal('Üst Şerit','728×90 px','Sayfanın en üstünde, ziyaretçinin ilk gördüğü alan — maksimum görünürlük')">
+  <div class="promo-slot promo-leaderboard" onclick="openAdModal('Üst Şerit','728×90 px','Sayfanın en üstünde, ziyaretçinin ilk gördüğü alan — maksimum görünürlük')">
     <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-    <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">728 × 90 px</div></div>
+    <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">728 × 90 px</div></div>
   </div>
 </div>
 
@@ -1663,14 +1687,14 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 <!-- ══ MID AD (2'li) ══ -->
 <div class="container">
-  <div class="ad-slot-double">
-    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Orta Sol','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
+  <div class="promo-double">
+    <div class="promo-slot promo-mid-half" onclick="openAdModal('Orta Sol','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
       <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
     </div>
-    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Orta Sağ','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
+    <div class="promo-slot promo-mid-half" onclick="openAdModal('Orta Sağ','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
       <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
     </div>
   </div>
 </div>
@@ -1699,7 +1723,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
         <div class="gundem-live-dot"></div>
         <span data-tr>CANLI</span><span data-ua>НАЖИВО</span>
       </div>
-      <div class="gundem-update-info" id="gundemUpdateInfo">—</div>
+      <div class="gundem-update-info" id="gundemUpdateInfo" style="margin-top:6px;">—</div>
     </div>
   </div>
 
@@ -1746,6 +1770,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <h2 class="section-title" data-ua>Останні Воєнні Новини</h2>
     <p class="section-sub" data-tr>Cephe hattı, müzakereler ve insani duruma ilişkin en güncel gelişmeler. Her 6 saatte bir güncellenir.</p>
     <p class="section-sub" data-ua>Найсвіжіші новини про лінію фронту, переговори та гуманітарну ситуацію. Оновлення кожні 6 годин.</p>
+    <div id="newsLastUpdate" style="font-size:11px;color:var(--text-muted);letter-spacing:1px;margin-top:6px;">—</div>
 
   <div style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 14px;background:rgba(0,243,255,0.04);border:1px solid rgba(0,243,255,0.1);border-radius:8px;flex-wrap:wrap;">
     <span style="font-size:10px;color:var(--neon-green);">✓</span>
@@ -2314,7 +2339,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <p class="section-sub" data-ua>Охопіть тисячі відвідувачів, які шукають інформацію між Туреччиною та Україною. Натисніть на площу нижче, щоб подати заявку.</p>
   </div>
   <div class="sponsored-grid">
-    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 1','Otobüs / Taşımacılık','Türkiye-Ukrayna arası otobüs, taşımacılık ve lojistik firmaları için ideal konum')">
+    <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 1','Otobüs / Taşımacılık','Türkiye-Ukrayna arası otobüs, taşımacılık ve lojistik firmaları için ideal konum')">
       <span style="font-size:32px;">🚌</span>
       <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Otobüs / Taşımacılık</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Автобус / Перевезення</div>
@@ -2323,7 +2348,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
         <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
       </div>
     </div>
-    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 2','Vize & Göç Acentesi','Vize danışmanları, göç acenteleri ve hukuk büroları için özel konum')">
+    <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 2','Vize & Göç Acentesi','Vize danışmanları, göç acenteleri ve hukuk büroları için özel konum')">
       <span style="font-size:32px;">✈️</span>
       <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Vize &amp; Göç Acentesi</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Візове &amp; Міграційне Агентство</div>
@@ -2332,7 +2357,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
         <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
       </div>
     </div>
-    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 3','Ticaret / Lojistik','İki ülke arasında ticaret ve lojistik hizmeti veren firmalar için')">
+    <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 3','Ticaret / Lojistik','İki ülke arasında ticaret ve lojistik hizmeti veren firmalar için')">
       <span style="font-size:32px;">🤝</span>
       <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Ticaret / Lojistik</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Торгівля / Логістика</div>
@@ -2345,122 +2370,64 @@ footer a { color:var(--text-muted); text-decoration:none; }
 </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     DANIŞMANLIK FORMU
-══════════════════════════════════════════ -->
-<section id="contact">
+
+<!-- ══ HAKKIMIZDA & SORUMLULUK REDDİ ══ -->
+<section id="hakkimizda">
 <div class="container">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
 
-  <div class="section-header">
-    <div class="section-badge"><span class="dot"></span><span data-tr>ÜCRETLİ DANIŞMANLIK</span><span data-ua>ПЛАТНА КОНСУЛЬТАЦІЯ</span></div>
-    <h2 class="section-title" data-tr>Hukuk, Tercüme &amp; Bürokratik Destek</h2>
-    <h2 class="section-title" data-ua>Юридична, Перекладацька &amp; Бюрократична Підтримка</h2>
-  </div>
-
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h3 data-tr>Size Yardımcı Olabiliriz</h3>
-      <h3 data-ua>Ми Можемо Вам Допомогти</h3>
-      <p data-tr>Türkiye ve Ukrayna'da yaşadığınız hukuki, bürokratik ve dil engellerinde yanınızdayız. Avukat yönlendirmesinden belge çevirisine, ehliyetten oturma iznine kadar her adımda destek sağlıyoruz.</p>
-      <p data-ua>Ми поруч із вами при юридичних, бюрократичних та мовних труднощах у Туреччині та Україні. Від направлення до адвоката до перекладу документів, від посвідчення водія до дозволу на проживання — підтримка на кожному кроці.</p>
-      <ul class="service-list">
-        <li data-tr>⚖️ Türkiye'de hukuki destek — avukat yönlendirme ve danışmanlık</li>
-        <li data-ua>⚖️ Юридична підтримка в Туреччині — направлення до адвоката та консультації</li>
-        <li data-tr>⚖️ Ukrayna'da hukuki destek — yerel avukat ve hukuk rehberliği</li>
-        <li data-ua>⚖️ Юридична підтримка в Україні — місцевий адвокат та правове керівництво</li>
-        <li data-tr>🌐 Resmi belge ve yazışmalar için tercüme yardımı (Türkçe ↔ Ukraynaca)</li>
-        <li data-ua>🌐 Допомога з перекладом офіційних документів та листування (турецька ↔ українська)</li>
-        <li data-tr>🏠 Ukrayna'da süresiz oturum başvurusu — yanında tercümanlık desteği</li>
-        <li data-ua>🏠 Заявка на безстрокове проживання в Україні — супровід з перекладачем</li>
-        <li data-tr>🚗 Ukrayna'da Türk ehliyeti çevirisi ve dönüşüm süreçlerinde destek</li>
-        <li data-ua>🚗 Переклад турецьких водійських прав в Україні та підтримка у процесі обміну</li>
-        <li data-tr>🆘 Türkiye veya Ukrayna'da karşılaşılan bürokratik sorunlarda bilgi ve yönlendirme desteği</li>
-        <li data-ua>🆘 Інформаційна та довідкова підтримка при бюрократичних труднощах у Туреччині або Україні</li>
-        <li data-tr>🚗 Türkiye ve Ukrayna'da araç sigortası ve kasko süreçlerinde rehberlik ve hizmet desteği</li>
-        <li data-ua>🚗 Підтримка та консультації щодо автострахування та КАСКО в Туреччині та Україні</li>
-        <li data-tr>🧾 Ukrayna'da muhasebe hizmeti — mali kayıtlar, raporlama ve danışmanlık</li>
-        <li data-ua>🧾 Бухгалтерські послуги в Україні — фінансовий облік, звітність та консультації</li>
-        <li data-tr>🏢 Ukrayna'da şirket kuruluşu — tescil, izinler ve resmi süreç takibi</li>
-        <li data-ua>🏢 Відкриття компанії в Україні — реєстрація, дозволи та офіційний супровід</li>
-        <li data-tr>🔒 Ukrayna'da şirket kapanışı — tasfiye, belge ve yasal süreç yönetimi</li>
-        <li data-ua>🔒 Закриття компанії в Україні — ліквідація, документи та правове супроводження</li>
-        <li data-tr>🔄 Şirket süreç takibi — başvuru, onay ve resmi işlemlerin takip desteği</li>
-        <li data-ua>🔄 Супровід процесів компанії — відстеження заявок, дозволів та офіційних процедур</li>
-        <li data-tr>🔍 Ukrayna'da vergi borcu sorgusu — borcunuz var mı? Kontrol ve bilgilendirme desteği</li>
-        <li data-ua>🔍 Перевірка податкової заборгованості в Україні — чи є борги? Підтримка у перевірці та інформуванні</li>
-      </ul>
-    </div>
-
-    <div>
-      <div class="contact-form">
-        <h3 style="font-size:16px;font-weight:600;margin-bottom:20px;" data-tr>İletişim Formu</h3>
-        <h3 style="font-size:16px;font-weight:600;margin-bottom:20px;" data-ua>Форма Контакту</h3>
-
-        <div class="form-group">
-          <label data-tr>Ad Soyad / İsim</label>
-          <label data-ua>Ім'я та прізвище</label>
-          <input type="text" placeholder="..." id="f-name">
-        </div>
-        <div class="form-group">
-          <label data-tr>E-posta / Email</label>
-          <label data-ua>Електронна пошта</label>
-          <input type="email" placeholder="ornek@firma.com" id="f-email">
-        </div>
-        <div class="form-group">
-          <label data-tr>Konu</label>
-          <label data-ua>Тема</label>
-          <select id="f-topic-tr" data-tr>
-            <option value="">— Seçiniz —</option>
-            <option value="law-tr">⚖️ Türkiye'de Hukuki Destek</option>
-            <option value="law-ua">⚖️ Ukrayna'da Hukuki Destek</option>
-            <option value="translate">🌐 Tercüme Yardımı</option>
-            <option value="residence">🏠 Ukrayna'da Oturum Başvurusu</option>
-            <option value="license">🚗 Ehliyet Çevirisi / Dönüşümü</option>
-            <option value="bureaucracy">🆘 Bürokratik Sorun / Bilgi Desteği</option>
-            <option value="insurance">🚗 Sigorta / Kasko Desteği</option>
-            <option value="accounting">🧾 Muhasebe Hizmeti</option>
-            <option value="company-open">🏢 Şirket Kuruluşu</option>
-            <option value="company-close">🔒 Şirket Kapanışı</option>
-            <option value="tax">🔍 Vergi Borcu Sorgusu</option>
-            <option value="sponsor">📢 Sponsorluk / Reklam</option>
-            <option value="other">💬 Diğer</option>
-          </select>
-          <select id="f-topic-ua" data-ua>
-            <option value="">— Оберіть —</option>
-            <option value="law-tr">⚖️ Юридична підтримка в Туреччині</option>
-            <option value="law-ua">⚖️ Юридична підтримка в Україні</option>
-            <option value="translate">🌐 Допомога з перекладом</option>
-            <option value="residence">🏠 Заявка на проживання в Україні</option>
-            <option value="license">🚗 Переклад / обмін водійських прав</option>
-            <option value="bureaucracy">🆘 Бюрократичні труднощі / Інформація</option>
-            <option value="insurance">🚗 Страхування / КАСКО</option>
-            <option value="accounting">🧾 Бухгалтерські послуги</option>
-            <option value="company-open">🏢 Відкриття компанії</option>
-            <option value="company-close">🔒 Закриття компанії</option>
-            <option value="tax">🔍 Перевірка податкового боргу</option>
-            <option value="sponsor">📢 Спонсорство / Реклама</option>
-            <option value="other">💬 Інше</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label data-tr>Mesajınız</label>
-          <label data-ua>Ваше повідомлення</label>
-          <textarea id="f-msg" placeholder="..." rows="4"></textarea>
-        </div>
-        <button class="btn-submit" onclick="submitForm()" data-tr>GÖNDER →</button>
-        <button class="btn-submit" onclick="submitForm()" data-ua>НАДІСЛАТИ →</button>
-        <a class="telegram-btn" href="https://t.me/TurkUA_destek" target="_blank">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-          <span data-tr>Telegram ile Ulaşın</span>
-          <span data-ua>Написати у Telegram</span>
-        </a>
+    <!-- Hakkımızda -->
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px;">
+      <div style="font-family:'Orbitron',monospace;font-size:9px;letter-spacing:4px;color:var(--neon-blue);opacity:.7;margin-bottom:10px;">
+        <span data-tr>HAKKIMIZDA</span><span data-ua>ПРО НАС</span>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:12px;">TürkUA</div>
+      <p data-tr style="font-size:13px;color:rgba(200,200,255,.7);line-height:1.8;margin-bottom:10px;">
+        TürkUA, Türkiye ile Ukrayna arasında bilgiye ihtiyaç duyan herkese yönelik bağımsız bir bilgi platformudur.
+        Vize süreçleri, eğitim, ticaret ve güncel savaş gelişmeleri gibi kritik konularda doğru ve güncel bilgiyi tek çatı altında sunuyoruz.
+      </p>
+      <p data-ua style="font-size:13px;color:rgba(200,200,255,.7);line-height:1.8;margin-bottom:10px;">
+        TürkUA — незалежна інформаційна платформа для всіх, хто потребує інформації між Туреччиною та Україною.
+        Ми надаємо актуальні дані щодо віз, освіти, торгівлі та подій війни.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+        <span style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,243,255,0.07);border:1px solid rgba(0,243,255,0.15);color:rgba(200,200,255,.6);" data-tr>🇹🇷 Türkçe</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,243,255,0.07);border:1px solid rgba(0,243,255,0.15);color:rgba(200,200,255,.6);" data-tr>🇺🇦 Ukraynaca</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,243,255,0.07);border:1px solid rgba(0,243,255,0.15);color:rgba(200,200,255,.6);" data-ua>🇹🇷 Турецька</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,243,255,0.07);border:1px solid rgba(0,243,255,0.15);color:rgba(200,200,255,.6);" data-ua>🇺🇦 Українська</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,243,255,0.07);border:1px solid rgba(0,243,255,0.15);color:rgba(200,200,255,.6);" data-tr>🔄 6 saatte güncelleme</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,243,255,0.07);border:1px solid rgba(0,243,255,0.15);color:rgba(200,200,255,.6);" data-ua>🔄 Оновлення кожні 6 год</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,243,255,0.07);border:1px solid rgba(0,243,255,0.15);color:rgba(200,200,255,.6);">📡 7/24</span>
       </div>
     </div>
-  </div>
 
+    <!-- Sorumluluk Reddi -->
+    <div style="background:rgba(255,140,0,0.04);border:1px solid rgba(255,140,0,0.18);border-radius:14px;padding:24px;">
+      <div style="font-family:'Orbitron',monospace;font-size:9px;letter-spacing:4px;color:var(--neon-orange);opacity:.8;margin-bottom:10px;">
+        <span data-tr>SORUMLULUK REDDİ</span><span data-ua>ВІДМОВА ВІД ВІДПОВІДАЛЬНОСТІ</span>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:rgba(255,140,0,0.85);margin-bottom:12px;">
+        <span data-tr>⚠️ Önemli Uyarı</span><span data-ua>⚠️ Важливе Попередження</span>
+      </div>
+      <p data-tr style="font-size:13px;color:rgba(200,200,255,.65);line-height:1.8;margin-bottom:10px;">
+        Bu sitede yer alan tüm bilgiler <strong style="color:rgba(255,180,80,.8);">yalnızca bilgilendirme amaçlıdır</strong> ve resmi tavsiye niteliği taşımamaktadır.
+        Savaş olasılık tahminleri çeşitli analistlerin değerlendirmelerine dayalı olup kesin sonuç garantisi verilmez.
+        Vize, hukuki veya finansal konularda <strong style="color:rgba(255,180,80,.8);">yetkili makamların güncel bilgilerini</strong> takip ediniz.
+      </p>
+      <p data-ua style="font-size:13px;color:rgba(200,200,255,.65);line-height:1.8;margin-bottom:10px;">
+        Вся інформація на цьому сайті надається <strong style="color:rgba(255,180,80,.8);">виключно в інформаційних цілях</strong> і не є офіційною порадою.
+        Прогнози ймовірності засновані на оцінках аналітиків і не гарантують точного результату.
+        З питань віз, права та фінансів звертайтесь до <strong style="color:rgba(255,180,80,.8);">офіційних органів</strong>.
+      </p>
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,140,0,0.1);font-size:11px;color:rgba(200,200,255,.35);line-height:1.7;">
+        <span data-tr>TürkUA, içeriklerin doğruluğu veya güncelliği konusunda herhangi bir garanti vermemekte; bilgilerin kullanımından doğabilecek sonuçlardan sorumlu tutulamamaktadır.</span>
+        <span data-ua>TürkUA не несе відповідальності за наслідки використання інформації, розміщеної на сайті.</span>
+      </div>
+    </div>
+
+  </div>
 </div>
 </section>
-
 
 <!-- ══ FOOTER ══ -->
 <footer>
@@ -2468,6 +2435,14 @@ footer a { color:var(--text-muted); text-decoration:none; }
   <p style="margin-bottom:8px;">TürkUA &nbsp;·&nbsp; <span data-tr>Türkiye & Ukrayna Bilgi Merkezi</span><span data-ua>Інформаційний центр Туреччина & Україна</span></p>
   <p data-tr>Savaş olasılık tahminleri her 6 saatte güncellenir &nbsp;·&nbsp; Bu site bilgi amaçlıdır, resmi tavsiye değildir</p>
   <p data-ua>Прогнози імовірності оновлюються кожні 6 годин &nbsp;·&nbsp; Цей сайт є інформаційним, а не офіційною порадою</p>
+  <p style="margin-top:12px; font-size:11px;">
+    <a href="gizlilik-politikasi.html" data-tr style="color:rgba(200,200,255,0.4); margin-right:16px;">Gizlilik Politikası</a>
+    <a href="gizlilik-politikasi.html" data-ua style="color:rgba(200,200,255,0.4); margin-right:16px;">Політика Конфіденційності</a>
+    <a href="hakkimizda.html" data-tr style="color:rgba(200,200,255,0.4); margin-right:16px;">Hakkımızda</a>
+    <a href="hakkimizda.html" data-ua style="color:rgba(200,200,255,0.4); margin-right:16px;">Про Нас</a>
+    <span style="color:rgba(200,200,255,0.25);" data-tr>&copy; 2025 TürkUA. Tüm hakları saklıdır.</span>
+    <span style="color:rgba(200,200,255,0.25);" data-ua>&copy; 2025 TürkUA. Всі права захищені.</span>
+  </p>
 </div>
 </footer>
 
@@ -2933,6 +2908,13 @@ function renderNews() {
   if (items.length === 0) {
     grid.innerHTML = `<div style="color:var(--text-muted);font-size:13px;padding:20px 0;">${lang==='tr'?'Bu kategoride gelişme yok.':'Новини у цій категорії відсутні.'}</div>`;
   }
+  const newsUpEl = document.getElementById('newsLastUpdate');
+  if (newsUpEl && WAR_DATA.lastUpdate) {
+    const dt = new Date(WAR_DATA.lastUpdate);
+    const locale = lang === 'ua' ? 'uk-UA' : 'tr-TR';
+    const label = lang === 'ua' ? 'оновлено: ' : 'son güncelleme: ';
+    newsUpEl.textContent = label + dt.toLocaleString(locale, {day:'numeric', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit'});
+  }
 }
 
 function setCardProb(fillId, numId, labelId, prob, labelText) {
@@ -3012,7 +2994,7 @@ async function submitForm() {
   const submitBtn = document.querySelector('.btn-submit');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
   try {
-    const res = await fetch('https://formsubmit.co/ajax/demirgardas06@gmail.com', {
+    const res = await fetch('https://formsubmit.co/ajax/who.demir@gmail.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ _subject: 'TürkUA Danışmanlık — ' + topic, _template: 'table', _captcha: 'false', Ad_Soyad: name, Email: email, Konu: topic, Mesaj: msg })
@@ -3026,7 +3008,7 @@ async function submitForm() {
     } else { throw new Error(); }
   } catch(e) {
     const body = encodeURIComponent('Ad: ' + name + '\nKonu: ' + topic + '\n\n' + msg);
-    window.open('mailto:demirgardas06@gmail.com?subject=' + encodeURIComponent('TürkUA — ' + topic) + '&body=' + body, '_blank');
+    window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('TürkUA — ' + topic) + '&body=' + body, '_blank');
   } finally {
     if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
   }
@@ -3114,8 +3096,11 @@ function toggleLangBn() {
 }
 
 // ── Reklam Modal ──
-function openAdModal(name, size, desc) {
-  document.getElementById('modalSlotName').textContent = name + ' — ' + size;
+function openAdModal(name, size, desc, showSlotInfo) {
+  var show = showSlotInfo !== false;
+  var slotBox = document.getElementById('adSlotInfoBox');
+  if (slotBox) slotBox.style.display = show ? '' : 'none';
+  document.getElementById('modalSlotName').textContent = show ? (name + ' — ' + size) : name;
   document.getElementById('modalSlotBadge').textContent = size;
   document.getElementById('modalSlotDesc').textContent = desc;
   document.getElementById('adFormSection').style.display = '';
@@ -3209,7 +3194,7 @@ async function submitAdForm() {
   if (logoFile) fd.append('Logo_Gorseli', logoFile);
 
   try {
-    const res = await fetch('https://formsubmit.co/ajax/demirgardas06@gmail.com', {
+    const res = await fetch('https://formsubmit.co/ajax/who.demir@gmail.com', {
       method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
     });
     const data = await res.json();
@@ -3219,7 +3204,7 @@ async function submitAdForm() {
     } else { throw new Error(); }
   } catch(e) {
     const body = encodeURIComponent('Reklam Basvurusu\nKonum: ' + slot + '\nFirma: ' + name + '\nSektor: ' + sector + '\n' + contactLines.join('\n') + '\n\nMesaj:\n' + message);
-    window.open('mailto:demirgardas06@gmail.com?subject=' + encodeURIComponent('Reklam — ' + slot) + '&body=' + body, '_blank');
+    window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('Reklam — ' + slot) + '&body=' + body, '_blank');
     document.getElementById('adFormSection').style.display = 'none';
     document.getElementById('adSuccess').style.display = 'block';
   } finally {
@@ -3519,9 +3504,9 @@ async function submitAdForm() {
 
     <div id="adFormSection">
       <!-- Slot bilgisi -->
-      <div class="ad-slot-info">
-        <span class="ad-slot-badge" id="modalSlotBadge">—</span>
-        <span class="ad-slot-desc" id="modalSlotDesc">—</span>
+      <div class="promo-info-box" id="adSlotInfoBox">
+        <span class="promo-badge" id="modalSlotBadge">—</span>
+        <span class="promo-desc" id="modalSlotDesc">—</span>
       </div>
 
       <!-- Açıklama kutusu -->
@@ -3652,16 +3637,39 @@ async function submitAdForm() {
     <span class="bn-icon">💸</span>
     <span data-tr>Para</span><span data-ua>Гроші</span>
   </a>
-  <a href="#contact" onclick="setBottomActive(this)">
-    <span class="bn-icon">💬</span>
-    <span data-tr>İletişim</span><span data-ua>Контакт</span>
-  </a>
   <button class="bn-lang-toggle" id="bnLangToggle" onclick="toggleLangBn()" aria-label="Dil degistir">
     <span class="bn-icon" id="bnLangIcon">🇹🇷</span>
     <span id="bnLangLabel">TR</span>
   </button>
 </nav>
 
+
+<!-- ══ KORUMA ══ -->
+<script>
+(function(){
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  document.addEventListener('selectstart', function(e){ e.preventDefault(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'F12' || e.keyCode === 123){ e.preventDefault(); return false; }
+    if(e.ctrlKey || e.metaKey){
+      if(['u','U','s','S','a','A','c','C'].indexOf(e.key) > -1){ e.preventDefault(); return false; }
+      if(e.shiftKey && ['i','I','j','J','c','C'].indexOf(e.key) > -1){ e.preventDefault(); return false; }
+    }
+  });
+  var devOpen = false;
+  setInterval(function(){
+    if(window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160){
+      if(!devOpen){
+        devOpen = true;
+        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#060610;color:#00f3ff;font-family:monospace;font-size:18px;text-align:center;padding:40px;">⛔ Bu sayfa geliştirici araçları ile görüntülenemez.</div>';
+      }
+    } else { devOpen = false; }
+  }, 1000);
+  var s = document.createElement('style');
+  s.innerHTML = '* { -webkit-user-select:none!important; -moz-user-select:none!important; user-select:none!important; } input,textarea { -webkit-user-select:text!important; user-select:text!important; }';
+  document.head.appendChild(s);
+})();
+</script>
 </body>
 </html>
                                                                                                                                                                                                                                         

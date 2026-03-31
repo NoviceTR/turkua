@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hakkımızda — TürkUA</title>
+<meta name="description" content="TürkUA hakkında bilgi. Türkiye ile Ukrayna arasında köprü kuran bilgi platformu.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.turkua.net/hakkimizda.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;500;600&display=swap');
+:root {
+  --neon-blue: #00f3ff;
+  --neon-green: #00ff88;
+  --bg-dark: #060610;
+  --bg-card: #0d0d20;
+  --bg-card2: #111128;
+  --border: rgba(0,243,255,0.12);
+  --text: #e0e0f0;
+  --text-muted: rgba(200,200,255,0.5);
+  --accent-tr: #E30A17;
+  --accent-ua: #005BBB;
+  --accent-ua2: #FFD500;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  line-height: 1.8;
+}
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(rgba(0,243,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,243,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events:none; z-index:0;
+}
+nav {
+  position: sticky; top:0; z-index:200;
+  background: rgba(6,6,16,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex; align-items: center;
+  height: 60px; gap: 20px;
+}
+.nav-logo {
+  font-family: 'Orbitron', monospace;
+  font-size: 16px; font-weight:900;
+  background: linear-gradient(90deg, #fff, var(--neon-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+.nav-back {
+  margin-left: auto;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: color .2s, border-color .2s;
+}
+.nav-back:hover { color: var(--neon-blue); border-color: rgba(0,243,255,0.3); }
+.container {
+  position: relative; z-index:1;
+  max-width: 800px; margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+.page-label {
+  font-family: 'Orbitron', monospace;
+  font-size: 10px; letter-spacing: 6px;
+  color: var(--neon-blue); opacity: .7;
+  margin-bottom: 12px;
+}
+h1 {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, var(--neon-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px; line-height: 1.3;
+}
+.hero-sub {
+  font-size: 13px; color: var(--text-muted);
+  letter-spacing: 2px; margin-bottom: 48px;
+}
+/* Stat cards */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 40px 0;
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.stat-flag { font-size: 28px; margin-bottom: 8px; }
+.stat-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 22px; font-weight: 900;
+  color: var(--neon-blue);
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+/* Feature cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color .2s;
+}
+.feature-card:hover { border-color: rgba(0,243,255,0.3); }
+.feature-icon { font-size: 24px; margin-bottom: 10px; }
+.feature-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #fff; }
+.feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+/* Flag banner */
+.flag-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 40px 0;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.flag-stripe-tr {
+  width: 60px; height: 36px;
+  background: linear-gradient(to bottom, #E30A17 50%, #E30A17 50%);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.flag-stripe-ua {
+  width: 60px; height: 36px;
+  background: linear-gradient(to bottom, #005BBB 50%, #FFD500 50%);
+  border-radius: 4px;
+}
+.flag-connector {
+  font-family: 'Orbitron', monospace;
+  font-size: 18px; font-weight: 900;
+  color: var(--neon-blue);
+}
+.flag-text {
+  font-size: 13px; color: var(--text-muted);
+  text-align: center; margin-top: 8px;
+  letter-spacing: 1px;
+}
+/* Mission text */
+.mission-text {
+  font-size: 15px;
+  color: rgba(200,200,255,0.8);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+h2 {
+  font-size: 13px; font-weight: 600;
+  color: var(--neon-blue);
+  letter-spacing: 3px;
+  margin: 44px 0 16px;
+  text-transform: uppercase;
+}
+/* Contact card */
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+.contact-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,243,255,0.06);
+  font-size: 13px;
+}
+.contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+.contact-icon { font-size: 18px; width: 28px; text-align: center; flex-shrink: 0; }
+.contact-label { color: var(--text-muted); width: 100px; flex-shrink: 0; }
+.contact-value { color: var(--text); }
+.contact-value a { color: var(--neon-blue); text-decoration: none; }
+/* Disclaimer */
+.disclaimer {
+  background: rgba(255,140,0,0.04);
+  border: 1px solid rgba(255,140,0,0.15);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 12px;
+  color: rgba(200,200,255,0.5);
+  line-height: 1.7;
+  margin: 32px 0;
+}
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 11px;
+  color: rgba(200,200,255,0.25);
+  border-top: 1px solid var(--border);
+  position: relative; z-index:1;
+}
+footer a { color: rgba(200,200,255,0.4); text-decoration: none; margin: 0 10px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">TürkUA</a>
+  <a href="/" class="nav-back">← Ana Sayfa</a>
+</nav>
+
+<div class="container">
+
+  <div class="page-label">HAKKIMIZDA</div>
+  <h1>Türkiye ile Ukrayna Arasında Köprü</h1>
+  <p class="hero-sub">TürkUA — Bilgi, Bağlantı, Güvenilirlik</p>
+
+  <div class="flag-banner">
+    <div>
+      <div class="flag-stripe-tr">🇹🇷</div>
+    </div>
+    <div class="flag-connector">×</div>
+    <div>
+      <div class="flag-stripe-ua"></div>
+    </div>
+  </div>
+
+  <p class="mission-text">
+    <strong style="color:#fff;">TürkUA</strong>, Türkiye ile Ukrayna arasında bilgiye ihtiyaç duyan herkese yönelik bağımsız bir bilgi platformudur. Vize süreçleri, eğitim fırsatları, ticari bağlantılar ve güncel savaş gelişmeleri gibi kritik konularda doğru ve güncel bilgiyi tek çatı altında sunmayı hedefliyoruz.
+  </p>
+  <p class="mission-text">
+    Platform Türkçe ve Ukraynaca olarak iki dilde hizmet vermekte olup her iki ülkeden kullanıcıların kolayca erişebilmesi için tasarlanmıştır.
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-flag">🇹🇷</div>
+      <div class="stat-num">TR</div>
+      <div class="stat-label">Türkçe içerik</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-flag">🇺🇦</div>
+      <div class="stat-num">UA</div>
+      <div class="stat-label">Ukraynaca içerik</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-flag">🔄</div>
+      <div class="stat-num">6H</div>
+      <div class="stat-label">Güncelleme sıklığı</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-flag">📡</div>
+      <div class="stat-num">7/24</div>
+      <div class="stat-label">Canlı takip</div>
+    </div>
+  </div>
+
+  <h2>Ne Sunuyoruz</h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📡</div>
+      <div class="feature-title">Savaş Takibi</div>
+      <div class="feature-desc">Ukrayna-Rusya savaşının güncel gelişmeleri ve analistlerin değerlendirmeleri.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🗞️</div>
+      <div class="feature-title">Gündem & Haberler</div>
+      <div class="feature-desc">Türkiye-Ukrayna ilişkilerini etkileyen güncel haberler ve analizler.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛂</div>
+      <div class="feature-title">Vize Rehberi</div>
+      <div class="feature-desc">Ukrayna vizesi başvuru adımları, gerekli belgeler ve güncel bilgiler.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💸</div>
+      <div class="feature-title">Döviz & Para</div>
+      <div class="feature-desc">UAH/TRY kur bilgileri, para transferi yöntemleri ve pratik rehber.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎓</div>
+      <div class="feature-title">Eğitim</div>
+      <div class="feature-desc">Ukrayna üniversiteleri, denklik, burs ve öğrenci hayatı hakkında bilgiler.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🤝</div>
+      <div class="feature-title">Ticaret & İşbirliği</div>
+      <div class="feature-desc">Türkiye-Ukrayna ticari bağlantılar, lojistik ve iş fırsatları.</div>
+    </div>
+  </div>
+
+  <h2>İletişim</h2>
+
+  <div class="contact-card">
+    <div class="contact-row">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">Web sitesi</div>
+      <div class="contact-value"><a href="https://www.turkua.net">www.turkua.net</a></div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">📧</div>
+      <div class="contact-label">E-posta</div>
+      <div class="contact-value"><a href="mailto:info@turkua.net">info@turkua.net</a></div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">📢</div>
+      <div class="contact-label">Reklam</div>
+      <div class="contact-value"><a href="/">Ana sayfadan başvurabilirsiniz →</a></div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ <strong style="color:rgba(255,140,0,0.8);">Sorumluluk Reddi:</strong> TürkUA'da yer alan bilgiler yalnızca bilgilendirme amaçlıdır. Savaş olasılık tahminleri çeşitli analist görüşlerine dayanmakta olup resmi kaynak niteliği taşımamaktadır. Vize ve yasal konularda her zaman resmi makamların güncel bilgilerini takip ediniz.
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">Ana Sayfa</a>
+  <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+  <span>&copy; 2025 TürkUA. Tüm hakları saklıdır.</span>
+</footer>
+
+</body>
+</html>
