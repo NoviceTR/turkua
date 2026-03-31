@@ -2902,7 +2902,7 @@ async function submitForm() {
   const submitBtn = document.querySelector('.btn-submit');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
   try {
-    const res = await fetch('https://formsubmit.co/ajax/demirgardas06@gmail.com', {
+    const res = await fetch('https://formsubmit.co/ajax/who.demir@gmail.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ _subject: 'TürkUA Danışmanlık — ' + topic, _template: 'table', _captcha: 'false', Ad_Soyad: name, Email: email, Konu: topic, Mesaj: msg })
@@ -2916,7 +2916,7 @@ async function submitForm() {
     } else { throw new Error(); }
   } catch(e) {
     const body = encodeURIComponent('Ad: ' + name + '\nKonu: ' + topic + '\n\n' + msg);
-    window.open('mailto:demirgardas06@gmail.com?subject=' + encodeURIComponent('TürkUA — ' + topic) + '&body=' + body, '_blank');
+    window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('TürkUA — ' + topic) + '&body=' + body, '_blank');
   } finally {
     if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
   }
@@ -3102,7 +3102,7 @@ async function submitAdForm() {
   if (logoFile) fd.append('Logo_Gorseli', logoFile);
 
   try {
-    const res = await fetch('https://formsubmit.co/ajax/demirgardas06@gmail.com', {
+    const res = await fetch('https://formsubmit.co/ajax/who.demir@gmail.com', {
       method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
     });
     const data = await res.json();
@@ -3112,7 +3112,7 @@ async function submitAdForm() {
     } else { throw new Error(); }
   } catch(e) {
     const body = encodeURIComponent('Reklam Basvurusu\nKonum: ' + slot + '\nFirma: ' + name + '\nSektor: ' + sector + '\n' + contactLines.join('\n') + '\n\nMesaj:\n' + message);
-    window.open('mailto:demirgardas06@gmail.com?subject=' + encodeURIComponent('Reklam — ' + slot) + '&body=' + body, '_blank');
+    window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('Reklam — ' + slot) + '&body=' + body, '_blank');
     document.getElementById('adFormSection').style.display = 'none';
     document.getElementById('adSuccess').style.display = 'block';
   } finally {
