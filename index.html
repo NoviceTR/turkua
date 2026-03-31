@@ -1489,11 +1489,11 @@ footer a { color:var(--text-muted); text-decoration:none; }
   </ul>
   <div class="nav-right-group">
     <!-- Reklam iş birliği butonu -->
-    <a href="#sponsored" class="nav-ad-btn">
+    <button onclick="openAdModal('Reklam Başvurusu','','',false)" class="nav-ad-btn" style="font-family:inherit;font-size:inherit;">
       <span class="nav-ad-icon">📢</span>
       <span class="nav-ad-text" data-tr>Reklam İş Birliği</span>
       <span class="nav-ad-text" data-ua>Реклама</span>
-    </a>
+    </button>
 
     <!-- Dil toggle -->
     <div class="lang-toggle">
@@ -3004,8 +3004,11 @@ function toggleLangBn() {
 }
 
 // ── Reklam Modal ──
-function openAdModal(name, size, desc) {
-  document.getElementById('modalSlotName').textContent = name + ' — ' + size;
+function openAdModal(name, size, desc, showSlotInfo) {
+  var show = showSlotInfo !== false;
+  var slotBox = document.getElementById('adSlotInfoBox');
+  if (slotBox) slotBox.style.display = show ? '' : 'none';
+  document.getElementById('modalSlotName').textContent = show ? (name + ' — ' + size) : name;
   document.getElementById('modalSlotBadge').textContent = size;
   document.getElementById('modalSlotDesc').textContent = desc;
   document.getElementById('adFormSection').style.display = '';
@@ -3409,7 +3412,7 @@ async function submitAdForm() {
 
     <div id="adFormSection">
       <!-- Slot bilgisi -->
-      <div class="ad-slot-info">
+      <div class="ad-slot-info" id="adSlotInfoBox">
         <span class="ad-slot-badge" id="modalSlotBadge">—</span>
         <span class="ad-slot-desc" id="modalSlotDesc">—</span>
       </div>
