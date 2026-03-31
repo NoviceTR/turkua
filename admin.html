@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TürkUA — Admin Paneli</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #060610;
+  color: #e0e0f0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+header {
+  background: rgba(0,0,20,0.97);
+  border-bottom: 2px solid #005BBB;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 17px;
+  font-weight: 700;
+  color: #00f3ff;
+  letter-spacing: 2px;
+}
+
+.save-status {
+  font-size: 11px;
+  color: rgba(0,255,120,0.7);
+  letter-spacing: 1px;
+  min-width: 160px;
+}
+
+.btn-dl {
+  background: #005BBB;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-dl:hover { background: #0070e0; }
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.section {
+  background: #0d0d20;
+  border: 1px solid rgba(0,243,255,0.12);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #00f3ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,243,255,0.1);
+}
+
+.field-group { margin-bottom: 14px; }
+.field-group:last-child { margin-bottom: 0; }
+
+label {
+  display: block;
+  font-size: 11px;
+  color: rgba(180,180,255,0.55);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,243,255,0.18);
+  border-radius: 8px;
+  padding: 9px 13px;
+  color: #e0e0f0;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(0,243,255,0.45);
+  background: rgba(0,243,255,0.04);
+}
+
+select {
+  cursor: pointer;
+}
+select option { background: #0d0d20; }
+
+textarea { resize: vertical; min-height: 70px; line-height: 1.5; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media(max-width:600px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="range"] {
+  flex: 1;
+  height: 4px;
+  accent-color: #00f3ff;
+  cursor: pointer;
+}
+
+.slider-val {
+  background: rgba(0,243,255,0.1);
+  border: 1px solid rgba(0,243,255,0.25);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #00f3ff;
+  min-width: 58px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Dynamic item cards --- */
+.item-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.item-num {
+  font-size: 10px;
+  color: rgba(180,180,255,0.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.btn-del {
+  background: rgba(255,50,50,0.15);
+  color: #ff7070;
+  border: 1px solid rgba(255,50,50,0.25);
+  border-radius: 6px;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-del:hover { background: rgba(255,50,50,0.3); }
+
+.btn-add {
+  width: 100%;
+  background: rgba(0,243,255,0.06);
+  color: rgba(0,243,255,0.8);
+  border: 1px dashed rgba(0,243,255,0.25);
+  border-radius: 8px;
+  padding: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 4px;
+}
+.btn-add:hover { background: rgba(0,243,255,0.12); }
+
+.btn-auto-fetch {
+  background: linear-gradient(135deg, #ff8c00, #d45f00);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 14px;
+  transition: opacity .2s;
+}
+.btn-auto-fetch:hover { opacity: 0.85; }
+.btn-auto-fetch:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Auto-fetch modal */
+#fetchModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+#fetchModal.open { display: flex; }
+.fetch-modal-box {
+  background: #0d0d22;
+  border: 1px solid rgba(255,140,0,0.3);
+  border-radius: 14px;
+  padding: 28px;
+  width: 90%;
+  max-width: 680px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.fetch-modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff8c00;
+  letter-spacing: 1px;
+}
+.fetch-modal-note {
+  font-size: 11px;
+  color: rgba(255,180,80,0.55);
+  margin-top: -8px;
+}
+.fetch-items-list {
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+}
+.fetch-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: background .15s;
+}
+.fetch-item:hover { background: rgba(255,140,0,0.07); }
+.fetch-item input[type=checkbox] { margin-top: 2px; flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; accent-color: #ff8c00; }
+.fetch-item-content { flex: 1; }
+.fetch-item-date { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 4px; letter-spacing: .5px; }
+.fetch-item-text { font-size: 13px; color: #e0e0f0; line-height: 1.55; }
+.fetch-modal-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.fetch-status { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px; flex: 1; align-self: center; }
+.btn-fetch-add {
+  background: #005BBB;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.btn-fetch-add:hover { opacity: 0.85; }
+.btn-fetch-close {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-fetch-close:hover { background: rgba(255,255,255,0.14); }
+
+.type-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.type-btn {
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(180,180,255,0.4);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.5px;
+}
+.type-btn[data-active="true"][data-val="positive"] { background: rgba(0,255,120,0.15); border-color: rgba(0,255,120,0.4); color: #00ff88; }
+.type-btn[data-active="true"][data-val="negative"] { background: rgba(255,40,60,0.15); border-color: rgba(255,40,60,0.4); color: #ff5577; }
+.type-btn[data-active="true"][data-val="neutral"]  { background: rgba(180,180,255,0.1); border-color: rgba(180,180,255,0.25); color: #aabbee; }
+
+.bottom-bar {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.btn-dl-big {
+  background: linear-gradient(135deg, #005BBB, #0070e0);
+  color: white;
+  border: none;
+  padding: 16px 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 24px rgba(0,91,187,0.35);
+}
+.btn-dl-big:hover { opacity: 0.88; }
+
+.hint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(180,180,255,0.35);
+  line-height: 1.6;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(0,243,255,0.08);
+  border: 1px solid rgba(0,243,255,0.2);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 11px;
+  color: #00f3ff;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">🇺🇦 TürkUA ADMİN</div>
+    <div class="save-status" id="saveStatus">— otomatik kaydediliyor</div>
+  </div>
+  <button class="btn-dl" onclick="downloadDataJs()">💾 data.js İndir</button>
+</header>
+
+<div class="container">
+
+  <!-- ① OLASILIKLAR -->
+  <div class="section">
+    <div class="section-title">📊 Ateşkes / Bitiş Olasılığı</div>
+
+    <div class="field-group">
+      <label>🕐 Yarın olasılığı (%)</label>
+      <div class="slider-row">
+        <input type="range" id="prob1d" min="0" max="100" oninput="sliderMove(this,'prob1d_v')" onchange="autoSave()">
+        <div class="slider-val" id="prob1d_v">—</div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>📅 1 Ay içinde olasılık (%)</label>
+      <div class="slider-row">
+        <input type="range" id="prob1m" min="0" max="100" oninput="sliderMove(this,'prob1m_v')" onchange="autoSave()">
+        <div class="slider-val" id="prob1m_v">—</div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>📆 1 Yıl içinde olasılık (%)</label>
+      <div class="slider-row">
+        <input type="range" id="prob1y" min="0" max="100" oninput="sliderMove(this,'prob1y_v')" onchange="autoSave()">
+        <div class="slider-val" id="prob1y_v">—</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>🎯 Güven skoru (1–5)</label>
+        <div class="slider-row">
+          <input type="range" id="confidence" min="1" max="5" step="1" oninput="sliderMove(this,'confidence_v','')" onchange="autoSave()">
+          <div class="slider-val" id="confidence_v">—</div>
+        </div>
+      </div>
+      <div class="field-group">
+        <label>📈 Trend yüzdesi (%)</label>
+        <div class="slider-row">
+          <input type="range" id="trendPct" min="0" max="100" oninput="sliderMove(this,'trendPct_v')" onchange="autoSave()">
+          <div class="slider-val" id="trendPct_v">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>🕐 Son güncelleme tarihi & saati</label>
+      <input type="datetime-local" id="lastUpdate" onchange="autoSave()">
+    </div>
+  </div>
+
+  <!-- ② DURUM -->
+  <div class="section">
+    <div class="section-title">⚡ Durum Göstergeleri</div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>🇹🇷 Savaş durumu (TR)</label>
+        <input type="text" id="statusSavas_tr" placeholder="AKTİF" onchange="autoSave()">
+      </div>
+      <div class="field-group">
+        <label>🇺🇦 Savaş durumu (UA)</label>
+        <input type="text" id="statusSavas_ua" placeholder="АКТИВНА" onchange="autoSave()">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>🇹🇷 Müzakereler (TR)</label>
+        <input type="text" id="statusMuzakere_tr" placeholder="ASKIDA" onchange="autoSave()">
+      </div>
+      <div class="field-group">
+        <label>🇺🇦 Müzakereler (UA)</label>
+        <input type="text" id="statusMuzakere_ua" placeholder="ПРИЗУПИНЕНО" onchange="autoSave()">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>🇹🇷 Trend açıklaması (TR)</label>
+        <input type="text" id="trend_tr" placeholder="düşük / sabit" onchange="autoSave()">
+      </div>
+      <div class="field-group">
+        <label>🇺🇦 Trend açıklaması (UA)</label>
+        <input type="text" id="trend_ua" placeholder="низький / стабільний" onchange="autoSave()">
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ KART AÇIKLAMALARI -->
+  <div class="section">
+    <div class="section-title">🏷️ Kart Açıklamaları</div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>🇹🇷 "Yarın" kart notu (TR)</label>
+        <input type="text" id="label1d_tr" onchange="autoSave()">
+      </div>
+      <div class="field-group">
+        <label>🇺🇦 "Yarın" kart notu (UA)</label>
+        <input type="text" id="label1d_ua" onchange="autoSave()">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>🇹🇷 "1 Ay" kart notu (TR)</label>
+        <input type="text" id="label1m_tr" onchange="autoSave()">
+      </div>
+      <div class="field-group">
+        <label>🇺🇦 "1 Ay" kart notu (UA)</label>
+        <input type="text" id="label1m_ua" onchange="autoSave()">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>🇹🇷 "1 Yıl" kart notu (TR)</label>
+        <input type="text" id="label1y_tr" onchange="autoSave()">
+      </div>
+      <div class="field-group">
+        <label>🇺🇦 "1 Yıl" kart notu (UA)</label>
+        <input type="text" id="label1y_ua" onchange="autoSave()">
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ ANALİZ METNİ -->
+  <div class="section">
+    <div class="section-title">📝 Analiz Metni</div>
+    <div class="field-group">
+      <label>🇹🇷 Türkçe analiz</label>
+      <textarea id="reasoning_tr" rows="5" onchange="autoSave()"></textarea>
+    </div>
+    <div class="field-group">
+      <label>🇺🇦 Ukraynaca analiz</label>
+      <textarea id="reasoning_ua" rows="5" onchange="autoSave()"></textarea>
+    </div>
+  </div>
+
+  <!-- ⑤ SON GELİŞMELER -->
+  <div class="section">
+    <div class="section-title">📋 Son Gelişmeler <span style="font-size:11px;color:rgba(180,180,255,.35);font-weight:400;text-transform:none;">(harita üzerindeki olaylar listesi)</span></div>
+    <div id="developments-list"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+      <button class="btn-auto-fetch" onclick="autoFetchDevelopments(this)">🤖 Haberleri Otomatik Çek</button>
+      <button class="btn-add" style="margin-top:0;flex:1;" onclick="addItem('developments')">+ Yeni Gelişme Ekle</button>
+    </div>
+  </div>
+
+  <!-- Auto-fetch modal -->
+  <div id="fetchModal">
+    <div class="fetch-modal-box">
+      <div class="fetch-modal-title">🤖 Güncel Haberler — Seç ve Ekle</div>
+      <div class="fetch-modal-note">⚠️ Kaynak adları ve bağlantılar gösterilmez. Sadece özet metin eklenir.</div>
+      <div class="fetch-items-list" id="fetchItemsList">
+        <div style="text-align:center;color:rgba(255,255,255,0.3);padding:30px;">Yükleniyor…</div>
+      </div>
+      <div class="fetch-modal-footer">
+        <div class="fetch-status" id="fetchStatus"></div>
+        <button class="btn-fetch-close" onclick="closeFetchModal()">İptal</button>
+        <button class="btn-fetch-add" onclick="addSelectedFetchItems()">Seçilenleri Ekle</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ HABERLER -->
+  <div class="section">
+    <div class="section-title">📰 Haberler / Analizler <span style="font-size:11px;color:rgba(180,180,255,.35);font-weight:400;text-transform:none;">(sol kolondaki haber kartları)</span></div>
+    <div id="newsItems-list"></div>
+    <button class="btn-add" onclick="addItem('newsItems')">+ Yeni Haber Ekle</button>
+  </div>
+
+  <!-- ⑦ GÜNDEM HABERLERİ -->
+  <div class="section">
+    <div class="section-title">🔴 Gündem Haberleri <span style="font-size:11px;color:rgba(180,180,255,.35);font-weight:400;text-transform:none;">(üstteki ticker ve gündem bölümü)</span></div>
+    <div id="gundemNews-list"></div>
+    <button class="btn-add" onclick="addItem('gundemNews')">+ Yeni Gündem Haberi Ekle</button>
+    <div class="field-group" style="margin-top:16px;">
+      <label>🕐 Gündem son güncelleme</label>
+      <input type="datetime-local" id="gundemLastUpdate" onchange="autoSave()">
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <button class="btn-dl-big" onclick="downloadDataJs()">💾 data.js İndir</button>
+    <div class="hint">
+      İndirilen <span class="tag">data.js</span> dosyasını siteye yükleyin — sayfa otomatik güncellenir.<br>
+      Değişiklikler bu tarayıcıda <b>otomatik kaydedilir</b>, sayfayı kapatıp açsanız da kaybolmaz.
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────
+// VARSAYILAN VERİLER (ilk açılışta yüklenir)
+// ─────────────────────────────────────────────────────
+const DEFAULT = {
+  "prob1d": 2, "prob1m": 8, "prob1y": 34,
+  "confidence": 3, "trendPct": 30,
+  "lastUpdate": "2026-03-25T12:00",
+  "statusSavas":    { "tr": "AKTİF",       "ua": "АКТИВНА"     },
+  "statusMuzakere": { "tr": "ASKIDA",      "ua": "ПРИЗУПИНЕНО" },
+  "trend":          { "tr": "düşük / sabit","ua": "низький / стабільний" },
+  "label1d": { "tr": "Müzakereler askıda, çatışma sürüyor", "ua": "Переговори на паузі, бої тривають" },
+  "label1m": { "tr": "Sınırlı diplomatik momentum",         "ua": "Обмежений дипломатичний поступ"    },
+  "label1y": { "tr": "Trump & AB baskısı, olası pencere",   "ua": "Тиск Трампа і ЄС, можливе вікно"   },
+  "reasoning": {
+    "tr": "Kremlin, Amerikalı müzakerecilerin önceliklerinin değiştiğini gerekçe göstererek üçlü formatı dondurdu. Avrupa Konseyi 19 Mart'ta Rusya'yı tam ve koşulsuz ateşkese çağırdı. İngiltere ve Fransa olası barış durumunda Ukrayna topraklarına askeri üsler kurmayı taahhüt etti. Polymarket'te Mart sonuna kadar ateşkes olasılığı %1'in altında. Esir değişimleri devam ediyor ancak toprak sorunu çıkmazda.",
+    "ua": "Кремль заморозив тристоронній формат, посилаючись на зміну пріоритетів американських переговорників. Єврорада 19 березня закликала Росію до повного та безумовного припинення вогню. Великобританія і Франція зобов'язалися розмістити військові хаби на території України в разі миру. На Polymarket шанс на припинення вогню до кінця березня менше 1%. Обмін полоненими триває, але територіальне питання в глухому куті."
+  },
+  "developments": [
+    { "date":{"tr":"19 Mart 2026","ua":"19 березня 2026"}, "text":{"tr":"Kremlin sözcüsü Peskov: Üçlü müzakereler geçici olarak askıya alındı.","ua":"Речник Кремля Пєсков: Тристоронні переговори тимчасово призупинені."}, "impact":-2, "type":"negative" },
+    { "date":{"tr":"19 Mart 2026","ua":"19 березня 2026"}, "text":{"tr":"Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese çağırdı.","ua":"Єврорада закликала Росію до повного припинення вогню."}, "impact":1, "type":"positive" },
+    { "date":{"tr":"15 Mart 2026","ua":"15 березня 2026"}, "text":{"tr":"Kiev, Rusya ile daha fazla müzakere olasılığını değerlendireceğini açıkladı.","ua":"Київ заявив про оцінку можливості переговорів з Росією."}, "impact":1, "type":"positive" },
+    { "date":{"tr":"10 Mart 2026","ua":"10 березня 2026"}, "text":{"tr":"Cephe hattında her iki taraf da ilerleme iddia ediyor.","ua":"Обидві сторони заявляють про просування на лінії фронту."}, "impact":-1, "type":"negative" },
+    { "date":{"tr":"24 Şubat 2026","ua":"24 лютого 2026"}, "text":{"tr":"BM Genel Kurulu, acil ve koşulsuz ateşkes çağrısı yapan kararı kabul etti.","ua":"Генасамблея ООН ухвалила резолюцію з вимогою припинення вогню."}, "impact":1, "type":"positive" },
+    { "date":{"tr":"3 Şubat 2026","ua":"3 лютого 2026"}, "text":{"tr":"Ukrayna, Batılı ortaklarla çok aşamalı ateşkes planı üzerinde anlaştı.","ua":"Україна узгодила з партнерами план припинення вогню."}, "impact":2, "type":"positive" }
+  ],
+  "newsItems": [
+    { "category":"diplomatic","date":{"tr":"19 Mart 2026","ua":"19 березня 2026"},"title":{"tr":"ABD-Rusya-Ukrayna üçlü görüşmeleri askıya alındı","ua":"Тристоронні переговори США-Росія-Україна призупинені"},"body":{"tr":"Kremlin sözcüsü Peskov üçlü görüşme formatını dondurduklarını açıkladı.","ua":"Пєсков заявив про заморожування тристороннього формату."}, "impact":-2,"type":"negative" },
+    { "category":"diplomatic","date":{"tr":"19 Mart 2026","ua":"19 березня 2026"},"title":{"tr":"AB Rusya'ya tam ve koşulsuz ateşkes çağrısı yaptı","ua":"ЄС закликав Росію до повного припинення вогню"},"body":{"tr":"Avrupa Konseyi Rusya'yı ateşkese ve müzakerelere davet etti.","ua":"Єврорада закликала Росію до переговорів і припинення вогню."}, "impact":1,"type":"positive" },
+    { "category":"military","date":{"tr":"10 Mart 2026","ua":"10 березня 2026"},"title":{"tr":"Cephe hattında her iki taraf da ilerleme iddiasında","ua":"Обидві сторони заявляють про просування"},"body":{"tr":"Rus ve Ukraynalı yetkililer aynı anda cephe hattında ilerleme iddiasında bulundu.","ua":"Обидві сторони одночасно заявили про просування на фронті."}, "impact":-1,"type":"negative" },
+    { "category":"diplomatic","date":{"tr":"24 Şubat 2026","ua":"24 лютого 2026"},"title":{"tr":"BM: Savaşın 4. yılında acil ateşkes çağrısı","ua":"ООН: Заклик до припинення вогню на 4-й рік"},"body":{"tr":"BM Genel Kurulu acil ve koşulsuz ateşkes talep eden kararı kabul etti.","ua":"Генасамблея ООН ухвалила резолюцію про негайне припинення вогню."}, "impact":1,"type":"positive" },
+    { "category":"economic","date":{"tr":"3 Şubat 2026","ua":"3 лютого 2026"},"title":{"tr":"Ukrayna ve Batı çok aşamalı ateşkes planında uzlaştı","ua":"Україна і Захід узгодили план припинення вогню"},"body":{"tr":"Ukrayna çok aşamalı ateşkes planını onayladı.","ua":"Україна схвалила багаторівневий план припинення вогню."}, "impact":2,"type":"positive" },
+    { "category":"humanitarian","date":{"tr":"15 Mart 2026","ua":"15 березня 2026"},"title":{"tr":"6 milyon yerinden edilmiş kişi geri dönmek istiyor","ua":"6 млн переміщених осіб хочуть повернутися"},"body":{"tr":"BM mülteci ajansına göre 6 milyon kişi kalıcı ateşkes durumunda ülkelerine dönmeyi planlıyor.","ua":"Згідно з УВКБ ООН, 6 млн осіб планують повернутися у разі миру."}, "impact":0,"type":"neutral" }
+  ],
+  "gundemNews": [
+    { "category":"parliamentary","date":{"tr":"25 Mart 2026","ua":"25 березня 2026"},"title":{"tr":"Rada: Ulusal Direniş eğitimi yasalaştı","ua":"Рада ухвалила закон про спротив"},"body":{"tr":"Verkhovna Rada, okul ve üniversitelerde 'Ulusal Direniş Temelleri' dersini zorunlu kıldı.","ua":"Рада ухвалила обов'язковий предмет «Основи спротиву» в школах."},"url":"https://www.rada.gov.ua/en/news/News//191082.html","impact":1,"type":"positive" },
+    { "category":"economic","date":{"tr":"2026","ua":"2026"},"title":{"tr":"BMMYK: Ukrayna mültecileri için 614 milyon dolar","ua":"УВКБ ООН: $614 млн для біженців"},"body":{"tr":"BM Mülteciler Yüksek Komiserliği 614 milyon dolarlık çağrı başlattı.","ua":"УВКБ ООН оголосило запит на $614 млн для постраждалих."},"url":"https://data.unhcr.org/en/documents/download/120716","impact":1,"type":"positive" },
+    { "category":"economic","date":{"tr":"Şubat 2026","ua":"Лютий 2026"},"title":{"tr":"Ukrayna yeniden yapılanma maliyeti 588 milyar dolar","ua":"Вартість відновлення — $588 млрд"},"body":{"tr":"AB-Dünya Bankası raporu: Ukrayna'nın 10 yıllık yeniden yapılanma maliyeti 588 milyar dolar.","ua":"ЄС і Світовий банк: відновлення України коштуватиме $588 млрд."},"url":"https://enlargement.ec.europa.eu/news/updated-ukraine-recovery-and-reconstruction-needs-assessment-released-2026-02-23_en","impact":-1,"type":"negative" },
+    { "category":"economic","date":{"tr":"Mart 2026","ua":"Березень 2026"},"title":{"tr":"AB: Ukrayna enerji sektörü yeniden inşasına katılım","ua":"ЄС: відновлення енергетики України"},"body":{"tr":"AB, Ukrayna'nın enerji sektörünün yeniden inşasına katılacak.","ua":"ЄС візьме участь у відновленні енергосектору України."},"url":"https://www.president.gov.ua/en/news/yevrosoyuz-bratime-uchast-u-vidnovlenni-ta-onovlenni-zahistu-103109","impact":1,"type":"positive" },
+    { "category":"humanitarian","date":{"tr":"2026","ua":"2026"},"title":{"tr":"IOM: 2025'te 1 milyon kişiye ulaşıldı","ua":"МОМ: 1 млн осіб отримали допомогу"},"body":{"tr":"Uluslararası Göç Örgütü 2025'te 1 milyondan fazla kişiye ulaştı.","ua":"МОМ надала допомогу понад 1 млн осіб у 2025 р."},"url":"https://www.iom.int/news/over-1m-supported-2025-nearly-11m-still-need-assistance-ukraine","impact":0,"type":"neutral" }
+  ],
+  "gundemLastUpdate": "2026-03-26T01:16"
+};
+
+// ─────────────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────────────
+let DATA;
+
+function loadData() {
+  try {
+    const s = localStorage.getItem('turkua_admin_data');
+    DATA = s ? JSON.parse(s) : JSON.parse(JSON.stringify(DEFAULT));
+  } catch(e) {
+    DATA = JSON.parse(JSON.stringify(DEFAULT));
+  }
+}
+
+function saveData() {
+  localStorage.setItem('turkua_admin_data', JSON.stringify(DATA));
+  const el = document.getElementById('saveStatus');
+  el.textContent = '✓ Kaydedildi — ' + new Date().toLocaleTimeString('tr-TR');
+}
+
+// ─────────────────────────────────────────────────────
+// SLIDER HELPERS
+// ─────────────────────────────────────────────────────
+function sliderMove(input, valId, suffix) {
+  if (suffix === undefined) suffix = '%';
+  document.getElementById(valId).textContent = input.value + suffix;
+}
+
+// ─────────────────────────────────────────────────────
+// FORM → DATA
+// ─────────────────────────────────────────────────────
+function autoSave() {
+  DATA.prob1d      = +document.getElementById('prob1d').value;
+  DATA.prob1m      = +document.getElementById('prob1m').value;
+  DATA.prob1y      = +document.getElementById('prob1y').value;
+  DATA.confidence  = +document.getElementById('confidence').value;
+  DATA.trendPct    = +document.getElementById('trendPct').value;
+  DATA.lastUpdate  = document.getElementById('lastUpdate').value;
+
+  DATA.statusSavas.tr    = document.getElementById('statusSavas_tr').value;
+  DATA.statusSavas.ua    = document.getElementById('statusSavas_ua').value;
+  DATA.statusMuzakere.tr = document.getElementById('statusMuzakere_tr').value;
+  DATA.statusMuzakere.ua = document.getElementById('statusMuzakere_ua').value;
+  DATA.trend.tr          = document.getElementById('trend_tr').value;
+  DATA.trend.ua          = document.getElementById('trend_ua').value;
+
+  DATA.label1d.tr = document.getElementById('label1d_tr').value;
+  DATA.label1d.ua = document.getElementById('label1d_ua').value;
+  DATA.label1m.tr = document.getElementById('label1m_tr').value;
+  DATA.label1m.ua = document.getElementById('label1m_ua').value;
+  DATA.label1y.tr = document.getElementById('label1y_tr').value;
+  DATA.label1y.ua = document.getElementById('label1y_ua').value;
+
+  DATA.reasoning.tr = document.getElementById('reasoning_tr').value;
+  DATA.reasoning.ua = document.getElementById('reasoning_ua').value;
+
+  DATA.gundemLastUpdate = document.getElementById('gundemLastUpdate').value;
+
+  DATA.developments = readList('developments');
+  DATA.newsItems    = readList('newsItems');
+  DATA.gundemNews   = readList('gundemNews');
+
+  saveData();
+}
+
+function readList(name) {
+  const container = document.getElementById(name + '-list');
+  const cards = container.querySelectorAll('.item-card');
+  const items = [];
+  cards.forEach(card => {
+    const get = id => { const el = card.querySelector('[data-field="'+id+'"]'); return el ? el.value : ''; };
+    const item = {
+      date: { tr: get('date_tr'), ua: get('date_ua') },
+      type: card.dataset.type || 'neutral',
+      impact: parseInt(get('impact')) || 0
+    };
+    if (name === 'developments') {
+      item.text = { tr: get('text_tr'), ua: get('text_ua') };
+    } else {
+      item.category = get('category');
+      item.title = { tr: get('title_tr'), ua: get('title_ua') };
+      item.body  = { tr: get('body_tr'),  ua: get('body_ua')  };
+      if (name === 'gundemNews') item.url = get('url');
+    }
+    items.push(item);
+  });
+  return items;
+}
+
+// ─────────────────────────────────────────────────────
+// DATA → FORM (initial populate)
+// ─────────────────────────────────────────────────────
+function populateForm() {
+  const set = (id, val) => { const el = document.getElementById(id); if(el) el.value = val; };
+  const setSlider = (id, valId, val, suffix) => {
+    set(id, val);
+    document.getElementById(valId).textContent = val + (suffix !== undefined ? suffix : '%');
+  };
+
+  setSlider('prob1d',     'prob1d_v',     DATA.prob1d);
+  setSlider('prob1m',     'prob1m_v',     DATA.prob1m);
+  setSlider('prob1y',     'prob1y_v',     DATA.prob1y);
+  setSlider('confidence', 'confidence_v', DATA.confidence, '');
+  setSlider('trendPct',   'trendPct_v',   DATA.trendPct);
+  set('lastUpdate', DATA.lastUpdate ? DATA.lastUpdate.slice(0,16) : '');
+
+  set('statusSavas_tr',    DATA.statusSavas.tr);
+  set('statusSavas_ua',    DATA.statusSavas.ua);
+  set('statusMuzakere_tr', DATA.statusMuzakere.tr);
+  set('statusMuzakere_ua', DATA.statusMuzakere.ua);
+  set('trend_tr',          DATA.trend.tr);
+  set('trend_ua',          DATA.trend.ua);
+
+  set('label1d_tr', DATA.label1d.tr);
+  set('label1d_ua', DATA.label1d.ua);
+  set('label1m_tr', DATA.label1m.tr);
+  set('label1m_ua', DATA.label1m.ua);
+  set('label1y_tr', DATA.label1y.tr);
+  set('label1y_ua', DATA.label1y.ua);
+
+  set('reasoning_tr', DATA.reasoning.tr);
+  set('reasoning_ua', DATA.reasoning.ua);
+
+  set('gundemLastUpdate', DATA.gundemLastUpdate ? DATA.gundemLastUpdate.slice(0,16) : '');
+
+  renderList('developments', DATA.developments);
+  renderList('newsItems',    DATA.newsItems);
+  renderList('gundemNews',   DATA.gundemNews);
+}
+
+// ─────────────────────────────────────────────────────
+// DYNAMIC LIST RENDERING
+// ─────────────────────────────────────────────────────
+const CATEGORIES = {
+  diplomatic:   '🤝 Diplomatik',
+  military:     '⚔️ Askeri',
+  economic:     '💰 Ekonomik',
+  humanitarian: '🤲 İnsani',
+  parliamentary:'🏛️ Parlamento'
+};
+
+function renderList(name, items) {
+  const container = document.getElementById(name + '-list');
+  container.innerHTML = '';
+  (items || []).forEach((item, i) => renderItem(name, item, i));
+}
+
+function renderItem(name, item, index) {
+  const container = document.getElementById(name + '-list');
+  const card = document.createElement('div');
+  card.className = 'item-card';
+  card.dataset.type = item.type || 'neutral';
+
+  const typeButtons = ['positive','negative','neutral'].map(t =>
+    `<button class="type-btn" data-val="${t}" data-active="${item.type===t}" onclick="setType(this,'${name}')">${t==='positive'?'✅ Olumlu':t==='negative'?'❌Olumsuz':'➖ Nötr'}</button>`
+  ).join('');
+
+  const catOptions = Object.entries(CATEGORIES).map(([val,label]) =>
+    `<option value="${val}" ${item.category===val?'selected':''}>${label}</option>`
+  ).join('');
+
+  let extra = '';
+  if (name === 'developments') {
+    extra = `
+      <div class="grid-2">
+        <div class="field-group"><label>🇹🇷 Olay metni (TR)</label><textarea data-field="text_tr" rows="2" onchange="autoSave()">${esc(item.text?.tr||'')}</textarea></div>
+        <div class="field-group"><label>🇺🇦 Olay metni (UA)</label><textarea data-field="text_ua" rows="2" onchange="autoSave()">${esc(item.text?.ua||'')}</textarea></div>
+      </div>`;
+  } else {
+    extra = `
+      <div class="field-group">
+        <label>Kategori</label>
+        <select data-field="category" onchange="autoSave()"><option value="">Seç...</option>${catOptions}</select>
+      </div>
+      <div class="grid-2">
+        <div class="field-group"><label>🇹🇷 Başlık (TR)</label><input type="text" data-field="title_tr" value="${esc(item.title?.tr||'')}" onchange="autoSave()"></div>
+        <div class="field-group"><label>🇺🇦 Başlık (UA)</label><input type="text" data-field="title_ua" value="${esc(item.title?.ua||'')}" onchange="autoSave()"></div>
+      </div>
+      <div class="grid-2">
+        <div class="field-group"><label>🇹🇷 İçerik (TR)</label><textarea data-field="body_tr" rows="2" onchange="autoSave()">${esc(item.body?.tr||'')}</textarea></div>
+        <div class="field-group"><label>🇺🇦 İçerik (UA)</label><textarea data-field="body_ua" rows="2" onchange="autoSave()">${esc(item.body?.ua||'')}</textarea></div>
+      </div>
+      ${name==='gundemNews'?`<div class="field-group"><label>🔗 Kaynak URL</label><input type="url" data-field="url" value="${esc(item.url||'')}" onchange="autoSave()"></div>`:''}`;
+  }
+
+  card.innerHTML = `
+    <div class="item-header">
+      <span class="item-num">#${index+1}</span>
+      <button class="btn-del" onclick="deleteItem(this,'${name}')">Sil ✕</button>
+    </div>
+    <div class="grid-2">
+      <div class="field-group"><label>🇹🇷 Tarih (TR)</label><input type="text" data-field="date_tr" value="${esc(item.date?.tr||'')}" placeholder="19 Mart 2026" onchange="autoSave()"></div>
+      <div class="field-group"><label>🇺🇦 Tarih (UA)</label><input type="text" data-field="date_ua" value="${esc(item.date?.ua||'')}" placeholder="19 березня 2026" onchange="autoSave()"></div>
+    </div>
+    ${extra}
+    <div class="field-group" style="margin-top:6px">
+      <label>Etki (-3 ... +3)</label>
+      <div class="slider-row">
+        <input type="range" data-field="impact" min="-3" max="3" step="1" value="${item.impact||0}" oninput="this.nextElementSibling.textContent=this.value" onchange="autoSave()">
+        <div class="slider-val">${item.impact||0}</div>
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Tür</label>
+      <div class="type-row">${typeButtons}</div>
+    </div>`;
+
+  container.appendChild(card);
+}
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function setType(btn, listName) {
+  const card = btn.closest('.item-card');
+  const val = btn.dataset.val;
+  card.dataset.type = val;
+  card.querySelectorAll('.type-btn').forEach(b => b.dataset.active = (b.dataset.val === val));
+  autoSave();
+}
+
+function deleteItem(btn, listName) {
+  if (!confirm('Bu kaydı silmek istediğinizden emin misiniz?')) return;
+  btn.closest('.item-card').remove();
+  autoSave();
+  // Re-number
+  document.querySelectorAll('#' + listName + '-list .item-num').forEach((el,i) => el.textContent = '#'+(i+1));
+}
+
+function addItem(listName) {
+  const emptyDev  = { date:{tr:'',ua:''}, text:{tr:'',ua:''}, type:'neutral', impact:0 };
+  const emptyNews = { category:'', date:{tr:'',ua:''}, title:{tr:'',ua:''}, body:{tr:'',ua:''}, type:'neutral', impact:0 };
+  const emptyGun  = { category:'', date:{tr:'',ua:''}, title:{tr:'',ua:''}, body:{tr:'',ua:''}, url:'', type:'neutral', impact:0 };
+
+  const template = listName==='developments' ? emptyDev : listName==='newsItems' ? emptyNews : emptyGun;
+  const count = document.querySelectorAll('#'+listName+'-list .item-card').length;
+  renderItem(listName, template, count);
+  // Scroll to new card
+  const cards = document.querySelectorAll('#'+listName+'-list .item-card');
+  cards[cards.length-1].scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+// ─────────────────────────────────────────────────────
+// DOWNLOAD data.js
+// ─────────────────────────────────────────────────────
+function downloadDataJs() {
+  autoSave(); // sync form to DATA first
+
+  // Prepare clean export object with full data
+  const exportData = JSON.parse(JSON.stringify(DATA));
+  // Normalize datetime fields
+  if (exportData.lastUpdate && exportData.lastUpdate.length === 16) exportData.lastUpdate += ':00';
+  if (exportData.gundemLastUpdate && exportData.gundemLastUpdate.length === 16) exportData.gundemLastUpdate += ':00';
+
+  const content =
+    '// ============================================================\n' +
+    '// DATA.JS — TürkUA Savaş Takip Verileri\n' +
+    '// Son güncelleme: ' + new Date().toLocaleString('tr-TR') + '\n' +
+    '// ============================================================\n' +
+    'window.WAR_DATA = ' + JSON.stringify(exportData, null, 2) + ';\n';
+
+  const blob = new Blob([content], { type: 'application/javascript; charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'data.js';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}
+
+// ─────────────────────────────────────────────────────
+// AUTO-FETCH NEWS (RSS → Gelişme)
+// Kaynak adları ve bağlantılar hiçbir zaman kaydedilmez.
+// ─────────────────────────────────────────────────────
+const RSS_FEEDS = [
+  'https://feeds.bbci.co.uk/turkish/rss.xml',
+  'https://tr.euronews.com/rss?format=mrss'
+];
+
+let _fetchedItems = [];
+
+function _trMonth(d) {
+  const m = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  return d.getDate() + ' ' + m[d.getMonth()] + ' ' + d.getFullYear();
+}
+function _uaMonth(d) {
+  const m = ['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
+  return d.getDate() + ' ' + m[d.getMonth()] + ' ' + d.getFullYear();
+}
+function _stripSource(t) {
+  // Remove leading "Source Name:" or "Source Name –" patterns
+  return t.replace(/^[\w\sÇĞİÖŞÜçğışöşü]+\s*[-:–]\s*/u, '').trim();
+}
+function _stripHtml(t) {
+  return t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
+}
+function _truncWords(t, n) {
+  const w = t.split(/\s+/);
+  return w.length <= n ? t : w.slice(0, n).join(' ') + '…';
+}
+
+const UKRAINE_KEYWORDS = [
+  'ukrayna','ukraina','kiev','kyiv','kharkiv','odesa','mariupol',
+  'zelensky','zelenskyy','putin','kremlin','rusya','rusya\'nın',
+  'donbas','dnipro','zaporizhzhia','kherson','luhansk','donetsk',
+  'ateşkes','savaş','çatışma','bombardıman','füze','drone',
+  'nato','ukrayna\'ya','ukrayna\'nın','rus ','rus ordu','ukraynalı'
+];
+
+async function autoFetchDevelopments(btn) {
+  btn.disabled = true;
+  btn.textContent = '⏳ Yükleniyor…';
+  _fetchedItems = [];
+  document.getElementById('fetchItemsList').innerHTML =
+    '<div style="text-align:center;color:rgba(255,255,255,0.3);padding:30px;">Haberler getiriliyor…</div>';
+  document.getElementById('fetchStatus').textContent = '';
+  document.getElementById('fetchModal').classList.add('open');
+
+  const all = [];
+
+  for (const feedUrl of RSS_FEEDS) {
+    try {
+      const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' +
+                     encodeURIComponent(feedUrl) + '&count=15';
+      const resp = await fetch(apiUrl);
+      const json = await resp.json();
+      if (json.status !== 'ok' || !json.items) continue;
+
+      json.items.forEach(item => {
+        const rawTitle = _stripHtml(item.title || '');
+        const rawDesc  = _stripHtml(item.description || item.content || '');
+
+        // Filter: only Ukraine-related
+        const combined = (rawTitle + ' ' + rawDesc).toLowerCase();
+        const relevant = UKRAINE_KEYWORDS.some(k => combined.includes(k));
+        if (!relevant) return;
+
+        // Clean: no source name prefix, no URLs
+        const cleanTitle = _stripSource(rawTitle);
+        const cleanDesc  = _stripSource(rawDesc);
+
+        // Build 1-2 sentence summary
+        let summary = cleanTitle;
+        if (cleanDesc && cleanDesc.toLowerCase() !== cleanTitle.toLowerCase()) {
+          const sentence = cleanDesc.split(/[.!?]\s+/)[0].trim();
+          if (sentence && sentence.length > 20 && sentence.toLowerCase() !== cleanTitle.toLowerCase()) {
+            summary += '. ' + _truncWords(sentence, 25);
+          }
+        }
+        if (!summary.match(/[.!?]$/)) summary += '.';
+
+        const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
+        all.push({ dateTr: _trMonth(pubDate), dateUa: _uaMonth(pubDate), summary, _ts: +pubDate });
+      });
+    } catch(e) {
+      console.warn('RSS fetch error:', feedUrl, e);
+    }
+  }
+
+  // Sort newest first, deduplicate similar headlines
+  all.sort((a, b) => b._ts - a._ts);
+  const seen = [];
+  _fetchedItems = all.filter(item => {
+    const key = item.summary.toLowerCase().split(/\s+/).slice(0, 6).join(' ');
+    if (seen.some(s => s.includes(key) || key.includes(s))) return false;
+    seen.push(key);
+    return true;
+  }).slice(0, 12);
+
+  btn.disabled = false;
+  btn.textContent = '🤖 Haberleri Otomatik Çek';
+  _renderFetchItems();
+}
+
+function _renderFetchItems() {
+  const list = document.getElementById('fetchItemsList');
+  if (!_fetchedItems.length) {
+    list.innerHTML =
+      '<div style="text-align:center;color:rgba(255,140,0,0.6);padding:30px;">' +
+      '⚠️ Ukrayna ile ilgili haber şu an bulunamadı. Lütfen daha sonra tekrar deneyin.</div>';
+    document.getElementById('fetchStatus').textContent = '';
+    return;
+  }
+  list.innerHTML = '';
+  _fetchedItems.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'fetch-item';
+    div.innerHTML =
+      '<input type="checkbox" id="fi_' + i + '" data-idx="' + i + '">' +
+      '<label class="fetch-item-content" for="fi_' + i + '" style="cursor:pointer">' +
+        '<div class="fetch-item-date">' + esc(item.dateTr) + '</div>' +
+        '<div class="fetch-item-text">' + esc(item.summary) + '</div>' +
+      '</label>';
+    list.appendChild(div);
+  });
+  document.getElementById('fetchStatus').textContent = _fetchedItems.length + ' haber bulundu';
+}
+
+function addSelectedFetchItems() {
+  const checked = document.querySelectorAll('#fetchItemsList input[type=checkbox]:checked');
+  if (!checked.length) { alert('Lütfen en az bir haber seçin.'); return; }
+
+  const firstIdx = document.querySelectorAll('#developments-list .item-card').length;
+  checked.forEach(cb => {
+    const item = _fetchedItems[+cb.dataset.idx];
+    // Source URL intentionally not stored — summaries only
+    const devItem = {
+      date: { tr: item.dateTr, ua: item.dateUa },
+      text: { tr: item.summary, ua: '' },   // UA field left blank for manual translation
+      type: 'neutral',
+      impact: 0
+    };
+    const count = document.querySelectorAll('#developments-list .item-card').length;
+    renderItem('developments', devItem, count);
+  });
+
+  autoSave();
+  closeFetchModal();
+
+  // Scroll to first added card
+  const cards = document.querySelectorAll('#developments-list .item-card');
+  if (cards[firstIdx]) cards[firstIdx].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeFetchModal() {
+  document.getElementById('fetchModal').classList.remove('open');
+}
+
+// ─────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────
+loadData();
+populateForm();
+</script>
+</body>
+</html>
