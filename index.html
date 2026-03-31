@@ -122,7 +122,7 @@ section { padding: 60px 0; }
 section + section { border-top: 1px solid var(--border); }
 
 /* ── AD SLOTS ── */
-.ad-slot {
+.promo-slot {
   background: rgba(255,140,0,0.03);
   border: 1px dashed rgba(255,140,0,0.25);
   border-radius: 10px;
@@ -132,9 +132,9 @@ section + section { border-top: 1px solid var(--border); }
   min-height: 90px; width:100%;
   margin: 24px 0;
 }
-.ad-slot-leaderboard { min-height:90px; }
-.ad-slot-rectangle { min-height:260px; max-width:336px; }
-.ad-slot-banner { min-height: 60px; }
+.promo-leaderboard { min-height:90px; }
+.promo-rectangle { min-height:260px; max-width:336px; }
+.promo-banner { min-height: 60px; }
 
 /* ══════════════════════════════════════════
    HERO — WAR TRACKER
@@ -658,7 +658,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 .lang-toggle { margin-left: 0; }
 
-.nav-ad-btn {
+.nav-promo-btn {
   display: flex; align-items: center; gap: 6px;
   padding: 6px 12px; border-radius: 8px;
   border: 1px solid rgba(255,140,0,0.3);
@@ -666,33 +666,33 @@ footer a { color:var(--text-muted); text-decoration:none; }
   text-decoration: none; cursor: pointer;
   transition: all .2s; white-space: nowrap;
 }
-.nav-ad-btn:hover {
+.nav-promo-btn:hover {
   background: rgba(255,140,0,0.16);
   border-color: rgba(255,140,0,0.6);
   box-shadow: 0 0 12px rgba(255,140,0,0.2);
 }
-.nav-ad-icon { font-size: 14px; }
-.nav-ad-text { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--neon-orange); text-transform: uppercase; }
+.nav-promo-icon { font-size: 14px; }
+.nav-promo-text { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--neon-orange); text-transform: uppercase; }
 
 @media (max-width: 700px) {
-  .nav-ad-text { display: none; }
-  .nav-ad-btn { padding: 6px 8px; }
+  .nav-promo-text { display: none; }
+  .nav-promo-btn { padding: 6px 8px; }
 }
 
 
 /* ── İkili mid reklam ── */
-.ad-slot-double {
+.promo-double {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin: 24px 0;
 }
-.ad-slot-mid-half {
+.promo-mid-half {
   min-height: 250px;
   margin: 0;
 }
 @media (max-width: 600px) {
-  .ad-slot-double { grid-template-columns: 1fr; }
+  .promo-double { grid-template-columns: 1fr; }
 }
 
 
@@ -701,16 +701,16 @@ footer a { color:var(--text-muted); text-decoration:none; }
 ══════════════════════════════════════════ */
 
 /* Ad slot tıklanabilir overlay */
-.ad-slot {
+.promo-slot {
   position: relative;
   cursor: pointer;
   transition: border-color .25s, box-shadow .25s;
 }
-.ad-slot:hover {
+.promo-slot:hover {
   border-color: rgba(255,140,0,.5);
   box-shadow: 0 0 20px rgba(255,140,0,.12);
 }
-.ad-slot .ad-overlay {
+.promo-slot .promo-overlay {
   position: absolute; inset: 0;
   border-radius: 10px;
   background: rgba(255,140,0,.04);
@@ -720,8 +720,8 @@ footer a { color:var(--text-muted); text-decoration:none; }
   opacity: 0.85; transition: opacity .25s, background .25s;
   pointer-events: none;
 }
-.ad-slot:hover .ad-overlay { opacity: 1; background: rgba(255,140,0,.09); }
-.ad-overlay-btn {
+.promo-slot:hover .promo-overlay { opacity: 1; background: rgba(255,140,0,.09); }
+.promo-cta-btn {
   background: rgba(255,140,0,.18);
   border: 1px solid rgba(255,140,0,.5);
   border-radius: 8px; padding: 7px 18px;
@@ -729,7 +729,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
   pointer-events: none;
 }
-.ad-overlay-size {
+.promo-size-tag {
   font-family: 'Orbitron', monospace;
   font-size: 9px; color: rgba(255,140,0,.5);
   letter-spacing: 2px;
@@ -789,20 +789,20 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .ad-modal-close:hover { background: rgba(255,255,255,.12); color: #fff; }
 
 /* Boyut bilgi kutusu */
-.ad-slot-info {
+.promo-info-box {
   background: rgba(255,140,0,.06);
   border: 1px solid rgba(255,140,0,.2);
   border-radius: 8px; padding: 12px 14px;
   margin-bottom: 20px;
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
 }
-.ad-slot-badge {
+.promo-badge {
   font-family: 'Orbitron', monospace; font-size: 10px;
   color: var(--neon-orange); letter-spacing: 2px;
   background: rgba(255,140,0,.1); border: 1px solid rgba(255,140,0,.25);
   border-radius: 6px; padding: 4px 10px;
 }
-.ad-slot-desc { font-size: 11px; color: var(--text-muted); }
+.promo-desc { font-size: 11px; color: var(--text-muted); }
 
 /* Form içi */
 .ad-modal .form-group { margin-bottom: 14px; }
@@ -1311,7 +1311,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   }
   .nav-links a:active { background: rgba(0,243,255,0.08); border-color: rgba(0,243,255,.2); }
   .nav-right-group { margin-left: auto; gap: 6px; flex-shrink: 0; }
-  .nav-ad-btn { display: none; }
+  .nav-promo-btn { display: none; }
   .lang-btn { padding: 5px 10px; font-size: 11px; }
 
   /* SECTIONS */
@@ -1381,9 +1381,9 @@ footer a { color:var(--text-muted); text-decoration:none; }
   .form-row { grid-template-columns: 1fr !important; }
 
   /* AD SLOTS - mobilde de görünür kalır */
-  .ad-slot-leaderboard { min-height: 70px; }
-  .ad-slot-double { grid-template-columns: 1fr; }
-  .ad-slot-mid-half { min-height: 180px; }
+  .promo-leaderboard { min-height: 70px; }
+  .promo-double { grid-template-columns: 1fr; }
+  .promo-mid-half { min-height: 180px; }
 }
 
 @media (max-width: 420px) {
@@ -1489,10 +1489,10 @@ footer a { color:var(--text-muted); text-decoration:none; }
   </ul>
   <div class="nav-right-group">
     <!-- Reklam iş birliği butonu -->
-    <button onclick="openAdModal('Reklam Başvurusu','','',false)" class="nav-ad-btn" style="font-family:inherit;font-size:inherit;">
-      <span class="nav-ad-icon">📢</span>
-      <span class="nav-ad-text" data-tr>Reklam İş Birliği</span>
-      <span class="nav-ad-text" data-ua>Реклама</span>
+    <button onclick="openAdModal('Reklam Başvurusu','','',false)" class="nav-promo-btn" style="font-family:inherit;font-size:inherit;">
+      <span class="nav-promo-icon">📢</span>
+      <span class="nav-promo-text" data-tr>Reklam İş Birliği</span>
+      <span class="nav-promo-text" data-ua>Реклама</span>
     </button>
 
     <!-- Dil toggle -->
@@ -1519,9 +1519,9 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 <!-- ══ TOP AD ══ -->
 <div class="container">
-  <div class="ad-slot ad-slot-leaderboard" onclick="openAdModal('Üst Şerit','728×90 px','Sayfanın en üstünde, ziyaretçinin ilk gördüğü alan — maksimum görünürlük')">
+  <div class="promo-slot promo-leaderboard" onclick="openAdModal('Üst Şerit','728×90 px','Sayfanın en üstünde, ziyaretçinin ilk gördüğü alan — maksimum görünürlük')">
     <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-    <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">728 × 90 px</div></div>
+    <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">728 × 90 px</div></div>
   </div>
 </div>
 
@@ -1662,14 +1662,14 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 <!-- ══ MID AD (2'li) ══ -->
 <div class="container">
-  <div class="ad-slot-double">
-    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Orta Sol','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
+  <div class="promo-double">
+    <div class="promo-slot promo-mid-half" onclick="openAdModal('Orta Sol','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
       <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
     </div>
-    <div class="ad-slot ad-slot-mid-half" onclick="openAdModal('Orta Sağ','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
+    <div class="promo-slot promo-mid-half" onclick="openAdModal('Orta Sağ','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
       <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-      <div class="ad-overlay"><div class="ad-overlay-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="ad-overlay-size">300 × 250 px</div></div>
+      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
     </div>
   </div>
 </div>
@@ -2314,7 +2314,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <p class="section-sub" data-ua>Охопіть тисячі відвідувачів, які шукають інформацію між Туреччиною та Україною. Натисніть на площу нижче, щоб подати заявку.</p>
   </div>
   <div class="sponsored-grid">
-    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 1','Otobüs / Taşımacılık','Türkiye-Ukrayna arası otobüs, taşımacılık ve lojistik firmaları için ideal konum')">
+    <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 1','Otobüs / Taşımacılık','Türkiye-Ukrayna arası otobüs, taşımacılık ve lojistik firmaları için ideal konum')">
       <span style="font-size:32px;">🚌</span>
       <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Otobüs / Taşımacılık</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Автобус / Перевезення</div>
@@ -2323,7 +2323,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
         <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
       </div>
     </div>
-    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 2','Vize & Göç Acentesi','Vize danışmanları, göç acenteleri ve hukuk büroları için özel konum')">
+    <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 2','Vize & Göç Acentesi','Vize danışmanları, göç acenteleri ve hukuk büroları için özel konum')">
       <span style="font-size:32px;">✈️</span>
       <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Vize &amp; Göç Acentesi</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Візове &amp; Міграційне Агентство</div>
@@ -2332,7 +2332,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
         <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
       </div>
     </div>
-    <div class="sponsor-slot ad-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 3','Ticaret / Lojistik','İki ülke arasında ticaret ve lojistik hizmeti veren firmalar için')">
+    <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 3','Ticaret / Lojistik','İki ülke arasında ticaret ve lojistik hizmeti veren firmalar için')">
       <span style="font-size:32px;">🤝</span>
       <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Ticaret / Lojistik</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Торгівля / Логістика</div>
@@ -3412,9 +3412,9 @@ async function submitAdForm() {
 
     <div id="adFormSection">
       <!-- Slot bilgisi -->
-      <div class="ad-slot-info" id="adSlotInfoBox">
-        <span class="ad-slot-badge" id="modalSlotBadge">—</span>
-        <span class="ad-slot-desc" id="modalSlotDesc">—</span>
+      <div class="promo-info-box" id="adSlotInfoBox">
+        <span class="promo-badge" id="modalSlotBadge">—</span>
+        <span class="promo-desc" id="modalSlotDesc">—</span>
       </div>
 
       <!-- Açıklama kutusu -->
