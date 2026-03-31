@@ -1424,6 +1424,15 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .bottom-nav a .bn-icon { font-size: 20px; line-height: 1; }
 .bottom-nav a:active,
 .bottom-nav a.active { color: var(--neon-blue); background: rgba(0,243,255,0.08); }
+.bn-lang-toggle {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  color: rgba(200,200,255,0.5); background: none; border: none; cursor: pointer;
+  font-size: 9px; letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 6px 8px; border-radius: 10px; transition: color .2s, background .2s;
+  min-width: 52px; text-align: center; -webkit-tap-highlight-color: transparent; font-family: inherit;
+}
+.bn-lang-toggle .bn-icon { font-size: 20px; line-height: 1; }
+.bn-lang-toggle:active { color: var(--neon-green); background: rgba(0,255,136,0.08); }
 
 @media (max-width: 768px) {
   .bottom-nav { display: flex; }
@@ -1466,7 +1475,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 <!-- ══ NAVBAR ══ -->
 <nav>
-  <div class="nav-logo">TürkUA</div>
+  <a class="nav-logo" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="text-decoration:none;cursor:pointer;">TürkUA</a>
   <button class="hamburger" id="hamburgerBtn" aria-label="Menü" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
   </button>
@@ -1526,7 +1535,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   <div class="hero-label" data-tr>▶ CANLI TAKİP SİSTEMİ — HER 6 SAATTE GÜNCELLENİR ◀</div>
   <div class="hero-label" data-ua>▶ СИСТЕМА ВІДСТЕЖЕННЯ В РЕАЛЬНОМУ ЧАСІ — ОНОВЛЕННЯ КОЖНІ 6 ГОДИН ◀</div>
 
-  <h1 class="hero-title" data-tr>UKRAYNA–RUSYA SAVAŞI<br>ATEŞKES & BİTİŞ OLASILIĞI</h1>
+  <h1 class="hero-title" data-tr>RUSYA–UKRAYNA SAVAŞI<br>ATEŞKES & BİTİŞ OLASILIĞI</h1>
   <h1 class="hero-title" data-ua>ВІЙНА УКРАЇНА–РОСІЯ<br>ЙМОВІРНІСТЬ ЗАВЕРШЕННЯ</h1>
 
   <p class="hero-sub" data-tr>YARIN • 1 AY • 1 YIL — CANLI TAHMİN</p>
@@ -2207,12 +2216,8 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-rate-val" id="rate-UAH-TRY" style="color:var(--neon-blue);font-weight:600;">—</span>
         </div>
         <div class="money-rate-row">
-          <span class="money-rate-pair">UAH → USD</span>
+          <span class="money-rate-pair">USD → UAH</span>
           <span class="money-rate-val" id="rate-UAH-USD" style="color:var(--neon-green);font-weight:600;">—</span>
-        </div>
-        <div style="margin-top:8px;font-size:10px;color:var(--text-muted);">
-          <span data-tr>Kaynak: open.er-api.com · 6 saatte bir güncellenir</span>
-          <span data-ua>Джерело: open.er-api.com · оновлення кожні 6 годин</span>
         </div>
       </div>
     </div>
@@ -2305,7 +2310,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <div class="section-badge"><span class="dot"></span><span data-tr>REKLAM ALANLARI</span><span data-ua>РЕКЛАМНІ ПЛОЩІ</span></div>
     <h2 class="section-title" data-tr>Hedef Kitlenize Doğrudan Ulaşın</h2>
     <h2 class="section-title" data-ua>Зв'яжіться Напряму з Вашою Аудиторією</h2>
-    <p class="section-sub" data-tr>Türkiye ve Ukrayna arasında bilgi arayan binlerce ziyaretçiye ulaşın. Aşağıdaki alanlara tıklayarak başvurun.</p>
+    <p class="section-sub" data-tr>TürkUA, Türkiye–Ukrayna ve Ukrayna–Türkiye arasında bilgi ve hizmet arayan binlerce kişiye ulaşan bir platformdur. Reklam alanı satın alarak hedef kitlenize doğrudan ulaşabilirsiniz. Başvuru formunu doldurun, 24 saat içinde size dönelim.</p>
     <p class="section-sub" data-ua>Охопіть тисячі відвідувачів, які шукають інформацію між Туреччиною та Україною. Натисніть на площу нижче, щоб подати заявку.</p>
   </div>
   <div class="sponsored-grid">
@@ -2383,8 +2388,6 @@ footer a { color:var(--text-muted); text-decoration:none; }
         <li data-ua>🔄 Супровід процесів компанії — відстеження заявок, дозволів та офіційних процедур</li>
         <li data-tr>🔍 Ukrayna'da vergi borcu sorgusu — borcunuz var mı? Kontrol ve bilgilendirme desteği</li>
         <li data-ua>🔍 Перевірка податкової заборгованості в Україні — чи є борги? Підтримка у перевірці та інформуванні</li>
-        <li data-tr>📢 Sponsorlu içerik ve reklam yerleşimi</li>
-        <li data-ua>📢 Спонсорський контент та розміщення реклами</li>
       </ul>
     </div>
 
@@ -2997,17 +3000,36 @@ function render() {
 }
 
 // ── Form ──
-function submitForm() {
+async function submitForm() {
   const name  = document.getElementById('f-name').value.trim();
   const email = document.getElementById('f-email').value.trim();
-  const lang = document.documentElement.getAttribute('data-lang') || 'tr';
+  const lang  = document.documentElement.getAttribute('data-lang') || 'tr';
   const topic = (document.getElementById('f-topic-' + lang) || {}).value || '';
   const msg   = document.getElementById('f-msg').value.trim();
   if (!name || !email || !msg) {
     alert('Lütfen tüm alanları doldurunuz. / Будь ласка, заповніть усі поля.'); return;
   }
-  // Replace with real form handler (Formspree, EmailJS, etc.)
-  alert('Mesajınız alındı! En kısa sürede dönüş yapacağız.\nПовідомлення отримано! Ми зв\'яжемося з вами найближчим часом.');
+  const submitBtn = document.querySelector('.btn-submit');
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/demirgardas06@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ _subject: 'TürkUA Danışmanlık — ' + topic, _template: 'table', _captcha: 'false', Ad_Soyad: name, Email: email, Konu: topic, Mesaj: msg })
+    });
+    const data = await res.json();
+    if (data.success === 'true' || data.success === true) {
+      alert('Mesajınız alındı! En kısa sürede dönüş yapacağız.\nПовідомлення отримано!');
+      document.getElementById('f-name').value = '';
+      document.getElementById('f-email').value = '';
+      document.getElementById('f-msg').value = '';
+    } else { throw new Error(); }
+  } catch(e) {
+    const body = encodeURIComponent('Ad: ' + name + '\nKonu: ' + topic + '\n\n' + msg);
+    window.open('mailto:demirgardas06@gmail.com?subject=' + encodeURIComponent('TürkUA — ' + topic) + '&body=' + body, '_blank');
+  } finally {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+  }
 }
 
 // ── Lang switcher – re-render on change ──
@@ -3075,13 +3097,20 @@ if ('serviceWorker' in navigator) {
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.setAttribute('lang', lang === 'ua' ? 'uk' : 'tr');
-  // Navbar butonları
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   const btn = document.querySelector('.lang-btn.' + lang);
   if (btn) btn.classList.add('active');
-
+  const bnIcon = document.getElementById('bnLangIcon');
+  const bnLabel = document.getElementById('bnLangLabel');
+  if (bnIcon) bnIcon.textContent = lang === 'ua' ? '🇺🇦' : '🇹🇷';
+  if (bnLabel) bnLabel.textContent = lang === 'ua' ? 'UA' : 'TR';
   localStorage.setItem('turkua-lang', lang);
   render();
+}
+
+function toggleLangBn() {
+  const current = document.documentElement.getAttribute('data-lang') || 'tr';
+  setLang(current === 'tr' ? 'ua' : 'tr');
 }
 
 // ── Reklam Modal ──
@@ -3137,7 +3166,7 @@ function selectContactTab(type, btn) {
   document.getElementById('ad-contact-value').value = '';
 }
 
-function submitAdForm() {
+async function submitAdForm() {
   const name      = document.getElementById('ad-name').value.trim();
   const whatsapp  = document.getElementById('ad-whatsapp').value.trim();
   const viber     = document.getElementById('ad-viber').value.trim();
@@ -3148,8 +3177,8 @@ function submitAdForm() {
   const message   = document.getElementById('ad-message').value.trim();
   const slot      = document.getElementById('modalSlotName').textContent;
   const errBox    = document.getElementById('ad-contact-error');
+  const submitBtn = document.querySelector('.ad-modal-submit');
 
-  // En az 2 iletişim kanalı zorunlu
   const filled = [whatsapp, viber, telegram, email].filter(v => v.length > 0);
   if (!name) { alert('Lütfen adınızı girin. / Будь ласка, введіть ім\'я.'); return; }
   if (filled.length < 2) {
@@ -3165,25 +3194,37 @@ function submitAdForm() {
   if (telegram)  contactLines.push('Telegram: ' + telegram);
   if (email)     contactLines.push('E-posta: '  + email);
 
-  const body = encodeURIComponent(
-    'Reklam Basvurusu\n' +
-    '================\n' +
-    'Konum: ' + slot + '\n' +
-    'Firma: '  + name + '\n' +
-    'Sektor: ' + sector + '\n' +
-    contactLines.join('\n') + '\n\n' +
-    'Mesaj:\n' + message
-  );
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
 
-  window.open(
-    'mailto:demirgardas06@gmail.com?subject=' +
-    encodeURIComponent('Reklam Basvurusu — ' + slot) +
-    '&body=' + body,
-    '_blank'
-  );
+  const fd = new FormData();
+  fd.append('_subject', 'TürkUA Reklam Başvurusu — ' + slot);
+  fd.append('_template', 'table');
+  fd.append('_captcha', 'false');
+  fd.append('Reklam_Konumu', slot);
+  fd.append('Firma_Adi', name);
+  fd.append('Sektor', sector);
+  fd.append('Iletisim', contactLines.join(' | '));
+  fd.append('Mesaj', message || '—');
+  const logoFile = document.getElementById('ad-logo').files && document.getElementById('ad-logo').files[0];
+  if (logoFile) fd.append('Logo_Gorseli', logoFile);
 
-  document.getElementById('adFormSection').style.display = 'none';
-  document.getElementById('adSuccess').style.display = 'block';
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/demirgardas06@gmail.com', {
+      method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
+    });
+    const data = await res.json();
+    if (data.success === 'true' || data.success === true) {
+      document.getElementById('adFormSection').style.display = 'none';
+      document.getElementById('adSuccess').style.display = 'block';
+    } else { throw new Error(); }
+  } catch(e) {
+    const body = encodeURIComponent('Reklam Basvurusu\nKonum: ' + slot + '\nFirma: ' + name + '\nSektor: ' + sector + '\n' + contactLines.join('\n') + '\n\nMesaj:\n' + message);
+    window.open('mailto:demirgardas06@gmail.com?subject=' + encodeURIComponent('Reklam — ' + slot) + '&body=' + body, '_blank');
+    document.getElementById('adFormSection').style.display = 'none';
+    document.getElementById('adSuccess').style.display = 'block';
+  } finally {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+  }
 }
 
 
@@ -3197,7 +3238,8 @@ function submitAdForm() {
     const el = id => document.getElementById(id);
     if (el('rate-TRY-UAH')) el('rate-TRY-UAH').textContent = '1 TL = ' + fmt(tryUah, 4) + ' ₴';
     if (el('rate-UAH-TRY')) el('rate-UAH-TRY').textContent = '1 ₴ = ' + fmt(uahTry, 4) + ' ₺';
-    if (el('rate-UAH-USD')) el('rate-UAH-USD').textContent = '1 ₴ = ' + fmt(uahUsd, 5) + ' $';
+    const usdUah = uahUsd ? 1 / uahUsd : null;
+    if (el('rate-UAH-USD')) el('rate-UAH-USD').textContent = '1 $ = ' + fmt(usdUah, 2) + ' ₴';
     if (el('rateStatus')) {
       const d = new Date(fetchedAt);
       const lang = document.documentElement.getAttribute('data-lang') || 'tr';
@@ -3606,10 +3648,6 @@ function submitAdForm() {
     <span class="bn-icon">🛂</span>
     <span data-tr>Vize</span><span data-ua>Віза</span>
   </a>
-  <a href="#trade" onclick="setBottomActive(this)">
-    <span class="bn-icon">🤝</span>
-    <span data-tr>Ticaret</span><span data-ua>Торгівля</span>
-  </a>
   <a href="#money" onclick="setBottomActive(this)">
     <span class="bn-icon">💸</span>
     <span data-tr>Para</span><span data-ua>Гроші</span>
@@ -3618,7 +3656,12 @@ function submitAdForm() {
     <span class="bn-icon">💬</span>
     <span data-tr>İletişim</span><span data-ua>Контакт</span>
   </a>
+  <button class="bn-lang-toggle" id="bnLangToggle" onclick="toggleLangBn()" aria-label="Dil degistir">
+    <span class="bn-icon" id="bnLangIcon">🇹🇷</span>
+    <span id="bnLangLabel">TR</span>
+  </button>
 </nav>
 
 </body>
 </html>
+                                                                                                                                                                                                                                        
