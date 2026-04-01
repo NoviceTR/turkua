@@ -2828,20 +2828,34 @@ async function submitAdForm() {
   const logoFile = document.getElementById('ad-logo').files && document.getElementById('ad-logo').files[0];
   if (logoFile) fd.append('Logo_Gorseli', logoFile);
 
+  // _replyto ekle (FormSubmit için)
+  if (email) fd.append('_replyto', email);
+  fd.append('_cc', 'who.demir@gmail.com');
+
   try {
     const res = await fetch('https://formsubmit.co/ajax/who.demir@gmail.com', {
       method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
     });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     if (data.success === 'true' || data.success === true) {
       document.getElementById('adFormSection').style.display = 'none';
       document.getElementById('adSuccess').style.display = 'block';
-    } else { throw new Error(); }
+    } else {
+      throw new Error(data.message || 'Gönderim başarısız');
+    }
   } catch(e) {
-    const body = encodeURIComponent('Reklam Basvurusu\nKonum: ' + slot + '\nFirma: ' + name + '\nSektor: ' + sector + '\n' + contactLines.join('\n') + '\n\nMesaj:\n' + message);
-    window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('Reklam — ' + slot) + '&body=' + body, '_blank');
-    document.getElementById('adFormSection').style.display = 'none';
-    document.getElementById('adSuccess').style.display = 'block';
+    // Kullanıcıya net hata mesajı göster
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+    const errMsg = document.getElementById('ad-contact-error');
+    if (errMsg) {
+      errMsg.textContent = 'Form gönderilemedi. Lütfen doğrudan e-posta gönderin: who.demir@gmail.com';
+      errMsg.style.display = 'block';
+      errMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      alert('Form gönderilemedi. Lütfen doğrudan e-posta gönderin: who.demir@gmail.com');
+    }
+    return;
   } finally {
     if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
   }
