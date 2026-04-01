@@ -1,7 +1,6 @@
 // ============================================================
 // DATA.JS — TürkUA Savaş Takip Verileri
 // Otomatik güncelleme: Zamanlanmış görev tarafından yönetilir.
-// Admin paneli: admin.html
 // ============================================================
 // DATA_START
 window.WAR_DATA = {
@@ -9,7 +8,7 @@ window.WAR_DATA = {
   "prob1m": 8,
   "prob1y": 34,
   "confidence": 3,
-  "lastUpdate": "2026-03-25T12:00:00",
+  "lastUpdate": "2026-04-01T14:33:26",
   "trendPct": 30,
   "statusSavas": {
     "tr": "AKTİF",
@@ -40,6 +39,42 @@ window.WAR_DATA = {
     "ua": "Кремль заморозив тристоронній формат, посилаючись на зміну пріоритетів американських переговорників. Єврорада 19 березня закликала Росію до повного та безумовного припинення вогню. Великобританія і Франція зобов'язалися розмістити військові хаби на території України в разі миру. На Polymarket шанс на припинення вогню до кінця березня менше 1%. Обмін полоненими триває, але територіальне питання в глухому куті."
   },
   "developments": [
+    {
+      "date": {
+        "tr": "31 Mart 2026",
+        "ua": "31 березня 2026"
+      },
+      "text": {
+        "tr": "AB dış politika şefi Kaja Kallas ve 12 AB dışişleri bakanı Kyiv'e giderek Bucha katliamının 4. yıldönümünde Ukrayna'ya destek mesajı verdi.",
+        "ua": "Глава зовнішньої політики ЄС Кая Каллас і 12 міністрів закордонних справ ЄС прибули до Києва, щоб підтримати Україну у 4-у річницю трагедії Бучі."
+      },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "date": {
+        "tr": "Mart 2026",
+        "ua": "Березень 2026"
+      },
+      "text": {
+        "tr": "Macaristan'ın veto etmesi nedeniyle AB'nin 90 milyar Euro'luk Ukrayna Destek Kredisi bloke oldu. Macaristan, Drujba boru hattı anlaşmazlığını gerekçe gösterdi.",
+        "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд, посилаючись на суперечку щодо нафтопроводу «Дружба»."
+      },
+      "impact": -2,
+      "type": "negative"
+    },
+    {
+      "date": {
+        "tr": "26 Mart 2026",
+        "ua": "26 березня 2026"
+      },
+      "text": {
+        "tr": "Zelenski, ABD'nin güvenlik garantileri konusundaki taleplerini kamuoyuyla paylaştı; toprak meselesi ana görüşme başlığı olmaya devam ediyor.",
+        "ua": "Зеленський оприлюднив вимоги США щодо гарантій безпеки; територіальне питання залишається головною темою переговорів."
+      },
+      "impact": -1,
+      "type": "negative"
+    },
     {
       "date": {
         "tr": "19 Mart 2026",
@@ -74,42 +109,6 @@ window.WAR_DATA = {
         "ua": "Київ заявив, що оцінюватиме можливість подальших переговорів з Росією."
       },
       "impact": 1,
-      "type": "positive"
-    },
-    {
-      "date": {
-        "tr": "10 Mart 2026",
-        "ua": "10 березня 2026"
-      },
-      "text": {
-        "tr": "Cephe hattında her iki taraf da ilerleme iddia ediyor. Putin, Rus kuvvetlerinin 'başarıyla ilerlediğini' söyledi.",
-        "ua": "На лінії фронту обидві сторони заявляють про просування. Путін заявив, що російські війська 'успішно просуваються'."
-      },
-      "impact": -1,
-      "type": "negative"
-    },
-    {
-      "date": {
-        "tr": "24 Şubat 2026",
-        "ua": "24 лютого 2026"
-      },
-      "text": {
-        "tr": "BM Genel Kurulu, savaşın 4. yıldönümünde acil ve koşulsuz ateşkes çağrısı yapan karar tasarısını kabul etti.",
-        "ua": "Генасамблея ООН ухвалила резолюцію з вимогою негайного та безумовного припинення вогню на 4-ту річницю війни."
-      },
-      "impact": 1,
-      "type": "positive"
-    },
-    {
-      "date": {
-        "tr": "3 Şubat 2026",
-        "ua": "3 лютого 2026"
-      },
-      "text": {
-        "tr": "Ukrayna, Batılı ortaklarla çok aşamalı ateşkes planı üzerinde anlaştı.",
-        "ua": "Україна узгодила з західними партнерами багаторівневий план припинення вогню."
-      },
-      "impact": 2,
       "type": "positive"
     }
   ],
@@ -220,7 +219,10 @@ window.WAR_DATA = {
   "gundemNews": [
     {
       "category": "diplomatic",
-      "date": { "tr": "27 Mart 2026", "ua": "27 березня 2026" },
+      "date": {
+        "tr": "27 Mart 2026",
+        "ua": "27 березня 2026"
+      },
       "title": {
         "tr": "BM Genel Kurulu ateşkes kararı aldı",
         "ua": "ГА ООН ухвалила резолюцію про припинення вогню"
@@ -235,14 +237,17 @@ window.WAR_DATA = {
     },
     {
       "category": "parliamentary",
-      "date": { "tr": "24 Mart 2026", "ua": "24 березня 2026" },
+      "date": {
+        "tr": "24 Mart 2026",
+        "ua": "24 березня 2026"
+      },
       "title": {
         "tr": "Rada: Milletvekilleri savaş koşullarına hazırlanıyor",
         "ua": "Рада: депутатам доручено готуватися до роботи в умовах війни"
       },
       "body": {
         "tr": "Verkhovna Rada, milletvekillerine olası acil durumlarda çalışmaya hazır olmalarını zorunlu kılan yeni bir prosedür benimsedi.",
-        "ua": "Верховна Рада ухвалила нову процедуру, яка зобов\'язує депутатів бути готовими до роботи в надзвичайних умовах."
+        "ua": "Верховна Рада ухвалила нову процедуру, яка зобов'язує депутатів бути готовими до роботи в надзвичайних умовах."
       },
       "url": "https://turkey.news-pravda.com/russia/2026/03/24/111800.html",
       "impact": 0,
@@ -250,7 +255,10 @@ window.WAR_DATA = {
     },
     {
       "category": "diplomatic",
-      "date": { "tr": "10 Mart 2026", "ua": "10 березня 2026" },
+      "date": {
+        "tr": "10 Mart 2026",
+        "ua": "10 березня 2026"
+      },
       "title": {
         "tr": "ABD arabuluculuğuyla barış görüşmeleri askıya alındı",
         "ua": "Мирні переговори за посередництва США призупинено"
@@ -265,7 +273,10 @@ window.WAR_DATA = {
     },
     {
       "category": "economic",
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
+      "date": {
+        "tr": "Mart 2026",
+        "ua": "Березень 2026"
+      },
       "title": {
         "tr": "ABD-Ukrayna Yatırım Fonu ilk yatırımını yaptı",
         "ua": "Американсько-український інвестфонд здійснив першу інвестицію"
@@ -280,7 +291,10 @@ window.WAR_DATA = {
     },
     {
       "category": "economic",
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
+      "date": {
+        "tr": "Mart 2026",
+        "ua": "Березень 2026"
+      },
       "title": {
         "tr": "EBRD: Ukrayna ekonomisi %2,5 büyüyecek",
         "ua": "ЄБРР: економіка України зросте на 2,5%"
@@ -295,7 +309,10 @@ window.WAR_DATA = {
     },
     {
       "category": "economic",
-      "date": { "tr": "26 Mart 2026", "ua": "26 березня 2026" },
+      "date": {
+        "tr": "26 Mart 2026",
+        "ua": "26 березня 2026"
+      },
       "title": {
         "tr": "Rada: Mali kriz uyarısı, 3,9 milyar Euro havada",
         "ua": "Рада: попередження про фінансову кризу, €3,9 млрд — під загрозою"
@@ -310,7 +327,10 @@ window.WAR_DATA = {
     },
     {
       "category": "parliamentary",
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
+      "date": {
+        "tr": "Mart 2026",
+        "ua": "Березень 2026"
+      },
       "title": {
         "tr": "Rada: Savaş döneminde seçim yapılamaz",
         "ua": "Рада: вибори під час воєнного стану неможливі"
@@ -325,7 +345,10 @@ window.WAR_DATA = {
     },
     {
       "category": "economic",
-      "date": { "tr": "6 Mart 2026", "ua": "6 березня 2026" },
+      "date": {
+        "tr": "6 Mart 2026",
+        "ua": "6 березня 2026"
+      },
       "title": {
         "tr": "Ukrayna enerji altyapısı: Tüm termik santraller hasar gördü",
         "ua": "Енергетика України: всі теплові станції пошкоджені"
@@ -340,7 +363,10 @@ window.WAR_DATA = {
     },
     {
       "category": "humanitarian",
-      "date": { "tr": "Şubat 2026", "ua": "Лютий 2026" },
+      "date": {
+        "tr": "Şubat 2026",
+        "ua": "Лютий 2026"
+      },
       "title": {
         "tr": "Dünya Bankası: Yeniden yapılanma 588 milyar dolar",
         "ua": "Світовий банк: відновлення коштуватиме $588 млрд"
@@ -355,7 +381,10 @@ window.WAR_DATA = {
     },
     {
       "category": "diplomatic",
-      "date": { "tr": "6 Ocak 2026", "ua": "6 січня 2026" },
+      "date": {
+        "tr": "6 Ocak 2026",
+        "ua": "6 січня 2026"
+      },
       "title": {
         "tr": "Paris zirvesi: Ukrayna'ya güvenlik güvenceleri tartışıldı",
         "ua": "Паризький саміт: обговорено гарантії безпеки для України"
