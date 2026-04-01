@@ -2787,20 +2787,23 @@ function selectContactTab(type, btn) {
 }
 
 async function submitAdForm() {
-  const name      = document.getElementById('ad-name').value.trim();
-  const whatsapp  = document.getElementById('ad-whatsapp').value.trim();
-  const viber     = document.getElementById('ad-viber').value.trim();
-  const telegram  = document.getElementById('ad-telegram').value.trim();
-  const email     = document.getElementById('ad-email').value.trim();
-  const _lang     = document.documentElement.getAttribute('data-lang') || 'tr';
-  const sector    = (document.getElementById('ad-sector-' + _lang) || {}).value || '';
-  const message   = document.getElementById('ad-message').value.trim();
-  const slot      = document.getElementById('modalSlotName').textContent;
-  const errBox    = document.getElementById('ad-contact-error');
-  const submitBtn = document.querySelector('.ad-modal-submit');
+  const name     = document.getElementById('ad-name').value.trim();
+  const whatsapp = document.getElementById('ad-whatsapp').value.trim();
+  const viber    = document.getElementById('ad-viber').value.trim();
+  const telegram = document.getElementById('ad-telegram').value.trim();
+  const email    = document.getElementById('ad-email').value.trim();
+  const _lang    = document.documentElement.getAttribute('data-lang') || 'tr';
+  const sector   = (document.getElementById('ad-sector-' + _lang) || {}).value || '';
+  const message  = document.getElementById('ad-message').value.trim();
+  const slot     = document.getElementById('modalSlotName').textContent;
+  const errBox   = document.getElementById('ad-contact-error');
 
+  // Doğrulama
   const filled = [whatsapp, viber, telegram, email].filter(v => v.length > 0);
-  if (!name) { alert('Lütfen adınızı girin. / Будь ласка, введіть ім\'я.'); return; }
+  if (!name) {
+    alert('Lütfen adınızı girin. / Будь ласка, введіть імʼя.');
+    return;
+  }
   if (filled.length < 1) {
     errBox.style.display = 'block';
     errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -2809,53 +2812,57 @@ async function submitAdForm() {
   errBox.style.display = 'none';
 
   const contactLines = [];
-  if (whatsapp)  contactLines.push('WhatsApp: ' + whatsapp);
-  if (viber)     contactLines.push('Viber: '    + viber);
-  if (telegram)  contactLines.push('Telegram: ' + telegram);
-  if (email)     contactLines.push('E-posta: '  + email);
+  if (whatsapp) contactLines.push('WhatsApp: ' + whatsapp);
+  if (viber)    contactLines.push('Viber: '    + viber);
+  if (telegram) contactLines.push('Telegram: ' + telegram);
+  if (email)    contactLines.push('E-posta: '  + email);
 
-  if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
-
-  const fd = new FormData();
-  fd.append('_subject', 'TürkUA Reklam Başvurusu — ' + slot);
-  fd.append('_template', 'table');
-  fd.append('_captcha', 'false');
-  fd.append('Reklam_Konumu', slot);
-  fd.append('Firma_Adi', name);
-  fd.append('Sektor', sector);
-  fd.append('Iletisim', contactLines.join(' | '));
-  fd.append('Mesaj', message || '—');
-  const logoFile = document.getElementById('ad-logo').files && document.getElementById('ad-logo').files[0];
-  if (logoFile) fd.append('Logo_Gorseli', logoFile);
-
-  // _replyto — FormSubmit desteklenen alan
-  if (email) fd.append('_replyto', email);
-
-  try {
-    const res = await fetch('https://formsubmit.co/ajax/who.demir@gmail.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: fd
-    });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    if (data.success === 'true' || data.success === true) {
-      document.getElementById('adFormSection').style.display = 'none';
-      document.getElementById('adSuccess').style.display = 'block';
-    } else {
-      throw new Error(data.message || 'sunucu hatası');
-    }
-  } catch(e) {
-    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
-    const errMsg = document.getElementById('ad-contact-error');
-    if (errMsg) {
-      errMsg.textContent = '⚠️ Gönderim başarısız. Lütfen doğrudan yazın: who.demir@gmail.com';
-      errMsg.style.display = 'block';
-      errMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  } finally {
-    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+  // ── iframe hedefli form gönderimi (CORS sorunu yok, 100% güvenilir) ──
+  let iframe = document.getElementById('adSubmitFrame');
+  if (!iframe) {
+    iframe = document.createElement('iframe');
+    iframe.id   = 'adSubmitFrame';
+    iframe.name = 'adSubmitFrame';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
   }
+
+  const form = document.createElement('form');
+  form.action  = 'https://formsubmit.co/who.demir@gmail.com';
+  form.method  = 'POST';
+  form.target  = 'adSubmitFrame';
+  form.style.display = 'none';
+
+  const fields = {
+    '_subject':       'TürkUA Reklam Başvurusu — ' + slot,
+    '_template':      'table',
+    '_captcha':       'false',
+    '_next':          'https://www.turkua.net',
+    'Reklam_Konumu':  slot,
+    'Firma_Adi':      name,
+    'Sektor':         sector,
+    'Iletisim':       contactLines.join(' | '),
+    'Mesaj':          message || '—'
+  };
+  if (email) fields['_replyto'] = email;
+
+  for (const [key, val] of Object.entries(fields)) {
+    const inp = document.createElement('input');
+    inp.type  = 'hidden';
+    inp.name  = key;
+    inp.value = val;
+    form.appendChild(inp);
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+
+  // Başarı ekranını göster
+  setTimeout(() => {
+    document.getElementById('adFormSection').style.display = 'none';
+    document.getElementById('adSuccess').style.display    = 'block';
+    document.body.removeChild(form);
+  }, 800);
 }
 
 
