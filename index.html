@@ -2800,10 +2800,7 @@ async function submitAdForm() {
 
   // Doğrulama
   const filled = [whatsapp, viber, telegram, email].filter(v => v.length > 0);
-  if (!name) {
-    alert('Lütfen adınızı girin. / Будь ласка, введіть імʼя.');
-    return;
-  }
+  if (!name) { alert('Lütfen adınızı girin. / Будь ласка, введіть імʼя.'); return; }
   if (filled.length < 1) {
     errBox.style.display = 'block';
     errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -2817,7 +2814,7 @@ async function submitAdForm() {
   if (telegram) contactLines.push('Telegram: ' + telegram);
   if (email)    contactLines.push('E-posta: '  + email);
 
-  // ── iframe hedefli form gönderimi (CORS sorunu yok, 100% güvenilir) ──
+  // ── iframe hedefli gerçek form gönderimi (dosya yükleme destekli) ──
   let iframe = document.getElementById('adSubmitFrame');
   if (!iframe) {
     iframe = document.createElement('iframe');
@@ -2830,19 +2827,21 @@ async function submitAdForm() {
   const form = document.createElement('form');
   form.action  = 'https://formsubmit.co/who.demir@gmail.com';
   form.method  = 'POST';
+  form.enctype = 'multipart/form-data';
   form.target  = 'adSubmitFrame';
   form.style.display = 'none';
 
+  // Gizli alanlar
   const fields = {
-    '_subject':       'TürkUA Reklam Başvurusu — ' + slot,
-    '_template':      'table',
-    '_captcha':       'false',
-    '_next':          'https://www.turkua.net',
-    'Reklam_Konumu':  slot,
-    'Firma_Adi':      name,
-    'Sektor':         sector,
-    'Iletisim':       contactLines.join(' | '),
-    'Mesaj':          message || '—'
+    '_subject':      'TürkUA Reklam Başvurusu — ' + slot,
+    '_template':     'table',
+    '_captcha':      'false',
+    '_next':         'https://www.turkua.net',
+    'Reklam_Konumu': slot,
+    'Firma_Adi':     name,
+    'Sektor':        sector,
+    'Iletisim':      contactLines.join(' | '),
+    'Mesaj':         message || '—'
   };
   if (email) fields['_replyto'] = email;
 
@@ -2854,14 +2853,32 @@ async function submitAdForm() {
     form.appendChild(inp);
   }
 
+  // Logo dosyası varsa: input'u geçici olarak forma taşı (değerini korur)
+  const logoInput     = document.getElementById('ad-logo');
+  const logoPlaceholder = document.createElement('input');
+  logoPlaceholder.type = 'hidden';
+  logoPlaceholder.id   = 'ad-logo-placeholder';
+  const hasLogo = logoInput && logoInput.files && logoInput.files.length > 0;
+  if (hasLogo) {
+    logoInput.name = 'Logo_Gorseli';
+    logoInput.parentNode.insertBefore(logoPlaceholder, logoInput);
+    form.appendChild(logoInput);  // orijinal DOM'dan alır, dosya bilgisi korunur
+  }
+
   document.body.appendChild(form);
   form.submit();
 
-  // Başarı ekranını göster
+  // Logo input'u geri yerine koy
+  if (hasLogo) {
+    logoPlaceholder.parentNode.insertBefore(logoInput, logoPlaceholder);
+    logoPlaceholder.remove();
+  }
+
+  // Başarı ekranı
   setTimeout(() => {
     document.getElementById('adFormSection').style.display = 'none';
     document.getElementById('adSuccess').style.display    = 'block';
-    document.body.removeChild(form);
+    if (document.body.contains(form)) document.body.removeChild(form);
   }, 800);
 }
 
