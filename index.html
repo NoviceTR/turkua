@@ -4459,15 +4459,27 @@ nav:not(.bottom-nav) {
       if(e.shiftKey && ['i','I','j','J','c','C'].indexOf(e.key) > -1){ e.preventDefault(); return false; }
     }
   });
-  var devOpen = false;
-  setInterval(function(){
-    if(window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160){
-      if(!devOpen){
-        devOpen = true;
-        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#060610;color:#00f3ff;font-family:monospace;font-size:18px;text-align:center;padding:40px;">⛔ Bu sayfa geliştirici araçları ile görüntülenemez.</div>';
-      }
-    } else { devOpen = false; }
-  }, 1000);
+  /* Mobil cihazlarda tarayıcı arayüzü (adres çubuğu, alt nav) ekranın büyük
+     bölümünü kaplar — bu nedenle boyut farkı kontrolü SADECE masaüstünde yapılır. */
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+              || ('ontouchstart' in window)
+              || (navigator.maxTouchPoints > 0);
+
+  if (!isMobile) {
+    var devOpen = false;
+    setInterval(function(){
+      var wDiff = window.outerWidth  - window.innerWidth;
+      var hDiff = window.outerHeight - window.innerHeight;
+      /* Masaüstü tarayıcısında devtools açıkken fark genellikle 300px+ olur.
+         Eşiği 300 yaparak küçük scrollbar / OS chrome farklarını yok sayıyoruz. */
+      if(wDiff > 300 || hDiff > 300){
+        if(!devOpen){
+          devOpen = true;
+          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#060610;color:#00f3ff;font-family:monospace;font-size:18px;text-align:center;padding:40px;">⛔ Bu sayfa geliştirici araçları ile görüntülenemez.</div>';
+        }
+      } else { devOpen = false; }
+    }, 1000);
+  }
   var s = document.createElement('style');
   s.innerHTML = '* { -webkit-user-select:none!important; -moz-user-select:none!important; user-select:none!important; } input,textarea { -webkit-user-select:text!important; user-select:text!important; }';
   document.head.appendChild(s);
