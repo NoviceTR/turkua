@@ -149,6 +149,67 @@ nav {
 section { padding: 60px 0; }
 section + section { border-top: 1px solid var(--border); }
 
+/* ── DİL ÖĞRENİYORUM ── */
+.lang-learn-tabs {
+  display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.lang-learn-tab {
+  padding: 10px 22px; border-radius: 8px; border: 1px solid rgba(0,243,255,0.2);
+  background: rgba(0,243,255,0.04); color: var(--text-muted);
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: all .2s; font-family: inherit;
+}
+.lang-learn-tab:hover { border-color: rgba(0,243,255,0.5); color: var(--neon-blue); }
+.lang-learn-tab.active {
+  background: rgba(0,243,255,0.12); border-color: var(--neon-blue);
+  color: var(--neon-blue); box-shadow: 0 0 16px rgba(0,243,255,0.15);
+}
+.lang-learn-panel { display: none; }
+.lang-learn-panel.active { display: block; }
+
+.ll-accordion { margin-bottom: 10px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,243,255,0.1); }
+.ll-acc-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px; background: rgba(0,243,255,0.04);
+  cursor: pointer; user-select: none; transition: background .2s;
+}
+.ll-acc-head:hover { background: rgba(0,243,255,0.08); }
+.ll-acc-head.open { background: rgba(0,243,255,0.1); }
+.ll-acc-title { font-size: 13px; font-weight: 600; color: rgba(200,220,255,0.9); letter-spacing: 0.5px; }
+.ll-acc-icon { font-size: 12px; color: var(--neon-blue); transition: transform .25s; }
+.ll-acc-head.open .ll-acc-icon { transform: rotate(180deg); }
+.ll-acc-body { display: none; padding: 16px 18px; background: rgba(0,0,20,0.3); }
+.ll-acc-body.open { display: block; }
+
+.ll-table { width: 100%; border-collapse: collapse; }
+.ll-table th {
+  text-align: left; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--neon-blue); opacity: 0.7; padding: 4px 10px 8px; border-bottom: 1px solid rgba(0,243,255,0.15);
+}
+.ll-table td {
+  padding: 8px 10px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: middle;
+}
+.ll-table tr:last-child td { border-bottom: none; }
+.ll-table .ll-word { font-weight: 600; color: rgba(220,235,255,0.95); }
+.ll-table .ll-pron { font-size: 11px; color: rgba(0,243,255,0.6); font-style: italic; }
+.ll-table .ll-meaning { color: rgba(200,200,255,0.7); }
+.ll-table .ll-ex { font-size: 11px; color: rgba(200,200,255,0.45); }
+.ll-badge {
+  display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+  padding: 2px 7px; border-radius: 4px; text-transform: uppercase; vertical-align: middle; margin-left: 6px;
+}
+.ll-badge-a0 { background: rgba(0,255,136,0.12); color: #00ff88; border: 1px solid rgba(0,255,136,0.25); }
+.ll-note {
+  margin-top: 12px; padding: 10px 14px; border-radius: 8px;
+  background: rgba(0,243,255,0.05); border-left: 3px solid rgba(0,243,255,0.3);
+  font-size: 12px; color: rgba(200,200,255,0.6); line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .ll-table td, .ll-table th { padding: 6px 6px; font-size: 12px; }
+  .lang-learn-tab { padding: 8px 14px; font-size: 11px; }
+}
+
 /* ── AD SLOTS ── */
 .promo-slot {
   background: rgba(255,140,0,0.03);
@@ -1514,6 +1575,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <li><a href="#visa" data-tr>🛂 Vize</a><a href="#visa" data-ua>🛂 Віза</a></li>
     <li><a href="#trade" data-tr>🤝 Ticaret</a><a href="#trade" data-ua>🤝 Торгівля</a></li>
         <li><a href="#money" data-tr>💸 Para Transferi</a><a href="#money" data-ua>💸 Переказ Грошей</a></li>
+    <li><a href="#dil-ogreniyorum" data-tr>🗣️ Dil Öğren</a><a href="#dil-ogreniyorum" data-ua>🗣️ Вивчай Мову</a></li>
     <li><a href="#hakkimizda" data-tr>ℹ️ Hakkımızda</a><a href="#hakkimizda" data-ua>ℹ️ Про Нас</a></li>
   </ul>
   <div class="nav-right-group">
@@ -2332,6 +2394,299 @@ footer a { color:var(--text-muted); text-decoration:none; }
 </div>
 </section>
 
+<!-- ══ DİL ÖĞRENİYORUM — A0 ══ -->
+<section id="dil-ogreniyorum">
+<div class="container">
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span>
+      <span data-tr>DİL ÖĞRENİYORUM</span>
+      <span data-ua>ВИВЧАЮ МОВУ</span>
+    </div>
+    <h2 class="section-title" data-tr>A0 İlk Adım — Türkçe & Ukraynaca</h2>
+    <h2 class="section-title" data-ua>A0 Перший Крок — Турецька & Українська</h2>
+    <p class="section-sub" data-tr>Sıfırdan başlayanlar için temel gramer ve kelimeler. Hangi dili öğrenmek istediğini seç.</p>
+    <p class="section-sub" data-ua>Основна граматика та словниковий запас для початківців. Обери мову, яку хочеш вивчити.</p>
+  </div>
+
+  <!-- SEKMELER -->
+  <div class="lang-learn-tabs">
+    <button class="lang-learn-tab active" onclick="llTab(this,'ll-tr')" data-tr>🇹🇷 Türkçe Öğren</button>
+    <button class="lang-learn-tab active" onclick="llTab(this,'ll-tr')" data-ua>🇹🇷 Вивчай Турецьку</button>
+    <button class="lang-learn-tab" onclick="llTab(this,'ll-ua')" data-tr>🇺🇦 Ukraynaca Öğren</button>
+    <button class="lang-learn-tab" onclick="llTab(this,'ll-ua')" data-ua>🇺🇦 Вивчай Українську</button>
+  </div>
+
+  <!-- PANEL: TÜRKÇE ÖĞREN -->
+  <div class="lang-learn-panel active" id="ll-tr">
+
+    <!-- 1. Alfabe ipuçları -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>🔤 Alfabe & Telaffuz İpuçları <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>🔤 Алфавіт та Вимова <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Harf</th><th data-tr>Telaffuz</th><th data-tr>Örnek</th>
+              <th data-ua>Буква</th><th data-ua>Вимова</th><th data-ua>Приклад</th></tr>
+          <tr><td class="ll-word">C / c</td><td class="ll-pron" data-tr>«ц» gibi</td><td class="ll-pron" data-ua>як «дж»</td><td class="ll-meaning" data-tr>cam → «джам»</td><td class="ll-meaning" data-ua>cam → «джам»</td></tr>
+          <tr><td class="ll-word">Ç / ç</td><td class="ll-pron" data-tr>«ч» gibi</td><td class="ll-pron" data-ua>як «ч»</td><td class="ll-meaning" data-tr>çay → «чай»</td><td class="ll-meaning" data-ua>çay → «чай»</td></tr>
+          <tr><td class="ll-word">Ğ / ğ</td><td class="ll-pron" data-tr>sessiz, önceki sesli uzar</td><td class="ll-pron" data-ua>тихий, попередній голосний подовжується</td><td class="ll-meaning" data-tr>dağ → «да:»</td><td class="ll-meaning" data-ua>dağ → «да:»</td></tr>
+          <tr><td class="ll-word">I / ı</td><td class="ll-pron" data-tr>«ı» — «и» ile «e» arası</td><td class="ll-pron" data-ua>між «и» та «е»</td><td class="ll-meaning" data-tr>kız → kız</td><td class="ll-meaning" data-ua>kız → kız</td></tr>
+          <tr><td class="ll-word">İ / i</td><td class="ll-pron" data-tr>«и» gibi net</td><td class="ll-pron" data-ua>чіткий «і»</td><td class="ll-meaning" data-tr>ip → «іп»</td><td class="ll-meaning" data-ua>ip → «іп»</td></tr>
+          <tr><td class="ll-word">Ö / ö</td><td class="ll-pron" data-tr>«ö» — yuvarlak «e»</td><td class="ll-pron" data-ua>округлий «е»</td><td class="ll-meaning" data-tr>göz → göz</td><td class="ll-meaning" data-ua>göz → göz</td></tr>
+          <tr><td class="ll-word">Ş / ş</td><td class="ll-pron" data-tr>«ш» gibi</td><td class="ll-pron" data-ua>як «ш»</td><td class="ll-meaning" data-tr>şeker → «şeker»</td><td class="ll-meaning" data-ua>şeker → «шекер»</td></tr>
+          <tr><td class="ll-word">Ü / ü</td><td class="ll-pron" data-tr>«ü» — yuvarlak «i»</td><td class="ll-pron" data-ua>округлий «і»</td><td class="ll-meaning" data-tr>üzüm → üzüm</td><td class="ll-meaning" data-ua>üzüm → üzюм</td></tr>
+        </table>
+        <div class="ll-note" data-tr>💡 Türkçede her harf tek bir sese karşılık gelir — telaffuz yazımla birebir uyumludur.</div>
+        <div class="ll-note" data-ua>💡 У турецькій кожна буква відповідає одному звуку — вимова повністю відповідає написанню.</div>
+      </div>
+    </div>
+
+    <!-- 2. Selamlama -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>👋 Selamlama & Temel İfadeler <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>👋 Привітання та Базові Вирази <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Türkçe</th><th data-tr>Telaffuz</th><th data-tr>Anlamı</th>
+              <th data-ua>Турецькою</th><th data-ua>Вимова</th><th data-ua>Значення</th></tr>
+          <tr><td class="ll-word">Merhaba</td><td class="ll-pron">mer-ha-BA</td><td class="ll-meaning" data-tr>Merhaba</td><td class="ll-meaning" data-ua>Привіт</td></tr>
+          <tr><td class="ll-word">Günaydın</td><td class="ll-pron">gün-ay-DIN</td><td class="ll-meaning" data-tr>Günaydın</td><td class="ll-meaning" data-ua>Доброго ранку</td></tr>
+          <tr><td class="ll-word">İyi akşamlar</td><td class="ll-pron">i-yi ak-ŞAMLAR</td><td class="ll-meaning" data-tr>İyi akşamlar</td><td class="ll-meaning" data-ua>Добрий вечір</td></tr>
+          <tr><td class="ll-word">Teşekkür ederim</td><td class="ll-pron">te-şek-KÜR e-de-RİM</td><td class="ll-meaning" data-tr>Teşekkür ederim</td><td class="ll-meaning" data-ua>Дякую</td></tr>
+          <tr><td class="ll-word">Rica ederim</td><td class="ll-pron">ri-CA e-de-RİM</td><td class="ll-meaning" data-tr>Rica ederim</td><td class="ll-meaning" data-ua>Будь ласка / Нема за що</td></tr>
+          <tr><td class="ll-word">Evet / Hayır</td><td class="ll-pron">e-VET / ha-YIR</td><td class="ll-meaning" data-tr>Evet / Hayır</td><td class="ll-meaning" data-ua>Так / Ні</td></tr>
+          <tr><td class="ll-word">Özür dilerim</td><td class="ll-pron">ö-ZÜR di-le-RİM</td><td class="ll-meaning" data-tr>Özür dilerim</td><td class="ll-meaning" data-ua>Вибачте</td></tr>
+          <tr><td class="ll-word">Hoşça kal</td><td class="ll-pron">hoş-ça KAL</td><td class="ll-meaning" data-tr>Hoşça kal (ayrılırken)</td><td class="ll-meaning" data-ua>До побачення (той хто йде)</td></tr>
+          <tr><td class="ll-word">Güle güle</td><td class="ll-pron">gü-le GÜ-le</td><td class="ll-meaning" data-tr>Güle güle (kalırken)</td><td class="ll-meaning" data-ua>До побачення (той хто лишається)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3. Sayılar -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>🔢 Sayılar 0–20 <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>🔢 Числа 0–20 <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Sayı</th><th data-tr>Türkçe</th><th data-tr>Telaffuz</th>
+              <th data-ua>Число</th><th data-ua>Турецькою</th><th data-ua>Вимова</th></tr>
+          <tr><td class="ll-word">0</td><td class="ll-meaning">sıfır</td><td class="ll-pron">S�I-fır</td></tr>
+          <tr><td class="ll-word">1</td><td class="ll-meaning">bir</td><td class="ll-pron">bİR</td></tr>
+          <tr><td class="ll-word">2</td><td class="ll-meaning">iki</td><td class="ll-pron">İ-ki</td></tr>
+          <tr><td class="ll-word">3</td><td class="ll-meaning">üç</td><td class="ll-pron">ÜÇ</td></tr>
+          <tr><td class="ll-word">4</td><td class="ll-meaning">dört</td><td class="ll-pron">DÖRT</td></tr>
+          <tr><td class="ll-word">5</td><td class="ll-meaning">beş</td><td class="ll-pron">BEŞ</td></tr>
+          <tr><td class="ll-word">6</td><td class="ll-meaning">altı</td><td class="ll-pron">AL-tı</td></tr>
+          <tr><td class="ll-word">7</td><td class="ll-meaning">yedi</td><td class="ll-pron">YE-di</td></tr>
+          <tr><td class="ll-word">8</td><td class="ll-meaning">sekiz</td><td class="ll-pron">SE-kiz</td></tr>
+          <tr><td class="ll-word">9</td><td class="ll-meaning">dokuz</td><td class="ll-pron">DO-kuz</td></tr>
+          <tr><td class="ll-word">10</td><td class="ll-meaning">on</td><td class="ll-pron">ON</td></tr>
+          <tr><td class="ll-word">11</td><td class="ll-meaning">on bir</td><td class="ll-pron">on BİR</td></tr>
+          <tr><td class="ll-word">20</td><td class="ll-meaning">yirmi</td><td class="ll-pron">YİR-mi</td></tr>
+          <tr><td class="ll-word">100</td><td class="ll-meaning">yüz</td><td class="ll-pron">YÜZ</td></tr>
+          <tr><td class="ll-word">1000</td><td class="ll-meaning">bin</td><td class="ll-pron">BİN</td></tr>
+        </table>
+        <div class="ll-note" data-tr>💡 Türkçe sayılar düzenlidir: 21 = yirmi bir, 35 = otuz beş. Ezber kolaylaşır!</div>
+        <div class="ll-note" data-ua>💡 Турецькі числівники логічні: 21 = yirmi bir, 35 = otuz beş. Легко запамʼятати!</div>
+      </div>
+    </div>
+
+    <!-- 4. Zamirler & Olmak -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>👤 Zamirler & "Olmak" (to be) <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>👤 Займенники та «Бути» <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Zamir</th><th data-tr>Türkçe</th><th data-tr>Örnek cümle</th>
+              <th data-ua>Займенник</th><th data-ua>Турецькою</th><th data-ua>Приклад речення</th></tr>
+          <tr><td class="ll-pron" data-tr>Ben (ben)</td><td class="ll-pron" data-ua>Я (ben)</td><td class="ll-word">-(y)im</td><td class="ll-meaning" data-tr>Ben öğrenciyim.</td><td class="ll-meaning" data-ua>Ben öğrenciyim. (Я студент.)</td></tr>
+          <tr><td class="ll-pron" data-tr>Sen (sen)</td><td class="ll-pron" data-ua>Ти (sen)</td><td class="ll-word">-sin</td><td class="ll-meaning" data-tr>Sen Türksün.</td><td class="ll-meaning" data-ua>Sen Türksün. (Ти турок.)</td></tr>
+          <tr><td class="ll-pron" data-tr>O (o)</td><td class="ll-pron" data-ua>Він/Вона (o)</td><td class="ll-word">-(dır)</td><td class="ll-meaning" data-tr>O Ukraynalı.</td><td class="ll-meaning" data-ua>O Ukraynalı. (Він/Вона українець.)</td></tr>
+          <tr><td class="ll-pron" data-tr>Biz (biz)</td><td class="ll-pron" data-ua>Ми (biz)</td><td class="ll-word">-(y)iz</td><td class="ll-meaning" data-tr>Biz öğrenciyiz.</td><td class="ll-meaning" data-ua>Biz öğrenciyiz. (Ми студенти.)</td></tr>
+          <tr><td class="ll-pron" data-tr>Siz (siz)</td><td class="ll-pron" data-ua>Ви (siz)</td><td class="ll-word">-siniz</td><td class="ll-meaning" data-tr>Siz nerelisiniz?</td><td class="ll-meaning" data-ua>Siz nerelisiniz? (Ви звідки?)</td></tr>
+          <tr><td class="ll-pron" data-tr>Onlar (onlar)</td><td class="ll-pron" data-ua>Вони (onlar)</td><td class="ll-word">-(dır)lar</td><td class="ll-meaning" data-tr>Onlar İstanbul'da.</td><td class="ll-meaning" data-ua>Onlar İstanbul'da. (Вони в Стамбулі.)</td></tr>
+        </table>
+        <div class="ll-note" data-tr>💡 Türkçede "olmak" fiili ek olarak eklenir: öğrenci + yim = öğrenciyim. Fiil çekimi ünlü uyumuna göre değişir.</div>
+        <div class="ll-note" data-ua>💡 У турецькій дієслово «бути» додається як суфікс: öğrenci + yim = öğrenciyim. Відмінювання залежить від гармонії голосних.</div>
+      </div>
+    </div>
+
+    <!-- 5. Temel Sorular -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>❓ Temel Sorular <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>❓ Базові Питання <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Soru</th><th data-tr>Telaffuz</th><th data-tr>Anlamı</th>
+              <th data-ua>Питання</th><th data-ua>Вимова</th><th data-ua>Значення</th></tr>
+          <tr><td class="ll-word">Adın ne?</td><td class="ll-pron">a-DIN ne</td><td class="ll-meaning" data-tr>Adın ne?</td><td class="ll-meaning" data-ua>Як тебе звати?</td></tr>
+          <tr><td class="ll-word">Nerelisin?</td><td class="ll-pron">ne-re-Lİ-sin</td><td class="ll-meaning" data-tr>Nerelisin?</td><td class="ll-meaning" data-ua>Звідки ти?</td></tr>
+          <tr><td class="ll-word">Kaç yaşındasın?</td><td class="ll-pron">kaç ya-ŞIN-da-sın</td><td class="ll-meaning" data-tr>Kaç yaşındasın?</td><td class="ll-meaning" data-ua>Скільки тобі років?</td></tr>
+          <tr><td class="ll-word">Bu ne?</td><td class="ll-pron">bu NE</td><td class="ll-meaning" data-tr>Bu ne?</td><td class="ll-meaning" data-ua>Що це?</td></tr>
+          <tr><td class="ll-word">Nerede?</td><td class="ll-pron">ne-RE-de</td><td class="ll-meaning" data-tr>Nerede?</td><td class="ll-meaning" data-ua>Де?</td></tr>
+          <tr><td class="ll-word">Ne kadar?</td><td class="ll-pron">ne KA-dar</td><td class="ll-meaning" data-tr>Ne kadar? (fiyat)</td><td class="ll-meaning" data-ua>Скільки коштує?</td></tr>
+          <tr><td class="ll-word">Türkçe biliyor musun?</td><td class="ll-pron">türk-çe bi-Lİ-yor mu-SUN</td><td class="ll-meaning" data-tr>Türkçe biliyor musun?</td><td class="ll-meaning" data-ua>Ти знаєш турецьку?</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /ll-tr -->
+
+  <!-- PANEL: UKRAYNACA ÖĞREN -->
+  <div class="lang-learn-panel" id="ll-ua">
+
+    <!-- 1. Kiril Alfabesi -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>🔤 Kiril Alfabesi & Telaffuz <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>🔤 Кирилиця та Вимова <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th>Harf / Буква</th><th data-tr>Türkçe karşılık</th><th data-ua>Відповідник</th><th data-tr>Örnek</th><th data-ua>Приклад</th></tr>
+          <tr><td class="ll-word">А а</td><td class="ll-pron">A</td><td class="ll-pron">А</td><td class="ll-meaning">а́вто (avto)</td></tr>
+          <tr><td class="ll-word">Б б</td><td class="ll-pron">B</td><td class="ll-pron">Б</td><td class="ll-meaning">батько (batko)</td></tr>
+          <tr><td class="ll-word">В в</td><td class="ll-pron">V</td><td class="ll-pron">В</td><td class="ll-meaning">вода (voda)</td></tr>
+          <tr><td class="ll-word">Г г</td><td class="ll-pron">H (yumuşak)</td><td class="ll-pron">Г (м'який)</td><td class="ll-meaning">гарний (harniyi)</td></tr>
+          <tr><td class="ll-word">Д д</td><td class="ll-pron">D</td><td class="ll-pron">Д</td><td class="ll-meaning">день (den)</td></tr>
+          <tr><td class="ll-word">Е е</td><td class="ll-pron">E / YE</td><td class="ll-pron">Е / Є</td><td class="ll-meaning">є (ye — var)</td></tr>
+          <tr><td class="ll-word">І і</td><td class="ll-pron">İ (net)</td><td class="ll-pron">І (чіткий)</td><td class="ll-meaning">іти (iti — gitmek)</td></tr>
+          <tr><td class="ll-word">И и</td><td class="ll-pron">I (ı gibi)</td><td class="ll-pron">И (схоже на ı)</td><td class="ll-meaning">ми (mi — biz)</td></tr>
+          <tr><td class="ll-word">Й й</td><td class="ll-pron">Y (kısa)</td><td class="ll-pron">Й (короткий)</td><td class="ll-meaning">йти (yti)</td></tr>
+          <tr><td class="ll-word">К к</td><td class="ll-pron">K</td><td class="ll-pron">К</td><td class="ll-meaning">кіт (kit — kedi)</td></tr>
+          <tr><td class="ll-word">П п</td><td class="ll-pron">P</td><td class="ll-pron">П</td><td class="ll-meaning">привіт (pryvit)</td></tr>
+          <tr><td class="ll-word">Р р</td><td class="ll-pron">R (titrek)</td><td class="ll-pron">Р (вібруючий)</td><td class="ll-meaning">рано (rano)</td></tr>
+          <tr><td class="ll-word">С с</td><td class="ll-pron">S</td><td class="ll-pron">С</td><td class="ll-meaning">сонце (sontse)</td></tr>
+          <tr><td class="ll-word">Ш ш</td><td class="ll-pron">Ş</td><td class="ll-pron">Ш</td><td class="ll-meaning">школа (şkola)</td></tr>
+          <tr><td class="ll-word">Щ щ</td><td class="ll-pron">ŞÇ</td><td class="ll-pron">ШЧ</td><td class="ll-meaning">що (şço — ne)</td></tr>
+          <tr><td class="ll-word">Ї ї</td><td class="ll-pron">Yİ</td><td class="ll-pron">ЙІ</td><td class="ll-meaning">їсти (yisti — yemek)</td></tr>
+        </table>
+        <div class="ll-note" data-tr>💡 Ukrayna alfabesi 33 harften oluşur. Kiril yazısını birkaç günde öğrenebilirsin — telaffuz Türkçeye göre daha düzenlidir.</div>
+        <div class="ll-note" data-ua>💡 Український алфавіт має 33 букви. Кирилицю можна вивчити за кілька днів.</div>
+      </div>
+    </div>
+
+    <!-- 2. Selamlama UA -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>👋 Selamlama & Temel İfadeler <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>👋 Привітання та Базові Вирази <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Ukraynaca</th><th data-tr>Okunuş</th><th data-tr>Anlamı</th>
+              <th data-ua>Українською</th><th data-ua>Вимова</th><th data-ua>Значення</th></tr>
+          <tr><td class="ll-word">Привіт</td><td class="ll-pron">Prı-VİT</td><td class="ll-meaning" data-tr>Merhaba</td><td class="ll-meaning" data-ua>Привіт</td></tr>
+          <tr><td class="ll-word">Доброго ранку</td><td class="ll-pron">DOB-ro-ho RAN-ku</td><td class="ll-meaning" data-tr>Günaydın</td><td class="ll-meaning" data-ua>Доброго ранку</td></tr>
+          <tr><td class="ll-word">Добрий день</td><td class="ll-pron">DOB-rıy den</td><td class="ll-meaning" data-tr>İyi günler</td><td class="ll-meaning" data-ua>Добрий день</td></tr>
+          <tr><td class="ll-word">Добрий вечір</td><td class="ll-pron">DOB-rıy VE-çir</td><td class="ll-meaning" data-tr>İyi akşamlar</td><td class="ll-meaning" data-ua>Добрий вечір</td></tr>
+          <tr><td class="ll-word">Дякую</td><td class="ll-pron">DYA-ku-yu</td><td class="ll-meaning" data-tr>Teşekkür ederim</td><td class="ll-meaning" data-ua>Дякую</td></tr>
+          <tr><td class="ll-word">Будь ласка</td><td class="ll-pron">bud LAS-ka</td><td class="ll-meaning" data-tr>Rica ederim / Lütfen</td><td class="ll-meaning" data-ua>Будь ласка</td></tr>
+          <tr><td class="ll-word">Так / Ні</td><td class="ll-pron">tak / ni</td><td class="ll-meaning" data-tr>Evet / Hayır</td><td class="ll-meaning" data-ua>Так / Ні</td></tr>
+          <tr><td class="ll-word">Вибачте</td><td class="ll-pron">VI-baç-te</td><td class="ll-meaning" data-tr>Özür dilerim</td><td class="ll-meaning" data-ua>Вибачте</td></tr>
+          <tr><td class="ll-word">До побачення</td><td class="ll-pron">do po-BA-çen-nya</td><td class="ll-meaning" data-tr>Hoşça kal / Güle güle</td><td class="ll-meaning" data-ua>До побачення</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3. Sayılar UA -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>🔢 Sayılar 0–20 <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>🔢 Числа 0–20 <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Sayı</th><th data-tr>Ukraynaca</th><th data-tr>Okunuş</th>
+              <th data-ua>Число</th><th data-ua>Українською</th><th data-ua>Вимова</th></tr>
+          <tr><td class="ll-word">0</td><td class="ll-meaning">нуль</td><td class="ll-pron">nul</td></tr>
+          <tr><td class="ll-word">1</td><td class="ll-meaning">один</td><td class="ll-pron">o-DİN</td></tr>
+          <tr><td class="ll-word">2</td><td class="ll-meaning">два</td><td class="ll-pron">dva</td></tr>
+          <tr><td class="ll-word">3</td><td class="ll-meaning">три</td><td class="ll-pron">tri</td></tr>
+          <tr><td class="ll-word">4</td><td class="ll-meaning">чотири</td><td class="ll-pron">cho-TI-ri</td></tr>
+          <tr><td class="ll-word">5</td><td class="ll-meaning">п'ять</td><td class="ll-pron">pyat</td></tr>
+          <tr><td class="ll-word">6</td><td class="ll-meaning">шість</td><td class="ll-pron">şist</td></tr>
+          <tr><td class="ll-word">7</td><td class="ll-meaning">сім</td><td class="ll-pron">sim</td></tr>
+          <tr><td class="ll-word">8</td><td class="ll-meaning">вісім</td><td class="ll-pron">vi-SIM</td></tr>
+          <tr><td class="ll-word">9</td><td class="ll-meaning">дев'ять</td><td class="ll-pron">DE-vyat</td></tr>
+          <tr><td class="ll-word">10</td><td class="ll-meaning">десять</td><td class="ll-pron">DE-syat</td></tr>
+          <tr><td class="ll-word">11</td><td class="ll-meaning">одинадцять</td><td class="ll-pron">o-di-NAD-tsyat</td></tr>
+          <tr><td class="ll-word">20</td><td class="ll-meaning">двадцять</td><td class="ll-pron">DVAD-tsyat</td></tr>
+          <tr><td class="ll-word">100</td><td class="ll-meaning">сто</td><td class="ll-pron">sto</td></tr>
+          <tr><td class="ll-word">1000</td><td class="ll-meaning">тисяча</td><td class="ll-pron">TI-sya-ça</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 4. Zamirler UA -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>👤 Zamirler & "Бути" (to be) <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>👤 Займенники та «Бути» <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Zamir</th><th data-tr>Ukraynaca</th><th data-tr>Örnek cümle</th>
+              <th data-ua>Займенник</th><th data-ua>Українською</th><th data-ua>Приклад</th></tr>
+          <tr><td class="ll-pron" data-tr>Ben</td><td class="ll-pron" data-ua>Я</td><td class="ll-word">Я</td><td class="ll-meaning" data-tr>Я студент. (Ben öğrenciyim.)</td><td class="ll-meaning" data-ua>Я студент.</td></tr>
+          <tr><td class="ll-pron" data-tr>Sen</td><td class="ll-pron" data-ua>Ти</td><td class="ll-word">Ти</td><td class="ll-meaning" data-tr>Ти турок. (Sen Türksün.)</td><td class="ll-meaning" data-ua>Ти турок.</td></tr>
+          <tr><td class="ll-pron" data-tr>O (erkek)</td><td class="ll-pron" data-ua>Він</td><td class="ll-word">Він</td><td class="ll-meaning" data-tr>Він українець. (O Ukraynalı.)</td><td class="ll-meaning" data-ua>Він українець.</td></tr>
+          <tr><td class="ll-pron" data-tr>O (kadın)</td><td class="ll-pron" data-ua>Вона</td><td class="ll-word">Вона</td><td class="ll-meaning" data-tr>Вона студентка. (O öğrenci.)</td><td class="ll-meaning" data-ua>Вона студентка.</td></tr>
+          <tr><td class="ll-pron" data-tr>Biz</td><td class="ll-pron" data-ua>Ми</td><td class="ll-word">Ми</td><td class="ll-meaning" data-tr>Ми в Стамбулі. (Biz İstanbul'dayız.)</td><td class="ll-meaning" data-ua>Ми в Стамбулі.</td></tr>
+          <tr><td class="ll-pron" data-tr>Siz</td><td class="ll-pron" data-ua>Ви</td><td class="ll-word">Ви</td><td class="ll-meaning" data-tr>Ви звідки? (Nerelisiniz?)</td><td class="ll-meaning" data-ua>Ви звідки?</td></tr>
+          <tr><td class="ll-pron" data-tr>Onlar</td><td class="ll-pron" data-ua>Вони</td><td class="ll-word">Вони</td><td class="ll-meaning" data-tr>Вони в Києві. (Onlar Kyiv'de.)</td><td class="ll-meaning" data-ua>Вони в Києві.</td></tr>
+        </table>
+        <div class="ll-note" data-tr>💡 Günümüz Ukraynacasında "є" (var / is) çoğunlukla düşürülür: "Я студент" = "Ben öğrenciyim" — "є" kullanılmaz.</div>
+        <div class="ll-note" data-ua>💡 У сучасній українській «є» часто опускається: «Я студент» — дієслово «бути» не вживається в теперішньому часі.</div>
+      </div>
+    </div>
+
+    <!-- 5. Temel Sorular UA -->
+    <div class="ll-accordion">
+      <div class="ll-acc-head" onclick="llAcc(this)">
+        <span class="ll-acc-title" data-tr>❓ Temel Sorular <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-title" data-ua>❓ Базові Питання <span class="ll-badge ll-badge-a0">A0</span></span>
+        <span class="ll-acc-icon">▼</span>
+      </div>
+      <div class="ll-acc-body">
+        <table class="ll-table">
+          <tr><th data-tr>Ukraynaca</th><th data-tr>Okunuş</th><th data-tr>Anlamı</th>
+              <th data-ua>Українською</th><th data-ua>Вимова</th><th data-ua>Значення</th></tr>
+          <tr><td class="ll-word">Як тебе звати?</td><td class="ll-pron">yak TE-be ZVA-ti</td><td class="ll-meaning" data-tr>Adın ne?</td><td class="ll-meaning" data-ua>Як тебе звати?</td></tr>
+          <tr><td class="ll-word">Звідки ти?</td><td class="ll-pron">ZVİD-ki ti</td><td class="ll-meaning" data-tr>Nerelisin?</td><td class="ll-meaning" data-ua>Звідки ти?</td></tr>
+          <tr><td class="ll-word">Скільки тобі років?</td><td class="ll-pron">SKIL-ki to-Bİ RO-kiv</td><td class="ll-meaning" data-tr>Kaç yaşındasın?</td><td class="ll-meaning" data-ua>Скільки тобі років?</td></tr>
+          <tr><td class="ll-word">Що це?</td><td class="ll-pron">şço tse</td><td class="ll-meaning" data-tr>Bu ne?</td><td class="ll-meaning" data-ua>Що це?</td></tr>
+          <tr><td class="ll-word">Де?</td><td class="ll-pron">de</td><td class="ll-meaning" data-tr>Nerede?</td><td class="ll-meaning" data-ua>Де?</td></tr>
+          <tr><td class="ll-word">Скільки коштує?</td><td class="ll-pron">SKIL-ki koş-TU-ye</td><td class="ll-meaning" data-tr>Ne kadar?</td><td class="ll-meaning" data-ua>Скільки коштує?</td></tr>
+          <tr><td class="ll-word">Ти розмовляєш турецькою?</td><td class="ll-pron">ti roz-mov-LYA-yeş tu-RES-koyu</td><td class="ll-meaning" data-tr>Türkçe biliyor musun?</td><td class="ll-meaning" data-ua>Ти розмовляєш турецькою?</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /ll-ua -->
+
+</div>
+</section>
+
 <!-- ══ REKLAM ALANLARI ══ -->
 <section id="sponsored" style="padding:40px 0;">
 <div class="container">
@@ -2665,6 +3020,22 @@ window.addEventListener('load', () => {
   }
   setTimeout(render, 150);
 });
+
+// ══ DİL ÖĞRENİYORUM — SEKME & ACCORDION ══
+function llTab(btn, panelId) {
+  // Tüm tabları sıfırla
+  document.querySelectorAll('.lang-learn-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.lang-learn-panel').forEach(p => p.classList.remove('active'));
+  // Aynı paneli hedefleyen tüm tabları aktif et (TR+UA dil çifti)
+  document.querySelectorAll('.lang-learn-tab[onclick*="' + panelId + '"]').forEach(t => t.classList.add('active'));
+  const panel = document.getElementById(panelId);
+  if (panel) panel.classList.add('active');
+}
+function llAcc(head) {
+  const body = head.nextElementSibling;
+  const isOpen = head.classList.toggle('open');
+  body.classList.toggle('open', isOpen);
+}
 
 // ══ MOBİL HAMBURGER MENÜ ══
 function toggleMobileMenu() {
