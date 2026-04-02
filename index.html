@@ -2545,6 +2545,38 @@ footer a { color:var(--text-muted); text-decoration:none; }
       </div>
     </div>
 
+
+    <!-- ── MİNİ TEST: TÜRKÇE ── -->
+    <div class="ll-quiz-wrap" id="quiz-tr">
+      <div class="ll-quiz-header">
+        <span class="ll-quiz-title-icon">🎯</span>
+        <span class="ll-quiz-title-text">
+          <span data-tr>Mini Test — Türkçe</span>
+          <span data-ua>Міні-Тест — Турецька</span>
+        </span>
+        <span class="ll-quiz-score-badge"><span id="qt-q-num">1</span> / 10</span>
+      </div>
+      <div class="ll-quiz-progress-bar"><div class="ll-quiz-progress-fill" id="qt-prog"></div></div>
+      <div id="quiz-tr-body">
+        <div class="ll-quiz-question-label">
+          <span data-tr>Bu Türkçe ifadenin anlamı nedir?</span>
+          <span data-ua>Що означає цей турецький вираз?</span>
+        </div>
+        <div class="ll-quiz-word" id="qt-word">—</div>
+        <div class="ll-quiz-opts" id="qt-opts"></div>
+        <div class="ll-quiz-feedback" id="qt-feedback" style="display:none"></div>
+      </div>
+      <div class="ll-quiz-result" id="quiz-tr-result" style="display:none">
+        <div class="ll-quiz-result-emoji" id="qt-emoji">🏆</div>
+        <div class="ll-quiz-result-text" id="qt-result-txt"></div>
+        <div class="ll-quiz-result-sub" id="qt-result-sub"></div>
+        <button class="ll-quiz-restart-btn" onclick="llStartQuiz('tr')">
+          <span data-tr>🔄 Tekrar Dene</span>
+          <span data-ua>🔄 Спробувати знову</span>
+        </button>
+      </div>
+    </div>
+
   </div><!-- /ll-tr -->
 
   <!-- PANEL: UKRAYNACA ÖĞREN -->
@@ -2679,6 +2711,38 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <tr><td class="ll-word">Скільки коштує?</td><td class="ll-pron">SKIL-ki koş-TU-ye</td><td class="ll-meaning" data-tr>Ne kadar?</td><td class="ll-meaning" data-ua>Скільки коштує?</td></tr>
           <tr><td class="ll-word">Ти розмовляєш турецькою?</td><td class="ll-pron">ti roz-mov-LYA-yeş tu-RES-koyu</td><td class="ll-meaning" data-tr>Türkçe biliyor musun?</td><td class="ll-meaning" data-ua>Ти розмовляєш турецькою?</td></tr>
         </table>
+      </div>
+    </div>
+
+
+    <!-- ── MİNİ TEST: UKRAYNACA ── -->
+    <div class="ll-quiz-wrap" id="quiz-ua">
+      <div class="ll-quiz-header">
+        <span class="ll-quiz-title-icon">🎯</span>
+        <span class="ll-quiz-title-text">
+          <span data-tr>Mini Test — Ukraynaca</span>
+          <span data-ua>Міні-Тест — Українська</span>
+        </span>
+        <span class="ll-quiz-score-badge"><span id="qu-q-num">1</span> / 10</span>
+      </div>
+      <div class="ll-quiz-progress-bar"><div class="ll-quiz-progress-fill" id="qu-prog"></div></div>
+      <div id="quiz-ua-body">
+        <div class="ll-quiz-question-label">
+          <span data-tr>Bu Ukraynaca ifadenin anlamı nedir?</span>
+          <span data-ua>Що означає цей украïнський вираз?</span>
+        </div>
+        <div class="ll-quiz-word" id="qu-word">—</div>
+        <div class="ll-quiz-opts" id="qu-opts"></div>
+        <div class="ll-quiz-feedback" id="qu-feedback" style="display:none"></div>
+      </div>
+      <div class="ll-quiz-result" id="quiz-ua-result" style="display:none">
+        <div class="ll-quiz-result-emoji" id="qu-emoji">🏆</div>
+        <div class="ll-quiz-result-text" id="qu-result-txt"></div>
+        <div class="ll-quiz-result-sub" id="qu-result-sub"></div>
+        <button class="ll-quiz-restart-btn" onclick="llStartQuiz('ua')">
+          <span data-tr>🔄 Tekrar Dene</span>
+          <span data-ua>🔄 Спробувати знову</span>
+        </button>
       </div>
     </div>
 
@@ -3688,6 +3752,303 @@ async function submitAdForm() {
   </button>
 </nav>
 
+
+<!-- ══ MİNİ TEST: STİLLER & MOTOR ══ -->
+<style>
+/* ─────────────────────────────────────────
+   MINI TEST / QUIZ BİLEŞENİ
+───────────────────────────────────────── */
+.ll-quiz-wrap {
+  margin-top: 28px;
+  background: rgba(0,243,255,0.025);
+  border: 1px solid rgba(0,243,255,0.15);
+  border-radius: 16px;
+  padding: 22px 20px;
+  position: relative; overflow: hidden;
+}
+.ll-quiz-wrap::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, transparent, var(--neon-blue), var(--neon-green), var(--neon-blue), transparent);
+  background-size: 300% 100%;
+  animation: quizScan 4s linear infinite;
+}
+@keyframes quizScan {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+.ll-quiz-header {
+  display:flex; align-items:center; gap:10px; margin-bottom:12px;
+}
+.ll-quiz-title-icon { font-size:18px; }
+.ll-quiz-title-text {
+  font-family:'Orbitron',monospace;
+  font-size:10px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--neon-blue); flex:1;
+}
+.ll-quiz-score-badge {
+  font-family:'Orbitron',monospace; font-size:11px;
+  color: var(--text-muted);
+  background: rgba(0,243,255,0.06); padding:4px 10px;
+  border-radius:6px; border:1px solid rgba(0,243,255,0.1);
+}
+.ll-quiz-progress-bar {
+  height:3px; background:rgba(0,243,255,0.1);
+  border-radius:2px; margin-bottom:18px; overflow:hidden;
+}
+.ll-quiz-progress-fill {
+  height:100%; width:0%;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
+  border-radius:2px;
+  transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
+  box-shadow: 0 0 8px var(--neon-blue);
+}
+.ll-quiz-question-label {
+  font-size:10px; color:var(--text-muted);
+  letter-spacing:1.5px; text-transform:uppercase;
+  margin-bottom:10px;
+}
+.ll-quiz-word {
+  font-family:'Orbitron',monospace;
+  font-size: clamp(16px,3.5vw,28px); font-weight:700;
+  color:#fff; text-align:center;
+  padding:16px 20px; margin-bottom:20px;
+  background:rgba(0,0,30,0.45);
+  border-radius:12px; border:1px solid rgba(0,243,255,0.14);
+  letter-spacing:2px;
+  text-shadow: 0 0 18px rgba(0,243,255,0.35);
+  animation: wordPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes wordPop {
+  from { opacity:0; transform:scale(0.9); }
+  to   { opacity:1; transform:scale(1); }
+}
+.ll-quiz-opts {
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+}
+@media(max-width:500px){ .ll-quiz-opts { grid-template-columns:1fr; } }
+
+.ll-quiz-opt {
+  padding:13px 14px;
+  background:rgba(0,243,255,0.04); border:1px solid rgba(0,243,255,0.12);
+  border-radius:10px; color:rgba(200,220,255,0.88);
+  font-size:13px; font-family:inherit; cursor:pointer; text-align:center;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1); line-height:1.4;
+  will-change: transform;
+}
+.ll-quiz-opt:hover:not(:disabled) {
+  background:rgba(0,243,255,0.1); border-color:rgba(0,243,255,0.35);
+  transform:translateY(-2px); color:#fff;
+  box-shadow: 0 4px 16px rgba(0,243,255,0.12);
+}
+.ll-quiz-opt.correct {
+  background:rgba(0,255,136,0.12) !important;
+  border-color:var(--neon-green) !important;
+  color:var(--neon-green) !important;
+  box-shadow: 0 0 16px rgba(0,255,136,0.2) !important;
+}
+.ll-quiz-opt.wrong {
+  background:rgba(255,36,66,0.1) !important;
+  border-color:var(--neon-red) !important;
+  color:var(--neon-red) !important;
+}
+.ll-quiz-opt:disabled { cursor:not-allowed; transform:none !important; }
+
+.ll-quiz-feedback {
+  margin-top:14px; padding:11px 16px; border-radius:10px;
+  font-size:13px; text-align:center; line-height:1.5;
+  animation: feedIn 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+@keyframes feedIn {
+  from { opacity:0; transform:translateY(6px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.ll-quiz-feedback.correct-fb {
+  background:rgba(0,255,136,0.08);
+  border:1px solid rgba(0,255,136,0.25);
+  color:var(--neon-green);
+}
+.ll-quiz-feedback.wrong-fb {
+  background:rgba(255,36,66,0.08);
+  border:1px solid rgba(255,36,66,0.25);
+  color:var(--neon-red);
+}
+.ll-quiz-result {
+  text-align:center; padding:18px 10px;
+  animation: feedIn 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.ll-quiz-result-emoji { font-size:52px; margin-bottom:14px; }
+.ll-quiz-result-text {
+  font-family:'Orbitron',monospace; font-size:15px; font-weight:700;
+  color:var(--neon-blue); margin-bottom:6px;
+}
+.ll-quiz-result-sub { font-size:13px; color:var(--text-muted); margin-bottom:22px; }
+.ll-quiz-restart-btn {
+  padding:12px 30px;
+  background:rgba(0,243,255,0.08); border:1px solid rgba(0,243,255,0.3);
+  border-radius:10px; color:var(--neon-blue);
+  font-size:12px; font-family:inherit; cursor:pointer; letter-spacing:1px;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.ll-quiz-restart-btn:hover {
+  background:rgba(0,243,255,0.15); border-color:var(--neon-blue);
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,243,255,0.15);
+}
+</style>
+
+<script>
+/* ══════════════════════════════════════════
+   MİNİ TEST MOTORU
+══════════════════════════════════════════ */
+(function(){
+  'use strict';
+
+  /* Soru bankaları — sayfadaki verilerden */
+  var Q = {
+    tr:[
+      {w:'Merhaba',         c:'Привіт',           x:['Дякую','Вибачте','До побачення']},
+      {w:'Günaydın',        c:'Доброго ранку',     x:['Добрий вечір','Добрий день','Привіт']},
+      {w:'İyi akşamlar',    c:'Добрий вечір',      x:['Доброго ранку','Дякую','Будь ласка']},
+      {w:'Teşekkür ederim', c:'Дякую',             x:['Вибачте','Будь ласка','Привіт']},
+      {w:'Rica ederim',     c:'Будь ласка',        x:['Дякую','Вибачте','Привіт']},
+      {w:'Özür dilerim',    c:'Вибачте',           x:['Дякую','Будь ласка','До побачення']},
+      {w:'Evet',            c:'Так',               x:['Ні','Добре','Де?']},
+      {w:'Hayır',           c:'Ні',                x:['Так','Добре','Що це?']},
+      {w:'bir',             c:'1',                 x:['2','3','4']},
+      {w:'üç',              c:'3',                 x:['2','4','5']},
+      {w:'beş',             c:'5',                 x:['4','6','7']},
+      {w:'on',              c:'10',                x:['9','11','20']},
+      {w:'Nerede?',         c:'Де?',               x:['Що це?','Скільки коштує?','Як тебе звати?']},
+      {w:'Ne kadar?',       c:'Скільки коштує?',   x:['Де?','Що це?','Звідки ти?']},
+      {w:'Adın ne?',        c:'Як тебе звати?',    x:['Де?','Скільки коштує?','Звідки ти?']},
+    ],
+    ua:[
+      {w:'Привіт',               c:'Merhaba',           x:['Teşekkür ederim','Özür dilerim','Güle güle']},
+      {w:'Доброго ранку',        c:'Günaydın',          x:['İyi akşamlar','Merhaba','İyi geceler']},
+      {w:'Добрий вечір',         c:'İyi akşamlar',      x:['Günaydın','Merhaba','Rica ederim']},
+      {w:'Дякую',                c:'Teşekkür ederim',   x:['Özür dilerim','Rica ederim','Merhaba']},
+      {w:'Будь ласка',           c:'Rica ederim',       x:['Teşekkür ederim','Özür dilerim','Merhaba']},
+      {w:'Вибачте',              c:'Özür dilerim',      x:['Teşekkür ederim','Rica ederim','Hoşça kal']},
+      {w:'Так',                  c:'Evet',              x:['Hayır','Belki','Tamam']},
+      {w:'Ні',                   c:'Hayır',             x:['Evet','Belki','Tamam']},
+      {w:'один',                 c:'1',                 x:['2','3','0']},
+      {w:'три',                  c:'3',                 x:['2','4','5']},
+      {w:"п'ять",                c:'5',                 x:['4','6','3']},
+      {w:'десять',               c:'10',                x:['8','9','11']},
+      {w:'Де?',                  c:'Nerede?',           x:['Bu ne?','Ne kadar?','Adın ne?']},
+      {w:'Що це?',               c:'Bu ne?',            x:['Nerede?','Ne kadar?','Nerelisin?']},
+      {w:'Як тебе звати?',       c:'Adın ne?',          x:['Nerede?','Ne kadar?','Nerelisin?']},
+    ]
+  };
+
+  var S = {};
+
+  function shuf(a){
+    a=a.slice();
+    for(var i=a.length-1;i>0;i--){
+      var j=Math.floor(Math.random()*(i+1));
+      var t=a[i];a[i]=a[j];a[j]=t;
+    }
+    return a;
+  }
+
+  function el(id){ return document.getElementById(id); }
+
+  function els(t){
+    var p=t==='tr'?'qt':'qu';
+    return {
+      body:   el('quiz-'+t+'-body'),
+      result: el('quiz-'+t+'-result'),
+      prog:   el(p+'-prog'),
+      qnum:   el(p+'-q-num'),
+      word:   el(p+'-word'),
+      opts:   el(p+'-opts'),
+      fb:     el(p+'-feedback'),
+      emoji:  el(p+'-emoji'),
+      rtxt:   el(p+'-result-txt'),
+      rsub:   el(p+'-result-sub'),
+    };
+  }
+
+  function llStartQuiz(t){
+    if(!el('quiz-'+t+'-body')) return;
+    S[t]={ data:shuf(Q[t]).slice(0,10), idx:0, score:0 };
+    var e=els(t);
+    e.result.style.display='none';
+    e.body.style.display='block';
+    render(t);
+  }
+
+  function render(t){
+    var s=S[t], q=s.data[s.idx], e=els(t), tot=s.data.length;
+    e.prog.style.width=(s.idx/tot*100)+'%';
+    e.qnum.textContent=s.idx+1;
+    e.word.textContent=q.w;
+    e.fb.style.display='none';
+    e.fb.className='ll-quiz-feedback';
+    var opts=shuf([q.c].concat(q.x.slice(0,3)));
+    e.opts.innerHTML='';
+    opts.forEach(function(opt){
+      var b=document.createElement('button');
+      b.className='ll-quiz-opt';
+      b.textContent=opt;
+      b.onclick=function(){ answer(t,opt,q.c,b,e); };
+      e.opts.appendChild(b);
+    });
+  }
+
+  function answer(t,chosen,correct,btn,e){
+    e.opts.querySelectorAll('.ll-quiz-opt').forEach(function(b){
+      b.disabled=true;
+      if(b.textContent===correct) b.classList.add('correct');
+    });
+    var ok=chosen===correct;
+    if(!ok) btn.classList.add('wrong');
+    if(ok) S[t].score++;
+    var lang=document.documentElement.getAttribute('data-lang')||'tr';
+    e.fb.className='ll-quiz-feedback '+(ok?'correct-fb':'wrong-fb');
+    e.fb.textContent=ok
+      ? (lang==='ua'?'✅ Правильно! Чудово!':'✅ Doğru! Harika!')
+      : (lang==='ua'?'❌ Хибно! Правильна відповідь: '+correct:'❌ Yanlış! Doğru cevap: '+correct);
+    e.fb.style.display='block';
+    setTimeout(function(){
+      S[t].idx++;
+      if(S[t].idx<S[t].data.length){ render(t); } else { showResult(t); }
+    },1500);
+  }
+
+  function showResult(t){
+    var s=S[t],e=els(t),sc=s.score,tot=s.data.length;
+    var lang=document.documentElement.getAttribute('data-lang')||'tr';
+    e.prog.style.width='100%';
+    e.body.style.display='none';
+    e.result.style.display='block';
+    var em=sc>=8?'🏆':sc>=5?'🎯':'📚';
+    var tTR=sc>=8?'Mükemmel!':sc>=5?'İyi gidiyor!':'Biraz daha çalış!';
+    var tUA=sc>=8?'Чудово!':sc>=5?'Непогано!':'Ще трохи практики!';
+    e.emoji.textContent=em;
+    e.rtxt.textContent=lang==='ua'?tUA:tTR;
+    e.rsub.textContent=(lang==='ua'?'Результат: ':'Sonuç: ')+sc+' / '+tot;
+  }
+
+  window.llStartQuiz=llStartQuiz;
+
+  /* Başlatma & sekme hook */
+  window.addEventListener('load',function(){
+    setTimeout(function(){
+      llStartQuiz('tr');
+      var orig=window.llTab;
+      if(typeof orig==='function'){
+        window.llTab=function(btn,panel){
+          orig(btn,panel);
+          var t=panel==='ll-ua'?'ua':'tr';
+          if(!S[t]) setTimeout(function(){ llStartQuiz(t); },80);
+        };
+      }
+    },400);
+  });
+})();
+</script>
 
 <!-- ══ 4K VİZYON & ANİMASYON GELİŞTİRMELERİ ══ -->
 <style>
