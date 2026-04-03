@@ -5,11 +5,11 @@
 // DATA_START
 window.WAR_DATA = {
   "prob1d": 2,
-  "prob1m": 8,
-  "prob1y": 34,
+  "prob1m": 7,
+  "prob1y": 36,
   "confidence": 3,
-  "lastUpdate": "2026-04-01T14:33:26",
-  "trendPct": 30,
+  "lastUpdate": "2026-04-03T10:00:00",
+  "trendPct": 32,
   "statusSavas": {
     "tr": "AKTİF",
     "ua": "АКТИВНА"
@@ -23,26 +23,38 @@ window.WAR_DATA = {
     "ua": "низький / стабільний"
   },
   "label1d": {
-    "tr": "Müzakereler askıda, çatışma sürüyor",
-    "ua": "Переговори на паузі, бої тривають"
+    "tr": "Müzakereler askıda, cephe değişmiyor",
+    "ua": "Переговори на паузі, фронт без змін"
   },
   "label1m": {
-    "tr": "Sınırlı diplomatik momentum",
-    "ua": "Обмежений дипломатичний поступ"
+    "tr": "Trump baskısı sürüyor, Rusya direniyor",
+    "ua": "Тиск Трампа продовжується, Росія чинить опір"
   },
   "label1y": {
-    "tr": "Trump & AB baskısı, olası pencere",
-    "ua": "Тиск Трампа і ЄС, можливе вікно"
+    "tr": "AB-ABD koordinasyonu, ateşkes penceresi açık",
+    "ua": "Координація ЄС-США, вікно для перемир'я відкрите"
   },
   "reasoning": {
-    "tr": "Kremlin, Amerikalı müzakerecilerin önceliklerinin değiştiğini gerekçe göstererek üçlü formatı dondurdu. Avrupa Konseyi 19 Mart'ta Rusya'yı tam ve koşulsuz ateşkese çağırdı. İngiltere ve Fransa olası barış durumunda Ukrayna topraklarına askeri üsler kurmayı taahhüt etti. Polymarket'te Mart sonuna kadar ateşkes olasılığı %1'in altında. Esir değişimleri devam ediyor ancak toprak sorunu çıkmazda.",
-    "ua": "Кремль заморозив тристоронній формат, посилаючись на зміну пріоритетів американських переговорників. Єврорада 19 березня закликала Росію до повного та безумовного припинення вогню. Великобританія і Франція зобов'язалися розмістити військові хаби на території України в разі миру. На Polymarket шанс на припинення вогню до кінця березня менше 1%. Обмін полоненими триває, але територіальне питання в глухому куті."
+    "tr": "Nisan 2026 itibarıyla müzakere süreci fiilen durma noktasında. Trump yönetimi Rusya'ya artan ekonomik baskı uygulayacağının sinyalini verdi; Kremlin ise yeni müzakere şartları öne sürdü. AB üyeleri savunma harcamalarını artırmayı tartışıyor. Ukrayna cephede savunma pozisyonunu koruyor ancak Kursk'taki Ukrayna birlikleri büyük baskı altında. Esir takasları küçük çaplı sürmekte.",
+    "ua": "Станом на квітень 2026 р. переговорний процес фактично зупинився. Адміністрація Трампа сигналізувала про посилення економічного тиску на Росію; Кремль висунув нові умови переговорів. Країни ЄС обговорюють збільшення витрат на оборону. Україна утримує оборонні позиції на фронті, але українські підрозділи на Курщині перебувають під значним тиском. Обміни полоненими тривають у невеликих масштабах."
   },
   "developments": [
     {
       "date": {
-        "tr": "31 Mart 2026",
-        "ua": "31 березня 2026"
+        "tr": "3 Nisan 2026",
+        "ua": "3 квітня 2026"
+      },
+      "text": {
+        "tr": "Trump, Rusya'ya yönelik yeni yaptırım paketinin hazırlandığını açıkladı; Kremlin müzakere çağrılarını reddetti.",
+        "ua": "Трамп оголосив про підготовку нового пакету санкцій проти Росії; Кремль відкинув заклики до переговорів."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "date": {
+        "tr": "1 Nisan 2026",
+        "ua": "1 квітня 2026"
       },
       "text": {
         "tr": "AB dış politika şefi Kaja Kallas ve 12 AB dışişleri bakanı Kyiv'e giderek Bucha katliamının 4. yıldönümünde Ukrayna'ya destek mesajı verdi.",
@@ -57,7 +69,7 @@ window.WAR_DATA = {
         "ua": "Березень 2026"
       },
       "text": {
-        "tr": "Macaristan'ın veto etmesi nedeniyle AB'nin 90 milyar Euro'luk Ukrayna Destek Kredisi bloke oldu. Macaristan, Drujba boru hattı anlaşmazlığını gerekçe gösterdi.",
+        "tr": "Macaristan'ın veto etmesi nedeniyle AB'nin 90 milyar Euro'luk Ukrayna Destek Kredisi bloke oldu.",
         "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд, посилаючись на суперечку щодо нафтопроводу «Дружба»."
       },
       "impact": -2,
@@ -98,21 +110,26 @@ window.WAR_DATA = {
       },
       "impact": 1,
       "type": "positive"
-    },
-    {
-      "date": {
-        "tr": "15 Mart 2026",
-        "ua": "15 березня 2026"
-      },
-      "text": {
-        "tr": "Kiev, Rusya ile daha fazla müzakere olasılığını değerlendireceğini açıkladı.",
-        "ua": "Київ заявив, що оцінюватиме можливість подальших переговорів з Росією."
-      },
-      "impact": 1,
-      "type": "positive"
     }
   ],
   "newsItems": [
+    {
+      "category": "diplomatic",
+      "date": {
+        "tr": "3 Nisan 2026",
+        "ua": "3 квітня 2026"
+      },
+      "title": {
+        "tr": "Trump: Rusya'ya yeni yaptırım paketi geliyor",
+        "ua": "Трамп: новий пакет санкцій проти Росії"
+      },
+      "body": {
+        "tr": "ABD Başkanı Trump, Kremlin'in müzakere çağrılarını yanıtsız bırakması üzerine Rusya'ya yönelik kapsamlı yeni bir yaptırım paketinin hazırlık aşamasında olduğunu açıkladı.",
+        "ua": "Президент США Трамп заявив, що готується новий масштабний пакет санкцій проти Росії у відповідь на ігнорування Кремлем заклику до переговорів."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
     {
       "category": "diplomatic",
       "date": {
@@ -142,7 +159,7 @@ window.WAR_DATA = {
       },
       "body": {
         "tr": "Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese davet ederek anlamlı müzakerelere katılması çağrısında bulundu. Fransa ve İngiltere, olası barış durumunda Ukrayna'da askeri üs kurmayı taahhüt etti.",
-        "ua": "Єврорада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах. Франція і Великобританія зобов'язалися розмістити військові бази в Україні у разі миру."
+        "ua": "Єврорада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах. Франція і Велика Британія зобов'язалися розмістити військові бази в Україні у разі миру."
       },
       "impact": 1,
       "type": "positive"
@@ -150,18 +167,18 @@ window.WAR_DATA = {
     {
       "category": "military",
       "date": {
-        "tr": "10 Mart 2026",
-        "ua": "10 березня 2026"
+        "tr": "Nisan 2026",
+        "ua": "Квітень 2026"
       },
       "title": {
-        "tr": "Cephe hattında her iki taraf da ilerleme iddiasında",
-        "ua": "Обидві сторони заявляють про просування на лінії фронту"
+        "tr": "Kursk'ta Ukrayna birlikleri baskı altında",
+        "ua": "Українські підрозділи на Курщині під тиском"
       },
       "body": {
-        "tr": "Rus ve Ukraynalı yetkililer aynı anda cephe hattında ilerleme iddiasında bulundu. Ukrayna bazı bölgelerde Rusya'nın geri çekildiğini söylerken Kremlin Donetsk ekseninde kazanım elde ettiğini açıkladı.",
-        "ua": "Російські та українські посадовці одночасно заявили про просування на лінії фронту. Україна повідомила про відступ Росії в деяких районах, тоді як Кремль оголосив про здобутки на донецькому напрямку."
+        "tr": "Rusya'nın Kursk bölgesindeki Ukrayna mevzilerine yönelik saldırıları yoğunlaştı. Ukrayna Genelkurmayı birliklerin konumunu savunduğunu açıkladı.",
+        "ua": "Росія посилила атаки на українські позиції на Курщині. Генштаб ЗСУ повідомив, що підрозділи утримують свої позиції."
       },
-      "impact": -1,
+      "impact": -2,
       "type": "negative"
     },
     {
@@ -220,6 +237,60 @@ window.WAR_DATA = {
     {
       "category": "diplomatic",
       "date": {
+        "tr": "3 Nisan 2026",
+        "ua": "3 квітня 2026"
+      },
+      "title": {
+        "tr": "Trump: Rusya'ya yeni yaptırımlar geliyor",
+        "ua": "Трамп: нові санкції проти Росії на підході"
+      },
+      "body": {
+        "tr": "ABD Başkanı Trump, Kremlin'in müzakere çağrılarını yanıtsız bırakmasının ardından Rusya'ya yönelik kapsamlı yeni bir yaptırım paketinin hazırlık aşamasında olduğunu duyurdu.",
+        "ua": "Президент США Трамп оголосив про підготовку нового масштабного пакету санкцій проти Росії після того, як Кремль ігнорував заклики до переговорів."
+      },
+      "url": "https://www.reuters.com",
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": {
+        "tr": "2 Nisan 2026",
+        "ua": "2 квітня 2026"
+      },
+      "title": {
+        "tr": "Kursk'ta çatışmalar yoğunlaştı",
+        "ua": "Бої на Курщині посилилися"
+      },
+      "body": {
+        "tr": "Rusya'nın Kursk bölgesindeki Ukrayna mevzilerine yönelik saldırılar yoğunlaştı. Ukrayna Genelkurmayı birliklerin savunma konumunu sürdürdüğünü açıkladı.",
+        "ua": "Росія посилила атаки на українські позиції на Курщині. Генштаб ЗСУ підтвердив, що підрозділи утримують оборонні позиції."
+      },
+      "url": "https://www.ukrinform.net",
+      "impact": -2,
+      "type": "negative"
+    },
+    {
+      "category": "diplomatic",
+      "date": {
+        "tr": "1 Nisan 2026",
+        "ua": "1 квітня 2026"
+      },
+      "title": {
+        "tr": "AB bakanları Kyiv'de: Bucha'nın 4. yıldönümü",
+        "ua": "Міністри ЄС у Києві: 4-а річниця Бучі"
+      },
+      "body": {
+        "tr": "AB dış politika şefi Kaja Kallas ve 12 AB dışişleri bakanı Kyiv'i ziyaret ederek Bucha katliamının 4. yıldönümünde Ukrayna'ya tam destek mesajı verdi.",
+        "ua": "Голова зовнішньої політики ЄС Кая Каллас і 12 міністрів закордонних справ ЄС відвідали Київ і підтвердили повну підтримку України у 4-у річницю Бучі."
+      },
+      "url": "https://www.euractiv.com",
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": {
         "tr": "27 Mart 2026",
         "ua": "27 березня 2026"
       },
@@ -236,6 +307,24 @@ window.WAR_DATA = {
       "type": "positive"
     },
     {
+      "category": "economic",
+      "date": {
+        "tr": "26 Mart 2026",
+        "ua": "26 березня 2026"
+      },
+      "title": {
+        "tr": "Rada: Mali kriz uyarısı, 3,9 milyar Euro havada",
+        "ua": "Рада: попередження про фінансову кризу, €3,9 млрд під загрозою"
+      },
+      "body": {
+        "tr": "Rada vergi komitesi başkanı, Ukrayna'nın Ukraine Facility programının 14 şartını yerine getirememesi nedeniyle 3,9 milyar Euro'yu alamadığını açıkladı.",
+        "ua": "Голова податкового комітету Ради заявив, що Україна не отримала €3,9 млрд через невиконання 14 вимог програми Ukraine Facility."
+      },
+      "url": "https://ua.news-pravda.com/en/world/2026/03/26/94143.html",
+      "impact": -2,
+      "type": "negative"
+    },
+    {
       "category": "parliamentary",
       "date": {
         "tr": "24 Mart 2026",
@@ -243,7 +332,7 @@ window.WAR_DATA = {
       },
       "title": {
         "tr": "Rada: Milletvekilleri savaş koşullarına hazırlanıyor",
-        "ua": "Рада: депутатам доручено готуватися до роботи в умовах війни"
+        "ua": "Рада: депутатів зобов'язали готуватись до роботи в умовах війни"
       },
       "body": {
         "tr": "Verkhovna Rada, milletvekillerine olası acil durumlarda çalışmaya hazır olmalarını zorunlu kılan yeni bir prosedür benimsedi.",
@@ -265,7 +354,7 @@ window.WAR_DATA = {
       },
       "body": {
         "tr": "Orta Doğu'daki gelişmeler nedeniyle ABD'nin arabuluculuk ettiği Ukrayna-Rusya barış görüşmeleri durdu. Her iki taraf da cephe hattında ilerleme iddiasını sürdürüyor.",
-        "ua": "Переговори між Україною та Росією за посередництва США призупинено через загострення на Близькому Сході. Обидві сторони заявляють про просування на фронті."
+        "ua": "Переговори між Україною та Росією за посередництва США призупинено. Обидві сторони заявляють про просування на фронті."
       },
       "url": "https://www.euronews.com/2026/03/10/russia-and-ukraine-both-claim-front-line-progress-with-us-brokered-peace-talks-on-hold",
       "impact": -1,
@@ -282,8 +371,8 @@ window.WAR_DATA = {
         "ua": "Американсько-український інвестфонд здійснив першу інвестицію"
       },
       "body": {
-        "tr": "ABD Hazinesi, ABD-Ukrayna Yeniden Yapılanma Yatırım Fonu'nun ilk yatırımını onayladığını açıkladı. Fon, savunma teknolojisi alanında faaliyet gösteren Sine Engineering'e ortak sermaye yatırımı yapıyor.",
-        "ua": "Міністерство фінансів США оголосило про схвалення першої інвестиції Американсько-українського фонду відновлення у компанію Sine Engineering у сфері оборонних технологій."
+        "tr": "ABD Hazinesi, ABD-Ukrayna Yeniden Yapılanma Yatırım Fonu'nun ilk yatırımını onayladığını açıkladı. Savunma teknolojisi alanındaki Sine Engineering'e ortak sermaye yatırımı yapılıyor.",
+        "ua": "Міністерство фінансів США схвалило першу інвестицію фонду відновлення у компанію Sine Engineering у сфері оборонних технологій."
       },
       "url": "https://home.treasury.gov/news/press-releases/sb0424",
       "impact": 2,
@@ -300,48 +389,12 @@ window.WAR_DATA = {
         "ua": "ЄБРР: економіка України зросте на 2,5%"
       },
       "body": {
-        "tr": "Avrupa İmar ve Kalkınma Bankası, savaşın sürmesine rağmen Ukrayna'nın 2026'da %2,5, 2027'de %4 büyüyeceğini öngördü. 2025 yılı büyümesi %2 olarak gerçekleşti.",
-        "ua": "ЄБРР прогнозує зростання ВВП України на 2,5% у 2026 р. та на 4% у 2027 р. попри тривання війни. Зростання у 2025 р. склало 2%."
+        "tr": "Avrupa İmar ve Kalkınma Bankası, savaşın sürmesine rağmen Ukrayna'nın 2026'da %2,5, 2027'de %4 büyüyeceğini öngördü.",
+        "ua": "ЄБРР прогнозує зростання ВВП України на 2,5% у 2026 р. та на 4% у 2027 р. попри тривання війни."
       },
       "url": "https://www.ebrd.com/home/news-and-events/news/2026/ukraine-maintains-macroeconomic-stability-despite-war---ebrd-rep.html",
       "impact": 1,
       "type": "positive"
-    },
-    {
-      "category": "economic",
-      "date": {
-        "tr": "26 Mart 2026",
-        "ua": "26 березня 2026"
-      },
-      "title": {
-        "tr": "Rada: Mali kriz uyarısı, 3,9 milyar Euro havada",
-        "ua": "Рада: попередження про фінансову кризу, €3,9 млрд — під загрозою"
-      },
-      "body": {
-        "tr": "Rada vergi komitesi başkanı, Ukrayna'nın Ukraine Facility programının 14 şartını yerine getirememesi nedeniyle 3,9 milyar Euro'yu alamadığını açıkladı. Mali kriz riski gündemde.",
-        "ua": "Голова податкового комітету Ради заявив, що Україна не отримала €3,9 млрд через невиконання 14 вимог програми Ukraine Facility. Ризик фінансової кризи залишається актуальним."
-      },
-      "url": "https://ua.news-pravda.com/en/world/2026/03/26/94143.html",
-      "impact": -2,
-      "type": "negative"
-    },
-    {
-      "category": "parliamentary",
-      "date": {
-        "tr": "Mart 2026",
-        "ua": "Березень 2026"
-      },
-      "title": {
-        "tr": "Rada: Savaş döneminde seçim yapılamaz",
-        "ua": "Рада: вибори під час воєнного стану неможливі"
-      },
-      "body": {
-        "tr": "Verkhovna Rada, sıkıyönetim devam ettiği sürece Ukrayna'da seçim yapılamayacağı konusunda uzlaşıya vardı. Muhalefet ve iktidar partileri bu görüşte birleşti.",
-        "ua": "Верховна Рада дійшла консенсусу щодо неможливості проведення виборів в умовах воєнного стану. Опозиція та правляча партія підтримали цю позицію."
-      },
-      "url": "https://english.nv.ua/nation/verkhovna-rada-issues-new-statement-regarding-elections-in-ukraine-during-war-50594170.html",
-      "impact": 0,
-      "type": "neutral"
     },
     {
       "category": "economic",
@@ -351,53 +404,17 @@ window.WAR_DATA = {
       },
       "title": {
         "tr": "Ukrayna enerji altyapısı: Tüm termik santraller hasar gördü",
-        "ua": "Енергетика України: всі теплові станції пошкоджені"
+        "ua": "Енергетика України: всі теплові електростанції пошкоджені"
       },
       "body": {
         "tr": "Ukrayna'nın 15 termik santralinin tamamı hasar gördü ya da tahrip edildi. Buna karşın savunma sanayii 2022'den bu yana 50 kat büyüyerek 50 milyar dolarlık üretime ulaştı.",
-        "ua": "Всі 15 теплових електростанцій України пошкоджені або зруйновані. Водночас оборонна промисловість зросла у 50 разів з 2022 р. — до $50 млрд виробництва."
+        "ua": "Всі 15 теплових електростанцій України пошкоджені або зруйновані. Водночас оборонна промисловість зросла у 50 разів з 2022 р. до $50 млрд виробництва."
       },
       "url": "https://euromaidanpress.com/2026/03/06/ukraine-energy-economy-march-2026/",
       "impact": -1,
       "type": "negative"
-    },
-    {
-      "category": "humanitarian",
-      "date": {
-        "tr": "Şubat 2026",
-        "ua": "Лютий 2026"
-      },
-      "title": {
-        "tr": "Dünya Bankası: Yeniden yapılanma 588 milyar dolar",
-        "ua": "Світовий банк: відновлення коштуватиме $588 млрд"
-      },
-      "body": {
-        "tr": "AB ve Dünya Bankası güncellenmiş raporuna göre Ukrayna'nın 10 yıllık yeniden yapılanma maliyeti 588 milyar dolar; en büyük ihtiyaç ulaşım (96 milyar $), enerji (91 milyar $) ve konut (90 milyar $) sektörlerinde.",
-        "ua": "Оновлений звіт ЄС та Світового банку: вартість 10-річного відновлення України — $588 млрд; найбільші потреби у транспорті ($96 млрд), енергетиці ($91 млрд) і житлі ($90 млрд)."
-      },
-      "url": "https://www.worldbank.org/en/news/press-release/2026/02/23/updated-ukraine-recovery-and-reconstruction-needs-assessment-released",
-      "impact": -1,
-      "type": "negative"
-    },
-    {
-      "category": "diplomatic",
-      "date": {
-        "tr": "6 Ocak 2026",
-        "ua": "6 січня 2026"
-      },
-      "title": {
-        "tr": "Paris zirvesi: Ukrayna'ya güvenlik güvenceleri tartışıldı",
-        "ua": "Паризький саміт: обговорено гарантії безпеки для України"
-      },
-      "body": {
-        "tr": "Paris'teki güvenlik zirvesinde ABD güvenlik güvencelerini destekledi; Fransa ve İngiltere Ukrayna'da 'askeri üsler' kurulması teklifini masaya getirdi.",
-        "ua": "На паризькому безпековому саміті США підтримали гарантії безпеки; Франція та Велика Британія запропонували розмістити «військові хаби» в Україні."
-      },
-      "url": "https://www.aljazeera.com/news/2026/1/6/ukraine-talks-in-paris-yield-significant-progress-on-security-pledges",
-      "impact": 1,
-      "type": "positive"
     }
   ],
-  "gundemLastUpdate": "2026-03-27T12:00:00"
+  "gundemLastUpdate": "2026-04-03T10:00:00"
 };
 // DATA_END

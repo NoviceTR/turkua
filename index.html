@@ -3602,13 +3602,19 @@ async function submitAdForm() {
     }
   };
 
-  const _orig = window.setLang;
-  if (typeof _orig === 'function') {
-    window.setLang = function(lang) {
-      _orig(lang);
-      try { const c = localStorage.getItem(CACHE_KEY); if(c) renderGundem(JSON.parse(c).items); } catch(e) {}
-    };
-  }
+  // Dil değişince haberleri yeniden çiz
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.lang-btn');
+    if (btn) {
+      setTimeout(function() {
+        try {
+          const cached = localStorage.getItem(CACHE_KEY);
+          const rssItems = cached ? JSON.parse(cached).items : [];
+          renderGundem(rssItems);
+        } catch(err) { renderGundem([]); }
+      }, 50);
+    }
+  });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.fetchGundem(false));
   else window.fetchGundem(false);
