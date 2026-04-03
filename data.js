@@ -8,7 +8,7 @@ window.WAR_DATA = {
   "prob1m": 7,
   "prob1y": 36,
   "confidence": 3,
-  "lastUpdate": "2026-04-03T10:00:00",
+  "lastUpdate": "2026-04-03T18:00:00",
   "trendPct": 32,
   "statusSavas": {
     "tr": "AKTİF",
@@ -40,197 +40,92 @@ window.WAR_DATA = {
   },
   "developments": [
     {
-      "date": {
-        "tr": "3 Nisan 2026",
-        "ua": "3 квітня 2026"
-      },
-      "text": {
-        "tr": "Trump, Rusya'ya yönelik yeni yaptırım paketinin hazırlandığını açıkladı; Kremlin müzakere çağrılarını reddetti.",
-        "ua": "Трамп оголосив про підготовку нового пакету санкцій проти Росії; Кремль відкинув заклики до переговорів."
-      },
-      "impact": 1,
-      "type": "positive"
+      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
+      "text": { "tr": "Rusya, gece-gündüz birleştiren yeni toplu drone taktiğiyle Ukrayna'ya 700+ insansız hava aracı fırlattı. ISW bu yeni saldırı modelini belgeledi.", "ua": "Росія застосувала нову тактику — 700+ дронів вдень і вночі. ISW задокументував цей новий тип масованих ударів." },
+      "impact": -3, "type": "negative"
     },
     {
-      "date": {
-        "tr": "1 Nisan 2026",
-        "ua": "1 квітня 2026"
-      },
-      "text": {
-        "tr": "AB dış politika şefi Kaja Kallas ve 12 AB dışişleri bakanı Kyiv'e giderek Bucha katliamının 4. yıldönümünde Ukrayna'ya destek mesajı verdi.",
-        "ua": "Глава зовнішньої політики ЄС Кая Каллас і 12 міністрів закордонних справ ЄС прибули до Києва, щоб підтримати Україну у 4-у річницю трагедії Бучі."
-      },
-      "impact": 2,
-      "type": "positive"
+      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
+      "text": { "tr": "Trump, Kremlin'in müzakere çağrılarını reddetmesi üzerine Rusya'ya yeni yaptırım paketinin hazırlandığını duyurdu.", "ua": "Трамп оголосив про підготовку нового пакету санкцій проти Росії через відмову Кремля від переговорів." },
+      "impact": 1, "type": "positive"
     },
     {
-      "date": {
-        "tr": "Mart 2026",
-        "ua": "Березень 2026"
-      },
-      "text": {
-        "tr": "Macaristan'ın veto etmesi nedeniyle AB'nin 90 milyar Euro'luk Ukrayna Destek Kredisi bloke oldu.",
-        "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд, посилаючись на суперечку щодо нафтопроводу «Дружба»."
-      },
-      "impact": -2,
-      "type": "negative"
+      "date": { "tr": "1 Nisan 2026", "ua": "1 квітня 2026" },
+      "text": { "tr": "AB dış politika şefi Kallas ve 12 AB dışişleri bakanı Buça'nın 4. yıldönümünde Kyiv'de Ukrayna'ya destek verdi.", "ua": "Каллас та 12 міністрів ЄС у Києві підтримали Україну у 4-у річницю Бучі." },
+      "impact": 2, "type": "positive"
     },
     {
-      "date": {
-        "tr": "26 Mart 2026",
-        "ua": "26 березня 2026"
-      },
-      "text": {
-        "tr": "Zelenski, ABD'nin güvenlik garantileri konusundaki taleplerini kamuoyuyla paylaştı; toprak meselesi ana görüşme başlığı olmaya devam ediyor.",
-        "ua": "Зеленський оприлюднив вимоги США щодо гарантій безпеки; територіальне питання залишається головною темою переговорів."
-      },
-      "impact": -1,
-      "type": "negative"
+      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
+      "text": { "tr": "Macaristan'ın vetosyla AB'nin 90 milyar Euro'luk Ukrayna Destek Kredisi bloke oldu.", "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд." },
+      "impact": -2, "type": "negative"
     },
     {
-      "date": {
-        "tr": "19 Mart 2026",
-        "ua": "19 березня 2026"
-      },
-      "text": {
-        "tr": "Kremlin sözcüsü Peskov: Üçlü müzakereler geçici olarak askıya alındı, Amerikalı müzakerecilerin öncelikleri değişti.",
-        "ua": "Речник Кремля Пєсков: Тристоронні переговори тимчасово призупинені, пріоритети американських переговорників змінилися."
-      },
-      "impact": -2,
-      "type": "negative"
+      "date": { "tr": "26 Mart 2026", "ua": "26 березня 2026" },
+      "text": { "tr": "Zelenski, ABD'nin güvenlik garantileri taleplerini paylaştı; toprak meselesi müzakerelerin ana gündem maddesi olmaya devam ediyor.", "ua": "Зеленський оприлюднив вимоги США щодо гарантій безпеки; питання territories лишається головною темою." },
+      "impact": -1, "type": "negative"
     },
     {
-      "date": {
-        "tr": "19 Mart 2026",
-        "ua": "19 березня 2026"
-      },
-      "text": {
-        "tr": "Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese çağırdı ve anlamlı müzakerelere katılmaya davet etti.",
-        "ua": "Європейська Рада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах."
-      },
-      "impact": 1,
-      "type": "positive"
+      "date": { "tr": "19 Mart 2026", "ua": "19 березня 2026" },
+      "text": { "tr": "Kremlin sözcüsü Peskov: Üçlü müzakereler geçici olarak askıya alındı, Amerikalı müzakerecilerin öncelikleri değişti.", "ua": "Пєсков: Тристоронні переговори тимчасово призупинені, пріоритети американської сторони змінилися." },
+      "impact": -2, "type": "negative"
     }
   ],
   "newsItems": [
     {
-      "category": "diplomatic",
-      "date": {
-        "tr": "3 Nisan 2026",
-        "ua": "3 квітня 2026"
-      },
-      "title": {
-        "tr": "Trump: Rusya'ya yeni yaptırım paketi geliyor",
-        "ua": "Трамп: новий пакет санкцій проти Росії"
-      },
-      "body": {
-        "tr": "ABD Başkanı Trump, Kremlin'in müzakere çağrılarını yanıtsız bırakması üzerine Rusya'ya yönelik kapsamlı yeni bir yaptırım paketinin hazırlık aşamasında olduğunu açıkladı.",
-        "ua": "Президент США Трамп заявив, що готується новий масштабний пакет санкцій проти Росії у відповідь на ігнорування Кремлем заклику до переговорів."
-      },
-      "impact": 1,
-      "type": "positive"
-    },
-    {
-      "category": "diplomatic",
-      "date": {
-        "tr": "19 Mart 2026",
-        "ua": "19 березня 2026"
-      },
-      "title": {
-        "tr": "ABD-Rusya-Ukrayna üçlü görüşmeleri askıya alındı",
-        "ua": "Тристоронні переговори США-Росія-Україна призупинені"
-      },
-      "body": {
-        "tr": "Kremlin sözcüsü Peskov, Amerikalı müzakerecilerin önceliklerinin değiştiğini öne sürerek üçlü görüşme formatını geçici olarak dondurduklarını açıkladı. Esir değişimi tek taraflı sürecek.",
-        "ua": "Речник Кремля Пєсков заявив, що тристоронній формат переговорів тимчасово заморожений через зміну пріоритетів американських переговорників. Обмін полоненими продовжиться."
-      },
-      "impact": -2,
-      "type": "negative"
-    },
-    {
-      "category": "diplomatic",
-      "date": {
-        "tr": "19 Mart 2026",
-        "ua": "19 березня 2026"
-      },
-      "title": {
-        "tr": "AB Rusya'ya tam ve koşulsuz ateşkes çağrısı yaptı",
-        "ua": "ЄС закликав Росію до повного та безумовного припинення вогню"
-      },
-      "body": {
-        "tr": "Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese davet ederek anlamlı müzakerelere katılması çağrısında bulundu. Fransa ve İngiltere, olası barış durumunda Ukrayna'da askeri üs kurmayı taahhüt etti.",
-        "ua": "Єврорада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах. Франція і Велика Британія зобов'язалися розмістити військові бази в Україні у разі миру."
-      },
-      "impact": 1,
-      "type": "positive"
-    },
-    {
       "category": "military",
-      "date": {
-        "tr": "Nisan 2026",
-        "ua": "Квітень 2026"
-      },
-      "title": {
-        "tr": "Kursk'ta Ukrayna birlikleri baskı altında",
-        "ua": "Українські підрозділи на Курщині під тиском"
-      },
-      "body": {
-        "tr": "Rusya'nın Kursk bölgesindeki Ukrayna mevzilerine yönelik saldırıları yoğunlaştı. Ukrayna Genelkurmayı birliklerin konumunu savunduğunu açıkladı.",
-        "ua": "Росія посилила атаки на українські позиції на Курщині. Генштаб ЗСУ повідомив, що підрозділи утримують свої позиції."
-      },
-      "impact": -2,
-      "type": "negative"
+      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
+      "title": { "tr": "Rusya 700+ drone ile yeni toplu taktik uyguladı — ISW raporu", "ua": "Росія атакувала 700+ дронами: нова масована тактика — ISW" },
+      "body": { "tr": "ISW raporuna göre Rusya, 31 Mart–1 Nisan arasında gece ve gündüz birleştiren yeni toplu saldırı taktiğiyle Ukrayna genelinde 700'den fazla drone fırlattı. Lutsk, Jitomir, Hmelnytskiy ve Kriviy Rig'te patlamalar yaşandı.", "ua": "За даними ISW, між 31 березня та 1 квітня Росія застосувала нову тактику масованих атак — вдень і вночі — запустивши понад 700 дронів. Вибухи лунали в Луцьку, Житомирі, Хмельницькому та Кривому Розі." },
+      "impact": -3, "type": "negative"
     },
     {
       "category": "diplomatic",
-      "date": {
-        "tr": "24 Şubat 2026",
-        "ua": "24 лютого 2026"
-      },
-      "title": {
-        "tr": "BM: Savaşın 4. yılında acil ateşkes çağrısı",
-        "ua": "ООН: Заклик до негайного припинення вогню на 4-й рік війни"
-      },
-      "body": {
-        "tr": "BM Genel Kurulu, Rusya'nın Ukrayna'yı işgalinin 4. yıldönümünde acil ve koşulsuz ateşkes talep eden karar tasarısını kabul etti. Karar bağlayıcı nitelik taşımıyor ancak uluslararası baskıyı artıracak.",
-        "ua": "Генасамблея ООН ухвалила резолюцію з вимогою негайного та безумовного припинення вогню на 4-ту річницю вторгнення Росії. Резолюція не є обов'язковою, але посилить міжнародний тиск."
-      },
-      "impact": 1,
-      "type": "positive"
-    },
-    {
-      "category": "economic",
-      "date": {
-        "tr": "3 Şubat 2026",
-        "ua": "3 лютого 2026"
-      },
-      "title": {
-        "tr": "Ukrayna ve Batı çok aşamalı ateşkes planında uzlaştı",
-        "ua": "Україна і Захід узгодили багаторівневий план припинення вогню"
-      },
-      "body": {
-        "tr": "Ukrayna, Batılı ortaklarla müzakere edilen çok aşamalı ateşkes planını onayladı. Olası Rus ihlallerinde koordineli askeri yanıt mekanizması kurulacak. Plan ayrıca yeniden yapılanma finansmanı taahhütlerini de içeriyor.",
-        "ua": "Україна схвалила багаторівневий план припинення вогню, узгоджений із західними партнерами. У разі можливих порушень Росією буде створено механізм скоординованої військової відповіді. План також включає зобов'язання щодо фінансування відновлення."
-      },
-      "impact": 2,
-      "type": "positive"
+      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
+      "title": { "tr": "Trump: Rusya'ya yeni yaptırım paketi geliyor", "ua": "Трамп: новий пакет санкцій проти Росії готується" },
+      "body": { "tr": "ABD Başkanı Trump, Kremlin'in müzakere çağrılarını yanıtsız bırakması üzerine kapsamlı yeni bir yaptırım paketinin hazırlık aşamasında olduğunu açıkladı.", "ua": "Президент США Трамп заявив, що готується новий масштабний пакет санкцій проти Росії у відповідь на ігнорування Кремлем заклику до переговорів." },
+      "impact": 1, "type": "positive"
     },
     {
       "category": "humanitarian",
-      "date": {
-        "tr": "15 Mart 2026",
-        "ua": "15 березня 2026"
-      },
-      "title": {
-        "tr": "Ukrayna'da 6 milyon yerinden edilmiş kişi geri dönmek istiyor",
-        "ua": "6 мільйонів переміщених осіб в Україні хочуть повернутися"
-      },
-      "body": {
-        "tr": "BM mülteci ajansı raporuna göre Ukrayna'dan göç eden 6 milyonun üzerinde kişi kalıcı ateşkes sağlanması durumunda ülkelerine dönmeyi planladıklarını belirtti. Türkiye'deki Ukraynalıların %38'i bu grupta yer alıyor.",
-        "ua": "Згідно зі звітом агентства ООН у справах біженців, понад 6 мільйонів осіб, що виїхали з України, заявили про намір повернутися у разі досягнення стійкого миру. 38% українців у Туреччині входять до цієї групи."
-      },
-      "impact": 0,
-      "type": "neutral"
+      "date": { "tr": "1 Nisan 2026", "ua": "1 квітня 2026" },
+      "title": { "tr": "Zelenskiy Buça Zirvesi'nde: Rusya'ya baskı artırılmalı", "ua": "Зеленський на Саміті Бучі: тиск на Росію необхідно посилити" },
+      "body": { "tr": "Zelenskiy, Kiev'deki Buça Zirvesi 2026'da savaş suçlularının yargılanması ve Rusya üzerindeki uluslararası baskının artırılması çağrısında bulundu. '600'den fazla Ukraynalı hayatını kaybetti' dedi.", "ua": "Зеленський на саміті в Києві закликав притягнути воєнних злочинців до відповідальності та посилити міжнародний тиск на Росію. «Понад 600 українців загинули»." },
+      "impact": 1, "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": { "tr": "1 Nisan 2026", "ua": "1 квітня 2026" },
+      "title": { "tr": "12 AB dışişleri bakanı Buça 4. yıldönümünde Kyiv'de", "ua": "12 міністрів закордонних справ ЄС у Києві в 4-у річницю Бучі" },
+      "body": { "tr": "AB dış politika şefi Kaja Kallas ve 12 AB üyesi ülkenin dışişleri bakanları Kyiv'e giderek Buça katliamının 4. yıldönümünde Ukrayna'ya destek mesajı verdi.", "ua": "Кая Каллас та міністри закордонних справ 12 країн ЄС прибули до Києва з підтримкою України у 4-у річницю трагедії Бучі." },
+      "impact": 2, "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "Nisan 2026", "ua": "Квітень 2026" },
+      "title": { "tr": "Kursk'ta Ukrayna birlikleri ağır baskı altında savunmada", "ua": "Українські підрозділи на Курщині під важким тиском" },
+      "body": { "tr": "Rusya'nın Kursk bölgesindeki Ukrayna mevzilerine yönelik saldırıları yoğunlaştı. Ukrayna Genelkurmayı birliklerin savunma pozisyonunu koruduğunu açıkladı.", "ua": "Росія посилила атаки на українські позиції на Курщині. Генштаб ЗСУ повідомив, що підрозділи утримують оборонні позиції." },
+      "impact": -2, "type": "negative"
+    },
+    {
+      "category": "economic",
+      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
+      "title": { "tr": "Macaristan vetosyla AB'nin 90 milyar Euro'luk Ukrayna kredisi bloke oldu", "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд" },
+      "body": { "tr": "Macaristan'ın Drujba boru hattı anlaşmazlığını gerekçe göstererek veto etmesi nedeniyle AB'nin Ukrayna'ya sağlayacağı 90 milyar Euro'luk destek kredisi askıya alındı.", "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд, посилаючись на суперечку щодо нафтопроводу «Дружба»." },
+      "impact": -2, "type": "negative"
+    },
+    {
+      "category": "diplomatic",
+      "date": { "tr": "19 Mart 2026", "ua": "19 березня 2026" },
+      "title": { "tr": "ABD-Rusya-Ukrayna üçlü görüşmeleri askıya alındı", "ua": "Тристоронні переговори США-Росія-Україна призупинені" },
+      "body": { "tr": "Kremlin sözcüsü Peskov, Amerikalı müzakerecilerin önceliklerinin değiştiğini öne sürerek üçlü görüşme formatını geçici olarak dondurduklarını açıkladı. Esir değişimi tek taraflı sürecek.", "ua": "Речник Кремля Пєсков заявив, що тристоронній формат переговорів тимчасово заморожений. Обмін полоненими продовжиться." },
+      "impact": -2, "type": "negative"
+    },
+    {
+      "category": "humanitarian",
+      "date": { "tr": "24 Şubat 2026", "ua": "24 лютого 2026" },
+      "title": { "tr": "BM Genel Kurulu savaşın 4. yılında acil ateşkes kararı aldı", "ua": "Генасамблея ООН ухвалила резолюцію про негайне припинення вогню на 4-й рік війни" },
+      "body": { "tr": "BM Genel Kurulu, Rusya'nın Ukrayna'yı işgalinin 4. yıldönümünde acil ve koşulsuz ateşkes talep eden karar tasarısını kabul etti. Karar bağlayıcı nitelik taşımıyor.", "ua": "Генасамблея ООН ухвалила резолюцію з вимогою негайного та безумовного припинення вогню на 4-ту річницю вторгнення. Резолюція не є обов'язковою." },
+      "impact": 1, "type": "positive"
     }
   ],
   "gundemNews": [

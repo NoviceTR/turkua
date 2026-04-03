@@ -1507,43 +1507,53 @@ footer a { color:var(--text-muted); text-decoration:none; }
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 300;
-  background: rgba(6,6,16,0.97);
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(0,243,255,0.15);
-  padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
-  justify-content: space-around;
-  align-items: center;
+  background: rgba(4,4,14,0.97);
+  border-top: 1px solid rgba(0,243,255,0.12);
+  padding: 0;
+  flex-direction: column;
+  overflow: hidden;
 }
-.bottom-nav a {
+.bn-scroll-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 0;
+  padding: 4px 6px calc(4px + env(safe-area-inset-bottom));
+}
+.bn-scroll-row::-webkit-scrollbar { display: none; }
+.bottom-nav a, .bn-lang-toggle {
   display: flex; flex-direction: column;
-  align-items: center; gap: 3px;
-  color: rgba(200,200,255,0.5);
+  align-items: center; justify-content: center; gap: 3px;
+  color: rgba(200,200,255,0.45);
   text-decoration: none;
-  font-size: 9px; letter-spacing: 0.5px;
+  font-size: 9px; letter-spacing: 0.3px;
   text-transform: uppercase;
-  padding: 6px 8px;
-  border-radius: 10px;
-  transition: color .2s, background .2s;
-  min-width: 52px; text-align: center;
+  padding: 7px 10px 5px;
+  border-radius: 12px;
+  transition: color .18s, background .18s, transform .18s;
+  min-width: 58px; flex-shrink: 0;
+  text-align: center;
   -webkit-tap-highlight-color: transparent;
+  scroll-snap-align: start;
+  border: none; cursor: pointer; font-family: inherit;
+  background: none;
 }
-.bottom-nav a .bn-icon { font-size: 20px; line-height: 1; }
-.bottom-nav a:active,
-.bottom-nav a.active { color: var(--neon-blue); background: rgba(0,243,255,0.08); }
-.bn-lang-toggle {
-  display: flex; flex-direction: column; align-items: center; gap: 3px;
-  color: rgba(200,200,255,0.5); background: none; border: none; cursor: pointer;
-  font-size: 9px; letter-spacing: 0.5px; text-transform: uppercase;
-  padding: 6px 8px; border-radius: 10px; transition: color .2s, background .2s;
-  min-width: 52px; text-align: center; -webkit-tap-highlight-color: transparent; font-family: inherit;
+.bottom-nav a .bn-icon,
+.bn-lang-toggle .bn-icon {
+  font-size: 22px; line-height: 1.1;
+  display: block;
+  margin-bottom: 1px;
 }
-.bn-lang-toggle .bn-icon { font-size: 20px; line-height: 1; }
-.bn-lang-toggle:active { color: var(--neon-green); background: rgba(0,255,136,0.08); }
-
+.bottom-nav a:active { transform: scale(0.9); }
+.bottom-nav a.active { color: var(--neon-blue); background: rgba(0,243,255,0.1); }
+.bottom-nav a.active .bn-icon { filter: drop-shadow(0 0 6px var(--neon-blue)); }
+.bn-lang-toggle { color: rgba(200,200,255,0.45); }
+.bn-lang-toggle:active { color: var(--neon-green); background: rgba(0,255,136,0.09); transform: scale(0.9); }
 @media (max-width: 768px) {
   .bottom-nav { display: flex; }
-  body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
-  /* Üst hamburger menüyü gizle, alt nav yeterli */
+  body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
   .hamburger { display: none !important; }
   nav .nav-links { display: none !important; }
   nav { height: 52px; padding: 0 16px; }
@@ -1551,12 +1561,20 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 /* ══ AĞIR EFEKTLERİ MOBİLDE KAPAT ══ */
 @media (max-width: 768px) {
-  nav { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(6,6,16,0.98); }
-  .bottom-nav { backdrop-filter: blur(8px); }
+  nav:not(.bottom-nav) { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(6,6,16,0.98); }
+  .bottom-nav { backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; }
   .scanline { display: none; }
-  * { animation-duration: 0.01ms !important; }
-  .news-ticker-wrap { animation: none !important; }
-  .ticker-inner { animation: ticker-scroll 40s linear infinite !important; }
+  .ambient-orb { display: none !important; }
+  .particle-canvas { display: none !important; }
+  body::after { display: none; }
+  .card { transition: none !important; will-change: auto !important; }
+  .card:hover { transform: none !important; }
+  .prob-card { transition: none !important; will-change: auto !important; }
+  .news-ticker-wrap { animation: none !important; background: rgba(4,4,12,0.97) !important; }
+  .ticker-inner { animation: tickerScroll 40s linear infinite !important; }
+  .hero-title { animation: none !important; filter: none !important; }
+  .prob-card-num { animation: none !important; }
+  body::before { animation: none !important; }
 }
 
 /* ══ BÜYÜK DOKUNMA HEDEFLERİ ══ */
@@ -1620,7 +1638,19 @@ footer a { color:var(--text-muted); text-decoration:none; }
   </div>
   <div class="ticker-track">
     <div class="ticker-inner" id="tickerInner">
-      <span class="ticker-item"><span class="ticker-item-cat general">CANLI</span><span data-tr>Ukrayna haberleri yükleniyor…</span><span data-ua>Завантаження новин України…</span></span>
+      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Rusya 700+ drone saldırısıyla yeni toplu taktik uyguladı — ISW raporu</span><span data-ua>Росія застосувала 700+ дронів: нова масована тактика — звіт ISW</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Trump: Rusya'ya yeni yaptırım paketi hazırlanıyor</span><span data-ua>Трамп: готується новий пакет санкцій проти Росії</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat humanitarian">İNSANİ</span><span data-tr>Zelenskiy Buça Zirvesi'nde: Her katil cezalandırılmalı</span><span data-ua>Зеленський на саміті Бучі: кожен вбивця має бути покараний</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>AB ve 12 dışişleri bakanı 4. yıldönümünde Kyiv'de</span><span data-ua>ЄС і 12 міністрів у Києві в 4-у річницю</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat economic">EKONOMİ</span><span data-tr>Macaristan vetosyla 90 milyar Euro'luk AB-Ukrayna kredisi donduruldu</span><span data-ua>Угорщина заблокувала кредит ЄС €90 млрд для України</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Kursk'ta Ukrayna birlikleri yoğun baskı altında savunmada</span><span data-ua>Українські підрозділи на Курщині тримають оборону під тиском</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>ABD-Rusya-Ukrayna üçlü görüşmeleri askıya alındı — Peskov</span><span data-ua>США-Росія-Україна: тристоронні переговори призупинені — Пєсков</span></span>
     </div>
   </div>
 </div>
@@ -3144,6 +3174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ══ ALT NAV AKTİF DURUM ══
 function setBottomActive(el) {
   document.querySelectorAll('.bottom-nav a').forEach(a => a.classList.remove('active'));
+    if(link && link.scrollIntoView) { try { link.scrollIntoView({inline:'center', behavior:'smooth'}); } catch(e){} }
   el.classList.add('active');
 }
 // Scroll ile alt nav aktif güncelle
@@ -3753,26 +3784,40 @@ async function submitAdForm() {
 
 <!-- ══ ALT NAVİGASYON (MOBİL) ══ -->
 <nav class="bottom-nav" id="bottomNav">
-  <a href="#tracker" onclick="setBottomActive(this)">
-    <span class="bn-icon">📡</span>
-    <span data-tr>Savaş</span><span data-ua>Війна</span>
-  </a>
-  <a href="#gundem" onclick="setBottomActive(this)">
-    <span class="bn-icon">🔴</span>
-    <span data-tr>Gündem</span><span data-ua>Новини</span>
-  </a>
-  <a href="#visa" onclick="setBottomActive(this)">
-    <span class="bn-icon">🛂</span>
-    <span data-tr>Vize</span><span data-ua>Віза</span>
-  </a>
-  <a href="#money" onclick="setBottomActive(this)">
-    <span class="bn-icon">💸</span>
-    <span data-tr>Para</span><span data-ua>Гроші</span>
-  </a>
-  <button class="bn-lang-toggle" id="bnLangToggle" onclick="toggleLangBn()" aria-label="Dil degistir">
-    <span class="bn-icon" id="bnLangIcon">🇹🇷</span>
-    <span id="bnLangLabel">TR</span>
-  </button>
+  <div class="bn-scroll-row" id="bnScrollRow">
+    <a href="#tracker" onclick="setBottomActive(this)">
+      <span class="bn-icon">📡</span>
+      <span data-tr>Savaş</span><span data-ua>Війна</span>
+    </a>
+    <a href="#gundem" onclick="setBottomActive(this)">
+      <span class="bn-icon">🔴</span>
+      <span data-tr>Gündem</span><span data-ua>Новини</span>
+    </a>
+    <a href="#visa" onclick="setBottomActive(this)">
+      <span class="bn-icon">🛂</span>
+      <span data-tr>Vize</span><span data-ua>Віза</span>
+    </a>
+    <a href="#money" onclick="setBottomActive(this)">
+      <span class="bn-icon">💸</span>
+      <span data-tr>Para</span><span data-ua>Гроші</span>
+    </a>
+    <a href="#university" onclick="setBottomActive(this)">
+      <span class="bn-icon">🎓</span>
+      <span data-tr>Üniversite</span><span data-ua>Університет</span>
+    </a>
+    <a href="#trade" onclick="setBottomActive(this)">
+      <span class="bn-icon">🤝</span>
+      <span data-tr>Ticaret</span><span data-ua>Торгівля</span>
+    </a>
+    <a href="#dil-ogreniyorum" onclick="setBottomActive(this)">
+      <span class="bn-icon">🗣️</span>
+      <span data-tr>Dil</span><span data-ua>Мова</span>
+    </a>
+    <button class="bn-lang-toggle" id="bnLangToggle" onclick="toggleLangBn()" aria-label="Dil degistir">
+      <span class="bn-icon" id="bnLangIcon">🇹🇷</span>
+      <span id="bnLangLabel">TR</span>
+    </button>
+  </div>
 </nav>
 
 
@@ -4302,12 +4347,11 @@ nav:not(.bottom-nav) {
 
 /* ── BOTTOM NAV ENHANCED */
 .bottom-nav {
-  background: rgba(3,3,12,0.96) !important;
-  backdrop-filter: blur(28px) saturate(200%) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+  background: rgba(3,3,12,0.97) !important;
   border-top: 1px solid rgba(0,243,255,0.1) !important;
   box-shadow: 0 -4px 40px rgba(0,0,0,0.5), 0 -1px 0 rgba(0,243,255,0.06) !important;
 }
+.bn-scroll-row { background: transparent; }
 
 /* ── ENHANCED SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; }
@@ -4484,29 +4528,22 @@ nav:not(.bottom-nav) {
       if(e.shiftKey && ['i','I','j','J','c','C'].indexOf(e.key) > -1){ e.preventDefault(); return false; }
     }
   });
-  /* Mobil cihazlarda tarayıcı arayüzü (adres çubuğu, alt nav) ekranın büyük
-     bölümünü kaplar — bu nedenle boyut farkı kontrolü SADECE masaüstünde yapılır. */
-  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-              || ('ontouchstart' in window)
-              || (navigator.maxTouchPoints > 0);
-
-  if (!isMobile) {
+  var isTouchDevice = ('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0);
+  var isSmallScreen = window.screen.width <= 1024 || window.screen.height <= 768;
+  var isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet/i.test(navigator.userAgent);
+  if (!isTouchDevice && !isSmallScreen && !isMobileUA) {
     var devOpen = false;
+    var threshold = 400;
     setInterval(function(){
       var wDiff = window.outerWidth  - window.innerWidth;
       var hDiff = window.outerHeight - window.innerHeight;
-      /* Masaüstü tarayıcısında devtools açıkken fark genellikle 300px+ olur.
-         Eşiği 300 yaparak küçük scrollbar / OS chrome farklarını yok sayıyoruz. */
-      if(wDiff > 300 || hDiff > 300){
-        if(!devOpen){
-          devOpen = true;
-          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#060610;color:#00f3ff;font-family:monospace;font-size:18px;text-align:center;padding:40px;">⛔ Bu sayfa geliştirici araçları ile görüntülenemez.</div>';
-        }
+      if(wDiff > threshold || hDiff > threshold){
+        if(!devOpen){ devOpen = true; document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#060610;color:#00f3ff;font-family:monospace;font-size:18px;text-align:center;padding:40px;">⛔ Bu sayfa geliştirici araçları ile görüntülenemez.</div>'; }
       } else { devOpen = false; }
-    }, 1000);
+    }, 1500);
   }
   var s = document.createElement('style');
-  s.innerHTML = '* { -webkit-user-select:none!important; -moz-user-select:none!important; user-select:none!important; } input,textarea { -webkit-user-select:text!important; user-select:text!important; }';
+  s.innerHTML = '* { -webkit-user-select:none!important; -moz-user-select:none!important; user-select:none!important; } input,textarea,select { -webkit-user-select:text!important; user-select:text!important; }';
   document.head.appendChild(s);
 })();
 </script>
