@@ -109,13 +109,11 @@ nav {
   background: rgba(6,6,16,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 0;
+  padding: 0 24px;
   display: flex; align-items: center;
-  height: 60px;
-  overflow: hidden;
+  height: 60px; gap: 20px;
 }
 
-/* Logo — solda sabit */
 .nav-logo {
   font-family: 'Orbitron', monospace;
   font-size: 16px; font-weight:900;
@@ -123,21 +121,15 @@ nav {
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
   white-space: nowrap;
-  flex-shrink: 0;
-  padding: 0 0 0 20px;
 }
 
-/* Linkler — ortada kaydırılabilir */
 .nav-links {
-  display: flex; gap:4px; flex:1;
-  list-style: none;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 0 10px;
-  align-items: center;
+  display: flex; gap:6px; flex:1;
+  list-style: none; overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
-.nav-links::-webkit-scrollbar { display: none; }
+.nav-links::-webkit-scrollbar { display: none; } /* Chrome/Safari */
 
 .nav-links a {
   color: var(--text-muted);
@@ -150,25 +142,17 @@ nav {
 }
 .nav-links a:hover { color: var(--neon-blue); background: rgba(0,243,255,0.06); }
 
-/* Sağ grup — dil & reklam butonu her zaman görünür */
-.nav-right-group {
-  display: flex; align-items: center; gap: 8px;
-  flex-shrink: 0;
-  padding: 0 14px 0 8px;
-}
-
 /* Language toggle */
 .lang-toggle {
-  display: flex; gap:5px;
+  display: flex; gap:6px; margin-left:auto; flex-shrink:0;
 }
 
 .lang-btn {
-  padding: 5px 12px; border-radius:6px; border:none;
+  padding: 5px 14px; border-radius:6px; border:none;
   font-size:12px; font-weight:600; letter-spacing:1px;
   cursor:pointer; transition: all .2s;
   background: rgba(255,255,255,0.06);
   color: var(--text-muted);
-  white-space: nowrap;
 }
 
 .lang-btn.tr { border: 1px solid rgba(227,10,23,0.3); }
@@ -1401,47 +1385,40 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -7px); }
 
 @media (max-width: 768px) {
-  /* NAV — kaydırılabilir, logo + linkler + dil butonları */
-  .hamburger { display: none !important; }
+  /* NAV — sabit yükseklik, dropdown dışarıya taşar */
+  .hamburger { display: flex; }
   nav {
     position: sticky; top: 0; z-index: 200;
-    height: 52px;
-    padding: 0;
-    overflow: hidden;
+    flex-wrap: nowrap; height: 52px;
+    padding: 0 16px; gap: 8px; align-items: center;
+    overflow: visible;
   }
-  .nav-logo {
-    font-size: 13px;
-    padding: 0 0 0 14px;
-    flex-shrink: 0;
-  }
+  .nav-logo { font-size: 14px; }
 
-  /* Linkler mobilde yatay kaydırılabilir */
+  /* DROPDOWN — nav'ın altından başlar, sayfanın üstüne yayılır */
   .nav-links {
-    display: flex !important;
-    overflow-x: auto;
-    padding: 0 6px;
-    gap: 2px;
-    flex: 1;
+    display: none;
+    position: absolute;
+    top: 52px; left: 0; right: 0;
+    flex-direction: column;
+    background: rgba(6,6,16,0.98);
+    border-bottom: 1px solid rgba(0,243,255,0.18);
+    gap: 2px; padding: 8px 12px 12px;
+    z-index: 199;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
   }
-  .nav-links li { flex-shrink: 0; }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
   .nav-links a {
-    font-size: 11px;
-    padding: 6px 9px;
-    white-space: nowrap;
+    display: block; width: 100%; font-size: 14px;
+    padding: 12px 14px; border-radius: 8px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid transparent;
   }
-
-  /* Sağ grup — dil butonları her zaman görünür */
-  .nav-right-group {
-    flex-shrink: 0;
-    padding: 0 10px 0 4px;
-    gap: 5px;
-  }
-  .nav-promo-btn { display: none !important; }
-  .lang-btn {
-    padding: 5px 9px;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-  }
+  .nav-links a:active { background: rgba(0,243,255,0.08); border-color: rgba(0,243,255,.2); }
+  .nav-right-group { margin-left: auto; gap: 6px; flex-shrink: 0; }
+  .nav-promo-btn { display: none; }
+  .lang-btn { padding: 5px 10px; font-size: 11px; }
 
   /* SECTIONS */
   section { padding: 32px 0; }
@@ -1509,7 +1486,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   .contact-grid { grid-template-columns: 1fr !important; }
   .form-row { grid-template-columns: 1fr !important; }
 
-  /* AD SLOTS */
+  /* AD SLOTS - mobilde de görünür kalır */
   .promo-leaderboard { min-height: 70px; }
   .promo-double { grid-template-columns: 1fr; }
   .promo-mid-half { min-height: 180px; }
@@ -1531,68 +1508,73 @@ footer a { color:var(--text-muted); text-decoration:none; }
   bottom: 0; left: 0; right: 0;
   z-index: 300;
   background: rgba(4,4,14,0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(0,243,255,0.18);
-  padding: 0 0 env(safe-area-inset-bottom);
-  box-shadow: 0 -4px 30px rgba(0,0,0,0.5), 0 -1px 0 rgba(0,243,255,0.07);
+  border-top: 1px solid rgba(0,243,255,0.12);
+  padding: 0;
+  flex-direction: column;
+  overflow: hidden;
 }
-.bottom-nav-inner {
+.bn-scroll-row {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 0;
+  padding: 4px 6px calc(4px + env(safe-area-inset-bottom));
 }
-.bottom-nav a,
-.bn-lang-toggle {
+.bn-scroll-row::-webkit-scrollbar { display: none; }
+.bottom-nav a, .bn-lang-toggle {
   display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 4px;
-  color: rgba(180,180,220,0.45);
+  align-items: center; justify-content: center; gap: 3px;
+  color: rgba(200,200,255,0.45);
   text-decoration: none;
-  font-size: 8.5px; letter-spacing: 0.3px;
+  font-size: 9px; letter-spacing: 0.3px;
   text-transform: uppercase;
-  padding: 10px 4px 8px;
-  transition: color .25s, background .25s;
-  flex: 1; min-width: 48px;
+  padding: 7px 10px 5px;
+  border-radius: 12px;
+  transition: color .18s, background .18s, transform .18s;
+  min-width: 58px; flex-shrink: 0;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
-  position: relative;
-  border: none; background: none; cursor: pointer;
-  font-family: inherit; min-height: 56px;
-}
-.bottom-nav a::before,
-.bn-lang-toggle::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 20%; right: 20%;
-  height: 2px;
-  background: var(--neon-blue);
-  border-radius: 0 0 3px 3px;
-  transform: scaleX(0);
-  transition: transform .25s cubic-bezier(0.22,1,0.36,1);
-  box-shadow: 0 0 8px var(--neon-blue);
+  scroll-snap-align: start;
+  border: none; cursor: pointer; font-family: inherit;
+  background: none;
 }
 .bottom-nav a .bn-icon,
-.bn-lang-toggle .bn-icon { font-size: 20px; line-height: 1; }
-.bottom-nav a:active,
-.bottom-nav a.active { color: var(--neon-blue); background: rgba(0,243,255,0.07); }
-.bottom-nav a.active::before { transform: scaleX(1); }
-.bn-lang-toggle { color: rgba(180,180,220,0.45); }
-.bn-lang-toggle:active { color: var(--neon-green); background: rgba(0,255,136,0.07); }
-
+.bn-lang-toggle .bn-icon {
+  font-size: 22px; line-height: 1.1;
+  display: block;
+  margin-bottom: 1px;
+}
+.bottom-nav a:active { transform: scale(0.9); }
+.bottom-nav a.active { color: var(--neon-blue); background: rgba(0,243,255,0.1); }
+.bottom-nav a.active .bn-icon { filter: drop-shadow(0 0 6px var(--neon-blue)); }
+.bn-lang-toggle { color: rgba(200,200,255,0.45); }
+.bn-lang-toggle:active { color: var(--neon-green); background: rgba(0,255,136,0.09); transform: scale(0.9); }
 @media (max-width: 768px) {
   .bottom-nav { display: flex; }
-  body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+  body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  .hamburger { display: none !important; }
+  nav .nav-links { display: none !important; }
+  nav { height: 52px; padding: 0 16px; }
 }
 
-/* ══ MOBİLDE PERFORMANS OPTİMİZASYONU ══ */
+/* ══ AĞIR EFEKTLERİ MOBİLDE KAPAT ══ */
 @media (max-width: 768px) {
-  nav { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: rgba(4,4,14,0.96); }
+  nav:not(.bottom-nav) { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(6,6,16,0.98); }
+  .bottom-nav { backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; }
   .scanline { display: none; }
+  .ambient-orb { display: none !important; }
+  .particle-canvas { display: none !important; }
+  body::after { display: none; }
+  .card { transition: none !important; will-change: auto !important; }
+  .card:hover { transform: none !important; }
+  .prob-card { transition: none !important; will-change: auto !important; }
+  .news-ticker-wrap { animation: none !important; background: rgba(4,4,12,0.97) !important; }
+  .ticker-inner { animation: tickerScroll 40s linear infinite !important; }
+  .hero-title { animation: none !important; filter: none !important; }
+  .prob-card-num { animation: none !important; }
   body::before { animation: none !important; }
-  .ambient-orb { animation: none !important; opacity: 0.35; }
-  .particle-canvas { opacity: 0.2; }
-  .news-ticker-wrap { animation: none !important; }
-  .ticker-inner { animation: tickerScroll 50s linear infinite !important; }
 }
 
 /* ══ BÜYÜK DOKUNMA HEDEFLERİ ══ */
@@ -1656,7 +1638,19 @@ footer a { color:var(--text-muted); text-decoration:none; }
   </div>
   <div class="ticker-track">
     <div class="ticker-inner" id="tickerInner">
-      <span class="ticker-item"><span class="ticker-item-cat general">CANLI</span><span data-tr>Ukrayna haberleri yükleniyor…</span><span data-ua>Завантаження новин України…</span></span>
+      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>ISW: Rusya cephe taarruz hızını önemli ölçüde düşürdü — Nisan 2026</span><span data-ua>ISW: Росія суттєво знизила темп наступу на фронті</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Rusya İran'daki savaşı fırsat bilerek drone saldırılarını yoğunlaştırdı — 1.000 drone, 24 saat</span><span data-ua>Росія посилила дронові атаки: до 1000 БПЛА, до 24 годин поспіль</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Zelenskiy İstanbul'da Erdoğan ile görüştü: İstanbul Süreci yeniden masada</span><span data-ua>Зеленський у Стамбулі зустрівся з Ердоганом: Стамбульський процес повертається</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Zelenskiy Şam'da: Ukrayna 25 yılda ilk kez Suriye'ye ziyaret — drone uzmanlığı paylaşıldı</span><span data-ua>Зеленський у Дамаску: перший за 25 років, поділився досвідом протидії дронам</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Erdoğan-Putin telefon görüşmesi: Türkiye her iki tarafla da masada</span><span data-ua>Ердоган–Путін: Туреччина — єдиний посередник двох сторін</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Sirskiy: Ocak'tan bu yana 480 km²'lik alanda ve 12 yerleşim yerinde kontrol geri alındı</span><span data-ua>Сирський: з січня Україна повернула контроль над 480 км² та 12 населеними пунктами</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat economic">EKONOMİ</span><span data-tr>Macaristan vetosyla 90 milyar Euro'luk AB-Ukrayna kredisi donduruldu</span><span data-ua>Угорщина заблокувала кредит ЄС €90 млрд для України</span></span>
     </div>
   </div>
 </div>
@@ -3180,11 +3174,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // ══ ALT NAV AKTİF DURUM ══
 function setBottomActive(el) {
   document.querySelectorAll('.bottom-nav a').forEach(a => a.classList.remove('active'));
+    if(link && link.scrollIntoView) { try { link.scrollIntoView({inline:'center', behavior:'smooth'}); } catch(e){} }
   el.classList.add('active');
 }
 // Scroll ile alt nav aktif güncelle
 window.addEventListener('scroll', () => {
-  const sections = ['tracker','gundem','university','visa','trade','money','dil-ogreniyorum','contact'];
+  const sections = ['tracker','gundem','visa','trade','money','contact'];
   let current = 'tracker';
   for (const id of sections) {
     const el = document.getElementById(id);
@@ -3638,13 +3633,19 @@ async function submitAdForm() {
     }
   };
 
-  const _orig = window.setLang;
-  if (typeof _orig === 'function') {
-    window.setLang = function(lang) {
-      _orig(lang);
-      try { const c = localStorage.getItem(CACHE_KEY); if(c) renderGundem(JSON.parse(c).items); } catch(e) {}
-    };
-  }
+  // Dil değişince haberleri yeniden çiz
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.lang-btn');
+    if (btn) {
+      setTimeout(function() {
+        try {
+          const cached = localStorage.getItem(CACHE_KEY);
+          const rssItems = cached ? JSON.parse(cached).items : [];
+          renderGundem(rssItems);
+        } catch(err) { renderGundem([]); }
+      }, 50);
+    }
+  });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.fetchGundem(false));
   else window.fetchGundem(false);
@@ -3783,7 +3784,7 @@ async function submitAdForm() {
 
 <!-- ══ ALT NAVİGASYON (MOBİL) ══ -->
 <nav class="bottom-nav" id="bottomNav">
-  <div class="bottom-nav-inner">
+  <div class="bn-scroll-row" id="bnScrollRow">
     <a href="#tracker" onclick="setBottomActive(this)">
       <span class="bn-icon">📡</span>
       <span data-tr>Savaş</span><span data-ua>Війна</span>
@@ -3792,10 +3793,6 @@ async function submitAdForm() {
       <span class="bn-icon">🔴</span>
       <span data-tr>Gündem</span><span data-ua>Новини</span>
     </a>
-    <a href="#university" onclick="setBottomActive(this)">
-      <span class="bn-icon">🎓</span>
-      <span data-tr>Üniv.</span><span data-ua>Університет</span>
-    </a>
     <a href="#visa" onclick="setBottomActive(this)">
       <span class="bn-icon">🛂</span>
       <span data-tr>Vize</span><span data-ua>Віза</span>
@@ -3803,6 +3800,14 @@ async function submitAdForm() {
     <a href="#money" onclick="setBottomActive(this)">
       <span class="bn-icon">💸</span>
       <span data-tr>Para</span><span data-ua>Гроші</span>
+    </a>
+    <a href="#university" onclick="setBottomActive(this)">
+      <span class="bn-icon">🎓</span>
+      <span data-tr>Üniversite</span><span data-ua>Університет</span>
+    </a>
+    <a href="#trade" onclick="setBottomActive(this)">
+      <span class="bn-icon">🤝</span>
+      <span data-tr>Ticaret</span><span data-ua>Торгівля</span>
     </a>
     <a href="#dil-ogreniyorum" onclick="setBottomActive(this)">
       <span class="bn-icon">🗣️</span>
@@ -4342,12 +4347,11 @@ nav:not(.bottom-nav) {
 
 /* ── BOTTOM NAV ENHANCED */
 .bottom-nav {
-  background: rgba(3,3,12,0.96) !important;
-  backdrop-filter: blur(28px) saturate(200%) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+  background: rgba(3,3,12,0.97) !important;
   border-top: 1px solid rgba(0,243,255,0.1) !important;
   box-shadow: 0 -4px 40px rgba(0,0,0,0.5), 0 -1px 0 rgba(0,243,255,0.06) !important;
 }
+.bn-scroll-row { background: transparent; }
 
 /* ── ENHANCED SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; }
@@ -4524,15 +4528,22 @@ nav:not(.bottom-nav) {
       if(e.shiftKey && ['i','I','j','J','c','C'].indexOf(e.key) > -1){ e.preventDefault(); return false; }
     }
   });
-  /* Mobil cihazlarda tarayıcı arayüzü (adres çubuğu, alt nav) ekranın büyük
-     bölümünü kaplar — bu nedenle boyut farkı kontrolü SADECE masaüstünde yapılır. */
-  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-              || ('ontouchstart' in window)
-              || (navigator.maxTouchPoints > 0);
-
-  // Geliştirici araçları engeli kaldırıldı
+  var isTouchDevice = ('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0);
+  var isSmallScreen = window.screen.width <= 1024 || window.screen.height <= 768;
+  var isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet/i.test(navigator.userAgent);
+  if (!isTouchDevice && !isSmallScreen && !isMobileUA) {
+    var devOpen = false;
+    var threshold = 400;
+    setInterval(function(){
+      var wDiff = window.outerWidth  - window.innerWidth;
+      var hDiff = window.outerHeight - window.innerHeight;
+      if(wDiff > threshold || hDiff > threshold){
+        if(!devOpen){ devOpen = true; document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#060610;color:#00f3ff;font-family:monospace;font-size:18px;text-align:center;padding:40px;">⛔ Bu sayfa geliştirici araçları ile görüntülenemez.</div>'; }
+      } else { devOpen = false; }
+    }, 1500);
+  }
   var s = document.createElement('style');
-  s.innerHTML = '* { -webkit-user-select:none!important; -moz-user-select:none!important; user-select:none!important; } input,textarea { -webkit-user-select:text!important; user-select:text!important; }';
+  s.innerHTML = '* { -webkit-user-select:none!important; -moz-user-select:none!important; user-select:none!important; } input,textarea,select { -webkit-user-select:text!important; user-select:text!important; }';
   document.head.appendChild(s);
 })();
 </script>

@@ -1,213 +1,54 @@
 // ============================================================
 // DATA.JS — TürkUA Savaş Takip Verileri
-// Son güncelleme: 5 Nisan 2026
+// Otomatik güncelleme: Zamanlanmış görev tarafından yönetilir.
 // ============================================================
 // DATA_START
 window.WAR_DATA = {
   "prob1d": 2,
-  "prob1m": 9,
-  "prob1y": 36,
+  "prob1m": 8,
+  "prob1y": 33,
   "confidence": 3,
-  "lastUpdate": "2026-04-05T10:00:00",
-  "trendPct": 35,
-  "statusSavas": {
-    "tr": "AKTİF",
-    "ua": "АКТИВНА"
-  },
-  "statusMuzakere": {
-    "tr": "ASKIDA",
-    "ua": "ПРИЗУПИНЕНО"
-  },
-  "trend": {
-    "tr": "düşük / diplomatik ivme",
-    "ua": "низький / дипломатичний імпульс"
-  },
-  "label1d": {
-    "tr": "Cephede çatışma sürüyor, drone saldırıları yoğunlaştı",
-    "ua": "Бої тривають, атаки дронів посилилися"
-  },
-  "label1m": {
-    "tr": "Türkiye arabuluculuğu yeniden canlandı — İstanbul Süreci",
-    "ua": "Турецьке посередництво пожвавилося — Стамбульський процес"
-  },
-  "label1y": {
-    "tr": "NATO Ankara Zirvesi (Temmuz 2026) ve Trump baskısı belirleyici olacak",
-    "ua": "Саміт НАТО в Анкарі (липень 2026) і тиск Трампа будуть вирішальними"
-  },
+  "lastUpdate": "2026-04-08T10:00:00",
+  "trendPct": 28,
+  "statusSavas": { "tr": "AKTİF", "ua": "АКТИВНА" },
+  "statusMuzakere": { "tr": "DURDU", "ua": "ЗУПИНЕНО" },
+  "trend": { "tr": "düşük / sabit", "ua": "низький / стабільний" },
+  "label1d": { "tr": "Rusya drone taktiklerini yoğunlaştırıyor, müzakere yok", "ua": "Росія посилює дронові тактики, переговорів немає" },
+  "label1m": { "tr": "Erdoğan arabuluculuğu sürüyor; Rusya koşul dayatıyor", "ua": "Посередництво Ердогана триває; Росія диктує умови" },
+  "label1y": { "tr": "İstanbul Süreci yeniden canlanıyor, güvenlik garantileri şekilleniyor", "ua": "Стамбульський процес відновлюється, гарантії безпеки формуються" },
   "reasoning": {
-    "tr": "Zelenskiy 4 Nisan'da İstanbul'a gelerek Erdoğan ile Dolmabahçe'de görüştü; gündem ateşkes ve İstanbul Süreci'nin yeniden canlandırılmasıydı. Erdoğan bir gün önce Putin ile de telefonda görüşerek Karadeniz'de sivil gemi güvenliğini ve Ukrayna-Rusya krizinin İran savaşından ayrı tutulmasını vurguladı. ISW verilerine göre Rus ordusu Mart ayında toprak kazanımı elde edemedi — Eylül 2023'ten bu yana ilk kez. Ukrayna, Kupyansk karşı saldırısı ve Ust-Luga petrol terminali saldırısıyla önemli hasar verdi. Rusya 3 Nisan'da 500 drone ve füzeyle kayıt düzeyinde gündüz saldırısı gerçekleştirdi. NATO Ankara Zirvesi 7-8 Temmuz 2026'da yapılacak.",
-    "ua": "4 квітня Зеленський прибув до Стамбула і зустрівся з Ердоганом у Долмабахче; порядок денний — припинення вогню та відновлення Стамбульського процесу. Напередодні Ердоган спілкувався по телефону з Путіним, наголошуючи на безпеці судноплавства у Чорному морі. За даними ISW, Росія не зробила жодних територіальних здобутків у березні — вперше з вересня 2023 р. Україна завдала контрудару на Куп'янськ і атакувала термінал Усть-Луга. 3 квітня Росія завдала рекордного удару — близько 500 дронів та ракет. Саміт НАТО в Анкарі — 7–8 липня 2026 р."
+    "tr": "8 Nisan 2026 itibarıyla müzakere süreci fiilen durma noktasında. Rusya, İran'daki savaşı fırsat bilerek Ukrayna'ya drone saldırılarını yoğunlaştırdı; son iki haftada bazıları 24 saat süren ve 1.000 drone içeren saldırılar gerçekleşti. Zelenskiy 4 Nisan'da İstanbul'da Erdoğan ile buluştu — İstanbul Sürecinin yeniden canlandırılması hedeflendi. Türkiye, hem Putin (3 Nisan telefon) hem Zelenskiy ile görüşen tek arabulucu konumunda. ISW'ye göre cephedeki taarruz hızı önemli ölçüde yavaşladı. Sirskiy, Ocak'tan bu yana 480 km²'lik alanda ve 12 yerleşim yerinde kontrolün geri alındığını açıkladı.",
+    "ua": "Станом на 8 квітня 2026 р. переговорний процес фактично зупинився. Росія скористалася війною в Ірані та посилила дронові удари по Україні — за останні два тижні деякі тривали 24 години і включали до 1000 БПЛА. 4 квітня Зеленський зустрівся з Ердоганом у Стамбулі — мета: відновлення Стамбульського процесу. Туреччина — єдиний посередник, що говорить і з Путіним (дзвінок 3 квітня), і з Зеленським. За даними ISW, темп наступу суттєво сповільнився. Сирський: з січня повернуто контроль над 480 км² та 12 населеними пунктами."
   },
   "developments": [
-    {
-      "date": { "tr": "4 Nisan 2026", "ua": "4 квітня 2026" },
-      "text": {
-        "tr": "Zelenskiy İstanbul'a geldi; Erdoğan ile Dolmabahçe'de ateşkes ve İstanbul Süreci'ni görüştü. Erdoğan Türkiye'nin müzakerelere desteğini sürdüreceğini açıkladı.",
-        "ua": "Зеленський прибув до Стамбула; провів переговори з Ердоганом у Долмабахче щодо перемир'я та Стамбульського процесу. Ердоган підтвердив продовження підтримки переговорів."
-      },
-      "impact": 3,
-      "type": "positive"
-    },
-    {
-      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
-      "text": {
-        "tr": "Rusya, yaklaşık 500 drone ve füzeyle savaşın en büyük gündüz saldırısını gerçekleştirdi. Enerji ve askeri altyapı hedef alındı.",
-        "ua": "Росія завдала найбільшого денного удару у війні — близько 500 дронів та ракет. Цілями стали енергетична та військова інфраструктура."
-      },
-      "impact": -3,
-      "type": "negative"
-    },
-    {
-      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
-      "text": {
-        "tr": "Erdoğan, Zelenskiy ziyaretinden önce Putin ile telefon görüşmesi yaptı; Karadeniz gemi güvenliğini ve İran savaşının Ukrayna krizine yayılmamasını vurguladı.",
-        "ua": "Ердоган провів телефонну розмову з Путіним перед візитом Зеленського, наголосивши на безпеці суден у Чорному морі й недопущенні поширення іранської війни на Україну."
-      },
-      "impact": 2,
-      "type": "positive"
-    },
-    {
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
-      "text": {
-        "tr": "ISW: Rusya Mart'ta Ukrayna'da sıfır toprak kazandı — Eylül 2023'ten bu yana ilk kez. Ukrayna Kupyansk'ta önemli karşı saldırı düzenledi.",
-        "ua": "ISW: Росія у березні не захопила нових територій — вперше з вересня 2023 р. Україна провела значну контратаку на Куп'янськ."
-      },
-      "impact": 2,
-      "type": "positive"
-    },
-    {
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
-      "text": {
-        "tr": "SBU, Ust-Luga petrol terminaline 'önemli hasar' verdiğini açıkladı. Ukrayna, Rusya'nın enerji gelirlerini kesmeye odaklanıyor.",
-        "ua": "СБУ заявила про 'суттєві пошкодження' нафтового терміналу Усть-Луга. Україна зосереджується на скороченні доходів Росії від нафти."
-      },
-      "impact": 1,
-      "type": "positive"
-    },
-    {
-      "date": { "tr": "31 Mart 2026", "ua": "31 березня 2026" },
-      "text": {
-        "tr": "AB Dışişleri Temsilcisi Kallas ve 12 AB bakanı, Bucha katliamının 4. yıldönümünde Kyiv'i ziyaret etti.",
-        "ua": "Голова зовнішньої політики ЄС Каллас і 12 міністрів ЄС відвідали Київ у 4-у річницю Бучі."
-      },
-      "impact": 1,
-      "type": "positive"
-    }
+    { "date": { "tr": "8 Nisan 2026", "ua": "8 квітня 2026" }, "text": { "tr": "ISW: Rus ordusu cephedeki taarruz hızını önemli ölçüde azalttı. Zelenskiy, Rusya'nın koşullarını reddetti: 'Geri çekilemeyiz, Ruslar Trump ile oyun oynuyor.'", "ua": "ISW: Росія суттєво знизила темп наступу. Зеленський відкинув умови Росії: «Ми не можемо відступити, росіяни грають з Трампом»." }, "impact": 1, "type": "positive" },
+    { "date": { "tr": "6 Nisan 2026", "ua": "6 квітня 2026" }, "text": { "tr": "Rusya, İran'daki savaşı fırsat bilerek Ukrayna'ya gün içi drone saldırılarını yoğunlaştırdı. Son iki haftada 24 saate kadar süren ve bin drone içeren ataklar düzenlendi.", "ua": "Росія використала війну в Ірані та посилила денні дронові атаки на Україну — до 1000 БПЛА і тривалістю до 24 годин." }, "impact": -3, "type": "negative" },
+    { "date": { "tr": "5 Nisan 2026", "ua": "5 квітня 2026" }, "text": { "tr": "Zelenskiy, Ukrayna'nın ilk kez 25 yılda Suriye'ye ziyareti kapsamında Şam'da Ahmed el-Şaraa ve Türkiye Dışişleri Bakanı ile drone önleme uzmanlığını paylaştı.", "ua": "Зеленський у Дамаску — перший візит України до Сирії за 25 років. Обговорив з Аль-Шараа та МЗС Туреччини протидію дронам." }, "impact": 1, "type": "positive" },
+    { "date": { "tr": "4 Nisan 2026", "ua": "4 квітня 2026" }, "text": { "tr": "Zelenskiy İstanbul'da Erdoğan ile görüştü; İstanbul Sürecinin yeniden canlandırılması hedeflendi. Yakın vadede Zelenskiy-Putin telefon görüşmesi sinyali verildi.", "ua": "Зеленський у Стамбулі зустрівся з Ердоганом — мета відновити Стамбульський процес. Сигнал про можливий дзвінок Зеленський–Путін." }, "impact": 2, "type": "positive" },
+    { "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" }, "text": { "tr": "Erdoğan, Putin ile telefon görüşmesinde Ukrayna savaşı ve İran gerilimini ele aldı; Türkiye'nin arabuluculuğunu sürdüreceğini vurguladı.", "ua": "Ердоган і Путін по телефону обговорили Україну та напругу навколо Ірану; Туреччина підтвердила посередницьку роль." }, "impact": 1, "type": "positive" },
+    { "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" }, "text": { "tr": "Rusya, Ukrayna'ya yaklaşık 500 drone ve füze ile savaşın başından bu yana en büyük gündüz saldırılarından birini düzenledi.", "ua": "Росія завдала одного з найбільших денних ударів із початку війни — близько 500 дронів і ракет по Україні." }, "impact": -3, "type": "negative" },
+    { "date": { "tr": "Mart 2026", "ua": "Березень 2026" }, "text": { "tr": "Macaristan vetosyla AB'nin 90 milyar Euro'luk Ukrayna Destek Kredisi bloke oldu.", "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд." }, "impact": -2, "type": "negative" }
   ],
   "newsItems": [
-    {
-      "category": "diplomatic",
-      "date": { "tr": "4 Nisan 2026", "ua": "4 квітня 2026" },
-      "title": {
-        "tr": "Zelenskiy İstanbul'da: Erdoğan ile ateşkes ve İstanbul Süreci görüşmesi",
-        "ua": "Зеленський у Стамбулі: переговори щодо перемир'я та Стамбульського процесу"
-      },
-      "body": {
-        "tr": "Zelenskiy, 4 Nisan'da Dolmabahçe'de Erdoğan ile bir araya geldi. Savunma iş birliği, ateşkes çabaları ve Karadeniz seyrüsefer güvenliği gündemdeydi. Erdoğan Türkiye'nin müzakerelere desteğini taahhüt etti.",
-        "ua": "4 квітня Зеленський провів зустріч з Ердоганом у Долмабахче. Обговорювалися оборонне співробітництво, перемир'я та безпека судноплавства в Чорному морі. Ердоган підтвердив підтримку переговорів."
-      },
-      "impact": 3,
-      "type": "positive"
-    },
-    {
-      "category": "military",
-      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
-      "title": {
-        "tr": "500 drone ve füze: Rusya'nın savaştaki en büyük gündüz saldırısı",
-        "ua": "500 дронів та ракет: найбільший денний удар Росії у цій війні"
-      },
-      "body": {
-        "tr": "Rusya 3 Nisan sabahı yaklaşık 500 drone ve füzeyle Ukrayna'ya saldırdı. Bu, savaşın başından bu yana en büyük gündüz saldırılarından biri. Daha önce ABD arabuluculuğuyla yürütülen barış görüşmelerinin Orta Doğu'daki savaş nedeniyle askıya alındığı dönemde gerçekleşti.",
-        "ua": "3 квітня Росія атакувала Україну близько 500 дронами та ракетами — один із найбільших денних ударів у цій війні. Сталося на тлі призупинення мирних переговорів за посередництва США через загострення на Близькому Сході."
-      },
-      "impact": -3,
-      "type": "negative"
-    },
-    {
-      "category": "military",
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
-      "title": {
-        "tr": "ISW: Rus ordusu Mart'ta sıfır toprak kazandı — 2,5 yılda ilk kez",
-        "ua": "ISW: Армія РФ — нуль нових територій у березні, вперше за 2,5 роки"
-      },
-      "body": {
-        "tr": "Savaş Araştırmaları Enstitüsü'ne göre Rus ordusu Eylül 2023'ten bu yana ilk kez Mart ayında Ukrayna'da hiçbir toprak kazanamadı. Ukrayna ise bazı bölgelerde karşı saldırılarla geri alma operasyonları düzenledi.",
-        "ua": "За даними ISW, армія РФ вперше з вересня 2023 р. не захопила нових територій у березні. ЗСУ провели низку контратак і повернули деякі ділянки."
-      },
-      "impact": 2,
-      "type": "positive"
-    },
-    {
-      "category": "diplomatic",
-      "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" },
-      "title": {
-        "tr": "Erdoğan Putin'i aradı: Karadeniz güvenliği, İran savaşı Ukrayna'ya taşınmamalı",
-        "ua": "Ердоган подзвонив Путіну: безпека Чорного моря, іранська війна не повинна торкнутися України"
-      },
-      "body": {
-        "tr": "Erdoğan, Zelenskiy'nin ziyaretinden bir gün önce Putin ile telefon görüşmesi yaptı. Karadeniz'deki sivil gemilere saldırıların istikrarı bozduğunu ve İran savaşının Ukrayna krizini de kapsaması riskine dikkat çekti.",
-        "ua": "За день до зустрічі із Зеленським Ердоган провів телефонну розмову з Путіним. Він звернув увагу на дестабілізуючий ефект ударів по цивільних суднах у Чорному морі та ризик поширення іранської війни на Україну."
-      },
-      "impact": 2,
-      "type": "positive"
-    },
-    {
-      "category": "military",
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
-      "title": {
-        "tr": "Ukrayna Ust-Luga terminalini vurdu, Rusya'nın petrol ihracatına darbe",
-        "ua": "Україна вдарила по Усть-Луга, підірвавши нафтовий експорт Росії"
-      },
-      "body": {
-        "tr": "Ukrayna Güvenlik Servisi, Baltık Denizi'nin en büyük petrol ihracat terminali Ust-Luga'ya 'önemli hasar' verdiğini açıkladı. Ukrayna, Rusya'nın savaş ekonomisini besleyen enerji gelirlerini hedef almayı sürdürüyor.",
-        "ua": "СБУ повідомила про 'суттєві пошкодження' найбільшого нафтового терміналу Балтійського моря Усть-Луга. Україна продовжує бити по енергетичних доходах Росії."
-      },
-      "impact": 1,
-      "type": "positive"
-    },
-    {
-      "category": "economic",
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
-      "title": {
-        "tr": "Macaristan, AB'nin 90 milyar Euro Ukrayna kredisini veto etti",
-        "ua": "Угорщина наклала вето на кредит ЄС для України на €90 млрд"
-      },
-      "body": {
-        "tr": "Macaristan, Drujba petrol boru hattı sorununu gerekçe göstererek AB'nin Ukrayna'ya 90 milyar Euro'luk destek kredisini bloke etti. Bu hamle, Ukrayna'nın kısa vadeli finansman bütçesini tehdit ediyor.",
-        "ua": "Угорщина заблокувала кредит ЄС для України на €90 млрд, посилаючись на проблему нафтопроводу «Дружба». Це загрожує короткостроковому фінансуванню України."
-      },
-      "impact": -2,
-      "type": "negative"
-    },
-    {
-      "category": "economic",
-      "date": { "tr": "Mart 2026", "ua": "Березень 2026" },
-      "title": {
-        "tr": "EBRD: Ukrayna ekonomisi savaşa rağmen büyüyor",
-        "ua": "ЄБРР: економіка України зростає попри війну"
-      },
-      "body": {
-        "tr": "Avrupa İmar ve Kalkınma Bankası, Ukrayna'nın 2026'da %2,5, 2027'de %4 büyüyeceğini öngördü. Savunma sanayi son 4 yılda 50 kat büyüyerek 50 milyar dolarlık üretime ulaştı.",
-        "ua": "ЄБРР прогнозує зростання ВВП України на 2,5% у 2026 р. та 4% — у 2027 р. Оборонна промисловість за 4 роки зросла у 50 разів до $50 млрд."
-      },
-      "impact": 1,
-      "type": "positive"
-    },
-    {
-      "category": "diplomatic",
-      "date": { "tr": "Temmuz 2026", "ua": "Липень 2026" },
-      "title": {
-        "tr": "NATO Ankara Zirvesi 7-8 Temmuz 2026'da",
-        "ua": "Саміт НАТО в Анкарі — 7–8 липня 2026 р."
-      },
-      "body": {
-        "tr": "Türkiye ev sahipliğindeki NATO Ankara Zirvesi, Ukrayna güvenlik garantileri ve İttifak'ın genişleme gündemini taşıyacak. Erdoğan, zirvenin barış sürecine yeni ivme kazandırabileceğini vurguladı.",
-        "ua": "Саміт НАТО в Анкарі розгляне питання гарантій безпеки для України та розширення Альянсу. Ердоган підкреслив, що саміт може дати новий поштовх мирному процесу."
-      },
-      "impact": 2,
-      "type": "positive"
-    }
+    { "category": "military", "date": { "tr": "7 Nisan 2026", "ua": "7 квітня 2026" }, "title": { "tr": "ISW: Rusya cephe taarruz hızını önemli ölçüde düşürdü", "ua": "ISW: Росія суттєво знизила темп фронтального наступу" }, "body": { "tr": "Savaş Araştırmaları Enstitüsü (ISW), Rusya'nın cephedeki taarruz hızının önemli ölçüde azaldığını bildirdi. Sirskiy ise Ocak ayının sonundan bu yana 480 km²'lik alanda ve 12 yerleşim yerinde kontrolün yeniden sağlandığını açıkladı.", "ua": "ISW повідомив про суттєве сповільнення темпу наступу Росії. Сирський заявив, що з кінця січня Україна повернула контроль над 480 км² та 12 населеними пунктами." }, "impact": 2, "type": "positive" },
+    { "category": "military", "date": { "tr": "6 Nisan 2026", "ua": "6 квітня 2026" }, "title": { "tr": "Rusya İran savaşından fırsat bilerek drone saldırılarını yoğunlaştırdı", "ua": "Росія скористалася війною в Ірані та посилила дронові удари" }, "body": { "tr": "The Sunday Times'ın Ukraynalı askeri yetkililerine dayanarak bildirdiğine göre, Rusya son iki haftada 24 saate kadar süren ve bin kadar drone içeren büyük çaplı gündüz saldırıları düzenledi. Amaç Patriot hava savunma stoklarını tüketmek.", "ua": "За даними Sunday Times з посиланням на українських військових, Росія протягом двох тижнів регулярно проводила масовані денні атаки тривалістю до 24 годин із до 1000 дронів — мета: виснажити запаси Patriot." }, "impact": -3, "type": "negative" },
+    { "category": "diplomatic", "date": { "tr": "5 Nisan 2026", "ua": "5 квітня 2026" }, "title": { "tr": "Zelenskiy Şam'da: Ukrayna 25 yılda ilk kez Suriye'ye ziyaret", "ua": "Зеленський у Дамаску: перший візит України до Сирії за 25 років" }, "body": { "tr": "Zelenskiy, Dışişleri Bakanı Sibiga, UGK Sekreteri Umerov ve Genelkurmay Başkanı Gnatov ile Şam'a giderek Ahmed el-Şaraa ve Türkiye Dışişleri Bakanı ile üçlü görüşme yaptı. Drone ve insansız sistemlerle mücadele uzmanlığı paylaşıldı.", "ua": "Зеленський разом із Сибігою, Умеровим і Гнатовим відвідав Дамаск, зустрівся з Аль-Шараа та МЗС Туреччини. Обговорювались технології протидії дронам." }, "impact": 1, "type": "positive" },
+    { "category": "diplomatic", "date": { "tr": "4 Nisan 2026", "ua": "4 квітня 2026" }, "title": { "tr": "Erdoğan-Zelenskiy İstanbul Zirvesi: İstanbul Süreci yeniden canlanıyor", "ua": "Саміт Ердоган–Зеленський у Стамбулі: відновлення Стамбульського процесу" }, "body": { "tr": "Ukrayna Devlet Başkanı Zelenskiy İstanbul'da Erdoğan ile Dolmabahçe'de görüştü. İstanbul Sürecinin yeniden canlandırılması hedeflendi; analistler yakın vadede Zelenskiy-Putin telefon görüşmesi ihtimalini değerlendiriyor.", "ua": "Зеленський зустрівся з Ердоганом у Долмабахче, Стамбул. Ціль — відновити Стамбульський процес. Аналітики розглядають можливість дзвінка Зеленський–Путін у найближчому майбутньому." }, "impact": 2, "type": "positive" },
+    { "category": "diplomatic", "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" }, "title": { "tr": "Erdoğan-Putin telefon görüşmesi: Türkiye arabuluculuğunu sürdürüyor", "ua": "Ердоган–Путін по телефону: Туреччина продовжує посередництво" }, "body": { "tr": "Erdoğan, Putin ile Ukrayna savaşı, İran gerilimi ve Suriye'yi görüştü. Karadeniz'deki sivil gemilere saldırıların istikrara zarar verdiğini ve İran savaşının Ukrayna krizine yeni cephe açmaması gerektiğini vurguladı.", "ua": "Ердоган і Путін обговорили Україну, Іран і Сирію. Ердоган підкреслив, що атаки на цивільні судна в Чорному морі шкодять стабільності, а іранська війна не має поширюватися на Україну." }, "impact": 1, "type": "positive" },
+    { "category": "military", "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" }, "title": { "tr": "Rusya savaşın en büyük gündüz saldırısını düzenledi: 500 drone ve füze", "ua": "Росія завдала найбільший денний удар: ~500 дронів і ракет" }, "body": { "tr": "Rusya, 3 Nisan sabahı Ukrayna'ya yaklaşık 500 drone ve füzeyle savaşın başından bu yana en büyük gündüz saldırılarından birini düzenledi. Lutsk, Jitomir, Hmelnytskiy ve Kriviy Rig'te patlamalar yaşandı.", "ua": "3 квітня вранці Росія завдала близько 500 дронів та ракет — один із найбільших денних ударів з початку вторгнення. Вибухи у Луцьку, Житомирі, Хмельницькому, Кривому Розі." }, "impact": -3, "type": "negative" },
+    { "category": "diplomatic", "date": { "tr": "1 Nisan 2026", "ua": "1 квітня 2026" }, "title": { "tr": "Rusya Paskalya ateşkesini reddetti — Peskov Donbas'tan çekilme şartı öne sürdü", "ua": "Росія відхилила великоднє перемир'я — Пєсков вимагає відходу з Донбасу" }, "body": { "tr": "Kremlin sözcüsü Peskov, Zelenskiy'nin Paskalya ateşkes önerisini reddederek Ukrayna'nın Donbas'tan çekilmesini ön koşul olarak ileri sürdü.", "ua": "Пєсков відхилив пропозицію Зеленського і вимагає відведення українських сил з Донбасу як передумову переговорів." }, "impact": -2, "type": "negative" },
+    { "category": "economic", "date": { "tr": "Mart 2026", "ua": "Березень 2026" }, "title": { "tr": "EBRD: Ukrayna ekonomisi %2,5 büyüyecek", "ua": "ЄБРР: економіка України зросте на 2,5%" }, "body": { "tr": "Avrupa İmar ve Kalkınma Bankası, savaşın sürmesine rağmen Ukrayna'nın 2026'da %2,5, 2027'de %4 büyüyeceğini öngördü.", "ua": "ЄБРР прогнозує зростання ВВП України на 2,5% у 2026 р. та на 4% у 2027 р. попри тривання війни." }, "impact": 1, "type": "positive" }
   ],
-  "gundemLastUpdate": "2026-04-05T10:00:00"
+  "gundemNews": [
+    { "category": "military", "date": { "tr": "7 Nisan 2026", "ua": "7 квітня 2026" }, "title": { "tr": "ISW: Rusya cephe taarruz hızını önemli ölçüde düşürdü", "ua": "ISW: Росія суттєво знизила темп наступу на фронті" }, "body": { "tr": "Savaş Araştırmaları Enstitüsü, Rusya'nın cephede ilerleme hızının belirgin biçimde azaldığını bildirdi. Sirskiy, Ocak'tan bu yana 480 km²'lik alanda kontrolün geri alındığını açıkladı.", "ua": "ISW: темп наступу Росії суттєво знизився. Сирський: з кінця січня Україна відновила контроль над 480 км² та 12 населеними пунктами." }, "url": "https://www.ukrhaber.com", "impact": 2, "type": "positive" },
+    { "category": "military", "date": { "tr": "6 Nisan 2026", "ua": "6 квітня 2026" }, "title": { "tr": "Rusya İran'daki savaşı fırsat bilerek drone saldırılarını artırdı", "ua": "Росія скористалася іранською війною для посилення дронових ударів" }, "body": { "tr": "Son iki haftada Rusya, 24 saate kadar süren ve bin kadar drone içeren gündüz saldırıları düzenledi. Hedef: Patriot hava savunma stoklarını bitirmek.", "ua": "За 2 тижні — регулярні денні атаки до 24 год і до 1000 дронів. Мета: знекровити запаси ракет Patriot." }, "url": "https://www.ukrhaber.com/blog/rusya-irandaki-savastan-faydalanarak-gun-icinde-ukraynaya-daha-sik-saldirmaya-basladi/", "impact": -3, "type": "negative" },
+    { "category": "diplomatic", "date": { "tr": "5 Nisan 2026", "ua": "5 квітня 2026" }, "title": { "tr": "Zelenskiy Şam'da: 25 yılda ilk Ukrayna-Suriye görüşmesi", "ua": "Зеленський у Дамаску: перший за 25 років контакт Україна–Сирія" }, "body": { "tr": "Zelenskiy, Şam'da Ahmed el-Şaraa ve Türkiye Dışişleri Bakanı ile üçlü görüşme gerçekleştirdi. Ukrayna'nın drone karşı önleme uzmanlığı paylaşıldı.", "ua": "Зеленський зустрівся з Аль-Шараа і МЗС Туреччини у Дамаску. Ділився досвідом України у протидії дронам." }, "url": "https://turkey.news-pravda.com/russia/2026/04/06/114954.html", "impact": 1, "type": "positive" },
+    { "category": "diplomatic", "date": { "tr": "4 Nisan 2026", "ua": "4 квітня 2026" }, "title": { "tr": "Zelenskiy İstanbul'da Erdoğan ile görüştü: İstanbul Süreci masada", "ua": "Зеленський у Стамбулі зустрівся з Ердоганом: Стамбульський процес на столі" }, "body": { "tr": "Ukrayna Cumhurbaşkanı Zelenskiy, Dolmabahçe'de Erdoğan ile görüştü. Ateşkes çabaları ve kalıcı çözüm formülleri ele alındı; yakın vadede Zelenskiy-Putin görüşmesi ihtimali gündemde.", "ua": "Зеленський у Долмабахче зустрівся з Ердоганом. Обговорено ateşkes çabaları і постійне врегулювання; можливий дзвінок Зеленський–Путін." }, "url": "https://www.ahaber.com.tr/gundem/2026/04/04/ukrayna-devlet-baskani-volodimir-zelenskiyden-turkiyeye-ziyaret", "impact": 2, "type": "positive" },
+    { "category": "diplomatic", "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" }, "title": { "tr": "Erdoğan-Putin telefon görüşmesi: Türkiye her iki tarafla da masada", "ua": "Ердоган–Путін: Туреччина — єдиний посередник двох сторін" }, "body": { "tr": "Erdoğan, Putin ile Ukrayna savaşı, İran ve Suriye'yi görüştü. Erdoğan barışçıl çözüm için arabuluculuğunu sürdüreceğini vurguladı.", "ua": "Ердоган і Путін по телефону — Україна, Іран і Сирія. Туреччина підтвердила роль єдиного посередника між Росією та Україною." }, "url": "https://www.takvim.com.tr/guncel/2026/04/04/istanbulda-ukrayna-masasi-zelenskiy-turkiyeye-geliyor", "impact": 1, "type": "positive" },
+    { "category": "military", "date": { "tr": "3 Nisan 2026", "ua": "3 квітня 2026" }, "title": { "tr": "Rusya savaşın en büyük gündüz saldırısını düzenledi: ~500 drone ve füze", "ua": "Найбільший денний удар Росії: ~500 дронів та ракет по Україні" }, "body": { "tr": "Rusya, 3 Nisan sabahı Ukrayna'ya yaklaşık 500 drone ve füzeyle savaşın en büyük gündüz saldırılarından birini düzenledi.", "ua": "Один із найбільших денних ударів з початку вторгнення — близько 500 дронів та ракет вранці 3 квітня." }, "url": "https://nupel.tv/analiz-1500-gunluk-savasin-ardindan-ukrayna-aci-cekiyor-rusya-kazaniyor-mu/", "impact": -3, "type": "negative" },
+    { "category": "diplomatic", "date": { "tr": "1 Nisan 2026", "ua": "1 квітня 2026" }, "title": { "tr": "Rusya Paskalya ateşkesini reddetti — Peskov Donbas şartı öne sürdü", "ua": "Росія відхилила великоднє перемир'я — Пєсков вимагає Донбасу" }, "body": { "tr": "Peskov, Zelenskiy'nin Paskalya ateşkes önerisini reddetti; Donbas'tan Ukrayna askerlerinin çekilmesini ön koşul olarak ileri sürdü.", "ua": "Пєсков відкинув пропозицію перемир'я, вимагає відведення українських військ з Донбасу." }, "url": "https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine", "impact": -2, "type": "negative" },
+    { "category": "economic", "date": { "tr": "Mart 2026", "ua": "Березень 2026" }, "title": { "tr": "EBRD: Ukrayna savaşa rağmen 2026'da %2,5 büyüyecek", "ua": "ЄБРР: Україна зросте на 2,5% у 2026 р. попри війну" }, "body": { "tr": "Avrupa İmar ve Kalkınma Bankası, Ukrayna'nın 2026'da %2,5, 2027'de %4 büyüyeceğini öngördü.", "ua": "ЄБРР прогнозує зростання ВВП України на 2,5% у 2026 р. та 4% у 2027 р." }, "url": "https://www.ebrd.com/home/news-and-events/news/2026/ukraine-maintains-macroeconomic-stability-despite-war---ebrd-rep.html", "impact": 1, "type": "positive" }
+  ],
+  "gundemLastUpdate": "2026-04-08T10:00:00"
 };
 // DATA_END
