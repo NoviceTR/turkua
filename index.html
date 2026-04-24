@@ -27,6 +27,11 @@
 <meta name="twitter:description" content="Ukrayna-Rusya savaş takibi, vize rehberi, döviz kurları ve güncel haberler.">
 <meta name="twitter:image" content="https://www.turkua.net/og-image.png">
 
+<!-- ═══ GOOGLE ADSENSE ═══ -->
+<!-- ADIM 1: Aşağıdaki data-ad-client değerini kendi AdSense Publisher ID'nizle değiştirin -->
+<!-- Örnek: ca-pub-1234567890123456 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1935309373189119" crossorigin="anonymous"></script>
+
 <!-- ═══ PWA ═══ -->
 <meta name="theme-color" content="#060610">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -56,6 +61,43 @@
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+/* ── REKLAM ALANLARI ── */
+.ad-slot-wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.ad-slot-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(200,200,255,0.2);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+.ad-slot-direct {
+  width: 100%;
+  min-height: 90px;
+  background: rgba(0,243,255,0.03);
+  border: 1px dashed rgba(0,243,255,0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,200,255,0.3);
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.ad-slot-direct:hover {
+  border-color: rgba(0,243,255,0.3);
+  background: rgba(0,243,255,0.05);
+}
 
 * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -1638,19 +1680,19 @@ footer a { color:var(--text-muted); text-decoration:none; }
   </div>
   <div class="ticker-track">
     <div class="ticker-inner" id="tickerInner">
-      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>ISW: Rusya cephe taarruz hızını önemli ölçüde düşürdü — Nisan 2026</span><span data-ua>ISW: Росія суттєво знизила темп наступу на фронті</span></span>
+      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Rusya 700+ drone saldırısıyla yeni toplu taktik uyguladı — ISW raporu</span><span data-ua>Росія застосувала 700+ дронів: нова масована тактика — звіт ISW</span></span>
       <span class="ticker-item-sep">◆</span>
-      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Rusya İran'daki savaşı fırsat bilerek drone saldırılarını yoğunlaştırdı — 1.000 drone, 24 saat</span><span data-ua>Росія посилила дронові атаки: до 1000 БПЛА, до 24 годин поспіль</span></span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Trump: Rusya'ya yeni yaptırım paketi hazırlanıyor</span><span data-ua>Трамп: готується новий пакет санкцій проти Росії</span></span>
       <span class="ticker-item-sep">◆</span>
-      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Zelenskiy İstanbul'da Erdoğan ile görüştü: İstanbul Süreci yeniden masada</span><span data-ua>Зеленський у Стамбулі зустрівся з Ердоганом: Стамбульський процес повертається</span></span>
+      <span class="ticker-item"><span class="ticker-item-cat humanitarian">İNSANİ</span><span data-tr>Zelenskiy Buça Zirvesi'nde: Her katil cezalandırılmalı</span><span data-ua>Зеленський на саміті Бучі: кожен вбивця має бути покараний</span></span>
       <span class="ticker-item-sep">◆</span>
-      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Zelenskiy Şam'da: Ukrayna 25 yılda ilk kez Suriye'ye ziyaret — drone uzmanlığı paylaşıldı</span><span data-ua>Зеленський у Дамаску: перший за 25 років, поділився досвідом протидії дронам</span></span>
-      <span class="ticker-item-sep">◆</span>
-      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>Erdoğan-Putin telefon görüşmesi: Türkiye her iki tarafla da masada</span><span data-ua>Ердоган–Путін: Туреччина — єдиний посередник двох сторін</span></span>
-      <span class="ticker-item-sep">◆</span>
-      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Sirskiy: Ocak'tan bu yana 480 km²'lik alanda ve 12 yerleşim yerinde kontrol geri alındı</span><span data-ua>Сирський: з січня Україна повернула контроль над 480 км² та 12 населеними пунктами</span></span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>AB ve 12 dışişleri bakanı 4. yıldönümünde Kyiv'de</span><span data-ua>ЄС і 12 міністрів у Києві в 4-у річницю</span></span>
       <span class="ticker-item-sep">◆</span>
       <span class="ticker-item"><span class="ticker-item-cat economic">EKONOMİ</span><span data-tr>Macaristan vetosyla 90 milyar Euro'luk AB-Ukrayna kredisi donduruldu</span><span data-ua>Угорщина заблокувала кредит ЄС €90 млрд для України</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat military">ASKERİ</span><span data-tr>Kursk'ta Ukrayna birlikleri yoğun baskı altında savunmada</span><span data-ua>Українські підрозділи на Курщині тримають оборону під тиском</span></span>
+      <span class="ticker-item-sep">◆</span>
+      <span class="ticker-item"><span class="ticker-item-cat diplomatic">DİPLOMASİ</span><span data-tr>ABD-Rusya-Ukrayna üçlü görüşmeleri askıya alındı — Peskov</span><span data-ua>США-Росія-Україна: тристоронні переговори призупинені — Пєсков</span></span>
     </div>
   </div>
 </div>
@@ -1813,6 +1855,23 @@ footer a { color:var(--text-muted); text-decoration:none; }
 </div>
 
 
+<!-- ══ REKLAM ALANI 1 — Tracker Altı ══ -->
+<div class="container">
+  <div class="ad-slot-wrap">
+    <span class="ad-slot-label">reklam / реклама</span>
+    <!-- Google AdSense — Yatay Banner -->
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:90px;"
+         data-ad-client="ca-pub-1935309373189119"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- Direkt Reklam İçin Yedek Alan (AdSense yoksa kullanın) -->
+    <!-- <div class="ad-slot-direct" onclick="window.open('mailto:who.demir@gmail.com')">📢 Buraya Reklam Verin — reklam@turkua.net</div> -->
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════
      UKRAYNA GÜNDEMİ — CANLI HABERLER
 ══════════════════════════════════════════ -->
@@ -1867,6 +1926,23 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 </div>
 </section>
+
+<!-- ══ REKLAM ALANI 2 — Gündem & Haberler Arası ══ -->
+<div class="container">
+  <div class="ad-slot-wrap">
+    <span class="ad-slot-label">reklam / реклама</span>
+    <!-- Google AdSense — Kare / Dikdörtgen -->
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px;"
+         data-ad-client="ca-pub-1935309373189119"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="rectangle"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- Direkt Reklam İçin Yedek Alan -->
+    <!-- <div class="ad-slot-direct" style="min-height:250px;" onclick="window.open('mailto:who.demir@gmail.com')">📢 Buraya Reklam Verin — reklam@turkua.net</div> -->
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════
      SAVAŞ GELİŞMELERİ / ВОЄННІ НОВИНИ
@@ -2899,12 +2975,31 @@ footer a { color:var(--text-muted); text-decoration:none; }
 </div>
 </section>
 
+<!-- ══ REKLAM ALANI 3 — Footer Üstü ══ -->
+<div class="container">
+  <div class="ad-slot-wrap">
+    <span class="ad-slot-label">reklam / реклама</span>
+    <!-- Google AdSense — Yatay Banner -->
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:90px;"
+         data-ad-client="ca-pub-1935309373189119"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
 <!-- ══ FOOTER ══ -->
 <footer>
 <div class="container">
   <p style="margin-bottom:8px;">TürkUA &nbsp;·&nbsp; <span data-tr>Türkiye & Ukrayna Bilgi Merkezi</span><span data-ua>Інформаційний центр Туреччина & Україна</span></p>
   <p data-tr>Savaş olasılık tahminleri her 6 saatte güncellenir &nbsp;·&nbsp; Bu site bilgi amaçlıdır, resmi tavsiye değildir</p>
   <p data-ua>Прогнози імовірності оновлюються кожні 6 годин &nbsp;·&nbsp; Цей сайт є інформаційним, а не офіційною порадою</p>
+  <p style="margin-top:10px; font-size:11px;">
+    <a href="mailto:who.demir@gmail.com" data-tr style="color:rgba(0,243,255,0.4); margin-right:16px;">📢 Reklam Ver</a>
+    <a href="mailto:who.demir@gmail.com" data-ua style="color:rgba(0,243,255,0.4); margin-right:16px;">📢 Розмістити рекламу</a>
+  </p>
   <p style="margin-top:12px; font-size:11px;">
     <a href="gizlilik-politikasi.html" data-tr style="color:rgba(200,200,255,0.4); margin-right:16px;">Gizlilik Politikası</a>
     <a href="gizlilik-politikasi.html" data-ua style="color:rgba(200,200,255,0.4); margin-right:16px;">Політика Конфіденційності</a>
