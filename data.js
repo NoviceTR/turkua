@@ -1,54 +1,204 @@
 // ============================================================
 // DATA.JS — TürkUA Savaş Takip Verileri
 // Otomatik güncelleme: Zamanlanmış görev tarafından yönetilir.
+// Kaynak: ISW, Kyiv Independent, Ukrinform, Reuters
 // ============================================================
 // DATA_START
 window.WAR_DATA = {
   "prob1d": 2,
-  "prob1m": 9,
-  "prob1y": 31,
+  "prob1m": 6,
+  "prob1y": 32,
   "confidence": 3,
-  "lastUpdate": "2026-04-14T10:00:00",
-  "trendPct": 31,
+  "lastUpdate": "2026-04-25T12:00:00",
+  "trendPct": 28,
   "statusSavas": { "tr": "AKTİF", "ua": "АКТИВНА" },
-  "statusMuzakere": { "tr": "DONMUŞ", "ua": "ЗАМОРОЖЕНО" },
-  "trend": { "tr": "kısmi ateşkes sonrası / çatışmalar sürüyor", "ua": "після часткового перемир'я / бої тривають" },
-  "label1d": { "tr": "Paskalya ateşkesi bitti; Rusya Odessa ve Dnipro'ya saldırıyor", "ua": "Великоднє перемир'я скінчилося; Росія б'є по Одесі та Дніпру" },
-  "label1m": { "tr": "Müzakereler donmuş; Rusya Donbas'tan çekilmeyi ön koşul tutuyor", "ua": "Переговори заморожені; Росія вимагає відходу з Донбасу" },
-  "label1y": { "tr": "İstanbul Süreci yeniden hayatta; güvenlik garantileri şekilleniyor", "ua": "Стамбульський процес відновлено; гарантії безпеки формуються" },
+  "statusMuzakere": { "tr": "DURDU", "ua": "ЗУПИНЕНО" },
+  "trend": { "tr": "düşük / sabit", "ua": "низький / стабільний" },
+  "label1d": { "tr": "Odessa'ya gece saldırısı: 2 ölü, 15 yaralı", "ua": "Нічний удар по Одесі: 2 загиблих, 15 поранених" },
+  "label1m": { "tr": "ISW: Rusya Nisan'da 2 mil kare net kayıp yaşadı", "ua": "ISW: Росія втратила 2 кв. милі у квітні" },
+  "label1y": { "tr": "AB 90 milyar Euro onayladı; barış müzakereleri İstanbul'a dönebilir", "ua": "ЄС схвалив €90 млрд; переговори можуть повернутись до Стамбула" },
   "reasoning": {
-    "tr": "14 Nisan 2026 itibarıyla Paskalya ateşkesi (11-12 Nisan) fiilen çöktü: her iki taraf binlerce ihlal kayıt etti. Rusya, ateşkesin hemen ardından 13 Nisan'da Dnipro'ya füze saldırısı düzenleyerek 5 kişiyi öldürdü, 27'sini yaraladı. 14 Nisan sabahı ise Odessa bölgesindeki liman ve sivil altyapısına 129 drone ve 4 güdümlü füze fırlatıldı. ISW verilerine göre Rusya'nın cephedeki taarruz hızı ilk çeyrekte günde 5,5 km²'ye geriledi — son 18 ayın en düşük seviyesi. Ukrayna güney cephesinde Ocak'tan bu yana 480 km²'lik toprak geri aldı. Peskov ateşkes bittikten sonra 'operasyonun Zelenskiy barışa hazır olana dek süreceğini' açıkladı. Müzakere süreci İran-ABD gerginliği nedeniyle Washington'un gündeminden düştü. Erdoğan arabuluculuğu sürdürüyor ancak somut adım yok.",
-    "ua": "Станом на 14 квітня 2026 р. великоднє перемир'я (11–12 квітня) фактично провалилося: обидві сторони зафіксували тисячі порушень. Одразу після перемир'я, 13 квітня, Росія завдала ракетного удару по Дніпру — 5 загиблих, 27 поранених. Вранці 14 квітня — 129 БПЛА і 4 ракети по Одеській обл. За даними ISW, темп наступу Росії впав до 5,5 км²/день у І кв. 2026 р. — найнижчий показник за 18 місяців. Україна повернула 480 км² на півдні з січня. Пєсков: операція триває, доки Зеленський не готовий до миру. Переговори — стоп через Іран. Ердоган посередничає, конкретних результатів немає."
+    "tr": "25 Nisan 2026 itibarıyla cephe hattında Rusya net toprak kaybetmeye devam ediyor: ISW verilerine göre 24 Nisan haftasında 5 mil kare net kayıp yaşandı. Ukrayna Neptune füzeleriyle Taganrog'daki Rusya drone fabrikasını imha etti. Odessa'ya gece saldırısında 2 sivil hayatını kaybetti, 15 kişi yaralandı. Esir takasında her iki taraf 193'er savaş esirini karşılıklı serbest bıraktı. Lavrov, İstanbul'da yeniden müzakere olasılığını olumlu karşıladığını açıkladı ancak ön koşullardan vazgeçmedi. AB Konseyi, Ukrayna'ya 90 milyar Euro'luk finansmanı ve Rusya'ya yönelik 20. yaptırım paketini onayladı.",
+    "ua": "Станом на 25 квітня 2026 р. Росія продовжує зазнавати чистих втрат на фронті: за даними ISW, за тиждень 24 квітня вона втратила 5 кв. миль. Україна знищила завод з виробництва дронів у Таганрозі ракетами «Нептун». Вночі Одеса зазнала удару: 2 загиблих, 15 поранених. Відбувся обмін по 193 полонених. Лавров допустив відновлення переговорів у Стамбулі, але не відмовився від передумов. ЄС затвердив €90 млрд для України та 20-й санкційний пакет проти Росії."
   },
   "developments": [
-    { "date": { "tr": "14 Nisan 2026", "ua": "14 квітня 2026" }, "text": { "tr": "Rusya 14 Nisan sabahı Odessa bölgesindeki liman ve sivil altyapısına Shahed drone saldırısı düzenledi. 129 drone ve 4 Kh-59/69 güdümlü füze fırlatıldı; 115 hedef düşürüldü, 12'si hedefe ulaştı.", "ua": "Росія 14 квітня атакувала порт і цивільну інфраструктуру Одеської обл. Запущено 129 БПЛА і 4 ракети Х-59/69; збито 115 цілей, 12 досягли." }, "impact": -2, "type": "negative" },
-    { "date": { "tr": "13 Nisan 2026", "ua": "13 квітня 2026" }, "text": { "tr": "Rusya Dnipro'ya füze saldırısı düzenledi: 5 kişi hayatını kaybetti, 27 kişi yaralandı. 15 Nisan Dnipro'da yas günü ilan edildi.", "ua": "Росія завдала ракетного удару по Дніпру: 5 загиблих, 27 поранених. 15 квітня — день жалоби в Дніпрі." }, "impact": -3, "type": "negative" },
-    { "date": { "tr": "12 Nisan 2026", "ua": "12 квітня 2026" }, "text": { "tr": "Paskalya ateşkesi fiilen çöktü: Ukrayna 2.299, Rusya ise 1.971 ihlal kayıt etti. Peskov 'harekat Zelenskiy barışa hazır olana dek sürer' dedi.", "ua": "Великоднє перемир'я провалилося: Україна — 2299, Росія — 1971 порушень. Пєсков: «операція триває»." }, "impact": -2, "type": "negative" },
-    { "date": { "tr": "11 Nisan 2026", "ua": "11 квітня 2026" }, "text": { "tr": "Putin Paskalya ateşkesini ilan etti (11-12 Nisan, 32 saat). Zelenskiy karşılıklı ateşkese hazır olduklarını açıkladı.", "ua": "Путін оголосив великоднє перемир'я (11–12 квітня, 32 год.). Зеленський погодився." }, "impact": 1, "type": "neutral" },
-    { "date": { "tr": "8 Nisan 2026", "ua": "8 квітня 2026" }, "text": { "tr": "ISW: Rusya'nın cephe taarruz hızı 2026'nın ilk çeyreğinde günde 5,5 km²'ye geriledi — son 18 ayın en düşük seviyesi. Sirskiy: Ocak'tan bu yana 480 km²'lik alanda kontrol geri alındı.", "ua": "ISW: темп наступу Росії впав до 5,5 км²/день у І кв. 2026 — мінімум за 18 міс. Сирський: Україна повернула 480 км² з січня." }, "impact": 2, "type": "positive" },
-    { "date": { "tr": "6 Nisan 2026", "ua": "6 квітня 2026" }, "text": { "tr": "Rusya, İran savaşından fırsat bilerek 24 saate kadar süren ve bin drone içeren gündüz saldırıları düzenledi. Hedef: Patriot hava savunma stoklarını tüketmek.", "ua": "Росія посилила денні атаки — до 24 год. і 1000 БПЛА, мета: знекровити Patriot." }, "impact": -3, "type": "negative" },
-    { "date": { "tr": "4 Nisan 2026", "ua": "4 квітня 2026" }, "text": { "tr": "Zelenskiy İstanbul'da Erdoğan ile görüştü; İstanbul Sürecinin yeniden canlandırılması hedeflendi.", "ua": "Зеленський зустрівся з Ердоганом у Стамбулі — відновлення Стамбульського процесу." }, "impact": 2, "type": "positive" }
+    {
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "text": { "tr": "Odessa'ya gece saldırısında konut binaları ve limandaki ticaret gemisi vuruldu. 2 kişi hayatını kaybetti, 15 kişi yaralandı (9 kadın, 8 erkek, 18-83 yaş arası).", "ua": "Вночі вдарили по Одесі: жилі будинки та суховантаж у порту. 2 загиблих, 15 поранених (9 жінок, 8 чоловіків, 18–83 роки)." },
+      "impact": -3,
+      "type": "negative"
+    },
+    {
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "text": { "tr": "Ukrayna ve Rusya karşılıklı 193'er savaş esirini serbest bıraktı. Zelenskiy, Rusya'nın haklarında ceza davası açtığı kişilerin de takas edildiğini açıkladı.", "ua": "Україна та Росія обмінялися по 193 полонених. Зеленський: серед звільнених — ті, проти кого РФ відкрила кримінальні справи." },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "date": { "tr": "19 Nisan 2026", "ua": "19 квітня 2026" },
+      "text": { "tr": "Ukrayna Neptune füzeleriyle Rostov Oblastı'ndaki Atlant Aero drone fabrikasını vurdu. Fabrika tasarım, üretim ve test aşamalarının tamamını kapsıyordu.", "ua": "Україна вдарила ракетами «Нептун» по заводу «Атлант Аеро» в Ростовській обл. Завод охоплював повний цикл виробництва дронів." },
+      "impact": 3,
+      "type": "positive"
+    },
+    {
+      "date": { "tr": "22 Nisan 2026", "ua": "22 квітня 2026" },
+      "text": { "tr": "ISW: 14-21 Nisan haftasında Rusya 5 mil kare net toprak kaybetti. 24 Mart-21 Nisan döneminde toplam 2 mil kare net kayıp.", "ua": "ISW: за тиждень 14–21 квітня Росія зазнала чистих втрат 5 кв. миль. За 24 берез. – 21 квіт. загалом -2 кв. милі." },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "date": { "tr": "20 Nisan 2026", "ua": "20 квітня 2026" },
+      "text": { "tr": "Lavrov, Antalya Diplomasi Forumu'nda İstanbul'da müzakerelerin yeniden başlatılması olasılığını olumlu karşıladıklarını açıkladı.", "ua": "Лавров на Анталійському дипломатичному форумі заявив, що Росія позитивно ставиться до можливості відновлення переговорів у Стамбулі." },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "date": { "tr": "23 Nisan 2026", "ua": "23 квітня 2026" },
+      "text": { "tr": "AB Konseyi, Ukrayna'ya 90 milyar Euro'luk askeri ve bütçe desteğini ve Rusya'ya yönelik 20. yaptırım paketini resmen onayladı.", "ua": "Рада ЄС офіційно схвалила €90 млрд фінансування для України та 20-й пакет санкцій проти Росії." },
+      "impact": 3,
+      "type": "positive"
+    }
   ],
   "newsItems": [
-    { "category": "military", "date": { "tr": "14 Nisan 2026", "ua": "14 квітня 2026" }, "title": { "tr": "Odessa bölgesine Shahed drone saldırısı: 129 drone, 12'si hedefe ulaştı", "ua": "129 дронів Shahed по Одещині: 12 вразили цілі" }, "body": { "tr": "Rusya 14 Nisan sabahı Odessa bölgesindeki liman ve sivil altyapıyı hedef aldı. Hava kuvvetleri 129 drone ve 4 güdümlü füze fırlatıldığını, 115 hedefin düşürüldüğünü açıkladı. Mykolaiv bölgesinde enerji tesisleri de saldırıya uğradı, üç yerleşim yeri elektrikleri kesildi.", "ua": "Росія атакувала порт і цивільну інфраструктуру Одещини. З 129 БПЛА і 4 ракет збито 115. На Миколаївщині — удар по енергетиці, три селища без електрики." }, "impact": -2, "type": "negative" },
-    { "category": "military", "date": { "tr": "13 Nisan 2026", "ua": "13 квітня 2026" }, "title": { "tr": "Dnipro'ya füze saldırısı: 5 ölü, 27 yaralı", "ua": "Ракетний удар по Дніпру: 5 загиблих, 27 поранених" }, "body": { "tr": "Rusya 13 Nisan'da Dnipro'yu füze saldırısıyla hedef aldı. Dnipropetrovsk valisi 21 kişinin hastaneye kaldırıldığını, 10 kişinin durumunun ağır olduğunu açıkladı. 15 Nisan Dnipro'da resmi yas günü ilan edildi.", "ua": "13 квітня РФ вдарила по Дніпру. Губернатор: 21 госпіталізовано, 10 у важкому стані. 15 квітня — день жалоби." }, "impact": -3, "type": "negative" },
-    { "category": "military", "date": { "tr": "13 Nisan 2026", "ua": "13 квітня 2026" }, "title": { "tr": "Ukrayna Kırım ve Zaporijya'yı drone ile vurdu", "ua": "Україна атакувала Крим і Запоріжжя дронами" }, "body": { "tr": "Ukrayna savunma kuvvetleri geceyi kapsayan büyük çaplı saldırıyla geçici işgal altındaki Kırım'ı hedef aldı. Simferopol, Feodosiya ve Kerç çevresinde patlamalar duyuldu. Zaporijya bölgesinde de bir trafo merkezi vuruldu.", "ua": "Масований удар по Криму — вибухи біля Сімферополя, Феодосії, Керчі. Удар по підстанції в Запоріжжі." }, "impact": 2, "type": "positive" },
-    { "category": "diplomatic", "date": { "tr": "12 Nisan 2026", "ua": "12 квітня 2026" }, "title": { "tr": "Paskalya ateşkesi çöktü: Taraflar binlerce ihlali kayıt etti", "ua": "Великоднє перемир'я провалилося: тисячі порушень" }, "body": { "tr": "32 saatlik Paskalya ateşkesi fiilen işlevsiz kaldı. Ukrayna Genelkurmay'ı 2.299, Rusya ise 1.971 ihlal kayıt etti. Ateşkes bittikten sonra Peskov, 'operasyonun Zelenskiy barışa hazır olana dek süreceğini' açıkladı.", "ua": "32-год. перемир'я не спрацювало. Україна — 2299, Росія — 1971 порушень. Пєсков: «операція триває»." }, "impact": -2, "type": "negative" },
-    { "category": "military", "date": { "tr": "13 Nisan 2026", "ua": "13 квітня 2026" }, "title": { "tr": "Harkiv'de binaya drone çarptı; Sumy cephesinde Rusya ilerledi", "ua": "Дрон по будинку в Харкові; просування РФ на Сумщині" }, "body": { "tr": "Harkiv'in Şevçenkivski ilçesinde çok katlı bir binaya Rus dronu çarptı. 13 Nisan boyunca Harkiv bölgesinin 24 yerleşiminde Rus saldırısı gerçekleşti: 1 ölü, 20 yaralı. Sumy bölgesinde Rusya Myropillya yakınında ilerledi.", "ua": "Дрон влучив у будинок у Шевченківському р-ні Харкова. За день — атаки на 24 нас. пункти Харківщини: 1 заг., 20 поран. На Сумщині — просування РФ." }, "impact": -2, "type": "negative" },
-    { "category": "diplomatic", "date": { "tr": "11 Nisan 2026", "ua": "11 квітня 2026" }, "title": { "tr": "Putin Paskalya ateşkesi ilan etti — Zelenskiy kabul etti", "ua": "Путін оголосив перемир'я — Зеленський прийняв" }, "body": { "tr": "Putin 9 Nisan'da Ortodoks Paskalyası için 32 saatlik ateşkes ilan etti. Zelenskiy ateşkese uyacaklarını açıkladı. Kremlin bu adımın müzakerelerle bağlantılı olmadığını vurguladı.", "ua": "9 квітня Путін оголосив 32-год. перемир'я. Зеленський погодився. Кремль: не пов'язано з переговорами." }, "impact": 1, "type": "neutral" },
-    { "category": "military", "date": { "tr": "8 Nisan 2026", "ua": "8 квітня 2026" }, "title": { "tr": "ISW: Rus taarruz hızı 18 ayın en düşüğünde — Ukrayna 480 km² geri aldı", "ua": "ISW: темп наступу РФ — мінімум за 18 міс.; 480 км² повернуто" }, "body": { "tr": "ISW'ye göre Rusya 2026 ilk çeyreğinde günde 5,5 km² ilerledi — 18 aylık en düşük seviye. Zelenskiy, Mart 2026'da savaşın başından bu yana en yüksek Rus kayıp rakamını açıkladı: ayda 35.000'den fazla asker.", "ua": "ISW: І кв. 2026 — 5,5 км²/день, мінімум за 18 міс. Зеленський: березень 2026 — 35 000+ втрат РФ за місяць, рекорд." }, "impact": 2, "type": "positive" },
-    { "category": "economic", "date": { "tr": "Mart 2026", "ua": "Березень 2026" }, "title": { "tr": "EBRD: Ukrayna ekonomisi 2026'da %2,5 büyüyecek", "ua": "ЄБРР: Україна зросте на 2,5% у 2026 р." }, "body": { "tr": "Avrupa İmar ve Kalkınma Bankası, savaşın sürmesine rağmen Ukrayna'nın 2026'da %2,5, 2027'de %4 büyüyeceğini öngördü.", "ua": "ЄБРР прогнозує зростання ВВП України на 2,5% у 2026 р. та 4% у 2027 р." }, "impact": 1, "type": "positive" }
+    {
+      "category": "military",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "Odessa'ya gece saldırısı: 2 ölü, 15 yaralı", "ua": "Нічний удар по Одесі: 2 загиблих, 15 поранених" },
+      "body": { "tr": "Rusya'nın Odessa'ya düzenlediği gece saldırısında konut binaları ve limandaki ticaret gemisi vuruldu. 2 sivil hayatını kaybetti, 15 kişi yaralandı. Ukrayna Donanması aynı gece Odessa limanına yaklaşmaya çalışan bir Rus insansız deniz aracını imha etti.", "ua": "У нічному ударі Росії по Одесі постраждали житлові будинки та суховантаж у порту. 2 цивільних загинули, 15 поранені. Того ж вечора ВМС України знищили російський безпілотний катер біля Одеси." },
+      "impact": -3,
+      "type": "negative"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "Ukrayna ve Rusya 193'er esiri karşılıklı serbest bıraktı", "ua": "Україна і Росія обмінялися по 193 полонених" },
+      "body": { "tr": "Zelenskiy'nin açıklamasına göre serbest bırakılanlar arasında Rusya'nın ceza davası açtığı askerler ve yaralı askerler de yer alıyor. Takas, Türkiye'nin arabuluculuğuyla gerçekleşti.", "ua": "Зеленський: серед звільнених — ті, кому РФ пред'явила звинувачення, а також поранені. Обмін відбувся за посередництва Туреччини." },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "19 Nisan 2026", "ua": "19 квітня 2026" },
+      "title": { "tr": "Ukrayna Neptune füzeleriyle Rusya'nın drone fabrikasını imha etti", "ua": "Україна знищила завод дронів РФ ракетами «Нептун»" },
+      "body": { "tr": "Ukrayna Genel Kurmayı, Neptune füzelerinin Rostov Oblastı'ndaki Atlant Aero tesisini vurduğunu doğruladı. Tesis, drone tasarımı, üretimi ve testinin tamamını kapsıyordu.", "ua": "Генштаб ЗСУ підтвердив удар ракетами «Нептун» по «Атлант Аеро» в Ростовській обл. Підприємство охоплювало повний цикл: проєктування, виробництво, випробування." },
+      "impact": 3,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "22 Nisan 2026", "ua": "22 квітня 2026" },
+      "title": { "tr": "ISW: Rusya son haftada 5 mil kare toprak kaybetti", "ua": "ISW: Росія втратила 5 кв. миль за останній тиждень" },
+      "body": { "tr": "Russia Matters'ın ISW verisi analizine göre 14-21 Nisan haftasında Rusya 5 mil kare net toprak kaybetti. Mart 2026'da Rusya'nın drone saldırılarına karşı Ukrayna'nın önleme oranı %92'ye yükseldi.", "ua": "За аналізом Russia Matters на основі даних ISW, за 14–21 квітня Росія зазнала чистих втрат 5 кв. миль. У березні 2026 Україна збивала 92% дронів РФ." },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": { "tr": "20 Nisan 2026", "ua": "20 квітня 2026" },
+      "title": { "tr": "Lavrov: İstanbul müzakerelerini olumlu karşılıyoruz", "ua": "Лавров: позитивно ставимось до переговорів у Стамбулі" },
+      "body": { "tr": "Antalya Diplomasi Forumu'nda konuşan Lavrov, Rusya-Ukrayna müzakerelerinin İstanbul'da yeniden başlaması olasılığını olumlu karşıladıklarını söyledi. Ancak Ukrayna'nın müzakere masasına hazır olması gerektiğini vurguladı.", "ua": "На Анталійському форумі Лавров заявив, що Росія позитивно ставиться до відновлення переговорів у Стамбулі, але наголосив: Україна має бути готова сісти за стіл." },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": { "tr": "23 Nisan 2026", "ua": "23 квітня 2026" },
+      "title": { "tr": "AB Ukrayna'ya 90 milyar Euro onayladı, Rusya'ya 20. yaptırım paketi", "ua": "ЄС затвердив €90 млрд для України та 20-й санкційний пакет" },
+      "body": { "tr": "AB Konseyi Başkanı Costa, Ukrayna'nın 2026-2027 dönemi askeri ve bütçe ihtiyaçlarını karşılamak üzere 90 milyar Euro'luk finansmanı ve Rusya'ya yönelik 20. yaptırım paketini resmen onayladığını açıkladı.", "ua": "Голова Ради ЄС Коста оголосив офіційне схвалення €90 млрд для покриття військових і бюджетних потреб України на 2026–2027 рр. та 20-го санкційного пакету проти Росії." },
+      "impact": 3,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "Rusya toplam 1.323.460 personel kaybetti", "ua": "Загальні втрати Росії — 1 323 460 особового складу" },
+      "body": { "tr": "Ukrinform'a göre Rusya'nın 24 Şubat 2022'den 24 Nisan 2026'ya kadar toplam personel kaybı yaklaşık 1.323.460'a ulaştı. Son 24 saatte 910 personel kaybı yaşandı.", "ua": "За даними Укрінформу, загальні втрати Росії з 24 лютого 2022 по 24 квітня 2026 р. сягнули 1 323 460 осіб. За останню добу — 910 осіб." },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "ABD'li senatörler Ukrayna'da din özgürlüğüne karşı Rusya'ya yaptırım tasarısı sundu", "ua": "Сенатори США внесли законопроєкт про санкції проти Росії за порушення свободи віросповідання в Україні" },
+      "body": { "tr": "Çift partili ABD senatörleri grubu, Rusya'nın Ukrayna'da din özgürlüğüne saldırılarını hedef alan yaptırım yasası tasarısını 23 Nisan'da Kongre'ye sundu.", "ua": "Двопартійна група сенаторів США 23 квітня внесла до Конгресу законопроєкт про санкції, спрямований проти атак Росії на свободу віросповідання в Україні." },
+      "impact": 1,
+      "type": "positive"
+    }
   ],
   "gundemNews": [
-    { "category": "military", "date": { "tr": "14 Nisan 2026", "ua": "14 квітня 2026" }, "title": { "tr": "Odessa bölgesine 129 drone saldırısı: 12'si liman ve sivil altyapısına isabet etti", "ua": "129 дронів по Одещині: 12 вразили порт і цивільну інфраструктуру" }, "body": { "tr": "Rusya sabah saatlerinde Odessa bölgesindeki liman ve sivil altyapıyı Shahed dronelarıyla vurdu. 129 drone ve 4 güdümlü füzeden 115'i düşürüldü. Mykolaiv bölgesinde enerji tesislerine yapılan saldırıda üç yerleşim yeri elektrikleri kesildi.", "ua": "Росія атакувала порт і цивільну інфраструктуру Одещини. З 129 БПЛА і 4 ракет збито 115. На Миколаївщині — три селища без електрики." }, "url": "https://kyivindependent.com/", "impact": -2, "type": "negative" },
-    { "category": "military", "date": { "tr": "13 Nisan 2026", "ua": "13 квітня 2026" }, "title": { "tr": "Dnipro'ya füze saldırısı: 5 ölü, 27 yaralı — yas günü ilan edildi", "ua": "Ракетний удар по Дніпру: 5 загиблих, 27 поранених — день жалоби" }, "body": { "tr": "Rusya Dnipro'yu füze saldırısıyla hedef aldı: 5 kişi öldü, 27 yaralandı. 21 kişi hastaneye kaldırıldı, 10'unun durumu ağır. 15 Nisan yas günü ilan edildi.", "ua": "РФ вдарила по Дніпру: 5 загиблих, 27 поранених, 21 госпіталізовано. 15 квітня — день жалоби." }, "url": "https://kyivindependent.com/", "impact": -3, "type": "negative" },
-    { "category": "diplomatic", "date": { "tr": "12 Nisan 2026", "ua": "12 квітня 2026" }, "title": { "tr": "Paskalya ateşkesi çöktü: Binlerce ihlal — Peskov 'operasyon sürüyor' dedi", "ua": "Перемир'я провалилось: тисячі порушень — «операція триває»" }, "body": { "tr": "32 saatlik Paskalya ateşkesi çöktü. Ukrayna 2.299, Rusya 1.971 ihlal açıkladı. Peskov sonraki açıklamada 'Zelenskiy barışa hazır olana dek operasyonun süreceğini' belirtti.", "ua": "32-год. перемир'я провалилось. Україна — 2299 порушень, РФ — 1971. Пєсков: «операція триватиме»." }, "url": "https://www.aljazeera.com/news/2026/4/12/ukraine-and-russia-accuse-each-other-of-breaching-easter-ceasefire", "impact": -2, "type": "negative" },
-    { "category": "military", "date": { "tr": "13 Nisan 2026", "ua": "13 квітня 2026" }, "title": { "tr": "Ukrayna Kırım ve Zaporijya'yı vurdu; Harkiv'e drone saldırısı", "ua": "Україна вдарила по Криму і Запоріжжю; дрон по Харкову" }, "body": { "tr": "Ukrayna geceyi kapsayan saldırıyla Kırım'ı hedef aldı; Simferopol, Feodosiya, Kerç çevresinde patlamalar duyuldu. Zaporijya'da da trafo merkezi vuruldu. Harkiv'de çok katlı binaya Rus dronu isabet etti.", "ua": "Масований удар по Криму — Сімферополь, Феодосія, Керч. Підстанція в Запоріжжі. Дрон по будинку в Харкові." }, "url": "https://kyivindependent.com/", "impact": 1, "type": "positive" },
-    { "category": "diplomatic", "date": { "tr": "11 Nisan 2026", "ua": "11 квітня 2026" }, "title": { "tr": "Putin 32 saatlik Paskalya ateşkesi ilan etti", "ua": "Путін оголосив 32-годинне великоднє перемир'я" }, "body": { "tr": "Putin 9 Nisan'da Ortodoks Paskalyası için ateşkes ilan etti. Zelenskiy de karşılıklı ateşkes hazırlığını açıkladı. Kremlin adımın müzakerelerle bağlantısız olduğunu söyledi.", "ua": "9 квітня Путін оголосив перемир'я. Зеленський погодився на взаємне. Кремль: не пов'язано з переговорами." }, "url": "https://www.star.com.tr/dunya/rusya-ile-ukrayna-arasinda-paskalya-ateskesi-basladi-haber-2008649/", "impact": 0, "type": "neutral" },
-    { "category": "military", "date": { "tr": "8 Nisan 2026", "ua": "8 квітня 2026" }, "title": { "tr": "ISW: Rus taarruz hızı 18 ayın en düşüğünde — Ukrayna 480 km² geri aldı", "ua": "ISW: темп наступу РФ — мінімум за 18 міс.; 480 км² повернуто" }, "body": { "tr": "ISW'ye göre Rusya 2026 ilk çeyreğinde günde 5,5 km² ilerledi. Zelenskiy, Mart 2026'da Rusya'nın savaşın başından bu yana en yüksek aylık kayıplarını verdiğini açıkladı: 35.000'den fazla asker.", "ua": "ISW: І кв. 2026 — 5,5 км²/день. Зеленський: березень — рекордні 35 000+ втрат РФ за місяць." }, "url": "https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-april-8-2026", "impact": 2, "type": "positive" },
-    { "category": "diplomatic", "date": { "tr": "4 Nisan 2026", "ua": "4 квітня 2026" }, "title": { "tr": "Zelenskiy İstanbul'da Erdoğan ile görüştü: İstanbul Süreci yeniden masada", "ua": "Зеленський–Ердоган у Стамбулі: Стамбульський процес знову на порядку денному" }, "body": { "tr": "Zelenskiy Dolmabahçe'de Erdoğan ile görüşerek İstanbul Sürecinin yeniden canlandırılmasını hedefledi. Analistler yakın vadede Zelenskiy-Putin telefon görüşmesi ihtimalini değerlendiriyor.", "ua": "Зеленський у Долмабахче зустрівся з Ердоганом — мета відновити Стамбульський процес. Аналітики: можливий дзвінок Зеленський–Путін." }, "url": "https://www.ahaber.com.tr/gundem/2026/04/04/ukrayna-devlet-baskani-volodimir-zelenskiyden-turkiyeye-ziyaret", "impact": 2, "type": "positive" },
-    { "category": "economic", "date": { "tr": "Mart 2026", "ua": "Березень 2026" }, "title": { "tr": "EBRD: Ukrayna 2026'da savaşa rağmen %2,5 büyüyecek", "ua": "ЄБРР: Україна зросте на 2,5% у 2026 р. попри війну" }, "body": { "tr": "Avrupa İmar ve Kalkınma Bankası, Ukrayna'nın 2026'da %2,5, 2027'de %4 büyüyeceğini öngördü.", "ua": "ЄБРР: зростання ВВП 2,5% у 2026 р. та 4% у 2027 р." }, "url": "https://www.ebrd.com/home/news-and-events/news/2026/ukraine-maintains-macroeconomic-stability-despite-war---ebrd-rep.html", "impact": 1, "type": "positive" }
+    {
+      "category": "military",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "Odessa'ya gece saldırısı: 2 ölü, 15 yaralı", "ua": "Нічний удар по Одесі: 2 загиблих, 15 поранених" },
+      "body": { "tr": "Rusya'nın Odessa'ya düzenlediği gece saldırısında konut binaları ve limandaki ticaret gemisi vuruldu. 2 sivil hayatını kaybetti, 15 kişi yaralandı.", "ua": "У нічному ударі по Одесі постраждали житлові будинки та суховантаж у порту. 2 загиблих, 15 поранених." },
+      "url": "https://www.ukrinform.net/rubric-ato",
+      "impact": -3,
+      "type": "negative"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "193 esir takası: Türkiye arabuluculuğuyla gerçekleşti", "ua": "Обмін 193 полоненими: за посередництва Туреччини" },
+      "body": { "tr": "Ukrayna ve Rusya karşılıklı 193'er savaş esirini serbest bıraktı. Serbest bırakılanlar arasında Rusya'nın haklarında ceza davası açtığı askerler de var.", "ua": "Україна та Росія обмінялися по 193 полонених. Серед звільнених — ті, кому РФ пред'явила кримінальні звинувачення." },
+      "url": "https://kyivindependent.com/",
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "19 Nisan 2026", "ua": "19 квітня 2026" },
+      "title": { "tr": "Ukrayna Neptune füzeleriyle Rusya drone fabrikasını vurdu", "ua": "Україна вдарила «Нептунами» по заводу дронів РФ" },
+      "body": { "tr": "Neptune füzeleri Rostov Oblastı'ndaki Atlant Aero tesisini vurdu. Tesis drone tasarımı, üretimi ve testinin tamamını kapsıyordu.", "ua": "Ракети «Нептун» вразили «Атлант Аеро» в Ростовській обл. — повний цикл виробництва дронів." },
+      "url": "https://kyivindependent.com/",
+      "impact": 3,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "22 Nisan 2026", "ua": "22 квітня 2026" },
+      "title": { "tr": "ISW: Rusya son haftada 5 mil kare net toprak kaybetti", "ua": "ISW: Росія втратила 5 кв. миль за тиждень" },
+      "body": { "tr": "14-21 Nisan haftasında Rusya 5 mil kare net toprak kaybetti. Mart 2026'da Ukrayna drone önleme oranı %92'ye yükseldi.", "ua": "За 14–21 квітня Росія зазнала -5 кв. миль. У березні 2026 Україна збивала 92% дронів РФ." },
+      "url": "https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-april-22-2026",
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": { "tr": "20 Nisan 2026", "ua": "20 квітня 2026" },
+      "title": { "tr": "Lavrov Antalya'da: İstanbul müzakerelerine açığız", "ua": "Лавров в Анталії: відкриті до переговорів у Стамбулі" },
+      "body": { "tr": "Antalya Diplomasi Forumu'nda Lavrov, İstanbul'da yeniden müzakere olasılığını olumlu karşıladıklarını açıkladı.", "ua": "На Анталійському форумі Лавров заявив про позитивне ставлення до відновлення переговорів у Стамбулі." },
+      "url": "https://www.haber7.com/dunya/haber/3621126-rusyadan-turkiye-mesaji-olumlu-karsiliyoruz",
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "diplomatic",
+      "date": { "tr": "23 Nisan 2026", "ua": "23 квітня 2026" },
+      "title": { "tr": "AB 90 milyar Euro ve 20. yaptırım paketini onayladı", "ua": "ЄС затвердив €90 млрд та 20-й санкційний пакет" },
+      "body": { "tr": "AB Konseyi Başkanı Costa, Ukrayna'ya 2026-2027 dönemi için 90 milyar Euro'luk finansmanı ve Rusya'ya 20. yaptırım paketini onayladığını açıkladı.", "ua": "Голова Ради ЄС Коста оголосив про схвалення €90 млрд для України на 2026–2027 рр. та 20-го санкційного пакету проти РФ." },
+      "url": "https://kyivindependent.com/",
+      "impact": 3,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "Rusya toplam 1.323.460 personel kaybetti — günlük 910", "ua": "Загальні втрати РФ — 1 323 460, за добу — 910" },
+      "body": { "tr": "Ukrinform'a göre Rusya'nın 24 Şubat 2022'den bu yana toplam personel kaybı 1.323.460'a ulaştı. Son 24 saatte 910 personel kaybı yaşandı.", "ua": "За даними Укрінформу, з 24 лютого 2022 р. Росія втратила 1 323 460 осіб. За останню добу — 910." },
+      "url": "https://www.ukrinform.net/rubric-ato",
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "military",
+      "date": { "tr": "24 Nisan 2026", "ua": "24 квітня 2026" },
+      "title": { "tr": "Ukrayna yeni hava savunma seviyesi başlatıyor", "ua": "Україна запускає новий рівень 'малої' ППО" },
+      "body": { "tr": "Ukrayna, küçük çaplı hava savunma sistemlerinin yeni bir seviyesini hayata geçiriyor. Sistem özellikle Shahed tipi İHA saldırılarına karşı tasarlandı.", "ua": "Україна запускає новий рівень системи «малої» протиповітряної оборони, розробленої проти дронів типу «Шахед»." },
+      "url": "https://www.ukrinform.net/rubric-ato",
+      "impact": 2,
+      "type": "positive"
+    }
   ],
-  "gundemLastUpdate": "2026-04-14T10:00:00"
+  "gundemLastUpdate": "2026-04-25T12:00:00"
 };
 // DATA_END
