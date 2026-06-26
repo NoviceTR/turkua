@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.turkua.net/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: AhrefsBot
+User-agent: SemrushBot
+Disallow: /
