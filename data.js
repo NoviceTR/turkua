@@ -1,32 +1,32 @@
 // ============================================================
 // DATA.JS — TürkUA Savaş Takip Verileri
-// Son Güncelleme: 27 June 2026
+// Son Güncelleme: 28 June 2026
 // ============================================================
 // DATA_START
 window.WAR_DATA = {
-  "prob1d": 0.5,
-  "prob1m": 0.3,
-  "prob1y": 0.2,
+  "prob1d": 0.45,
+  "prob1m": 0.32,
+  "prob1y": 0.21,
   "confidence": 3,
-  "lastUpdate": "2026-06-27T20:39:00",
-  "trendPct": 0.1,
+  "lastUpdate": "2026-06-28T01:31:00",
+  "trendPct": -0.05,
   "statusSavas": {"tr": "AKTİF", "ua": "АКТИВНА"},
-  "statusMuzakere": {"tr": "DURDU", "ua": "ПЕРЕРВА"},
-  "trend": {"tr": "Savaşın yoğunluğu artıyor", "ua": "Ескалізація війни"},
-  "label1d": {"tr": "Günlük saldırılar", "ua": "Щоденні атаки"},
-  "label1m": {"tr": "Aylık çatışmalar", "ua": "Місячні сутички"},
-  "label1y": {"tr": "Yıllık savaş durumu", "ua": "Річний стан війни"},
-  "reasoning": {"tr": "Son günlerde savaşın yoğunluğu artıyor", "ua": "Останніми днями ескалізація війни"},
+  "statusMuzakere": {"tr": "DURDU", "ua": "ЗУПИНИВСЯ"},
+  "trend": {"tr": "Savaşın yoğunluğunda artış var", "ua": "Збільшення інтенсивності війни"},
+  "label1d": {"tr": "Savaşın yoğunluğu", "ua": "Інтенсивність війни"},
+  "label1m": {"tr": "Savaşın seyri", "ua": "Хід війни"},
+  "label1y": {"tr": "Savaşın sonucu", "ua": "Результат війни"},
+  "reasoning": {"tr": "Son günlerde savaşın yoğunluğunda artış var", "ua": "Останніми днями спостерігається зростання інтенсивності війни"},
   "developments": [
     {
-      "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "text": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu, bir kişi öldü", "ua": "Російські сили атакували Дніпропетровську область понад 40 раз, загинув один чоловік"},
+      "date": {"tr": "28 Haziran 2026", "ua": "28 червня 2026"},
+      "text": {"tr": "Rus güçleri Dnipropetrovsk bölgesini 40'dan fazla kez vurdu", "ua": "Російські війська обстріляли Дніпропетровську область понад 40 раз"},
       "impact": -2,
       "type": "negative"
     },
     {
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "text": {"tr": "İngiliz istihbaratı, Ukrayna'nın işgal altındaki Kırım'a yönelik saldırılarını analiz ediyor", "ua": "Британська розвідка аналізує українські атаки на окупований Крим"},
+      "text": {"tr": "Ukrayna ve Polonya bilim adamları Arktika ve Antarktika'da ortak araştırmalar yapacak", "ua": "Українські та польські вчені проведуть спільні дослідження в Арктиці та Антарктиці"},
       "impact": 1,
       "type": "positive"
     }
@@ -34,21 +34,21 @@ window.WAR_DATA = {
   "newsItems": [
     {
       "category": "military",
-      "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "title": {"tr": "Rus forces Dnipropetrovsk bölgesini vurdu", "ua": "Російські сили атакували Дніпропетровську область"},
-      "body": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu, bir kişi öldü", "ua": "Російські сили атакували Дніпропетровську область понад 40 раз, загинув один чоловік"},
-      "impact": -2,
+      "date": {"tr": "28 Haziran 2026", "ua": "28 червня 2026"},
+      "title": {"tr": "Rus güçleri Herson bölgesini vurdu", "ua": "Російські війська обстріляли Херсонську область"},
+      "body": {"tr": "Rus güçleri Herson bölgesini vurdu, 7 sivil yaralandı", "ua": "Російські війська обстріляли Херсонську область, 7 цивільних осіб поранено"},
+      "impact": -1,
       "type": "negative"
     },
     {
       "category": "diplomacy",
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "title": {"tr": "Türkiye, Ukrayna-Rusya barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати українсько-російські мирні переговори"},
-      "body": {"tr": "Türkiye, Ukrayna ve Rusya arasında barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати українсько-російські мирні переговори"},
-      "impact": 1,
+      "title": {"tr": "Ukrayna ve AB, dual-use teknolojileri desteklemek için program başlattı", "ua": "Україна та ЄС запустили програму з підтримки двоїстого використання технологій"},
+      "body": {"tr": "Ukrayna ve AB, dual-use teknolojileri desteklemek için 343 milyon euroluk bir program başlattı", "ua": "Україна та ЄС запустили програму з підтримки двоїстого використання технологій на суму 343 млн євро"},
+      "impact": 2,
       "type": "positive"
     }
   ],
-  "gundemLastUpdate": "2026-06-27T20:39:00"
+  "gundemLastUpdate": "2026-06-28T01:31:00"
 };
 // DATA_END
