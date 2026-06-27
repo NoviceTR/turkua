@@ -8,25 +8,25 @@ window.WAR_DATA = {
   "prob1m": 0.3,
   "prob1y": 0.2,
   "confidence": 3,
-  "lastUpdate": "2026-06-27T20:26:00",
-  "trendPct": -0.1,
+  "lastUpdate": "2026-06-27T20:39:00",
+  "trendPct": 0.1,
   "statusSavas": {"tr": "AKTİF", "ua": "АКТИВНА"},
-  "statusMuzakere": {"tr": "DURDU", "ua": "ЗУПИНИВСЯ"},
-  "trend": {"tr": "Savaşın yoğunluğu artıyor", "ua": "Збільшення інтенсивності війни"},
-  "label1d": {"tr": "Günlük saldırı sayısı", "ua": "Кількість атак на добу"},
-  "label1m": {"tr": "Aylık saldırı sayısı", "ua": "Кількість атак на місяць"},
-  "label1y": {"tr": "Yıllık saldırı sayısı", "ua": "Кількість атак на рік"},
-  "reasoning": {"tr": "Son günlerde saldırıların artması", "ua": "Збільшення кількості атак останнім часом"},
+  "statusMuzakere": {"tr": "DURDU", "ua": "ПЕРЕРВА"},
+  "trend": {"tr": "Savaşın yoğunluğu artıyor", "ua": "Ескалізація війни"},
+  "label1d": {"tr": "Günlük saldırılar", "ua": "Щоденні атаки"},
+  "label1m": {"tr": "Aylık çatışmalar", "ua": "Місячні сутички"},
+  "label1y": {"tr": "Yıllık savaş durumu", "ua": "Річний стан війни"},
+  "reasoning": {"tr": "Son günlerde savaşın yoğunluğu artıyor", "ua": "Останніми днями ескалізація війни"},
   "developments": [
     {
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "text": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu", "ua": "Російські війська обстріляли Дніпропетровську область понад 40 разів"},
+      "text": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu, bir kişi öldü", "ua": "Російські сили атакували Дніпропетровську область понад 40 раз, загинув один чоловік"},
       "impact": -2,
       "type": "negative"
     },
     {
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "text": {"tr": "Ukrayna, işgal edilmiş Kırım'da Rus hedeflerine saldırı düzenledi", "ua": "Україна здійснила удар по російських цілях на окупованому Криму"},
+      "text": {"tr": "İngiliz istihbaratı, Ukrayna'nın işgal altındaki Kırım'a yönelik saldırılarını analiz ediyor", "ua": "Британська розвідка аналізує українські атаки на окупований Крим"},
       "impact": 1,
       "type": "positive"
     }
@@ -35,20 +35,20 @@ window.WAR_DATA = {
     {
       "category": "military",
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "title": {"tr": "Rus forces Dnipropetrovsk bölgesini vurdu", "ua": "Російські війська обстріляли Дніпропетровську область"},
-      "body": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu, bir kişi öldü", "ua": "Російські війська обстріляли Дніпропетровську область понад 40 разів, один чоловік загинув"},
+      "title": {"tr": "Rus forces Dnipropetrovsk bölgesini vurdu", "ua": "Російські сили атакували Дніпропетровську область"},
+      "body": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu, bir kişi öldü", "ua": "Російські сили атакували Дніпропетровську область понад 40 раз, загинув один чоловік"},
       "impact": -2,
       "type": "negative"
     },
     {
       "category": "diplomacy",
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "title": {"tr": "Türkiye, Ukrayna-Rusya barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати переговори між Україною та Росією"},
-      "body": {"tr": "Türkiye, Ukrayna-Rusya barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати переговори між Україною та Росією"},
+      "title": {"tr": "Türkiye, Ukrayna-Rusya barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати українсько-російські мирні переговори"},
+      "body": {"tr": "Türkiye, Ukrayna ve Rusya arasında barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати українсько-російські мирні переговори"},
       "impact": 1,
       "type": "positive"
     }
   ],
-  "gundemLastUpdate": "2026-06-27T20:26:00"
+  "gundemLastUpdate": "2026-06-27T20:39:00"
 };
 // DATA_END
