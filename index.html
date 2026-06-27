@@ -1628,6 +1628,17 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
   line-height: 1.7;
   color: rgba(220,229,241,.66);
 }
+.policy-box {
+  margin: 14px 0 18px;
+  padding: 13px 15px;
+  border: 1px solid rgba(232,199,122,.20);
+  border-radius: 8px;
+  background: rgba(232,199,122,.055);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(235,241,248,.72);
+}
+.policy-box strong { color: var(--gold); }
 @media (max-width: 768px) {
   .hero-title { font-size: clamp(26px, 9vw, 42px) !important; }
   .trust-consent-card { grid-template-columns: 1fr; }
@@ -1645,14 +1656,14 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
 <div class="trust-consent" id="trustConsent" role="dialog" aria-live="polite" aria-label="Bilgilendirme ve onay">
   <div class="trust-consent-card">
     <div>
-      <div class="trust-consent-title" data-tr>Bilgilendirme ve ziyaretçi onayı</div>
-      <div class="trust-consent-title" data-ua>Інформація та згода відвідувача</div>
-      <div class="trust-consent-text" data-tr>Bu site genel bilgilendirme ve reklam amaçlıdır. İçerikler resmi, hukuki, finansal veya seyahat tavsiyesi değildir; güncel kararlar için yetkili kurumları kontrol edin. Siteyi kullanarak bu bilgilendirmeyi ve temel çerez kullanımını kabul etmiş olursunuz.</div>
-      <div class="trust-consent-text" data-ua>Цей сайт призначений для загальної інформації та реклами. Матеріали не є офіційною, юридичною, фінансовою чи туристичною порадою; перевіряйте актуальні рішення в уповноважених установах. Користуючись сайтом, ви погоджуєтесь із цим повідомленням та базовим використанням cookie.</div>
+      <div class="trust-consent-title" data-tr>Çerez ve bilgilendirme tercihi</div>
+      <div class="trust-consent-title" data-ua>Cookie та інформаційне повідомлення</div>
+      <div class="trust-consent-text" data-tr>Site temel çalışması için gerekli yerel kayıtları kullanır. Reklam/analitik amaçlı takip çerezi çalıştırmıyoruz. Kabul etmeseniz de siteye girebilir ve tüm içerikleri görüntüleyebilirsiniz. İçerikler genel bilgilendirmedir; resmi, hukuki, finansal veya seyahat tavsiyesi değildir.</div>
+      <div class="trust-consent-text" data-ua>Сайт використовує лише необхідні локальні записи для роботи. Рекламні або аналітичні tracking-cookie не запускаються. Навіть якщо ви не погодитесь, ви можете користуватись сайтом і переглядати весь контент. Матеріали мають загальний інформаційний характер.</div>
     </div>
     <div class="trust-consent-actions">
-      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-tr>Sadece gerekli</button>
-      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-ua>Лише необхідні</button>
+      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-tr>Reddet ve devam et</button>
+      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-ua>Відхилити й продовжити</button>
       <button class="trust-consent-btn primary" type="button" onclick="dismissConsent(true)" data-tr>Kabul et</button>
       <button class="trust-consent-btn primary" type="button" onclick="dismissConsent(true)" data-ua>Прийняти</button>
     </div>
@@ -1877,8 +1888,8 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
       </div>
       <h2 class="section-title" data-tr>Ukrayna Gündemi</h2>
       <h2 class="section-title" data-ua>Актуальні Новини України</h2>
-      <p class="section-sub" data-tr>Ukrinform resmi haber ajansından anlık gelişmeler. 6 saatte bir otomatik güncellenir.</p>
-      <p class="section-sub" data-ua>Актуальні події від офіційного агентства Укрінформ. Автоматичне оновлення кожні 6 годин.</p>
+      <p class="section-sub" data-tr>Ukrinform RSS akışından derlenen haber başlıkları. Reklam, marka tanıtımı ve uzun alıntı filtreleri uygulanır; 6 saatte bir otomatik güncellenir.</p>
+      <p class="section-sub" data-ua>Заголовки з RSS-стрічки Ukrinform. Застосовуються фільтри реклами, брендових згадок і довгих цитат; оновлення кожні 6 годин.</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
       <div class="gundem-live-badge">
@@ -2537,8 +2548,8 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
   <p data-ua>Прогнози імовірності оновлюються кожні 6 годин &nbsp;·&nbsp; Цей сайт є інформаційним, а не офіційною порадою</p>
 
   <div class="legal-note">
-    <span data-tr>Yasal not: TürkUA üzerinde yer alan haber, olasılık, vize, eğitim, para transferi ve ticaret içerikleri genel bilgilendirme niteliğindedir. Reklam veren içerikleri ayrıca değerlendirilir; nihai karar ve sorumluluk kullanıcıya aittir.</span>
-    <span data-ua>Юридична примітка: новини, прогнози, візова, освітня, фінансова та торговельна інформація на TürkUA мають загальний інформаційний характер. Рекламні матеріали оцінюються окремо; остаточне рішення та відповідальність належать користувачу.</span>
+    <span data-tr>Yasal not: TürkUA üzerindeki haber, olasılık, vize, eğitim, para transferi ve ticaret içerikleri genel bilgilendirme niteliğindedir; resmi kurum, hukuk, finans, seyahat veya yatırım tavsiyesi değildir. Otomatik haber akışında reklam, marka tanıtımı ve uzun alıntı filtreleri uygulanır. Reklam başvuruları yayın öncesi manuel incelenir; yanıltıcı, yasa dışı veya üçüncü kişi haklarını ihlal eden içerikler kabul edilmez. Üçüncü taraf bağlantılar, başvurular ve nihai kararlar kullanıcının sorumluluğundadır.</span>
+    <span data-ua>Юридична примітка: новини, прогнози, візова, освітня, фінансова та торговельна інформація на TürkUA мають загальний інформаційний характер і не є офіційною, юридичною, фінансовою, туристичною чи інвестиційною порадою. Для автоматичних новин застосовуються фільтри реклами, брендових згадок і довгих цитат. Рекламні заявки перевіряються вручну перед публікацією; оманливі, незаконні матеріали або матеріали, що порушують права третіх осіб, не приймаються. Відповідальність за сторонні посилання, заявки та остаточні рішення несе користувач.</span>
   </div>
 </div>
 </footer>
@@ -3231,6 +3242,12 @@ function closeAdModalDirect() {
 function previewLogo(input) {
   const file = input.files[0];
   if (!file) return;
+  const allowed = ['image/png', 'image/jpeg', 'image/webp', 'image/gif', 'image/svg+xml'];
+  if (!allowed.includes(file.type) || file.size > 4 * 1024 * 1024) {
+    alert('Lütfen PNG, JPG, WEBP, SVG veya GIF formatında en fazla 4MB dosya seçin.');
+    input.value = '';
+    return;
+  }
   const reader = new FileReader();
   reader.onload = e => {
     const img = document.getElementById('logoPreview');
@@ -3270,6 +3287,7 @@ async function submitAdForm() {
   const email     = document.getElementById('ad-email').value.trim();
   const _lang     = document.documentElement.getAttribute('data-lang') || 'tr';
   const sector    = (document.getElementById('ad-sector-' + _lang) || {}).value || '';
+  const adFormat  = (document.getElementById('ad-format') || {}).value || 'Statik görsel';
   const message   = document.getElementById('ad-message').value.trim();
   const slot      = document.getElementById('modalSlotName').textContent;
   const errBox    = document.getElementById('ad-contact-error');
@@ -3299,10 +3317,12 @@ async function submitAdForm() {
   fd.append('Reklam_Konumu', slot);
   fd.append('Firma_Adi', name);
   fd.append('Sektor', sector);
+  fd.append('Reklam_Turu', adFormat);
+  fd.append('Yayin_Onayi', 'Yayın öncesi manuel kontrol zorunlu');
   fd.append('Iletisim', contactLines.join(' | '));
   fd.append('Mesaj', message || '—');
   const logoFile = document.getElementById('ad-logo').files && document.getElementById('ad-logo').files[0];
-  if (logoFile) fd.append('Logo_Gorseli', logoFile);
+  if (logoFile) fd.append('Logo_veya_GIF_Gorseli', logoFile);
 
   try {
     const res = await fetch('https://formsubmit.co/ajax/who.demir@gmail.com', {
@@ -3314,7 +3334,7 @@ async function submitAdForm() {
       document.getElementById('adSuccess').style.display = 'block';
     } else { throw new Error(); }
   } catch(e) {
-    const body = encodeURIComponent('Reklam Basvurusu\nKonum: ' + slot + '\nFirma: ' + name + '\nSektor: ' + sector + '\n' + contactLines.join('\n') + '\n\nMesaj:\n' + message);
+    const body = encodeURIComponent('Reklam Basvurusu\nKonum: ' + slot + '\nFirma: ' + name + '\nSektor: ' + sector + '\nReklam Turu: ' + adFormat + '\nYayin Onayi: Manuel kontrol zorunlu\n' + contactLines.join('\n') + '\n\nMesaj:\n' + message);
     window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('Reklam — ' + slot) + '&body=' + body, '_blank');
     document.getElementById('adFormSection').style.display = 'none';
     document.getElementById('adSuccess').style.display = 'block';
@@ -3462,15 +3482,38 @@ async function submitAdForm() {
   }
 
   function shortText(raw, max) {
-    const t = (raw||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+    const t = sanitizeNewsText(raw);
     return t.length > max ? t.substring(0, max).replace(/\s\S*$/,'')+'…' : t;
+  }
+
+  function sanitizeNewsText(raw) {
+    return (raw || '')
+      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/https?:\/\/\S+/gi, ' ')
+      .replace(/[“”"«»][^“”"«»]{20,}[“”"«»]/g, ' ')
+      .replace(/\b(advertisement|sponsored|promo|promotion|partner content|buy now|subscribe|newsletter|cookie|privacy policy)\b/gi, ' ')
+      .replace(/\b(reklam|sponsorlu|tanıtım|kampanya|satın al|abonelik|çerez|gizlilik politikası)\b/gi, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function isAllowedNewsItem(it) {
+    const title = sanitizeNewsText(it && it.title);
+    const body = sanitizeNewsText(it && it.description);
+    const combined = (title + ' ' + body).toLowerCase();
+    if (!title || title.length < 18) return false;
+    if (/(advertisement|sponsored|promo|promotion|partner content|commercial offer|newsletter|subscribe|reklam|sponsorlu|tanıtım|kampanya|abonelik)/i.test(combined)) return false;
+    if ((combined.match(/\b[A-Z][A-Z0-9&.-]{2,}\b/g) || []).length > 5) return false;
+    return true;
   }
 
   function buildCard(it, featured, lang) {
     const cat = it._cat || detectCat(it.title||'', it.description||'');
     const style = CAT_STYLE[cat] || CAT_STYLE.general;
     const catTxt = (lang==='ua' ? CAT_UA : CAT_TR)[cat];
-    const title  = lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||'');
+    const title  = sanitizeNewsText(lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||''));
     const body   = lang==='ua' && it._body_ua  ? it._body_ua  : (it._body_tr||shortText(it.description, featured?130:90));
     const dateStr= lang==='ua' && it._date_ua  ? it._date_ua  : (it._date_tr||fmtDate(it.pubDate||'', lang));
     return `<div class="gundem-card${featured?' featured':''}">
@@ -3489,7 +3532,7 @@ async function submitAdForm() {
       const cat = it._cat || detectCat(it.title||'', it.description||'');
       const catTxt = (lang==='ua' ? CAT_UA : CAT_TR)[cat];
       const style = CAT_STYLE[cat] || CAT_STYLE.general;
-      const title = lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||'');
+      const title = sanitizeNewsText(lang==='ua' && it._title_ua ? it._title_ua : (it._title_tr||it.title||''));
       return `<span class="ticker-item">` +
         `<span class="ticker-item-cat ${cat}" style="${style}">${catTxt}</span>` +
         `<span>${title.substring(0,85)}${title.length>85?'…':''}</span>` +
@@ -3564,7 +3607,8 @@ async function submitAdForm() {
       const merged = results
         .filter(r => r.status==='fulfilled')
         .flatMap(r => r.value)
-        .filter(it => { if(seen.has(it.title)) return false; seen.add(it.title); return true; })
+        .filter(isAllowedNewsItem)
+        .filter(it => { const key = sanitizeNewsText(it.title); if(seen.has(key)) return false; seen.add(key); return true; })
         .sort((a,b) => new Date(b.pubDate||0) - new Date(a.pubDate||0))
         .slice(0, 20);
       if (merged.length) {
@@ -3626,6 +3670,10 @@ initConsent();
         <span data-tr>TürkUA, Türkiye ile Ukrayna arasında bilgi arayan on binlerce kişiye ulaşan bir platformdur. Reklam alanı satın alarak hedef kitlenize doğrudan ulaşabilirsiniz.<br>Başvuru formunu doldurun, <strong style="color:var(--neon-blue)">24 saat</strong> içinde size dönelim.</span>
         <span data-ua>TürkUA — це платформа, яка охоплює десятки тисяч людей, що шукають інформацію між Туреччиною та Україною. Придбайте рекламний простір і напряму зв\'яжіться з вашою аудиторією.<br>Заповніть форму — ми відповімо протягом <strong style="color:var(--neon-blue)">24 годин</strong>.</span>
       </div>
+      <div class="policy-box">
+        <span data-tr><strong>Reklam kuralı:</strong> Statik görsel veya GIF kabul edilir. GIF dosyaları yayına alınmadan önce hız, içerik ve marka güvenliği açısından manuel kontrol edilir. Yetişkin içerik, yasa dışı hizmet, yanıltıcı vaat, siyasi propaganda, nefret söylemi ve üçüncü kişi haklarını ihlal eden reklamlar yayınlanmaz.</span>
+        <span data-ua><strong>Правило реклами:</strong> Приймаються статичні зображення або GIF. GIF перевіряється вручну перед публікацією щодо швидкості, змісту та безпеки бренду. Не публікуються матеріали для дорослих, незаконні послуги, оманливі обіцянки, політична пропаганда, мова ворожнечі або порушення прав третіх осіб.</span>
+      </div>
 
       <!-- Form -->
       <div class="form-row">
@@ -3656,6 +3704,21 @@ initConsent();
             <option>Нерухомість</option>
             <option>Інше</option>
           </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label data-tr>Reklam Türü</label><label data-ua>Тип реклами</label>
+          <select id="ad-format">
+            <option value="Statik görsel">Statik görsel / Static image</option>
+            <option value="GIF animasyon">GIF animasyon / GIF animation</option>
+            <option value="Metin + görsel">Metin + görsel / Text + image</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-tr>Yayın Onayı</label><label data-ua>Підтвердження публікації</label>
+          <input type="text" value="Yayın öncesi manuel kontrol zorunlu" readonly style="opacity:.75;">
         </div>
       </div>
 
@@ -3698,9 +3761,9 @@ initConsent();
       <div class="form-group">
         <label><span data-tr>Firma Logosu / Görseli (isteğe bağlı)</span><span data-ua>Логотип / Зображення (необов\'язково)</span></label>
         <div class="logo-upload-area" onclick="document.getElementById('ad-logo').click()">
-          <input type="file" id="ad-logo" accept="image/*" onchange="previewLogo(this)">
+          <input type="file" id="ad-logo" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" onchange="previewLogo(this)">
           <div class="logo-upload-icon"></div>
-          <div class="logo-upload-text"><span data-tr>Tıklayarak görsel seçin</span><span data-ua>Натисніть, щоб вибрати зображення</span><br><span style="font-size:10px;opacity:.6;">PNG, JPG, SVG — maks. 2MB</span></div>
+          <div class="logo-upload-text"><span data-tr>Tıklayarak görsel veya GIF seçin</span><span data-ua>Натисніть, щоб вибрати зображення або GIF</span><br><span style="font-size:10px;opacity:.6;">PNG, JPG, WEBP, SVG, GIF — maks. 4MB</span></div>
           <img class="logo-preview" id="logoPreview" alt="Logo">
         </div>
       </div>

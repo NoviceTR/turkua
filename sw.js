@@ -1,5 +1,5 @@
-// TürkUA Service Worker - cache reset build 2026-06-27
-const CACHE = 'turkua-v2-20260627';
+// TürkUA Service Worker - policy/news filter build 2026-06-28
+const CACHE = 'turkua-v3-20260628';
 const ASSETS = [
   '/',
   '/index.html',
