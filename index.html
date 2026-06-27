@@ -12,22 +12,24 @@
 <link rel="manifest" href="manifest.json">
 <title>TürkUA — Türkiye & Ukrayna Bilgi Merkezi</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --neon-blue: #00f3ff;
-  --neon-green: #00ff88;
-  --neon-orange: #ff8c00;
-  --neon-red: #ff2442;
-  --bg-dark: #060610;
-  --bg-card: #0d0d20;
-  --bg-card2: #111128;
-  --border: rgba(0,243,255,0.12);
-  --text: #e0e0f0;
-  --text-muted: rgba(200,200,255,0.5);
+  --neon-blue: #6bc7ff;
+  --neon-green: #35d498;
+  --neon-orange: #f6b15d;
+  --neon-red: #ff5f75;
+  --bg-dark: #07090f;
+  --bg-card: #101722;
+  --bg-card2: #141d2b;
+  --border: rgba(148, 163, 184, 0.18);
+  --text: #f3f7fb;
+  --text-muted: rgba(220, 229, 241, 0.62);
   --accent-tr: #E30A17;
   --accent-ua: #005BBB;
   --accent-ua2: #FFD500;
+  --gold: #e8c77a;
+  --panel-shadow: 0 18px 70px rgba(0, 0, 0, 0.34);
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 70px; }
@@ -37,21 +39,23 @@ html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 body {
   background: var(--bg-dark);
   color: var(--text);
-  font-family: 'Inter', 'Rajdhani', sans-serif;
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
   background-image:
-    radial-gradient(ellipse at 15% 15%, rgba(0,80,200,0.05) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 85%, rgba(0,200,100,0.03) 0%, transparent 55%);
+    linear-gradient(135deg, rgba(0, 91, 187, 0.14) 0%, rgba(7, 9, 15, 0) 32%),
+    linear-gradient(315deg, rgba(232, 199, 122, 0.11) 0%, rgba(7, 9, 15, 0) 34%),
+    linear-gradient(180deg, #090d15 0%, #07090f 48%, #0b1118 100%);
 }
 
 body::before {
   content:'';
   position:fixed; inset:0;
-  background-image:
-    linear-gradient(rgba(0,243,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,243,255,0.025) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 70%);
   pointer-events:none; z-index:0;
 }
 
@@ -73,7 +77,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 16px; font-weight:900;
   background: linear-gradient(90deg, #fff, var(--neon-blue));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -143,7 +147,7 @@ section + section { border-top: 1px solid var(--border); }
 
 .hero-label {
   text-align:center;
-  font-family:'Orbitron',monospace;
+  font-family:'Inter',sans-serif;
   font-size:10px; letter-spacing:6px;
   color: var(--neon-blue); opacity:.7;
   margin-bottom:12px;
@@ -151,7 +155,7 @@ section + section { border-top: 1px solid var(--border); }
 
 .hero-title {
   text-align:center;
-  font-family:'Orbitron',monospace;
+  font-family:'Inter',sans-serif;
   font-size: clamp(16px,3vw,26px);
   font-weight:900; letter-spacing:2px; line-height:1.3;
   background: linear-gradient(135deg,#fff,var(--neon-blue));
@@ -182,7 +186,7 @@ section + section { border-top: 1px solid var(--border); }
 }
 
 .tube-title {
-  font-family:'Orbitron',monospace;
+  font-family:'Inter',sans-serif;
   font-size:9px; letter-spacing:4px;
   color:var(--text-muted); text-transform:uppercase;
 }
@@ -223,10 +227,10 @@ section + section { border-top: 1px solid var(--border); }
   position:absolute; right:-42px; top:0; height:100%;
   display:flex; flex-direction:column; justify-content:space-between; padding:2px 4px;
 }
-.scale-label { font-family:'Orbitron',monospace; font-size:7px; color:rgba(0,243,255,0.35); }
+.scale-label { font-family:'Inter',sans-serif; font-size:7px; color:rgba(0,243,255,0.35); }
 
 .prob-number {
-  font-family:'Orbitron',monospace;
+  font-family:'Inter',sans-serif;
   font-size:48px; font-weight:900; line-height:1;
   color:var(--neon-green);
   text-shadow: 0 0 20px var(--neon-green), 0 0 40px rgba(0,255,136,.3);
@@ -234,7 +238,7 @@ section + section { border-top: 1px solid var(--border); }
 
 .prob-label { font-size:11px; color:var(--text-muted); letter-spacing:2px; text-transform:uppercase; }
 .prob-desc { font-size:11px; color:rgba(255,200,100,.7); text-align:center; font-style:italic; max-width:140px; line-height:1.5; }
-.last-update { font-family:'Orbitron',monospace; font-size:8px; color:rgba(0,243,255,.35); letter-spacing:1px; text-align:center; }
+.last-update { font-family:'Inter',sans-serif; font-size:8px; color:rgba(0,243,255,.35); letter-spacing:1px; text-align:center; }
 
 
 /* ── 3 ZAMAN DİLİMLİ OLASILILIK KARTLARI ── */
@@ -265,7 +269,7 @@ section + section { border-top: 1px solid var(--border); }
 .prob-card:hover { border-color:rgba(0,243,255,0.22); box-shadow:0 0 28px rgba(0,243,255,0.08); }
 
 .prob-card-badge {
-  font-family:'Orbitron',monospace;
+  font-family:'Inter',sans-serif;
   font-size:8px; letter-spacing:4px; text-transform:uppercase;
   color: var(--neon-blue); opacity:.85;
 }
@@ -297,10 +301,10 @@ section + section { border-top: 1px solid var(--border); }
   position:absolute; right:-28px; top:0; height:100%;
   display:flex; flex-direction:column; justify-content:space-between; padding:2px 4px;
 }
-.prob-card-scale span { font-family:'Orbitron',monospace; font-size:6px; color:rgba(0,243,255,0.28); }
+.prob-card-scale span { font-family:'Inter',sans-serif; font-size:6px; color:rgba(0,243,255,0.28); }
 
 .prob-card-num {
-  font-family:'Orbitron',monospace;
+  font-family:'Inter',sans-serif;
   font-size:38px; font-weight:900; line-height:1;
   text-shadow:0 0 16px currentColor;
 }
@@ -323,7 +327,7 @@ section + section { border-top: 1px solid var(--border); }
 }
 
 .card-title {
-  font-family:'Orbitron',monospace;
+  font-family:'Inter',sans-serif;
   font-size:9px; letter-spacing:4px;
   color:var(--neon-blue); text-transform:uppercase;
   margin-bottom:14px; display:flex; align-items:center; gap:8px;
@@ -344,7 +348,7 @@ section + section { border-top: 1px solid var(--border); }
 }
 
 .status-value {
-  font-family:'Orbitron',monospace; font-size:13px; font-weight:700;
+  font-family:'Inter',sans-serif; font-size:13px; font-weight:700;
   color:var(--neon-blue); margin-bottom:4px;
 }
 
@@ -362,7 +366,7 @@ section + section { border-top: 1px solid var(--border); }
 .dev-item.positive { --item-color: rgba(0,255,136,.5); }
 
 .dev-impact {
-  font-family:'Orbitron',monospace; font-size:10px; font-weight:700;
+  font-family:'Inter',sans-serif; font-size:10px; font-weight:700;
   min-width:36px; text-align:center; padding:2px 4px;
   border-radius:4px; margin-top:2px;
 }
@@ -519,7 +523,7 @@ section + section { border-top: 1px solid var(--border); }
 }
 
 .stat-number {
-  font-family:'Orbitron',monospace; font-size:28px; font-weight:900;
+  font-family:'Inter',sans-serif; font-size:28px; font-weight:900;
   background:linear-gradient(135deg,var(--neon-blue),var(--neon-green));
   -webkit-background-clip:text; -webkit-text-fill-color:transparent;
   background-clip:text; margin-bottom:6px;
@@ -730,7 +734,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   pointer-events: none;
 }
 .promo-size-tag {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 9px; color: rgba(255,140,0,.5);
   letter-spacing: 2px;
 }
@@ -770,7 +774,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   margin-bottom: 22px;
 }
 .ad-modal-title {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 14px; font-weight: 700;
   background: linear-gradient(135deg,#fff,var(--neon-orange));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -797,7 +801,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
 }
 .promo-badge {
-  font-family: 'Orbitron', monospace; font-size: 10px;
+  font-family: 'Inter', sans-serif; font-size: 10px;
   color: var(--neon-orange); letter-spacing: 2px;
   background: rgba(255,140,0,.1); border: 1px solid rgba(255,140,0,.25);
   border-radius: 6px; padding: 4px 10px;
@@ -914,7 +918,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .news-card.economic   .news-cat { color: var(--neon-green);  background: rgba(0,255,136,.07); }
 .news-card.humanitarian .news-cat { color: var(--neon-orange); background: rgba(255,140,0,.07); }
 
-.news-date { font-family: 'Orbitron', monospace; font-size: 8px; color: var(--text-muted); letter-spacing: 1px; }
+.news-date { font-family: 'Inter', sans-serif; font-size: 8px; color: var(--text-muted); letter-spacing: 1px; }
 
 .news-title {
   font-size: 14px; font-weight: 600; line-height: 1.4;
@@ -927,7 +931,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
 .news-impact {
   display: inline-flex; align-items: center; gap: 4px;
-  font-family: 'Orbitron', monospace; font-size: 10px; font-weight: 700;
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
   padding: 2px 8px; border-radius: 4px; align-self: flex-start;
 }
 .news-impact.pos { color: var(--neon-green); background: rgba(0,255,136,.08); }
@@ -941,7 +945,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
   padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(0,243,255,.15);
   background: transparent; color: var(--text-muted); cursor: pointer;
-  transition: all .2s; font-family: 'Orbitron', monospace;
+  transition: all .2s; font-family: 'Inter', sans-serif;
 }
 .news-filter-btn:hover,
 .news-filter-btn.active { background: rgba(0,243,255,.1); color: var(--neon-blue); border-color: rgba(0,243,255,.35); }
@@ -989,7 +993,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   display: flex; align-items: center; gap: 12px;
 }
 .money-limit-num {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 22px; font-weight: 900;
   color: var(--neon-green);
   text-shadow: 0 0 12px rgba(0,255,136,.4);
@@ -1044,7 +1048,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .money-rate-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,.04); font-size: 12px; }
 .money-rate-row:last-child { border-bottom: none; }
 .money-rate-pair { color: rgba(200,200,255,.7); }
-.money-rate-val { font-family: 'Orbitron', monospace; font-size: 11px; color: var(--neon-green); }
+.money-rate-val { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--neon-green); }
 
 .money-tip {
   display: flex; gap: 8px; align-items: flex-start;
@@ -1091,7 +1095,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   padding: 0 14px;
   height: 100%;
   background: #cc0022;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px; font-weight: 900; letter-spacing: 2px;
   color: #fff;
   white-space: nowrap;
@@ -1131,7 +1135,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .ticker-item:hover { color: var(--neon-blue); }
 .ticker-item-sep { color: rgba(255,36,66,.5); font-size: 14px; }
 .ticker-item-cat {
-  font-size: 9px; font-family: 'Orbitron', monospace; letter-spacing: 1px;
+  font-size: 9px; font-family: 'Inter', sans-serif; letter-spacing: 1px;
   padding: 1px 5px; border-radius: 3px; font-weight: 700;
 }
 .ticker-item-cat.diplomatic { background: rgba(0,100,255,.25); color: #5bbfff; }
@@ -1152,7 +1156,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   padding: 5px 14px; border-radius: 20px;
   background: rgba(200,0,30,.15);
   border: 1px solid rgba(200,0,30,.4);
-  font-family: 'Orbitron', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 10px; letter-spacing: 2px; color: #ff4060;
 }
 .gundem-live-dot {
@@ -1198,7 +1202,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
 }
 .gundem-cat {
-  font-size: 9px; font-family: 'Orbitron', monospace; letter-spacing: 1.5px;
+  font-size: 9px; font-family: 'Inter', sans-serif; letter-spacing: 1.5px;
   font-weight: 700; padding: 3px 8px; border-radius: 4px;
 }
 .gundem-cat.diplomatic   { background: rgba(0,100,255,.2);  color: #5bbfff; border: 1px solid rgba(0,100,255,.25); }
@@ -1217,7 +1221,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .gundem-card-link {
   display: inline-flex; align-items: center; gap: 4px;
   margin-top: 12px; font-size: 10px; color: var(--neon-blue);
-  font-family: 'Orbitron', monospace; letter-spacing: 1px;
+  font-family: 'Inter', sans-serif; letter-spacing: 1px;
   opacity: .7; transition: opacity .2s;
 }
 .gundem-card:hover .gundem-card-link { opacity: 1; }
@@ -1245,7 +1249,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 .gundem-source-txt { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
 .gundem-refresh-btn {
   background: rgba(0,243,255,.08); border: 1px solid rgba(0,243,255,.2);
-  color: var(--neon-blue); font-size: 10px; font-family: 'Orbitron', monospace;
+  color: var(--neon-blue); font-size: 10px; font-family: 'Inter', sans-serif;
   letter-spacing: 1px; padding: 5px 12px; border-radius: 6px; cursor: pointer;
   transition: all .2s;
 }
@@ -1467,11 +1471,194 @@ footer a { color:var(--text-muted); text-decoration:none; }
   * { animation: none !important; transition: none !important; }
   .ticker-inner { animation: none !important; }
 }
+
+/* ══════════════════════════════════════════
+   PREMIUM 4K KURUMSAL GÖRÜNÜM
+══════════════════════════════════════════ */
+nav {
+  background: rgba(7, 10, 16, 0.86);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.22);
+}
+
+.nav-links { overflow: visible; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+@media (max-width: 768px) { .nav-links { overflow: visible; } }
+.nav-logo {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #ffffff, #e8c77a 55%, #6bc7ff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-links a {
+  letter-spacing: 0.4px;
+  text-transform: none;
+  font-size: 13px;
+  color: rgba(235, 241, 248, 0.68);
+}
+.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+.lang-btn, .nav-promo-btn, .btn-submit, .ad-modal-submit, .gundem-refresh-btn, .news-filter-btn {
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+.nav-promo-btn {
+  background: linear-gradient(135deg, rgba(232,199,122,.16), rgba(107,199,255,.08));
+  border-color: rgba(232,199,122,.34);
+}
+.nav-promo-text { color: var(--gold); }
+section { padding: 72px 0; }
+section + section { border-top: 1px solid rgba(255,255,255,0.08); }
+.hero-label, .section-badge, .card-title, .prob-card-badge, .tube-title, .news-date, .ticker-badge, .gundem-live-badge,
+.stat-number, .prob-number, .prob-card-num, .status-value, .money-rate-val, .promo-badge, .promo-size-tag {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.6px;
+}
+.hero-label {
+  color: rgba(232,199,122,.88);
+  font-size: 11px;
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(28px, 5vw, 58px);
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+  background: linear-gradient(135deg, #ffffff 0%, #dcecff 52%, #e8c77a 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub { color: rgba(220,229,241,.72); letter-spacing: 0.8px; }
+.card, .info-card, .visa-card, .money-card, .news-card, .gundem-card, .stat-card, .contact-form, .tube-panel, .prob-card, .sponsor-slot {
+  background: linear-gradient(180deg, rgba(18, 27, 40, 0.92), rgba(11, 17, 25, 0.92));
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: var(--panel-shadow);
+}
+.card:hover, .info-card:hover, .money-card:hover, .news-card:hover, .gundem-card:hover, .prob-card:hover {
+  border-color: rgba(232,199,122,.35);
+  box-shadow: 0 24px 80px rgba(0,0,0,.42);
+}
+.section-badge { color: var(--gold); opacity: 1; }
+.section-badge .dot, .card-title::before {
+  background: var(--gold);
+  box-shadow: 0 0 12px rgba(232,199,122,.55);
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.4px;
+}
+.section-sub { max-width: 760px; color: rgba(220,229,241,.66); }
+.promo-slot {
+  background: linear-gradient(135deg, rgba(232,199,122,.11), rgba(107,199,255,.08));
+  border: 1px solid rgba(232,199,122,.34);
+  border-radius: 8px;
+  color: rgba(255,255,255,.38);
+  box-shadow: 0 20px 70px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.promo-slot:hover {
+  border-color: rgba(232,199,122,.62);
+  box-shadow: 0 26px 90px rgba(0,0,0,.36), 0 0 32px rgba(232,199,122,.10);
+}
+.promo-slot .promo-overlay {
+  background: linear-gradient(135deg, rgba(232,199,122,.12), rgba(255,255,255,.04));
+}
+.promo-cta-btn {
+  background: rgba(7,9,15,.64);
+  border-color: rgba(232,199,122,.48);
+  color: #f5d58b;
+}
+.promo-size-tag { color: rgba(245,213,139,.62); }
+.sponsor-slot .slot-title { color: rgba(245,248,252,.84) !important; }
+.info-card-icon, .visa-flags, .visa-card-flag, .sector-item .icon, .sponsor-slot .slot-icon, .nav-promo-icon, .money-card-icon, .logo-upload-icon, .ad-success-icon, .bottom-nav a .bn-icon, .bn-lang-toggle .bn-icon {
+  display: none !important;
+}
+.sector-item { text-align: left; }
+.visa-hero { background: linear-gradient(135deg, rgba(0,91,187,.15), rgba(232,199,122,.08)); border-color: rgba(255,255,255,.12); }
+.news-filter-btn.active, .news-filter-btn:hover { background: rgba(232,199,122,.10); color: var(--gold); border-color: rgba(232,199,122,.36); }
+.scanline { display: none; }
+.trust-consent {
+  position: fixed;
+  left: 20px; right: 20px; bottom: 20px;
+  z-index: 1200;
+  display: none;
+  justify-content: center;
+  pointer-events: none;
+}
+.trust-consent.show { display: flex; }
+.trust-consent-card {
+  width: min(920px, 100%);
+  background: rgba(12, 18, 27, 0.96);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px;
+  box-shadow: 0 22px 90px rgba(0,0,0,.52);
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  pointer-events: auto;
+  backdrop-filter: blur(14px);
+}
+.trust-consent-title { font-weight: 700; margin-bottom: 6px; color: #fff; }
+.trust-consent-text { font-size: 12px; line-height: 1.6; color: rgba(220,229,241,.70); }
+.trust-consent-actions { display:flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.trust-consent-btn {
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #f3f7fb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+}
+.trust-consent-btn.primary {
+  background: linear-gradient(135deg, rgba(232,199,122,.28), rgba(107,199,255,.12));
+  border-color: rgba(232,199,122,.46);
+  color: #fff;
+}
+.legal-note {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 8px;
+  background: rgba(255,255,255,.035);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(220,229,241,.66);
+}
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(26px, 9vw, 42px) !important; }
+  .trust-consent-card { grid-template-columns: 1fr; }
+  .trust-consent-actions { justify-content: stretch; }
+  .trust-consent-btn { flex: 1; }
+  .nav-links a { font-size: 14px; }
+}
+
 </style>
 </head>
 <body>
 
 <div class="scanline"></div>
+
+<div class="trust-consent" id="trustConsent" role="dialog" aria-live="polite" aria-label="Bilgilendirme ve onay">
+  <div class="trust-consent-card">
+    <div>
+      <div class="trust-consent-title" data-tr>Bilgilendirme ve ziyaretçi onayı</div>
+      <div class="trust-consent-title" data-ua>Інформація та згода відвідувача</div>
+      <div class="trust-consent-text" data-tr>Bu site genel bilgilendirme ve reklam amaçlıdır. İçerikler resmi, hukuki, finansal veya seyahat tavsiyesi değildir; güncel kararlar için yetkili kurumları kontrol edin. Siteyi kullanarak bu bilgilendirmeyi ve temel çerez kullanımını kabul etmiş olursunuz.</div>
+      <div class="trust-consent-text" data-ua>Цей сайт призначений для загальної інформації та реклами. Матеріали не є офіційною, юридичною, фінансовою чи туристичною порадою; перевіряйте актуальні рішення в уповноважених установах. Користуючись сайтом, ви погоджуєтесь із цим повідомленням та базовим використанням cookie.</div>
+    </div>
+    <div class="trust-consent-actions">
+      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-tr>Sadece gerekli</button>
+      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-ua>Лише необхідні</button>
+      <button class="trust-consent-btn primary" type="button" onclick="dismissConsent(true)" data-tr>Kabul et</button>
+      <button class="trust-consent-btn primary" type="button" onclick="dismissConsent(true)" data-ua>Прийняти</button>
+    </div>
+  </div>
+</div>
+
 
 <!-- ══ NAVBAR ══ -->
 <nav>
@@ -1480,25 +1667,25 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#tracker" data-tr>📡 Savaş Takip</a><a href="#tracker" data-ua>📡 Відстеження</a></li>
-    <li><a href="#gundem" data-tr>🔴 Gündem</a><a href="#gundem" data-ua>🔴 Новини</a></li>
-    <li><a href="#university" data-tr>🎓 Üniversite</a><a href="#university" data-ua>🎓 Університет</a></li>
-    <li><a href="#visa" data-tr>🛂 Vize</a><a href="#visa" data-ua>🛂 Віза</a></li>
-    <li><a href="#trade" data-tr>🤝 Ticaret</a><a href="#trade" data-ua>🤝 Торгівля</a></li>
-        <li><a href="#money" data-tr>💸 Para Transferi</a><a href="#money" data-ua>💸 Переказ Грошей</a></li>
+    <li><a href="#tracker" data-tr>Savaş Takip</a><a href="#tracker" data-ua>Відстеження</a></li>
+    <li><a href="#gundem" data-tr>Gündem</a><a href="#gundem" data-ua>Новини</a></li>
+    <li><a href="#university" data-tr>Üniversite</a><a href="#university" data-ua>Університет</a></li>
+    <li><a href="#visa" data-tr>Vize</a><a href="#visa" data-ua>Віза</a></li>
+    <li><a href="#trade" data-tr>Ticaret</a><a href="#trade" data-ua>Торгівля</a></li>
+        <li><a href="#money" data-tr>Para Transferi</a><a href="#money" data-ua>Переказ Грошей</a></li>
   </ul>
   <div class="nav-right-group">
     <!-- Reklam iş birliği butonu -->
     <button onclick="openAdModal('Reklam Başvurusu','','',false)" class="nav-promo-btn" style="font-family:inherit;font-size:inherit;">
-      <span class="nav-promo-icon">📢</span>
+      <span class="nav-promo-icon"></span>
       <span class="nav-promo-text" data-tr>Reklam İş Birliği</span>
       <span class="nav-promo-text" data-ua>Реклама</span>
     </button>
 
     <!-- Dil toggle -->
     <div class="lang-toggle">
-    <button class="lang-btn tr active" onclick="setLang('tr')">🇹🇷 TR</button>
-    <button class="lang-btn ua" onclick="setLang('ua')">🇺🇦 UA</button>
+    <button class="lang-btn tr active" onclick="setLang('tr')">TR</button>
+    <button class="lang-btn ua" onclick="setLang('ua')">UA</button>
     </div><!-- /lang-toggle -->
   </div><!-- /nav-right-group -->
 </nav>
@@ -1521,7 +1708,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 <div class="container">
   <div class="promo-slot promo-leaderboard" onclick="openAdModal('Üst Şerit','728×90 px','Sayfanın en üstünde, ziyaretçinin ilk gördüğü alan — maksimum görünürlük')">
     <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-    <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">728 × 90 px</div></div>
+    <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>Reklam Al</span><span data-ua>Замовити Рекламу</span></div><div class="promo-size-tag">728 × 90 px</div></div>
   </div>
 </div>
 
@@ -1531,8 +1718,8 @@ footer a { color:var(--text-muted); text-decoration:none; }
 <section id="tracker">
 <div class="container">
 
-  <div class="hero-label" data-tr>▶ CANLI TAKİP SİSTEMİ — HER 6 SAATTE GÜNCELLENİR ◀</div>
-  <div class="hero-label" data-ua>▶ СИСТЕМА ВІДСТЕЖЕННЯ В РЕАЛЬНОМУ ЧАСІ — ОНОВЛЕННЯ КОЖНІ 6 ГОДИН ◀</div>
+  <div class="hero-label" data-tr>CANLI TAKİP SİSTEMİ - HER 6 SAATTE GÜNCELLENİR</div>
+  <div class="hero-label" data-ua>СИСТЕМА ВІДСТЕЖЕННЯ В РЕАЛЬНОМУ ЧАСІ - ОНОВЛЕННЯ КОЖНІ 6 ГОДИН</div>
 
   <h1 class="hero-title" data-tr>RUSYA–UKRAYNA SAVAŞI<br>ATEŞKES & BİTİŞ OLASILIĞI</h1>
   <h1 class="hero-title" data-ua>ВІЙНА УКРАЇНА–РОСІЯ<br>ЙМОВІРНІСТЬ ЗАВЕРШЕННЯ</h1>
@@ -1665,11 +1852,11 @@ footer a { color:var(--text-muted); text-decoration:none; }
   <div class="promo-double">
     <div class="promo-slot promo-mid-half" onclick="openAdModal('Orta Sol','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
       <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
+      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>Reklam Al</span><span data-ua>Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
     </div>
     <div class="promo-slot promo-mid-half" onclick="openAdModal('Orta Sağ','300×250 px','Savaş takip bölümünün hemen altında — yoğun ilgi çeken konum')">
       <!-- AdSense alanı: yayın sonrası aktif edilecek -->
-      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>📢 Reklam Al</span><span data-ua>📢 Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
+      <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr>Reklam Al</span><span data-ua>Замовити Рекламу</span></div><div class="promo-size-tag">300 × 250 px</div></div>
     </div>
   </div>
 </div>
@@ -1760,16 +1947,16 @@ footer a { color:var(--text-muted); text-decoration:none; }
       <span data-tr>Tümü</span><span data-ua>Всі</span>
     </button>
     <button class="news-filter-btn military" data-filter="military" onclick="filterNews('military')">
-      <span data-tr>🔴 Askeri</span><span data-ua>🔴 Військове</span>
+      <span data-tr>Askeri</span><span data-ua>Військове</span>
     </button>
     <button class="news-filter-btn diplomatic" data-filter="diplomatic" onclick="filterNews('diplomatic')">
-      <span data-tr>🔵 Diplomatik</span><span data-ua>🔵 Дипломатія</span>
+      <span data-tr>Diplomatik</span><span data-ua>Дипломатія</span>
     </button>
     <button class="news-filter-btn economic" data-filter="economic" onclick="filterNews('economic')">
-      <span data-tr>🟢 Ekonomik</span><span data-ua>🟢 Економіка</span>
+      <span data-tr>Ekonomik</span><span data-ua>Економіка</span>
     </button>
     <button class="news-filter-btn humanitarian" data-filter="humanitarian" onclick="filterNews('humanitarian')">
-      <span data-tr>🟡 İnsani</span><span data-ua>🟡 Гуманітарне</span>
+      <span data-tr>İnsani</span><span data-ua>Гуманітарне</span>
     </button>
   </div>
 
@@ -1797,7 +1984,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   <!-- Ukraynalılar → Türkiye -->
   <div class="info-card" style="margin-bottom:20px;">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <span style="font-size:28px;">🇺🇦→🇹🇷</span>
+      <span style="font-size:28px;">UA -> TR</span>
       <h3 style="font-size:17px;" data-tr>Ukraynalı Öğrenciler için Türkiye Üniversiteleri</h3>
       <h3 style="font-size:17px;" data-ua>Турецькі університети для українських студентів</h3>
     </div>
@@ -1827,10 +2014,10 @@ footer a { color:var(--text-muted); text-decoration:none; }
       </div>
       <div>
         <div class="highlight-box" data-tr>
-          <strong>📌 Türkiye Bursları (YTB):</strong> Her yıl yabancı öğrencilere burs verilir. Burs kapsamı: aylık burs + yurt + sağlık sigortası + Türkçe dil kursu. Başvuru: <strong>turkiyeburslari.gov.tr</strong>
+          <strong>Türkiye Bursları (YTB):</strong> Her yıl yabancı öğrencilere burs verilir. Burs kapsamı: aylık burs + yurt + sağlık sigortası + Türkçe dil kursu. Başvuru: <strong>turkiyeburslari.gov.tr</strong>
         </div>
         <div class="highlight-box" data-ua>
-          <strong>📌 Стипендії Туреччини (YTB):</strong> Щороку іноземні студенти отримують стипендії. Покриття: щомісячна стипендія + гуртожиток + медичне страхування + курс турецької мови. Сайт: <strong>turkiyeburslari.gov.tr</strong>
+          <strong>Стипендії Туреччини (YTB):</strong> Щороку іноземні студенти отримують стипендії. Покриття: щомісячна стипендія + гуртожиток + медичне страхування + курс турецької мови. Сайт: <strong>turkiyeburslari.gov.tr</strong>
         </div>
         <div class="tag-row" style="margin-top:16px;">
           <span class="tag ok" data-tr>Burs İmkânı</span>
@@ -1847,7 +2034,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   <!-- YÖK Denklik -->
   <div class="cards-grid">
     <div class="info-card">
-      <div class="info-card-icon">🏛️</div>
+      <div class="info-card-icon">Banka</div>
       <h3 data-tr>YÖK Denklik İşlemi</h3>
       <h3 data-ua>Нострифікація YÖK</h3>
       <p data-tr>Ukrayna'da alınan diplomaların Türkiye'de tanınması için YÖK'e denklik başvurusu yapılmalıdır.</p>
@@ -1867,19 +2054,19 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
       <!-- Savaş uyarısı + YÖK iletişim -->
       <div class="highlight-box" style="margin-top:16px; border-color:rgba(255,140,0,.35); background:rgba(255,140,0,.06);" data-tr>
-        ⚠️ <strong>Savaş Nedeniyle Önemli Uyarı:</strong> Ukrayna'daki kurumlarla iletişim kurmanın güç olduğu durumlarda belge temininde gecikmeler yaşanabilir. Sürecinizi hızlandırmak için <strong>YÖK'ü doğrudan Türkiye'den aramanız</strong> önerilir.<br><br>
-        📞 <strong>YÖK Denklik Birimi:</strong> <a href="tel:+903122982000" style="color:var(--neon-blue);">+90 (312) 298 20 00</a><br>
-        🌐 <a href="https://denklik.yok.gov.tr" target="_blank" style="color:var(--neon-blue);">denklik.yok.gov.tr</a>
+        Uyarı: <strong>Savaş Nedeniyle Önemli Uyarı:</strong> Ukrayna'daki kurumlarla iletişim kurmanın güç olduğu durumlarda belge temininde gecikmeler yaşanabilir. Sürecinizi hızlandırmak için <strong>YÖK'ü doğrudan Türkiye'den aramanız</strong> önerilir.<br><br>
+        <strong>YÖK Denklik Birimi:</strong> <a href="tel:+903122982000" style="color:var(--neon-blue);">+90 (312) 298 20 00</a><br>
+        <a href="https://denklik.yok.gov.tr" target="_blank" style="color:var(--neon-blue);">denklik.yok.gov.tr</a>
       </div>
       <div class="highlight-box" style="margin-top:16px; border-color:rgba(255,140,0,.35); background:rgba(255,140,0,.06);" data-ua>
-        ⚠️ <strong>Важливе попередження через війну:</strong> Через труднощі зв'язку з українськими установами можливі затримки в отриманні документів. Для пришвидшення процесу рекомендується <strong>безпосередньо зв'язатися з YÖK з Туреччини</strong>.<br><br>
-        📞 <strong>Відділ нострифікації YÖK:</strong> <a href="tel:+903122982000" style="color:var(--neon-blue);">+90 (312) 298 20 00</a><br>
-        🌐 <a href="https://denklik.yok.gov.tr" target="_blank" style="color:var(--neon-blue);">denklik.yok.gov.tr</a>
+        Uyarı: <strong>Важливе попередження через війну:</strong> Через труднощі зв'язку з українськими установами можливі затримки в отриманні документів. Для пришвидшення процесу рекомендується <strong>безпосередньо зв'язатися з YÖK з Туреччини</strong>.<br><br>
+        <strong>Відділ нострифікації YÖK:</strong> <a href="tel:+903122982000" style="color:var(--neon-blue);">+90 (312) 298 20 00</a><br>
+        <a href="https://denklik.yok.gov.tr" target="_blank" style="color:var(--neon-blue);">denklik.yok.gov.tr</a>
       </div>
     </div>
 
     <div class="info-card">
-      <div class="info-card-icon">🇹🇷→🇺🇦</div>
+      <div class="info-card-icon">TR -> UA</div>
       <h3 data-tr>Türk Öğrenciler için Ukrayna Üniversiteleri</h3>
       <h3 data-ua>Українські університети для турецьких студентів</h3>
       <p data-tr>Ukrayna'daki üniversiteler Türk öğrencilere düşük maliyetli tıp, mühendislik ve hukuk eğitimi sunmaktadır.</p>
@@ -1891,10 +2078,10 @@ footer a { color:var(--text-muted); text-decoration:none; }
         <li><span class="step-num">4</span><span data-tr>Türkiye'ye döndükten sonra YÖK denklik başvurusu yap</span><span data-ua>Після повернення до Туреччини — заявка на нострифікацію YÖK</span></li>
       </ol>
       <div class="highlight-box" data-tr>
-        ⚠️ <strong>Dikkat:</strong> Savaş nedeniyle bazı şehirlerde eğitim sekteye uğrayabilir. Başvurmadan önce üniversitenin güncel durumunu kontrol edin.
+        Uyarı: <strong>Dikkat:</strong> Savaş nedeniyle bazı şehirlerde eğitim sekteye uğrayabilir. Başvurmadan önce üniversitenin güncel durumunu kontrol edin.
       </div>
       <div class="highlight-box" data-ua>
-        ⚠️ <strong>Увага:</strong> Через війну навчання в деяких містах може бути порушено. Перевіряйте актуальний стан університету перед подачею заяви.
+        Uyarı: <strong>Увага:</strong> Через війну навчання в деяких містах може бути порушено. Перевіряйте актуальний стан університету перед подачею заяви.
       </div>
     </div>
   </div>
@@ -1917,21 +2104,21 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
   <!-- Free zone box -->
   <div class="visa-hero">
-    <div class="visa-flags">🇹🇷 🤝 🇺🇦</div>
+    <div class="visa-flags">TR / UA</div>
     <div>
       <h3 style="font-size:17px;font-weight:600;margin-bottom:6px;" data-tr>Türkiye ↔ Ukrayna Vizesiz Anlaşma</h3>
       <h3 style="font-size:17px;font-weight:600;margin-bottom:6px;" data-ua>Безвізовий режим Туреччина ↔ Україна</h3>
       <p style="font-size:13px;color:var(--text-muted);" data-tr>17 Şubat 2012 tarihli anlaşma ile her iki ülke vatandaşları 180 günde 90 güne kadar vizesiz giriş yapabilmektedir.</p>
       <p style="font-size:13px;color:var(--text-muted);" data-ua>Відповідно до угоди від 17 лютого 2012 р. громадяни обох країн можуть перебувати до 90 днів протягом 180 днів без візи.</p>
-      <div class="visa-free-badge" data-tr>✅ VİZESİZ — 90 GÜN</div>
-      <div class="visa-free-badge" data-ua>✅ БЕЗ ВІЗИ — 90 ДНІВ</div>
+      <div class="visa-free-badge" data-tr> VİZESİZ — 90 GÜN</div>
+      <div class="visa-free-badge" data-ua> БЕЗ ВІЗИ — 90 ДНІВ</div>
     </div>
   </div>
 
   <div class="two-col">
     <!-- Ukraynalılar için -->
     <div class="visa-card">
-      <div class="visa-card-flag">🇺🇦 → 🇹🇷</div>
+      <div class="visa-card-flag">UA -> TR</div>
       <h3 data-tr>Ukraynalılar için Türkiye</h3>
       <h3 data-ua>Туреччина для Українців</h3>
       <div class="info-row"><span class="lbl" data-tr>Kısa Ziyaret</span><span class="lbl" data-ua>Коротке Перебування</span><span class="val ok" data-tr>90 gün</span><span class="val ok" data-ua>90 днів</span></div>
@@ -1940,34 +2127,34 @@ footer a { color:var(--text-muted); text-decoration:none; }
       <div class="info-row"><span class="lbl" data-tr>Çalışma İzni</span><span class="lbl" data-ua>Дозвіл на Роботу</span><span class="val" data-tr>İşveren başvurusu</span><span class="val" data-ua>Заявка роботодавця</span></div>
       <div class="info-row"><span class="lbl" data-tr>Geçici Koruma</span><span class="lbl" data-ua>Тимчасовий Захист</span><span class="val ok" data-tr>Savaş dönemi hakkı</span><span class="val ok" data-ua>Право воєнного часу</span></div>
       <div class="highlight-box" style="margin-top:14px;" data-tr>
-        <strong>📋 İkamet İzni için:</strong> İl Göç İdaresi Müdürlüğü'ne başvur. Gerekli: pasaport, kira sözleşmesi, sağlık sigortası, fotoğraf, başvuru harcı.
+        <strong>İkamet İzni için:</strong> İl Göç İdaresi Müdürlüğü'ne başvur. Gerekli: pasaport, kira sözleşmesi, sağlık sigortası, fotoğraf, başvuru harcı.
       </div>
       <div class="highlight-box" style="margin-top:14px;" data-ua>
-        <strong>📋 Для посвідки на проживання:</strong> Звернись до Провінційного управління з питань міграції. Потрібно: паспорт, договір оренди, медичне страхування, фото, збір за подачу.
+        <strong>Для посвідки на проживання:</strong> Звернись до Провінційного управління з питань міграції. Потрібно: паспорт, договір оренди, медичне страхування, фото, збір за подачу.
       </div>
     </div>
 
     <!-- Türkler için -->
     <div class="visa-card">
-      <div class="visa-card-flag">🇹🇷 → 🇺🇦</div>
+      <div class="visa-card-flag">TR -> UA</div>
       <h3 data-tr>Türkler için Ukrayna</h3>
       <h3 data-ua>Україна для Турків</h3>
       <div class="info-row"><span class="lbl" data-tr>Kısa Ziyaret</span><span class="lbl" data-ua>Коротке Перебування</span><span class="val ok" data-tr>90 gün (çipli kimlik)</span><span class="val ok" data-ua>90 днів (посвідчення з чіпом)</span></div>
-      <div class="info-row"><span class="lbl" data-tr>Pasaport</span><span class="lbl" data-ua>Паспорт</span><span class="val warn" data-tr>⚠️ Savaş dönemi — pasaport tavsiye edilir</span><span class="val warn" data-ua>⚠️ Воєнний час — паспорт рекомендований</span></div>
+      <div class="info-row"><span class="lbl" data-tr>Pasaport</span><span class="lbl" data-ua>Паспорт</span><span class="val warn" data-tr>Uyarı: Savaş dönemi — pasaport tavsiye edilir</span><span class="val warn" data-ua>Uyarı: Воєнний час — паспорт рекомендований</span></div>
       <div class="highlight-box" style="margin-top:10px;border-color:rgba(255,140,0,0.4);background:rgba(255,100,0,0.07);" data-tr>
-        🪪 <strong>Kimlik & Pasaport Uyarısı:</strong> Normal koşullarda Türk kimliği (çipli) Ukrayna girişi için yeterlidir. Ancak savaş dolayısıyla alınan olağanüstü tedbirler kapsamında sınır kapılarında ek kontroller uygulanabilmektedir. Güvenli geçiş için <strong>pasaportunuzu yanınızda bulundurmanız kesinlikle tavsiye edilir.</strong> Güncel bilgi için T.C. Büyükelçiliği'ni (Kyiv) arayın.
+        <strong>Kimlik & Pasaport Uyarısı:</strong> Normal koşullarda Türk kimliği (çipli) Ukrayna girişi için yeterlidir. Ancak savaş dolayısıyla alınan olağanüstü tedbirler kapsamında sınır kapılarında ek kontroller uygulanabilmektedir. Güvenli geçiş için <strong>pasaportunuzu yanınızda bulundurmanız kesinlikle tavsiye edilir.</strong> Güncel bilgi için T.C. Büyükelçiliği'ni (Kyiv) arayın.
       </div>
       <div class="highlight-box" style="margin-top:10px;border-color:rgba(255,140,0,0.4);background:rgba(255,100,0,0.07);" data-ua>
-        🪪 <strong>Попередження щодо посвідчення особи та паспорта:</strong> За звичайних умов для в'їзду до України достатньо турецького посвідчення (з чіпом). Однак у зв'язку з надзвичайними заходами воєнного часу на кордонних пунктах можуть проводитися додаткові перевірки. Для безпечного перетину <strong>настійно рекомендується мати при собі паспорт.</strong> За актуальною інформацією звертайтесь до Посольства Туреччини (Київ).
+        <strong>Попередження щодо посвідчення особи та паспорта:</strong> За звичайних умов для в'їзду до України достатньо турецького посвідчення (з чіпом). Однак у зв'язку з надзвичайними заходами воєнного часу на кордонних пунктах можуть проводитися додаткові перевірки. Для безпечного перетину <strong>настійно рекомендується мати при собі паспорт.</strong> За актуальною інформацією звертайтесь до Посольства Туреччини (Київ).
       </div>
       <div class="info-row"><span class="lbl" data-tr>Uzun Kalış</span><span class="lbl" data-ua>Тривале Перебування</span><span class="val warn" data-tr>D tipi uzun süreli vize</span><span class="val warn" data-ua>Довгострокова віза типу D</span></div>
       <div class="info-row"><span class="lbl" data-tr>Öğrenci Vizesi</span><span class="lbl" data-ua>Студентська Віза</span><span class="val" data-tr>D tipi — konsolosluktan öğrenin</span><span class="val" data-ua>Тип D — уточніть у консульстві</span></div>
       <div class="info-row"><span class="lbl" data-tr>Savaş Etkisi</span><span class="lbl" data-ua>Вплив Війни</span><span class="val warn" data-tr>Bazı bölgeler kısıtlı</span><span class="val warn" data-ua>Деякі регіони обмежені</span></div>
       <div class="highlight-box" style="margin-top:14px;" data-tr>
-        ⚠️ <strong>Önemli:</strong> Aktif çatışma bölgelerine seyahat etmeyiniz. Seyahat öncesi T.C. Dışişleri Bakanlığı'nın güncel seyahat uyarılarını kontrol edin.
+        Uyarı: <strong>Önemli:</strong> Aktif çatışma bölgelerine seyahat etmeyiniz. Seyahat öncesi T.C. Dışişleri Bakanlığı'nın güncel seyahat uyarılarını kontrol edin.
       </div>
       <div class="highlight-box" style="margin-top:14px;" data-ua>
-        ⚠️ <strong>Важливо:</strong> Не їздіть до зон активних бойових дій. Перевіряйте актуальні попередження МЗС Туреччини перед поїздкою.
+        Uyarı: <strong>Важливо:</strong> Не їздіть до зон активних бойових дій. Перевіряйте актуальні попередження МЗС Туреччини перед поїздкою.
       </div>
     </div>
   </div>
@@ -2016,7 +2203,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
   <!-- Cards -->
   <div class="cards-grid">
     <div class="info-card">
-      <div class="info-card-icon">📜</div>
+      <div class="info-card-icon">STA</div>
       <h3 data-tr>Serbest Ticaret Anlaşması (STA)</h3>
       <h3 data-ua>Угода про Вільну Торгівлю (УВТ)</h3>
       <p data-tr>3 Şubat 2022'de imzalanan STA, 4 Ekim 2024'te yürürlüğe girdi. Türk ihracatçılar AB'li rakipleriyle aynı koşullarda Ukrayna pazarına girebiliyor.</p>
@@ -2026,23 +2213,23 @@ footer a { color:var(--text-muted); text-decoration:none; }
     </div>
 
     <div class="info-card">
-      <div class="info-card-icon">🏭</div>
+      <div class="info-card-icon">Sektör</div>
       <h3 data-tr>Öne Çıkan Sektörler</h3>
       <h3 data-ua>Провідні Сектори</h3>
       <p data-tr style="margin-bottom:12px;">İki ülke arasında en fazla ticaret yapılan sektörler:</p>
       <p data-ua style="margin-bottom:12px;">Найбільш активні сектори торгівлі між двома країнами:</p>
       <div class="sector-grid">
-        <div class="sector-item"><span class="icon">👗</span><span data-tr>Tekstil &amp; Hazır Giyim</span><span data-ua>Текстиль</span></div>
-        <div class="sector-item"><span class="icon">🚗</span><span data-tr>Otomotiv</span><span data-ua>Автомобілі</span></div>
-        <div class="sector-item"><span class="icon">🌾</span><span data-tr>Tarım &amp; Gıda</span><span data-ua>Сільгосп</span></div>
-        <div class="sector-item"><span class="icon">⚙️</span><span data-tr>Makina &amp; Ekipman</span><span data-ua>Обладнання</span></div>
-        <div class="sector-item"><span class="icon">🧪</span><span data-tr>Kimya</span><span data-ua>Хімія</span></div>
-        <div class="sector-item"><span class="icon">🏗️</span><span data-tr>İnşaat</span><span data-ua>Будівництво</span></div>
+        <div class="sector-item"><span class="icon">Tekstil</span><span data-tr>Tekstil &amp; Hazır Giyim</span><span data-ua>Текстиль</span></div>
+        <div class="sector-item"><span class="icon">Otomotiv</span><span data-tr>Otomotiv</span><span data-ua>Автомобілі</span></div>
+        <div class="sector-item"><span class="icon">Tarım</span><span data-tr>Tarım &amp; Gıda</span><span data-ua>Сільгосп</span></div>
+        <div class="sector-item"><span class="icon">Makina</span><span data-tr>Makina &amp; Ekipman</span><span data-ua>Обладнання</span></div>
+        <div class="sector-item"><span class="icon">Kimya</span><span data-tr>Kimya</span><span data-ua>Хімія</span></div>
+        <div class="sector-item"><span class="icon">İnşaat</span><span data-tr>İnşaat</span><span data-ua>Будівництво</span></div>
       </div>
     </div>
 
     <div class="info-card">
-      <div class="info-card-icon">💡</div>
+      <div class="info-card-icon">Not:</div>
       <h3 data-tr>İş Dünyası için Fırsatlar</h3>
       <h3 data-ua>Можливості для Бізнесу</h3>
       <ul class="step-list" data-tr>
@@ -2092,7 +2279,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <!-- UKRAYNA'YA NAKİT GÖTÜRME -->
     <div class="money-card">
       <div class="money-card-header">
-        <div class="money-card-icon">🇺🇦</div>
+        <div class="money-card-icon"></div>
         <div>
           <div class="money-card-title" data-tr>Ukrayna'ya Nakit Götürme</div>
           <div class="money-card-title" data-ua>Ввезення Готівки до України</div>
@@ -2108,14 +2295,14 @@ footer a { color:var(--text-muted); text-decoration:none; }
       </div>
 
       <div class="money-warn-box">
-        <span>⚠️</span>
+        <span>Uyarı:</span>
         <span data-tr>Savaş dönemi kısıtlaması: Ukrayna gümrüğü yabancı döviz çıkışını sıkı denetlemektedir. Giriş serbest ancak çıkışta bankadan alınan dekont veya döviz bozdurma belgesi istenebilir.</span>
         <span data-ua>Обмеження воєнного часу: митниця України суворо контролює вивезення іноземної валюти. Ввезення вільне, але при виїзді можуть вимагати банківські виписки або документи про обмін валюти.</span>
       </div>
 
       <div class="money-method-list">
         <div class="money-method">
-          <span>💵</span>
+          <span>Nakit</span>
           <span class="money-method-name" data-tr>USD / EUR nakit</span>
           <span class="money-method-name" data-ua>Готівка USD / EUR</span>
           <span class="money-method-detail" data-tr>10.000 €'ya kadar serbest</span>
@@ -2123,7 +2310,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-fast">✓ OK</span>
         </div>
         <div class="money-method">
-          <span>🇹🇷</span>
+          <span></span>
           <span class="money-method-name" data-tr>Türk Lirası</span>
           <span class="money-method-name" data-ua>Турецька Ліра</span>
           <span class="money-method-detail" data-tr>Ukrayna'da kabul sınırlı, dövize çevir</span>
@@ -2131,7 +2318,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-limit"><span data-tr>DİKKAT</span><span data-ua>УВАГА</span></span>
         </div>
         <div class="money-method">
-          <span>📋</span>
+          <span>Belge</span>
           <span class="money-method-name" data-tr>10.000 € üzeri</span>
           <span class="money-method-name" data-ua>Понад 10.000 €</span>
           <span class="money-method-detail" data-tr>Gümrük CD formu zorunlu</span>
@@ -2141,7 +2328,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
       </div>
 
       <div class="money-tip">
-        <span>💡</span>
+        <span>Not:</span>
         <span data-tr>Tavsiye: Büyük miktarı nakit taşımak yerine banka kartı (Visa/Mastercard) ya da uluslararası transfer hizmeti kullanmak hem daha güvenli hem de gümrük sorunu yaratmaz.</span>
         <span data-ua>Порада: Замість перевезення великих сум готівки краще використовувати банківську карту (Visa/Mastercard) або міжнародний сервіс переказів — це безпечніше і не створює митних проблем.</span>
       </div>
@@ -2150,7 +2337,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <!-- TÜRKİYE → UKRAYNA BANKA TRANSFERİ -->
     <div class="money-card">
       <div class="money-card-header">
-        <div class="money-card-icon">🏦</div>
+        <div class="money-card-icon">Banka</div>
         <div>
           <div class="money-card-title" data-tr>Türkiye → Ukrayna Transfer</div>
           <div class="money-card-title" data-ua>Туреччина → Україна Переказ</div>
@@ -2161,7 +2348,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
       <div class="money-method-list">
         <div class="money-method">
-          <span>⚡</span>
+          <span>Hızlı</span>
           <span class="money-method-name" data-tr>Uluslararası Para Transferi (Nakit)</span>
           <span class="money-method-name" data-ua>Міжнародний переказ (готівка)</span>
           <span class="money-method-detail" data-tr>Türkiye'den nakit gönder, Ukrayna'da nakit al</span>
@@ -2169,7 +2356,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-fast"><span data-tr>HIZLI</span><span data-ua>ШВИДКО</span></span>
         </div>
         <div class="money-method">
-          <span>💳</span>
+          <span>Kart</span>
           <span class="money-method-name" data-tr>Dijital Transfer Servisi</span>
           <span class="money-method-name" data-ua>Цифровий сервіс переказу</span>
           <span class="money-method-detail" data-tr>Düşük komisyon, UAH hesabına aktarım</span>
@@ -2177,7 +2364,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-fast"><span data-tr>DÜŞÜK MALİYET</span><span data-ua>НИЗЬКА ВАРТІСТЬ</span></span>
         </div>
         <div class="money-method">
-          <span>🏛️</span>
+          <span>Banka</span>
           <span class="money-method-name" data-tr>SWIFT Banka Havalesi</span>
           <span class="money-method-name" data-ua>SWIFT-переказ</span>
           <span class="money-method-detail" data-tr>Türk banka → Ukrayna bankası (2-5 iş günü)</span>
@@ -2185,7 +2372,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-bank">SWIFT</span>
         </div>
         <div class="money-method">
-          <span>📱</span>
+          <span>PTT</span>
           <span class="money-method-name" data-tr>PTT Para Gönderme</span>
           <span class="money-method-name" data-ua>Відправка через відділення PTT</span>
           <span class="money-method-detail" data-tr>PTT şubeleri üzerinden gönderi</span>
@@ -2193,7 +2380,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-fast">OK</span>
         </div>
         <div class="money-method">
-          <span>🔴</span>
+          <span>Limit</span>
           <span class="money-method-name" data-tr>Türk banka kartı (Ukrayna ATM)</span>
           <span class="money-method-name" data-ua>Турецька картка (банкомат в Україні)</span>
           <span class="money-method-detail" data-tr>Visa/MC çekimlerde ~%3-4 komisyon</span>
@@ -2204,7 +2391,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
       <div class="money-rate-box" id="liveRateBox">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
-          <div class="money-rate-title">💱 <span data-tr>Canlı Döviz Kuru</span><span data-ua>Курс Валют Онлайн</span></div>
+          <div class="money-rate-title">Kur <span data-tr>Canlı Döviz Kuru</span><span data-ua>Курс Валют Онлайн</span></div>
           <div id="rateStatus" style="font-size:10px;color:var(--text-muted);letter-spacing:1px;"></div>
         </div>
         <div class="money-rate-row">
@@ -2225,7 +2412,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
     <!-- UKRAYNA → TÜRKİYE TRANSFERİ -->
     <div class="money-card">
       <div class="money-card-header">
-        <div class="money-card-icon">🔄</div>
+        <div class="money-card-icon">Transfer</div>
         <div>
           <div class="money-card-title" data-tr>Ukrayna → Türkiye Transfer</div>
           <div class="money-card-title" data-ua>Україна → Туреччина Переказ</div>
@@ -2235,14 +2422,14 @@ footer a { color:var(--text-muted); text-decoration:none; }
       </div>
 
       <div class="money-warn-box">
-        <span>⚠️</span>
+        <span>Uyarı:</span>
         <span data-tr>Savaş dönemi: Ukrayna Merkez Bankası (NBU) yurt dışına döviz transferini kısıtlamıştır. Bireysel transferlerde limit uygulanmakta olup güncel NBU duyurularını takip edin.</span>
         <span data-ua>Воєнний час: НБУ обмежив переказ іноземної валюти за кордон. На індивідуальні перекази діють ліміти — слідкуйте за актуальними оголошеннями НБУ.</span>
       </div>
 
       <div class="money-method-list">
         <div class="money-method">
-          <span>🟡</span>
+          <span>Limitli</span>
           <span class="money-method-name" data-tr>Ukrayna bankası kartı (Visa)</span>
           <span class="money-method-name" data-ua>Картка українського банку (Visa)</span>
           <span class="money-method-detail" data-tr>Ukrayna'dan uluslararası Visa kart gönderimi</span>
@@ -2250,7 +2437,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-limit"><span data-tr>LİMİTLİ</span><span data-ua>ОБМЕЖЕНО</span></span>
         </div>
         <div class="money-method">
-          <span>⚡</span>
+          <span>Hızlı</span>
           <span class="money-method-name" data-tr>Uluslararası para transferi</span>
           <span class="money-method-name" data-ua>Міжнародний грошовий переказ</span>
           <span class="money-method-detail" data-tr>Ukrayna şubelerinden Türkiye'ye nakit gönderim</span>
@@ -2258,7 +2445,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-fast"><span data-tr>MEVCUT</span><span data-ua>ДОСТУПНО</span></span>
         </div>
         <div class="money-method">
-          <span>🏛️</span>
+          <span>Banka</span>
           <span class="money-method-name" data-tr>SWIFT (NBU izinli)</span>
           <span class="money-method-name" data-ua>SWIFT (за дозволом НБУ)</span>
           <span class="money-method-detail" data-tr>Belirli tutarlar için NBU onayı gerekebilir</span>
@@ -2266,7 +2453,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
           <span class="money-method-badge badge-warn"><span data-tr>ONAY GEREKLİ</span><span data-ua>ПОТРІБЕН ДОЗВІЛ</span></span>
         </div>
         <div class="money-method">
-          <span>💳</span>
+          <span>Kart</span>
           <span class="money-method-name" data-tr>Ukrayna kartıyla Türkiye ATM</span>
           <span class="money-method-name" data-ua>Карта України в банкоматі Туреччини</span>
           <span class="money-method-detail" data-tr>Ukrayna Visa kartı Türkiye'de çalışır (~%2-3 komisyon)</span>
@@ -2276,7 +2463,7 @@ footer a { color:var(--text-muted); text-decoration:none; }
       </div>
 
       <div class="money-tip">
-        <span>💡</span>
+        <span>Not:</span>
         <span data-tr>Tavsiye: NBU'nun güncel transfer limitlerini öğrenmek için <strong style="color:var(--neon-blue)">bank.gov.ua</strong> adresini veya bankanızın müşteri hizmetlerini arayın. Limitler sık değişiyor.</span>
         <span data-ua>Порада: Для отримання актуальних лімітів переказів НБУ відвідайте <strong style="color:var(--neon-blue)">bank.gov.ua</strong> або зверніться до служби підтримки вашого банку. Ліміти часто змінюються.</span>
       </div>
@@ -2286,8 +2473,8 @@ footer a { color:var(--text-muted); text-decoration:none; }
 
   <!-- ÖNEMLI UYARILAR -->
   <div class="highlight-box" style="margin-top:24px;">
-    <strong data-tr>📌 Önemli Hatırlatmalar</strong>
-    <strong data-ua>📌 Важливі Нагадування</strong>
+    <strong data-tr>Önemli Hatırlatmalar</strong>
+    <strong data-ua>Важливі Нагадування</strong>
     <ul style="margin-top:10px;padding-left:18px;display:flex;flex-direction:column;gap:6px;">
       <li style="font-size:13px;color:rgba(200,200,255,.75);" data-tr>Ukrayna'ya getirilen dövizi döviz bürosunda (обмінник) bozdurun — banka kuru daha düşük olabilir</li>
       <li style="font-size:13px;color:rgba(200,200,255,.75);" data-ua>Обмінюйте іноземну валюту в обмінниках, а не в банках — курс може бути вигіднішим</li>
@@ -2315,30 +2502,27 @@ footer a { color:var(--text-muted); text-decoration:none; }
   </div>
   <div class="sponsored-grid">
     <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 1','Otobüs / Taşımacılık','Türkiye-Ukrayna arası otobüs, taşımacılık ve lojistik firmaları için ideal konum')">
-      <span style="font-size:32px;">🚌</span>
-      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Otobüs / Taşımacılık</div>
+      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Premium: Otobüs / Taşımacılık</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Автобус / Перевезення</div>
       <div style="padding:6px 14px;background:rgba(0,243,255,0.08);border:1px solid rgba(0,243,255,0.2);border-radius:20px;">
-        <span data-tr style="font-size:11px;color:var(--neon-blue);">📢 Reklam Ver</span>
-        <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
+        <span data-tr style="font-size:11px;color:var(--neon-blue);">Reklam Ver</span>
+        <span data-ua style="font-size:11px;color:var(--neon-blue);">Розмістити Рекламу</span>
       </div>
     </div>
     <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 2','Vize & Göç Acentesi','Vize danışmanları, göç acenteleri ve hukuk büroları için özel konum')">
-      <span style="font-size:32px;">✈️</span>
-      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Vize &amp; Göç Acentesi</div>
+      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Premium: Vize &amp; Göç Acentesi</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Візове &amp; Міграційне Агентство</div>
       <div style="padding:6px 14px;background:rgba(0,243,255,0.08);border:1px solid rgba(0,243,255,0.2);border-radius:20px;">
-        <span data-tr style="font-size:11px;color:var(--neon-blue);">📢 Reklam Ver</span>
-        <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
+        <span data-tr style="font-size:11px;color:var(--neon-blue);">Reklam Ver</span>
+        <span data-ua style="font-size:11px;color:var(--neon-blue);">Розмістити Рекламу</span>
       </div>
     </div>
     <div class="sponsor-slot promo-slot" style="cursor:pointer;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;" onclick="openAdModal('Reklam Alanı 3','Ticaret / Lojistik','İki ülke arasında ticaret ve lojistik hizmeti veren firmalar için')">
-      <span style="font-size:32px;">🤝</span>
-      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Ticaret / Lojistik</div>
+      <div class="slot-title" data-tr style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Premium: Ticaret / Lojistik</div>
       <div class="slot-title" data-ua style="font-size:14px;font-weight:600;color:rgba(200,200,255,.7);">Торгівля / Логістика</div>
       <div style="padding:6px 14px;background:rgba(0,243,255,0.08);border:1px solid rgba(0,243,255,0.2);border-radius:20px;">
-        <span data-tr style="font-size:11px;color:var(--neon-blue);">📢 Reklam Ver</span>
-        <span data-ua style="font-size:11px;color:var(--neon-blue);">📢 Розмістити Рекламу</span>
+        <span data-tr style="font-size:11px;color:var(--neon-blue);">Reklam Ver</span>
+        <span data-ua style="font-size:11px;color:var(--neon-blue);">Розмістити Рекламу</span>
       </div>
     </div>
   </div>
@@ -2351,6 +2535,11 @@ footer a { color:var(--text-muted); text-decoration:none; }
   <p style="margin-bottom:8px;">TürkUA &nbsp;·&nbsp; <span data-tr>Türkiye & Ukrayna Bilgi Merkezi</span><span data-ua>Інформаційний центр Туреччина & Україна</span></p>
   <p data-tr>Savaş olasılık tahminleri her 6 saatte güncellenir &nbsp;·&nbsp; Bu site bilgi amaçlıdır, resmi tavsiye değildir</p>
   <p data-ua>Прогнози імовірності оновлюються кожні 6 годин &nbsp;·&nbsp; Цей сайт є інформаційним, а не офіційною порадою</p>
+
+  <div class="legal-note">
+    <span data-tr>Yasal not: TürkUA üzerinde yer alan haber, olasılık, vize, eğitim, para transferi ve ticaret içerikleri genel bilgilendirme niteliğindedir. Reklam veren içerikleri ayrıca değerlendirilir; nihai karar ve sorumluluk kullanıcıya aittir.</span>
+    <span data-ua>Юридична примітка: новини, прогнози, візова, освітня, фінансова та торговельна інформація на TürkUA мають загальний інформаційний характер. Рекламні матеріали оцінюються окремо; остаточне рішення та відповідальність належать користувачу.</span>
+  </div>
 </div>
 </footer>
 
@@ -2358,15 +2547,29 @@ footer a { color:var(--text-muted); text-decoration:none; }
      JAVASCRIPT
 ══════════════════════════════════════════ -->
 <script>
+
+function dismissConsent(analyticsOk) {
+  try { localStorage.setItem('turkuaConsent', analyticsOk ? 'accepted' : 'necessary'); } catch(e) {}
+  const el = document.getElementById('trustConsent');
+  if (el) el.classList.remove('show');
+}
+function initConsent() {
+  let stored = null;
+  try { stored = localStorage.getItem('turkuaConsent'); } catch(e) {}
+  const el = document.getElementById('trustConsent');
+  if (el && !stored) setTimeout(() => el.classList.add('show'), 700);
+}
+
+document.addEventListener('DOMContentLoaded', initConsent);
 // ============================================
 // DATA_START — Bu bölüm otomatik olarak güncellenir
 const WAR_DATA = {
   "prob1d": 2,
-  "prob1m": 7,
-  "prob1y": 28,
+  "prob1m": 8,
+  "prob1y": 34,
   "confidence": 3,
-  "lastUpdate": "2026-06-26T12:00:00",
-  "trendPct": 22,
+  "lastUpdate": "2026-03-25T12:00:00",
+  "trendPct": 30,
   "statusSavas": {
     "tr": "AKTİF",
     "ua": "АКТИВНА"
@@ -2376,147 +2579,113 @@ const WAR_DATA = {
     "ua": "ПРИЗУПИНЕНО"
   },
   "trend": {
-    "tr": "düşük / gerilen",
-    "ua": "низький / напружений"
+    "tr": "düşük / sabit",
+    "ua": "низький / стабільний"
   },
   "label1d": {
-    "tr": "Yoğun İHA atışmaları, müzakere yok",
-    "ua": "Інтенсивний обмін БПЛА, переговорів немає"
+    "tr": "Müzakereler askıda, çatışma sürüyor",
+    "ua": "Переговори на паузі, бої тривають"
   },
   "label1m": {
-    "tr": "Temmuz NATO zirvesi pencere açabilir",
-    "ua": "Липневий саміт НАТО може відкрити вікно"
+    "tr": "Sınırlı diplomatik momentum",
+    "ua": "Обмежений дипломатичний поступ"
   },
   "label1y": {
-    "tr": "Diplomatik çıkmaz, uzun yıpratma riski",
-    "ua": "Дипломатичний глухий кут, ризик затяжного виснаження"
+    "tr": "Trump & AB baskısı, olası pencere",
+    "ua": "Тиск Трампа і ЄС, можливе вікно"
   },
   "reasoning": {
-    "tr": "Haziran 2026 itibarıyla savaş yoğun bir İHA yıpratma evresine girdi. Ukrayna, Moskova dahil Rus enerji altyapısına rekor büyüklükte İHA saldırıları düzenliyor. Rusya 2 Haziran'da tek gecede 73 füze ve 656 İHA ile Ukrayna'yı vurdu. Müzakere kanalları pratikte kapalı: Lavrov çatışma sürerken ateşkes olmayacağını açıkladı. Temmuz 2026'da Türkiye'nin ev sahipliğinde yapılacak NATO Ankara Zirvesi, yeni bir diplomatik pencere açabilir. Zelenski, Rusya'nın barışı istemediğini açıkladı.",
-    "ua": "Станом на червень 2026 р. війна перейшла у фазу інтенсивного виснаження БПЛА. Україна завдає рекордних ударів по російській енергетичній інфраструктурі, включно з Москвою. 2 червня Росія вдарила по Україні 73 ракетами та 656 дронами за одну ніч. Переговорні канали фактично закриті: Лавров заявив, що ніякого припинення вогню під час бойових дій не буде. Саміт НАТО в Анкарі у липні 2026 р. може відкрити нове дипломатичне вікно. Зеленський заявив, що Росія не хоче миру."
+    "tr": "Kremlin, Amerikalı müzakerecilerin önceliklerinin değiştiğini gerekçe göstererek üçlü formatı dondurdu. Avrupa Konseyi 19 Mart'ta Rusya'yı tam ve koşulsuz ateşkese çağırdı. İngiltere ve Fransa olası barış durumunda Ukrayna topraklarına askeri üsler kurmayı taahhüt etti. Polymarket'te Mart sonuna kadar ateşkes olasılığı %1'in altında. Esir değişimleri devam ediyor ancak toprak sorunu çıkmazda.",
+    "ua": "Кремль заморозив тристоронній формат, посилаючись на зміну пріоритетів американських переговорників. Єврорада 19 березня закликала Росію до повного та безумовного припинення вогню. Великобританія і Франція зобов'язалися розмістити військові хаби на території України в разі миру. На Polymarket шанс на припинення вогню до кінця березня менше 1%. Обмін полоненими триває, але територіальне питання в глухому куті."
   },
   "developments": [
     {
       "date": {
-        "tr": "24 Haziran 2026",
-        "ua": "24 червня 2026"
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
       },
       "text": {
-        "tr": "Lavrov: Müzakereler için çatışmalara ara verilmeyecek, geçici ateşkes kabul edilemez.",
-        "ua": "Лавров: заради переговорів бойових дій не припинять, тимчасове перемир'я неприйнятне."
+        "tr": "Kremlin sözcüsü Peskov: Üçlü müzakereler geçici olarak askıya alındı, Amerikalı müzakerecilerin öncelikleri değişti.",
+        "ua": "Речник Кремля Пєсков: Тристоронні переговори тимчасово призупинені, пріоритети американських переговорників змінилися."
       },
       "impact": -2,
       "type": "negative"
     },
     {
       "date": {
-        "tr": "22 Haziran 2026",
-        "ua": "22 червня 2026"
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
       },
       "text": {
-        "tr": "Ukrayna, Voronej'deki Rus askeri-sanayi tesisini hassas silahlarla vurdu.",
-        "ua": "Україна завдала удару по військово-промисловому об'єкту Росії у Воронежі."
-      },
-      "impact": 0,
-      "type": "neutral"
-    },
-    {
-      "date": {
-        "tr": "18 Haziran 2026",
-        "ua": "18 червня 2026"
-      },
-      "text": {
-        "tr": "Türkiye, Ukrayna krizinin çözümü için müzakerelere ev sahipliği yapmaya hazır olduğunu teyit etti.",
-        "ua": "Туреччина підтвердила готовність прийняти переговори щодо врегулювання кризи в Україні."
+        "tr": "Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese çağırdı ve anlamlı müzakerelere katılmaya davet etti.",
+        "ua": "Європейська Рада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах."
       },
       "impact": 1,
       "type": "positive"
     },
     {
       "date": {
-        "tr": "16 Haziran 2026",
-        "ua": "16 червня 2026"
+        "tr": "15 Mart 2026",
+        "ua": "15 березня 2026"
       },
       "text": {
-        "tr": "Ukrayna, Moskova'daki büyük petrol rafinerisini uzun menzilli silahlarla vurdu.",
-        "ua": "Україна завдала удару по великому нафтопереробному заводу в Москві далекобійною зброєю."
+        "tr": "Kiev, Rusya ile daha fazla müzakere olasılığını değerlendireceğini açıkladı.",
+        "ua": "Київ заявив, що оцінюватиме можливість подальших переговорів з Росією."
       },
-      "impact": 0,
-      "type": "neutral"
+      "impact": 1,
+      "type": "positive"
     },
     {
       "date": {
-        "tr": "5 Haziran 2026",
-        "ua": "5 червня 2026"
+        "tr": "10 Mart 2026",
+        "ua": "10 березня 2026"
       },
       "text": {
-        "tr": "Zelenski: Putin'in yanıtı 'zayıf', Rusya savaşı bitirmek istemiyor.",
-        "ua": "Зеленський: відповідь Путіна 'слабка', Росія не хоче закінчувати війну."
+        "tr": "Cephe hattında her iki taraf da ilerleme iddia ediyor. Putin, Rus kuvvetlerinin 'başarıyla ilerlediğini' söyledi.",
+        "ua": "На лінії фронту обидві сторони заявляють про просування. Путін заявив, що російські війська 'успішно просуваються'."
       },
-      "impact": -2,
+      "impact": -1,
       "type": "negative"
     },
     {
       "date": {
-        "tr": "8 Mayıs 2026",
-        "ua": "8 травня 2026"
+        "tr": "24 Şubat 2026",
+        "ua": "24 лютого 2026"
       },
       "text": {
-        "tr": "Trump, zafer yürüyüşü için Rusya-Ukrayna arasında 3 günlük ateşkes ilan edildiğini açıkladı. Ateşkes kısa sürede ihlal edildi.",
-        "ua": "Трамп оголосив про тридобове перемир'я між Росією та Україною у зв'язку з парадом Перемоги. Перемир'я швидко порушено."
+        "tr": "BM Genel Kurulu, savaşın 4. yıldönümünde acil ve koşulsuz ateşkes çağrısı yapan karar tasarısını kabul etti.",
+        "ua": "Генасамблея ООН ухвалила резолюцію з вимогою негайного та безумовного припинення вогню на 4-ту річницю війни."
       },
-      "impact": 0,
-      "type": "neutral"
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "date": {
+        "tr": "3 Şubat 2026",
+        "ua": "3 лютого 2026"
+      },
+      "text": {
+        "tr": "Ukrayna, Batılı ortaklarla çok aşamalı ateşkes planı üzerinde anlaştı.",
+        "ua": "Україна узгодила з західними партнерами багаторівневий план припинення вогню."
+      },
+      "impact": 2,
+      "type": "positive"
     }
   ],
   "newsItems": [
     {
       "category": "diplomatic",
       "date": {
-        "tr": "24 Haziran 2026",
-        "ua": "24 червня 2026"
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
       },
       "title": {
-        "tr": "Lavrov: Ateşkes olmayacak, müzakere için savaşı durdurmayız",
-        "ua": "Лавров: перемир'я не буде, заради переговорів бою не зупинимо"
+        "tr": "ABD-Rusya-Ukrayna üçlü görüşmeleri askıya alındı",
+        "ua": "Тристоронні переговори США-Росія-Україна призупинені"
       },
       "body": {
-        "tr": "Rusya Dışişleri Bakanı Lavrov, ateşkes olmayacağını ve müzakere için çatışmalara ara verilmeyeceğini açıkladı. Geçici çözümlerin ve dışarıdan dayatılan ültimatomların kabul edilmeyeceğini vurguladı.",
-        "ua": "Міністр закордонних справ Росії Лавров заявив, що ніякого припинення вогню не буде і бойових дій задля переговорів не зупинять. Наголосив, що тимчасові рішення і ультиматуми ззовні не будуть прийняті."
-      },
-      "impact": -2,
-      "type": "negative"
-    },
-    {
-      "category": "military",
-      "date": {
-        "tr": "19 Haziran 2026",
-        "ua": "19 червня 2026"
-      },
-      "title": {
-        "tr": "Ukrayna Moskova'ya son yılların en büyük İHA saldırısını düzenledi",
-        "ua": "Україна завдала по Москві найбільшого за останні роки удару БПЛА"
-      },
-      "body": {
-        "tr": "Ukrayna, yaklaşık 200 İHA kullanan saldırıda Moskova'daki Gazprom Neft rafinerisini hedef aldı. Saldırı sonucu Rusya'nın bazı bölgelerinde yakıt kıtlığı yaşandı ve akaryakıt satışlarına kota getirildi.",
-        "ua": "Україна атакувала нафтопереробний завод «Газпром нафта» у Москві, задіявши близько 200 БПЛА. Через удар у деяких регіонах Росії виникли проблеми з паливом і введено квоти на його продаж."
-      },
-      "impact": 0,
-      "type": "neutral"
-    },
-    {
-      "category": "military",
-      "date": {
-        "tr": "2 Haziran 2026",
-        "ua": "2 червня 2026"
-      },
-      "title": {
-        "tr": "Rusya tek gecede 73 füze ve 656 İHA ile Ukrayna'yı vurdu",
-        "ua": "Росія вдарила по Україні 73 ракетами та 656 БПЛА за одну ніч"
-      },
-      "body": {
-        "tr": "Rusya, 38 noktayı hedef alan dev bir hava taarruzunda ilk kez 8 adet Zircon hipersonik füzesi kullandı. En az 16 kişi hayatını kaybetti; Ukrayna 40 füze ve 602 İHA'yı düşürdü.",
-        "ua": "Росія вперше застосувала 8 гіперзвукових ракет «Циркон» в масштабному авіаударі по 38 цілях. Загинули щонайменше 16 людей; Україна збила 40 ракет і 602 БПЛА."
+        "tr": "Kremlin sözcüsü Peskov, Amerikalı müzakerecilerin önceliklerinin değiştiğini öne sürerek üçlü görüşme formatını geçici olarak dondurduklarını açıkladı. Esir değişimi tek taraflı sürecek.",
+        "ua": "Речник Кремля Пєсков заявив, що тристоронній формат переговорів тимчасово заморожений через зміну пріоритетів американських переговорників. Обмін полоненими продовжиться."
       },
       "impact": -2,
       "type": "negative"
@@ -2524,50 +2693,84 @@ const WAR_DATA = {
     {
       "category": "diplomatic",
       "date": {
-        "tr": "18 Haziran 2026",
-        "ua": "18 червня 2026"
+        "tr": "19 Mart 2026",
+        "ua": "19 березня 2026"
       },
       "title": {
-        "tr": "Türkiye müzakerelere ev sahipliği yapmaya hazır",
-        "ua": "Туреччина готова прийняти переговори"
+        "tr": "AB Rusya'ya tam ve koşulsuz ateşkes çağrısı yaptı",
+        "ua": "ЄС закликав Росію до повного та безумовного припинення вогню"
       },
       "body": {
-        "tr": "Kremlin Dış Politika Danışmanı, Türkiye'nin Ukrayna krizinin çözümüne ilişkin müzakereler için ev sahipliği yapmaya hazır olduğunu teyit ettiğini bildirdi. Temmuz 2026'daki NATO Ankara Zirvesi öncesinde önemli bir sinyal.",
-        "ua": "Радник Кремля з питань зовнішньої політики повідомив, що Туреччина підтвердила готовність приймати переговори щодо врегулювання кризи в Україні. Важливий сигнал напередодні липневого саміту НАТО в Анкарі."
+        "tr": "Avrupa Konseyi, Rusya'yı tam ve koşulsuz ateşkese davet ederek anlamlı müzakerelere katılması çağrısında bulundu. Fransa ve İngiltere, olası barış durumunda Ukrayna'da askeri üs kurmayı taahhüt etti.",
+        "ua": "Єврорада закликала Росію до повного та безумовного припинення вогню та участі у змістовних переговорах. Франція і Великобританія зобов'язалися розмістити військові бази в Україні у разі миру."
       },
       "impact": 1,
       "type": "positive"
     },
     {
-      "category": "diplomatic",
+      "category": "military",
       "date": {
-        "tr": "5 Haziran 2026",
-        "ua": "5 червня 2026"
+        "tr": "10 Mart 2026",
+        "ua": "10 березня 2026"
       },
       "title": {
-        "tr": "Zelenski: Rusya savaşı bitirmeyi reddetti",
-        "ua": "Зеленський: Росія відмовилася закінчувати війну"
+        "tr": "Cephe hattında her iki taraf da ilerleme iddiasında",
+        "ua": "Обидві сторони заявляють про просування на лінії фронту"
       },
       "body": {
-        "tr": "Zelenski, Putin'in mektubuna verdiği yanıtı değerlendirerek 'Rus tarafı yine savaşı seçiyor, zayıf bir cevap' dedi. Ukrayna, Gripen savaş uçağı alımı için 2,5 milyar Euro'luk anlaşma imzaladı.",
-        "ua": "Зеленський, оцінюючи відповідь Путіна на свого листа, заявив: «Росія знову обирає війну, слабка відповідь». Україна підписала угоду на закупівлю винищувачів Gripen на 2,5 млрд євро."
+        "tr": "Rus ve Ukraynalı yetkililer aynı anda cephe hattında ilerleme iddiasında bulundu. Ukrayna bazı bölgelerde Rusya'nın geri çekildiğini söylerken Kremlin Donetsk ekseninde kazanım elde ettiğini açıkladı.",
+        "ua": "Російські та українські посадовці одночасно заявили про просування на лінії фронту. Україна повідомила про відступ Росії в деяких районах, тоді як Кремль оголосив про здобутки на донецькому напрямку."
       },
       "impact": -1,
       "type": "negative"
     },
     {
-      "category": "humanitarian",
+      "category": "diplomatic",
       "date": {
-        "tr": "10 Haziran 2026",
-        "ua": "10 червня 2026"
+        "tr": "24 Şubat 2026",
+        "ua": "24 лютого 2026"
       },
       "title": {
-        "tr": "4,37 milyon Ukraynalı AB'de geçici koruma altında",
-        "ua": "4,37 млн українців перебувають під тимчасовим захистом у ЄС"
+        "tr": "BM: Savaşın 4. yılında acil ateşkes çağrısı",
+        "ua": "ООН: Заклик до негайного припинення вогню на 4-й рік війни"
       },
       "body": {
-        "tr": "Avrupa Birliği ülkelerine sığınarak geçici koruma mekanizmasından yararlanan Ukraynalı sayısı 4,37 milyona ulaştı. Savaşın sona ermesi durumunda geri dönmek isteyen Ukraynalıların oranı yüksek.",
-        "ua": "Кількість українців, які скористалися механізмом тимчасового захисту в країнах ЄС, сягнула 4,37 млн. Більшість з них готові повернутися додому після закінчення війни."
+        "tr": "BM Genel Kurulu, Rusya'nın Ukrayna'yı işgalinin 4. yıldönümünde acil ve koşulsuz ateşkes talep eden karar tasarısını kabul etti. Karar bağlayıcı nitelik taşımıyor ancak uluslararası baskıyı artıracak.",
+        "ua": "Генасамблея ООН ухвалила резолюцію з вимогою негайного та безумовного припинення вогню на 4-ту річницю вторгнення Росії. Резолюція не є обов'язковою, але посилить міжнародний тиск."
+      },
+      "impact": 1,
+      "type": "positive"
+    },
+    {
+      "category": "economic",
+      "date": {
+        "tr": "3 Şubat 2026",
+        "ua": "3 лютого 2026"
+      },
+      "title": {
+        "tr": "Ukrayna ve Batı çok aşamalı ateşkes planında uzlaştı",
+        "ua": "Україна і Захід узгодили багаторівневий план припинення вогню"
+      },
+      "body": {
+        "tr": "Ukrayna, Batılı ortaklarla müzakere edilen çok aşamalı ateşkes planını onayladı. Olası Rus ihlallerinde koordineli askeri yanıt mekanizması kurulacak. Plan ayrıca yeniden yapılanma finansmanı taahhütlerini de içeriyor.",
+        "ua": "Україна схвалила багаторівневий план припинення вогню, узгоджений із західними партнерами. У разі можливих порушень Росією буде створено механізм скоординованої військової відповіді. План також включає зобов'язання щодо фінансування відновлення."
+      },
+      "impact": 2,
+      "type": "positive"
+    },
+    {
+      "category": "humanitarian",
+      "date": {
+        "tr": "15 Mart 2026",
+        "ua": "15 березня 2026"
+      },
+      "title": {
+        "tr": "Ukrayna'da 6 milyon yerinden edilmiş kişi geri dönmek istiyor",
+        "ua": "6 мільйонів переміщених осіб в Україні хочуть повернутися"
+      },
+      "body": {
+        "tr": "BM mülteci ajansı raporuna göre Ukrayna'dan göç eden 6 milyonun üzerinde kişi kalıcı ateşkes sağlanması durumunda ülkelerine dönmeyi planladıklarını belirtti. Türkiye'deki Ukraynalıların %38'i bu grupta yer alıyor.",
+        "ua": "Згідно зі звітом агентства ООН у справах біженців, понад 6 мільйонів осіб, що виїхали з України, заявили про намір повернутися у разі досягнення стійкого миру. 38% українців у Туреччині входять до цієї групи."
       },
       "impact": 0,
       "type": "neutral"
@@ -2576,22 +2779,22 @@ const WAR_DATA = {
   "gundemNews": [
     {
       "category": "diplomatic",
-      "date": { "tr": "24 Haziran 2026", "ua": "24 червня 2026" },
+      "date": { "tr": "27 Mart 2026", "ua": "27 березня 2026" },
       "title": {
-        "tr": "Lavrov: Ateşkes olmayacak",
-        "ua": "Лавров: перемир'я не буде"
+        "tr": "BM Genel Kurulu ateşkes kararı aldı",
+        "ua": "ГА ООН ухвалила резолюцію про припинення вогню"
       },
       "body": {
-        "tr": "Rusya Dışişleri Bakanı, ateşkes olmayacağını ve müzakere için savaşı durdurmayacaklarını açıkladı.",
-        "ua": "Міністр закордонних справ Росії заявив, що ніякого перемир'я не буде і бойових дій задля переговорів не зупинять."
+        "tr": "BM Genel Kurulu, savaşın 4. yıldönümünde 107'ye karşı 12 oyla tam ve koşulsuz ateşkes çağrısında bulunan karar tasarısını kabul etti.",
+        "ua": "ГА ООН у четверту річницю війни прийняла резолюцію із закликом до повного та безумовного припинення вогню — 107 «за», 12 «проти»."
       },
-      "url": "https://haberkibris.com/rusya-ukrayna-krizinin-siyasi-ve-diplomatik-yontemlerle-cozulmesi-mumkun-2226-2026-06-24.html",
-      "impact": -2,
-      "type": "negative"
+      "url": "https://press.un.org/en/2026/ga12752.doc.htm",
+      "impact": 1,
+      "type": "positive"
     },
     {
       "category": "parliamentary",
-      "date": { "tr": "22 Haziran 2026", "ua": "22 червня 2026" },
+      "date": { "tr": "24 Mart 2026", "ua": "24 березня 2026" },
       "title": {
         "tr": "Rada: Milletvekilleri savaş koşullarına hazırlanıyor",
         "ua": "Рада: депутатам доручено готуватися до роботи в умовах війни"
@@ -2992,7 +3195,7 @@ function setLang(lang) {
   if (btn) btn.classList.add('active');
   const bnIcon = document.getElementById('bnLangIcon');
   const bnLabel = document.getElementById('bnLangLabel');
-  if (bnIcon) bnIcon.textContent = lang === 'ua' ? '🇺🇦' : '🇹🇷';
+  if (bnIcon) bnIcon.textContent = lang === 'ua' ? '' : '';
   if (bnLabel) bnLabel.textContent = lang === 'ua' ? 'UA' : 'TR';
   localStorage.setItem('turkua-lang', lang);
   render();
@@ -3033,7 +3236,7 @@ function previewLogo(input) {
     const img = document.getElementById('logoPreview');
     img.src = e.target.result;
     img.style.display = 'block';
-    document.querySelector('.logo-upload-icon').textContent = '✅';
+    document.querySelector('.logo-upload-icon').textContent = '';
   };
   reader.readAsDataURL(file);
 }
@@ -3375,7 +3578,7 @@ async function submitAdForm() {
         const l = document.getElementById('gundemLoading');
         if (l && l.style.display !== 'none') {
           l.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text-muted);font-size:13px;">
-            <div style="font-size:24px;margin-bottom:8px;">📡</div>
+            <div style="font-size:24px;margin-bottom:8px;"></div>
             <span data-tr>Haberler yüklenemedi — lütfen daha sonra deneyin.</span>
             <span data-ua>Новини не завантажились — спробуйте пізніше.</span>
           </div>`;
@@ -3396,6 +3599,7 @@ async function submitAdForm() {
   else window.fetchGundem(false);
 })();
 
+initConsent();
 </script>
 
 <!-- ══ REKLAM BAŞVURU MODAL ══ -->
@@ -3404,7 +3608,7 @@ async function submitAdForm() {
 
     <div class="ad-modal-header">
       <div>
-        <div class="ad-modal-title"><span data-tr>📢 Reklam İş Birliği</span><span data-ua>📢 Рекламна Співпраця</span></div>
+        <div class="ad-modal-title"><span data-tr> Reklam İş Birliği</span><span data-ua> Рекламна Співпраця</span></div>
         <div class="ad-modal-sub" id="modalSlotName">—</div>
       </div>
       <div class="ad-modal-close" onclick="closeAdModalDirect()">✕</div>
@@ -3434,60 +3638,60 @@ async function submitAdForm() {
           <label data-tr>Sektör</label><label data-ua>Сектор</label>
           <select id="ad-sector-tr" data-tr>
             <option value="">— Seçiniz —</option>
-            <option>🎓 Eğitim / Üniversite</option>
-            <option>🚌 Otobüs / Taşımacılık</option>
-            <option>✈️ Vize / Göç Acentesi</option>
-            <option>🤝 Ticaret / Lojistik</option>
-            <option>🏥 Sağlık</option>
-            <option>🏠 Emlak</option>
-            <option>💼 Diğer</option>
+            <option>Eğitim / Üniversite</option>
+            <option>Taşıma Otobüs / Taşımacılık</option>
+            <option>Vize Vize / Göç Acentesi</option>
+            <option>Ticaret / Lojistik</option>
+            <option>Sağlık</option>
+            <option>Emlak</option>
+            <option>Diğer</option>
           </select>
           <select id="ad-sector-ua" data-ua>
             <option value="">— Оберіть —</option>
-            <option>🎓 Освіта / Університет</option>
-            <option>🚌 Автобус / Перевезення</option>
-            <option>✈️ Візи / Міграція</option>
-            <option>🤝 Торгівля / Логістика</option>
-            <option>🏥 Медицина</option>
-            <option>🏠 Нерухомість</option>
-            <option>💼 Інше</option>
+            <option>Освіта / Університет</option>
+            <option>Taşıma Автобус / Перевезення</option>
+            <option>Vize Візи / Міграція</option>
+            <option>Торгівля / Логістика</option>
+            <option>Медицина</option>
+            <option>Нерухомість</option>
+            <option>Інше</option>
           </select>
         </div>
       </div>
 
       <!-- İletişim başlığı -->
       <div style="font-size:12px;font-weight:600;color:rgba(200,200,255,.9);margin-bottom:8px;margin-top:4px;">
-        <span data-tr>📞 İletişim Bilgileri <span style="color:var(--neon-red);font-weight:400;font-size:11px;">* En az 2 kanal zorunlu</span></span>
-        <span data-ua>📞 Контактні Дані <span style="color:var(--neon-red);font-weight:400;font-size:11px;">* Мінімум 2 канали обов\'язково</span></span>
+        <span data-tr>İletişim Bilgileri <span style="color:var(--neon-red);font-weight:400;font-size:11px;">* En az 2 kanal zorunlu</span></span>
+        <span data-ua>Контактні Дані <span style="color:var(--neon-red);font-weight:400;font-size:11px;">* Мінімум 2 канали обов\'язково</span></span>
       </div>
 
       <!-- 4 iletişim alanı -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
         <div class="form-group" style="margin:0;">
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">💬</span> WhatsApp</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;"></span> WhatsApp</label>
           <input type="tel" id="ad-whatsapp" placeholder="+90 5XX XXX XX XX" style="font-size:13px;">
           <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>Ülke koduyla yazın (+90, +380)</span><span data-ua>З кодом країни (+90, +380)</span></div>
         </div>
         <div class="form-group" style="margin:0;">
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">📱</span> Viber</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">PTT</span> Viber</label>
           <input type="tel" id="ad-viber" placeholder="+38 0XX XXX XX XX" style="font-size:13px;">
           <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>Ülke koduyla yazın (+90, +380)</span><span data-ua>З кодом країни (+90, +380)</span></div>
         </div>
         <div class="form-group" style="margin:0;">
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">✈️</span> Telegram</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;">Telegram</label>
           <input type="text" id="ad-telegram" placeholder="@kullaniciadi" style="font-size:13px;">
           <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>@ ile başlayan kullanıcı adı</span><span data-ua>Ім\'я користувача з @</span></div>
         </div>
         <div class="form-group" style="margin:0;">
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><span style="font-size:16px;">✉️</span> E-posta</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;">E-posta</label>
           <input type="email" id="ad-email" placeholder="ornek@firma.com" style="font-size:13px;">
           <div style="font-size:10px;color:var(--text-muted);margin-top:3px;"><span data-tr>İş e-posta adresiniz</span><span data-ua>Ваша робоча електронна пошта</span></div>
         </div>
       </div>
 
       <div id="ad-contact-error" style="display:none;color:var(--neon-red);font-size:11px;margin-bottom:10px;padding:8px 12px;background:rgba(255,36,66,.08);border-radius:8px;border:1px solid rgba(255,36,66,.2);">
-        <span data-tr>⚠️ En az 2 iletişim kanalı doldurmanız gerekiyor.</span>
-        <span data-ua>⚠️ Необхідно заповнити мінімум 2 канали зв\'язку.</span>
+        <span data-tr>Uyarı: En az 2 iletişim kanalı doldurmanız gerekiyor.</span>
+        <span data-ua>Uyarı: Необхідно заповнити мінімум 2 канали зв\'язку.</span>
       </div>
 
       <!-- Logo yükleme -->
@@ -3495,7 +3699,7 @@ async function submitAdForm() {
         <label><span data-tr>Firma Logosu / Görseli (isteğe bağlı)</span><span data-ua>Логотип / Зображення (необов\'язково)</span></label>
         <div class="logo-upload-area" onclick="document.getElementById('ad-logo').click()">
           <input type="file" id="ad-logo" accept="image/*" onchange="previewLogo(this)">
-          <div class="logo-upload-icon">🖼️</div>
+          <div class="logo-upload-icon"></div>
           <div class="logo-upload-text"><span data-tr>Tıklayarak görsel seçin</span><span data-ua>Натисніть, щоб вибрати зображення</span><br><span style="font-size:10px;opacity:.6;">PNG, JPG, SVG — maks. 2MB</span></div>
           <img class="logo-preview" id="logoPreview" alt="Logo">
         </div>
@@ -3516,7 +3720,7 @@ async function submitAdForm() {
 
     <!-- Başarı mesajı -->
     <div class="ad-success" id="adSuccess">
-      <div class="ad-success-icon">✅</div>
+      <div class="ad-success-icon"></div>
       <div class="ad-success-title"><span data-tr>Başvurunuz Alındı!</span><span data-ua>Вашу Заявку Отримано!</span></div>
       <div class="ad-success-text">
         <span data-tr>Kısa süre içinde sizinle iletişime geçeceğiz.</span>
@@ -3530,27 +3734,26 @@ async function submitAdForm() {
 <!-- ══ ALT NAVİGASYON (MOBİL) ══ -->
 <nav class="bottom-nav" id="bottomNav">
   <a href="#tracker" onclick="setBottomActive(this)">
-    <span class="bn-icon">📡</span>
+    <span class="bn-icon">01</span>
     <span data-tr>Savaş</span><span data-ua>Війна</span>
   </a>
   <a href="#gundem" onclick="setBottomActive(this)">
-    <span class="bn-icon">🔴</span>
+    <span class="bn-icon">02</span>
     <span data-tr>Gündem</span><span data-ua>Новини</span>
   </a>
   <a href="#visa" onclick="setBottomActive(this)">
-    <span class="bn-icon">🛂</span>
+    <span class="bn-icon">03</span>
     <span data-tr>Vize</span><span data-ua>Віза</span>
   </a>
   <a href="#money" onclick="setBottomActive(this)">
-    <span class="bn-icon">💸</span>
+    <span class="bn-icon">04</span>
     <span data-tr>Para</span><span data-ua>Гроші</span>
   </a>
   <button class="bn-lang-toggle" id="bnLangToggle" onclick="toggleLangBn()" aria-label="Dil degistir">
-    <span class="bn-icon" id="bnLangIcon">🇹🇷</span>
+    <span class="bn-icon" id="bnLangIcon">TR</span>
     <span id="bnLangLabel">TR</span>
   </button>
 </nav>
 
 </body>
 </html>
-                                                                                                                                                                                                                                        

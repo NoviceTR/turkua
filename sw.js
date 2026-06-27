@@ -1,62 +1,58 @@
-// TürkUA Service Worker — v1.0
-const CACHE = 'turkua-v1';
+// TürkUA Service Worker - cache reset build 2026-06-27
+const CACHE = 'turkua-v2-20260627';
 const ASSETS = [
-  '/turkua/',
-  '/turkua/index.html',
-  'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap'
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/data.js'
 ];
 
-// Kurulum: temel dosyaları önbelleğe al
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ASSETS)).catch(() => {})
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE)
+      .then(cache => cache.addAll(ASSETS))
+      .catch(() => {})
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
-// Aktivasyon: eski önbellekleri temizle
-self.addEventListener('activate', e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    )
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(keys.map(key => {
+        if (key !== CACHE) return caches.delete(key);
+        return Promise.resolve();
+      })))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-// Fetch: önce önbellek, sonra ağ (network-first for HTML, cache-first for assets)
-self.addEventListener('fetch', e => {
-  const url = new URL(e.request.url);
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
 
-  // HTML — her zaman ağdan al, önbelleğe de kaydet
-  if (e.request.destination === 'document') {
-    e.respondWith(
-      fetch(e.request)
-        .then(res => {
-          const clone = res.clone();
-          caches.open(CACHE).then(c => c.put(e.request, clone));
-          return res;
+  if (event.request.mode === 'navigate' || event.request.destination === 'document') {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-store' })
+        .then(response => {
+          const copy = response.clone();
+          caches.open(CACHE).then(cache => cache.put(event.request, copy));
+          return response;
         })
-        .catch(() => caches.match(e.request))
+        .catch(() => caches.match(event.request).then(cached => cached || caches.match('/index.html')))
     );
     return;
   }
 
-  // Yazı tipleri ve statik dosyalar — önce önbellek
-  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
-    e.respondWith(
-      caches.match(e.request).then(cached => cached || fetch(e.request).then(res => {
-        const clone = res.clone();
-        caches.open(CACHE).then(c => c.put(e.request, clone));
-        return res;
-      }))
-    );
-    return;
-  }
-
-  // Döviz/haber API'leri — sadece ağ (önbellek yok)
   if (url.hostname.includes('er-api') || url.hostname.includes('rss2json')) {
-    e.respondWith(fetch(e.request).catch(() => new Response('{}', { status: 503 })));
+    event.respondWith(fetch(event.request, { cache: 'no-store' }).catch(() => new Response('{}', { status: 503 })));
     return;
   }
+
+  event.respondWith(
+    caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
+      const copy = response.clone();
+      caches.open(CACHE).then(cache => cache.put(event.request, copy));
+      return response;
+    }))
+  );
 });
