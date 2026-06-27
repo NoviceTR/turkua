@@ -8,47 +8,47 @@ window.WAR_DATA = {
   "prob1m": 0.3,
   "prob1y": 0.2,
   "confidence": 3,
-  "lastUpdate": "2026-06-27T16:39:00",
+  "lastUpdate": "2026-06-27T20:26:00",
   "trendPct": -0.1,
   "statusSavas": {"tr": "AKTİF", "ua": "АКТИВНА"},
-  "statusMuzakere": {"tr": "DURDU", "ua": "ПЕРЕРВА"},
-  "trend": {"tr": "Savaşın yoğunluğu artıyor", "ua": "Зростання інтенсивності війни"},
-  "label1d": {"tr": "Günlük savaş durumu", "ua": "Щоденна ситуація війни"},
-  "label1m": {"tr": "Aylık savaş durumu", "ua": "Місячна ситуація війни"},
-  "label1y": {"tr": "Yıllık savaş durumu", "ua": "Річний стан війни"},
-  "reasoning": {"tr": "Ukrayna ve Rusya arasındaki savaşın yoğunluğu artıyor.", "ua": "Зростання інтенсивності війни між Україною та Росією."},
+  "statusMuzakere": {"tr": "DURDU", "ua": "ЗУПИНИВСЯ"},
+  "trend": {"tr": "Savaşın yoğunluğu artıyor", "ua": "Збільшення інтенсивності війни"},
+  "label1d": {"tr": "Günlük saldırı sayısı", "ua": "Кількість атак на добу"},
+  "label1m": {"tr": "Aylık saldırı sayısı", "ua": "Кількість атак на місяць"},
+  "label1y": {"tr": "Yıllık saldırı sayısı", "ua": "Кількість атак на рік"},
+  "reasoning": {"tr": "Son günlerde saldırıların artması", "ua": "Збільшення кількості атак останнім часом"},
   "developments": [
     {
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "text": {"tr": "Ukrayna hükümeti, global savunma inovasyon ortaklıkları için Brave International çerçevesini başlattı.", "ua": "Уряд України запустив框架 Brave International для глобального партнерства в галузі оборонної інновації"},
-      "impact": 2,
-      "type": "positive"
+      "text": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu", "ua": "Російські війська обстріляли Дніпропетровську область понад 40 разів"},
+      "impact": -2,
+      "type": "negative"
     },
     {
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "text": {"tr": "Rusya'nın Sumy bölgesine yaptığı sabah saldırısında 18 kişi yaralandı.", "ua": "Внаслідок ранкової атаки Росії на Сумську область поранено 18 осіб"},
-      "impact": -1,
-      "type": "negative"
+      "text": {"tr": "Ukrayna, işgal edilmiş Kırım'da Rus hedeflerine saldırı düzenledi", "ua": "Україна здійснила удар по російських цілях на окупованому Криму"},
+      "impact": 1,
+      "type": "positive"
     }
   ],
   "newsItems": [
     {
       "category": "military",
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "title": {"tr": "Ukrayna, Rusya'nın Pantsir-S1 sistemini ve Kerch yakınlarındaki bir feribotu vurdu.", "ua": "Україна завдала удару по російській системі Pantsir-S1 та порому біля Керчі"},
-      "body": {"tr": "Ukrayna savunma kuvvetleri, Rusya'nın Pantsir-S1 sistemini ve Kerch yakınlarındaki bir feribotu vurdu.", "ua": "Збройні сили України завдали удару по російській системі Pantsir-S1 та порому біля Керчі"},
-      "impact": 1,
-      "type": "positive"
+      "title": {"tr": "Rus forces Dnipropetrovsk bölgesini vurdu", "ua": "Російські війська обстріляли Дніпропетровську область"},
+      "body": {"tr": "Rus forces Dnipropetrovsk bölgesini 40'dan fazla kez vurdu, bir kişi öldü", "ua": "Російські війська обстріляли Дніпропетровську область понад 40 разів, один чоловік загинув"},
+      "impact": -2,
+      "type": "negative"
     },
     {
-      "category": "military",
+      "category": "diplomacy",
       "date": {"tr": "27 Haziran 2026", "ua": "27 червня 2026"},
-      "title": {"tr": "Rusya, Naftogaz tesislerine saldırdı.", "ua": "Росія атакувала об'єкти Нафтогазу"},
-      "body": {"tr": "Rusya, Naftogaz tesislerine saldırdı ve hasara neden oldu.", "ua": "Росія атакувала об'єкти Нафтогазу та завдала їм пошкоджень"},
-      "impact": -1,
-      "type": "negative"
+      "title": {"tr": "Türkiye, Ukrayna-Rusya barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати переговори між Україною та Росією"},
+      "body": {"tr": "Türkiye, Ukrayna-Rusya barış görüşmelerine ev sahipliği yapmaya hazır", "ua": "Туреччина готова приймати переговори між Україною та Росією"},
+      "impact": 1,
+      "type": "positive"
     }
   ],
-  "gundemLastUpdate": "2026-06-27T16:39:00"
+  "gundemLastUpdate": "2026-06-27T20:26:00"
 };
 // DATA_END
