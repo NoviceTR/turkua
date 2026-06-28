@@ -1639,6 +1639,392 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
   color: rgba(235,241,248,.72);
 }
 .policy-box strong { color: var(--gold); }
+
+/* ══════════════════════════════════════════
+   TURKUA DROP
+══════════════════════════════════════════ */
+#shop {
+  background:
+    linear-gradient(180deg, rgba(232,199,122,.09), rgba(7,9,15,0) 34%),
+    linear-gradient(135deg, rgba(107,199,255,.08), rgba(255,255,255,0) 42%),
+    #080a0e;
+}
+.drop-marquee {
+  border-block: 1px solid rgba(232,199,122,.25);
+  background: rgba(232,199,122,.10);
+  color: rgba(255,255,255,.86);
+  overflow: hidden;
+  margin: -22px 0 42px;
+}
+.drop-marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 42s linear infinite;
+}
+.drop-marquee span {
+  display: inline-flex;
+  padding: 10px 28px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.drop-brand {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.tamga-logo {
+  width: 92px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(232,199,122,.38);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 40% 30%, rgba(232,199,122,.18), rgba(255,255,255,.03) 60%);
+  box-shadow: inset 0 0 24px rgba(232,199,122,.08), 0 18px 70px rgba(0,0,0,.35);
+}
+.tamga-symbol {
+  position: relative;
+  width: 38px;
+  height: 56px;
+  transform: skewY(-10deg);
+}
+.tamga-symbol::before,
+.tamga-symbol::after {
+  content: '';
+  position: absolute;
+  background: var(--gold);
+  box-shadow: 0 0 18px rgba(232,199,122,.32);
+}
+.tamga-symbol::before {
+  width: 8px;
+  height: 56px;
+  left: 16px;
+  top: 0;
+  transform: rotate(28deg);
+}
+.tamga-symbol::after {
+  width: 34px;
+  height: 8px;
+  left: 2px;
+  top: 24px;
+  transform: rotate(-34deg);
+}
+.drop-kicker {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.drop-title {
+  font-size: clamp(42px, 7vw, 86px);
+  line-height: .9;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+.drop-title span {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(232,199,122,.72);
+}
+.drop-sub {
+  margin-top: 14px;
+  color: rgba(220,229,241,.68);
+  line-height: 1.7;
+  max-width: 760px;
+}
+.shop-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 22px;
+  align-items: start;
+}
+.shop-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 26px;
+}
+.shop-chip {
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.055);
+  color: rgba(235,241,248,.76);
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 12px;
+}
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.product-card {
+  background: linear-gradient(180deg, rgba(18,27,40,.94), rgba(10,15,22,.94));
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--panel-shadow);
+  position: relative;
+}
+.product-card.soon {
+  opacity: .74;
+}
+.product-visual {
+  min-height: 260px;
+  padding: 18px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  background:
+    linear-gradient(135deg, rgba(232,199,122,.16), rgba(107,199,255,.06)),
+    radial-gradient(circle at 24% 18%, rgba(255,255,255,.13), transparent 26%);
+  position: relative;
+  overflow: hidden;
+}
+.product-visual::before {
+  content: '';
+  position: absolute;
+  inset: 22px 18% 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(230,234,238,.82));
+  clip-path: polygon(30% 0, 43% 10%, 57% 10%, 70% 0, 88% 18%, 76% 34%, 76% 100%, 24% 100%, 24% 34%, 12% 18%);
+  filter: drop-shadow(0 22px 24px rgba(0,0,0,.28));
+}
+.product-visual.watch::before {
+  inset: 40px 34% 34px;
+  border-radius: 999px;
+  clip-path: none;
+  background: radial-gradient(circle, #111827 0 42%, #d8bd75 43% 48%, #0a0f16 49% 100%);
+}
+.product-visual.gift::before {
+  inset: 64px 25% 44px;
+  clip-path: polygon(0 22%, 100% 22%, 100% 100%, 0 100%);
+  background: linear-gradient(135deg, rgba(232,199,122,.9), rgba(107,199,255,.5));
+}
+.product-visual.glasses::before {
+  inset: 92px 18% 100px;
+  clip-path: none;
+  background: transparent;
+  border-top: 10px solid rgba(232,199,122,.9);
+  border-left: 54px solid rgba(12,18,27,.82);
+  border-right: 54px solid rgba(12,18,27,.82);
+  border-radius: 28px;
+}
+.product-tamga {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 42%;
+  width: 34px;
+  height: 48px;
+  transform: translate(-50%, -50%) skewY(-10deg);
+}
+.product-tamga::before,
+.product-tamga::after {
+  content: '';
+  position: absolute;
+  background: rgba(12,18,27,.86);
+}
+.product-tamga::before {
+  width: 7px;
+  height: 48px;
+  left: 14px;
+  transform: rotate(28deg);
+}
+.product-tamga::after {
+  width: 30px;
+  height: 7px;
+  left: 2px;
+  top: 21px;
+  transform: rotate(-34deg);
+}
+.product-mark {
+  position: relative;
+  z-index: 2;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.92);
+  text-transform: uppercase;
+}
+.product-kind {
+  position: relative;
+  z-index: 2;
+  color: rgba(232,199,122,.82);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.product-body { padding: 18px; }
+.product-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.product-title { font-size: 18px; font-weight: 800; }
+.product-price { color: var(--gold); font-weight: 800; white-space: nowrap; }
+.product-desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(220,229,241,.64);
+  min-height: 42px;
+}
+.stock-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14px 0;
+  font-size: 12px;
+  color: rgba(220,229,241,.68);
+}
+.stock-meter {
+  width: 94px;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255,255,255,.08);
+}
+.stock-meter span {
+  display: block;
+  height: 100%;
+  width: var(--stock-width, 100%);
+  background: linear-gradient(90deg, var(--gold), var(--neon-green));
+}
+.product-actions {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 10px;
+}
+.product-actions input {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.045);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px;
+}
+.shop-btn {
+  border: 1px solid rgba(232,199,122,.36);
+  background: linear-gradient(135deg, rgba(232,199,122,.22), rgba(107,199,255,.08));
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+.shop-btn.secondary {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.14);
+  color: rgba(235,241,248,.75);
+}
+.shop-btn:disabled { opacity: .45; cursor: not-allowed; }
+.shop-cart {
+  position: sticky;
+  top: 86px;
+  background: linear-gradient(180deg, rgba(18,27,40,.96), rgba(10,15,22,.96));
+  border: 1px solid rgba(232,199,122,.18);
+  border-radius: 8px;
+  box-shadow: var(--panel-shadow);
+  padding: 18px;
+}
+.shop-cart h3 { font-size: 18px; margin-bottom: 8px; }
+.cart-note { font-size: 12px; color: rgba(220,229,241,.62); line-height: 1.7; margin-bottom: 14px; }
+.cart-items { display:flex; flex-direction:column; gap: 10px; margin-bottom: 14px; }
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  background: rgba(255,255,255,.035);
+  font-size: 12px;
+}
+.cart-item button {
+  border: 0;
+  background: transparent;
+  color: var(--neon-red);
+  cursor: pointer;
+  font-weight: 800;
+}
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-weight: 800;
+}
+.checkout-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.checkout-form input, .checkout-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.045);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 13px;
+}
+.checkout-form textarea { min-height: 74px; resize: vertical; }
+.store-legal {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.035);
+  color: rgba(220,229,241,.65);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════
+   HUKUKI MERKEZ
+══════════════════════════════════════════ */
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.legal-card {
+  background: linear-gradient(180deg, rgba(18,27,40,.92), rgba(10,15,22,.92));
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: var(--panel-shadow);
+}
+.legal-card h3 { font-size: 16px; margin-bottom: 10px; }
+.legal-card p, .legal-card li {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(220,229,241,.66);
+}
+.legal-card ul { padding-left: 18px; display:flex; flex-direction:column; gap: 6px; }
+
+@media (max-width: 900px) {
+  .shop-shell { grid-template-columns: 1fr; }
+  .shop-cart { position: static; }
+  .legal-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .shop-grid { grid-template-columns: 1fr; }
+  .product-visual { min-height: 170px; }
+  .product-mark { font-size: 34px; }
+}
 @media (max-width: 768px) {
   .hero-title { font-size: clamp(26px, 9vw, 42px) !important; }
   .trust-consent-card { grid-template-columns: 1fr; }
@@ -1683,7 +2069,8 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
     <li><a href="#university" data-tr>Üniversite</a><a href="#university" data-ua>Університет</a></li>
     <li><a href="#visa" data-tr>Vize</a><a href="#visa" data-ua>Віза</a></li>
     <li><a href="#trade" data-tr>Ticaret</a><a href="#trade" data-ua>Торгівля</a></li>
-        <li><a href="#money" data-tr>Para Transferi</a><a href="#money" data-ua>Переказ Грошей</a></li>
+    <li><a href="#money" data-tr>Para Transferi</a><a href="#money" data-ua>Переказ Грошей</a></li>
+    <li><a href="#shop" data-tr>TURKUA Drop</a><a href="#shop" data-ua>TURKUA Drop</a></li>
   </ul>
   <div class="nav-right-group">
     <!-- Reklam iş birliği butonu -->
@@ -2501,6 +2888,120 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
 </div>
 </section>
 
+<!-- ══ TURKUA DROP ══ -->
+<section id="shop">
+<div class="container">
+  <div class="drop-marquee" aria-hidden="true">
+    <div class="drop-marquee-inner">
+      <span>TURKUA FIRST DROP</span><span>10 PIECE START</span><span>TAMGA SERIES</span><span>PRE-ORDER MODE</span>
+      <span>TURKUA FIRST DROP</span><span>10 PIECE START</span><span>TAMGA SERIES</span><span>PRE-ORDER MODE</span>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="drop-brand">
+      <div class="tamga-logo" aria-label="TURKUA tamga logo"><div class="tamga-symbol"></div></div>
+      <div>
+        <div class="drop-kicker" data-tr>Eski Türk tamgasından ilham alan ilk seri</div>
+        <div class="drop-kicker" data-ua>Перша серія, натхненна давньою тюркською тамгою</div>
+        <h2 class="drop-title" data-tr>TURKUA <span>TAMGA</span></h2>
+        <h2 class="drop-title" data-ua>TURKUA <span>TAMGA</span></h2>
+        <p class="drop-sub" data-tr>Tişörtle başlayan sınırlı üretim çizgisi. Ardından saat, hediyelik obje ve gözlük gibi ürünlerle büyüyecek. Ödeme entegrasyonu sonraki aşamada eklenecek; şimdilik ön sipariş ve stok takibi çalışır.</p>
+        <p class="drop-sub" data-ua>Лімітована лінія стартує з футболки. Далі з'являться годинники, сувеніри та окуляри. Оплата буде додана пізніше; зараз працює попереднє замовлення та облік запасу.</p>
+      </div>
+    </div>
+    <div class="shop-toolbar">
+      <span class="shop-chip" data-tr>Başlangıç stoku: 10 adet</span>
+      <span class="shop-chip" data-ua>Початковий запас: 10 шт.</span>
+      <span class="shop-chip" data-tr>Ödeme: yakında</span>
+      <span class="shop-chip" data-ua>Оплата: незабаром</span>
+      <span class="shop-chip" data-tr>Talep gelince stok düşer</span>
+      <span class="shop-chip" data-ua>Запас зменшується після заявки</span>
+    </div>
+  </div>
+
+  <div class="shop-shell">
+    <div>
+      <div class="shop-grid" id="shopGrid"></div>
+      <div class="store-legal">
+        <span data-tr>TURKUA Drop şu anda ön sipariş ve talep toplama aşamasındadır. Bu bölümde görünen fiyat ve stoklar ticari hazırlık amaçlıdır; ödeme alınmadan kesin satış oluşmaz. Nihai fiyat, teslimat, iade ve mesafeli satış koşulları ödeme entegrasyonu açılmadan önce ayrıca yayınlanacaktır.</span>
+        <span data-ua>TURKUA Drop зараз працює як попереднє замовлення та збір заявок. Ціни й запаси мають підготовчий характер; без оплати остаточний продаж не формується. Остаточні ціни, доставка, повернення та умови дистанційного продажу будуть опубліковані перед запуском оплати.</span>
+      </div>
+    </div>
+
+    <aside class="shop-cart" aria-live="polite">
+      <h3 data-tr>Drop Talebi</h3>
+      <h3 data-ua>Заявка Drop</h3>
+      <p class="cart-note" data-tr>Sepete eklenen ürünler gerçek ödeme almaz. Talep gönderildiğinde sana e-posta hazırlanır ve stok bu cihazda düşer.</p>
+      <p class="cart-note" data-ua>Додавання в кошик не приймає оплату. Після відправки заявки формується e-mail, а запас зменшується на цьому пристрої.</p>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-total"><span data-tr>Tahmini toplam</span><span data-ua>Орієнтовно</span><strong id="cartTotal">0 TL</strong></div>
+      <div class="checkout-form">
+        <input id="shopName" type="text" placeholder="Ad Soyad / Ім'я">
+        <input id="shopContact" type="text" placeholder="Telefon veya e-posta / Телефон або e-mail">
+        <textarea id="shopNote" placeholder="Beden, renk, teslimat notu / Розмір, колір, доставка"></textarea>
+        <button class="shop-btn" type="button" onclick="submitShopRequest()" data-tr>Talep Gönder</button>
+        <button class="shop-btn" type="button" onclick="submitShopRequest()" data-ua>Надіслати Заявку</button>
+      </div>
+    </aside>
+  </div>
+</div>
+</section>
+
+<!-- ══ HUKUKI MERKEZ ══ -->
+<section id="legal-hub">
+<div class="container">
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span><span data-tr>HUKUKİ BİLGİLENDİRME</span><span data-ua>ЮРИДИЧНА ІНФОРМАЦІЯ</span></div>
+    <h2 class="section-title" data-tr>Kullanım, Gizlilik ve Reklam İlkeleri</h2>
+    <h2 class="section-title" data-ua>Умови, Конфіденційність та Реклама</h2>
+    <p class="section-sub" data-tr>Bu alan, ziyaretçiye site kurallarını sade şekilde açıklar. Ayrıntılı sözleşmeler ödeme ve üyelik aşamasında ayrıca genişletilebilir.</p>
+    <p class="section-sub" data-ua>Цей блок коротко пояснює правила сайту. Детальні умови можна розширити на етапі оплати та реєстрації.</p>
+  </div>
+  <div class="legal-grid">
+    <div class="legal-card">
+      <h3 data-tr>Kullanım Şartları</h3><h3 data-ua>Умови Користування</h3>
+      <ul data-tr>
+        <li>Site bilgi, haber özeti, reklam başvurusu ve ön sipariş amacıyla kullanılır.</li>
+        <li>İçerikler resmi tavsiye değildir; nihai karar kullanıcıya aittir.</li>
+        <li>Yanıltıcı, yasa dışı veya hak ihlali içeren talep ve reklamlar reddedilebilir.</li>
+      </ul>
+      <ul data-ua>
+        <li>Сайт використовується для інформації, новин, рекламних заявок і попередніх замовлень.</li>
+        <li>Матеріали не є офіційною порадою; остаточне рішення приймає користувач.</li>
+        <li>Оманливі, незаконні або правопорушні заявки можуть бути відхилені.</li>
+      </ul>
+    </div>
+    <div class="legal-card">
+      <h3 data-tr>Gizlilik ve Çerez</h3><h3 data-ua>Конфіденційність та Cookie</h3>
+      <ul data-tr>
+        <li>Temel site tercihleri tarayıcıda yerel olarak saklanabilir.</li>
+        <li>Reklam/analitik takip çerezi şu an çalıştırılmamaktadır.</li>
+        <li>Formlarla iletilen bilgiler yalnızca başvuruyu yanıtlamak için kullanılır.</li>
+      </ul>
+      <ul data-ua>
+        <li>Основні налаштування можуть зберігатися локально у браузері.</li>
+        <li>Рекламні або аналітичні tracking-cookie зараз не використовуються.</li>
+        <li>Дані з форм використовуються лише для відповіді на заявку.</li>
+      </ul>
+    </div>
+    <div class="legal-card">
+      <h3 data-tr>Reklam Politikası</h3><h3 data-ua>Рекламна Політика</h3>
+      <ul data-tr>
+        <li>Statik görsel ve GIF reklam başvuruları manuel incelenir.</li>
+        <li>Yetişkin, yasa dışı, nefret, propaganda veya yanıltıcı içerik yayınlanmaz.</li>
+        <li>Reklam yayın kararı ve süreleri TürkUA tarafından ayrıca onaylanır.</li>
+      </ul>
+      <ul data-ua>
+        <li>Статичні та GIF-реклами перевіряються вручну.</li>
+        <li>Не публікуються матеріали для дорослих, незаконний, ворожий, пропагандистський або оманливий контент.</li>
+        <li>Рішення та строки розміщення реклами окремо підтверджуються TürkUA.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- ══ REKLAM ALANLARI ══ -->
 <section id="sponsored" style="padding:40px 0;">
 <div class="container">
@@ -3179,7 +3680,7 @@ function setBottomActive(el) {
 }
 // Scroll ile alt nav aktif güncelle
 window.addEventListener('scroll', () => {
-  const sections = ['tracker','gundem','visa','trade','money','contact'];
+  const sections = ['tracker','gundem','visa','trade','money','shop','legal-hub','contact'];
   let current = 'tracker';
   for (const id of sections) {
     const el = document.getElementById(id);
@@ -3210,6 +3711,7 @@ function setLang(lang) {
   if (bnLabel) bnLabel.textContent = lang === 'ua' ? 'UA' : 'TR';
   localStorage.setItem('turkua-lang', lang);
   render();
+  if (typeof renderShop === 'function') renderShop();
 }
 
 function toggleLangBn() {
@@ -3409,7 +3911,7 @@ async function submitAdForm() {
 
 // ── Nav aktif bölüm vurgulama ──────────────────────────────────
 (function() {
-  const sections = ['tracker','news-section','university','visa','trade','money','contact'];
+  const sections = ['tracker','news-section','university','visa','trade','money','shop','legal-hub','contact'];
   const navLinks = document.querySelectorAll('.nav-links a');
 
   function setActive(id) {
@@ -3439,6 +3941,207 @@ async function submitAdForm() {
   });
 })();
 
+
+// ══ TURKUA DROP — ÖN SİPARİŞ/STOK ══════════════════════════
+const SHOP_PRODUCTS = [
+  {
+    id: 'tamga-tee-001',
+    kind: 'T-Shirt',
+    visual: 'tee',
+    title: { tr: 'Tamga Oversize Tişört', ua: 'Tamga Oversize Футболка' },
+    desc: {
+      tr: 'İlk seri için yıkamalı siyah kumaş, göğüste TURKUA tamga işareti. Beden notunu talepte yaz.',
+      ua: 'Перший дроп: washed black тканина, знак TURKUA Tamga на грудях. Розмір вкажіть у заявці.'
+    },
+    price: 799,
+    baseStock: 10,
+    active: true
+  },
+  {
+    id: 'tamga-watch-001',
+    kind: 'Watch',
+    visual: 'watch',
+    title: { tr: 'Tamga Saat', ua: 'Tamga Годинник' },
+    desc: {
+      tr: 'Metal kasa, koyu kadran, küçük tamga detayı. İkinci seri için hazırlanıyor.',
+      ua: 'Металевий корпус, темний циферблат, маленька деталь Tamga. Готується для другої серії.'
+    },
+    price: 0,
+    baseStock: 0,
+    active: false
+  },
+  {
+    id: 'tamga-gift-001',
+    kind: 'Object',
+    visual: 'gift',
+    title: { tr: 'Tamga Hediye Obje', ua: 'Tamga Сувенір' },
+    desc: {
+      tr: 'Masa üstü küçük obje, anahtarlık ve koleksiyon parçaları için ayrılan seri.',
+      ua: 'Серія для настільних обʼєктів, брелоків та колекційних речей.'
+    },
+    price: 0,
+    baseStock: 0,
+    active: false
+  },
+  {
+    id: 'tamga-glasses-001',
+    kind: 'Glasses',
+    visual: 'glasses',
+    title: { tr: 'Tamga Gözlük', ua: 'Tamga Окуляри' },
+    desc: {
+      tr: 'Yaz drop için planlanan sade, koyu camlı aksesuar çizgisi.',
+      ua: 'Лаконічна лінія аксесуарів із темними лінзами для літнього drop.'
+    },
+    price: 0,
+    baseStock: 0,
+    active: false
+  }
+];
+
+let shopCart = [];
+
+function shopLang() {
+  return document.documentElement.getAttribute('data-lang') || 'tr';
+}
+
+function shopStockKey() {
+  return 'turkua_shop_stock_v1';
+}
+
+function getShopStock() {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(shopStockKey()) || '{}'); } catch(e) {}
+  const stock = {};
+  SHOP_PRODUCTS.forEach(p => { stock[p.id] = Number.isFinite(saved[p.id]) ? saved[p.id] : p.baseStock; });
+  return stock;
+}
+
+function setShopStock(stock) {
+  try { localStorage.setItem(shopStockKey(), JSON.stringify(stock)); } catch(e) {}
+}
+
+function formatTry(amount) {
+  if (!amount) return 'Yakında';
+  return amount.toLocaleString('tr-TR') + ' TL';
+}
+
+function renderShop() {
+  const grid = document.getElementById('shopGrid');
+  if (!grid) return;
+  const lang = shopLang();
+  const stock = getShopStock();
+  grid.innerHTML = SHOP_PRODUCTS.map(p => {
+    const left = stock[p.id] || 0;
+    const pct = p.baseStock ? Math.max(0, Math.min(100, (left / p.baseStock) * 100)) : 0;
+    const disabled = !p.active || left <= 0;
+    const status = p.active ? (left > 0 ? (lang === 'ua' ? `${left} шт. доступно` : `${left} adet kaldı`) : (lang === 'ua' ? 'Вичерпано' : 'Tükendi')) : (lang === 'ua' ? 'Скоро' : 'Yakında');
+    const button = p.active ? (lang === 'ua' ? 'Talep Ekle' : 'Talep Ekle') : (lang === 'ua' ? 'Yakında' : 'Yakında');
+    return `<article class="product-card${p.active ? '' : ' soon'}">
+      <div class="product-visual ${p.visual}">
+        <div class="product-tamga"></div>
+        <div class="product-mark">TURKUA</div>
+        <div class="product-kind">${p.kind}</div>
+      </div>
+      <div class="product-body">
+        <div class="product-top">
+          <div class="product-title">${p.title[lang] || p.title.tr}</div>
+          <div class="product-price">${p.price ? formatTry(p.price) : (lang === 'ua' ? 'Скоро' : 'Yakında')}</div>
+        </div>
+        <div class="product-desc">${p.desc[lang] || p.desc.tr}</div>
+        <div class="stock-row">
+          <span>${status}</span>
+          <span class="stock-meter" style="--stock-width:${pct}%"><span></span></span>
+        </div>
+        <div class="product-actions">
+          <input type="number" min="1" max="${Math.max(1, left)}" value="1" id="qty-${p.id}" ${disabled ? 'disabled' : ''}>
+          <button class="shop-btn${disabled ? ' secondary' : ''}" type="button" onclick="addToShopCart('${p.id}')" ${disabled ? 'disabled' : ''}>${button}</button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+  renderShopCart();
+}
+
+function addToShopCart(id) {
+  const product = SHOP_PRODUCTS.find(p => p.id === id);
+  if (!product || !product.active) return;
+  const stock = getShopStock();
+  const input = document.getElementById('qty-' + id);
+  const qty = Math.max(1, Math.min(Number(input && input.value) || 1, stock[id] || 0));
+  if (!qty) return;
+  const existing = shopCart.find(item => item.id === id);
+  const inCart = existing ? existing.qty : 0;
+  if (inCart + qty > stock[id]) {
+    alert('Bu ürün için görünen stoktan fazla talep eklenemez.');
+    return;
+  }
+  if (existing) existing.qty += qty;
+  else shopCart.push({ id, qty });
+  renderShopCart();
+}
+
+function removeFromShopCart(id) {
+  shopCart = shopCart.filter(item => item.id !== id);
+  renderShopCart();
+}
+
+function renderShopCart() {
+  const box = document.getElementById('cartItems');
+  const totalEl = document.getElementById('cartTotal');
+  if (!box || !totalEl) return;
+  const lang = shopLang();
+  if (!shopCart.length) {
+    box.innerHTML = `<div class="cart-note">${lang === 'ua' ? 'Поки що немає товару.' : 'Henüz ürün eklenmedi.'}</div>`;
+    totalEl.textContent = '0 TL';
+    return;
+  }
+  let total = 0;
+  box.innerHTML = shopCart.map(item => {
+    const p = SHOP_PRODUCTS.find(product => product.id === item.id);
+    const line = (p ? p.price : 0) * item.qty;
+    total += line;
+    return `<div class="cart-item">
+      <div><strong>${p.title[lang] || p.title.tr}</strong><br>${item.qty} x ${formatTry(p.price)}</div>
+      <button type="button" onclick="removeFromShopCart('${item.id}')">Sil</button>
+    </div>`;
+  }).join('');
+  totalEl.textContent = formatTry(total);
+}
+
+function submitShopRequest() {
+  const lang = shopLang();
+  if (!shopCart.length) {
+    alert(lang === 'ua' ? 'Спочатку додайте товар.' : 'Önce ürün ekleyin.');
+    return;
+  }
+  const name = (document.getElementById('shopName') || {}).value || '';
+  const contact = (document.getElementById('shopContact') || {}).value || '';
+  const note = (document.getElementById('shopNote') || {}).value || '';
+  if (!name.trim() || !contact.trim()) {
+    alert(lang === 'ua' ? 'Імʼя та контакт обовʼязкові.' : 'Ad ve iletişim bilgisi zorunlu.');
+    return;
+  }
+  const stock = getShopStock();
+  const lines = shopCart.map(item => {
+    const p = SHOP_PRODUCTS.find(product => product.id === item.id);
+    return `${p.title.tr} - ${item.qty} adet - ${formatTry(p.price * item.qty)}`;
+  });
+  for (const item of shopCart) stock[item.id] = Math.max(0, (stock[item.id] || 0) - item.qty);
+  setShopStock(stock);
+  const body = encodeURIComponent(
+    'TURKUA Drop Talebi\\n' +
+    'Ad: ' + name.trim() + '\\n' +
+    'Iletisim: ' + contact.trim() + '\\n\\n' +
+    'Urunler:\\n' + lines.join('\\n') + '\\n\\n' +
+    'Not:\\n' + (note.trim() || '-') + '\\n\\n' +
+    'Not: Odeme alinmadi. Bu bir on siparis/talep kaydidir.'
+  );
+  window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('TURKUA Drop Talebi') + '&body=' + body, '_blank');
+  shopCart = [];
+  renderShop();
+}
+
+document.addEventListener('DOMContentLoaded', renderShop);
 
 // ══ UKRAYNA GÜNDEMİ — CANLI HABERLER ══════════════════════════
 // Kaynaklar: Ukrinform (genel + siyaset) + WAR_DATA.gundemNews (ajan ekler)
@@ -3808,9 +4511,9 @@ initConsent();
     <span class="bn-icon">03</span>
     <span data-tr>Vize</span><span data-ua>Віза</span>
   </a>
-  <a href="#money" onclick="setBottomActive(this)">
+  <a href="#shop" onclick="setBottomActive(this)">
     <span class="bn-icon">04</span>
-    <span data-tr>Para</span><span data-ua>Гроші</span>
+    <span data-tr>Drop</span><span data-ua>Drop</span>
   </a>
   <button class="bn-lang-toggle" id="bnLangToggle" onclick="toggleLangBn()" aria-label="Dil degistir">
     <span class="bn-icon" id="bnLangIcon">TR</span>

@@ -1,5 +1,5 @@
-// TürkUA Service Worker - policy/news filter build 2026-06-28
-const CACHE = 'turkua-v3-20260628';
+// TürkUA Service Worker - tamga drop build 2026-06-28
+const CACHE = 'turkua-v4-20260628';
 const ASSETS = [
   '/',
   '/index.html',
