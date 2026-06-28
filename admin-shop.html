@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>TURKUA Drop — Ürün Paneli</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #080a0e;
+  color: #f3f7fb;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,10,14,.94);
+  border-bottom: 1px solid rgba(232,199,122,.24);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.brand { font-size: 18px; font-weight: 900; letter-spacing: .5px; }
+.brand span { color: #e8c77a; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 24px 16px 80px; }
+.note {
+  border: 1px solid rgba(232,199,122,.22);
+  background: rgba(232,199,122,.07);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: rgba(235,241,248,.72);
+  line-height: 1.7;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.actions { display:flex; flex-wrap:wrap; gap: 10px; }
+button {
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 800;
+}
+button.primary {
+  background: linear-gradient(135deg, rgba(232,199,122,.28), rgba(107,199,255,.12));
+  border-color: rgba(232,199,122,.48);
+}
+button.danger { color: #ff7384; border-color: rgba(255,95,117,.35); }
+.grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card {
+  background: linear-gradient(180deg, rgba(18,27,40,.96), rgba(10,15,22,.96));
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 8px;
+  padding: 16px;
+}
+.card-head { display:flex; align-items:center; justify-content:space-between; gap: 10px; margin-bottom: 14px; }
+.card-title { font-weight: 900; color: #e8c77a; }
+.fields { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.field.full { grid-column: 1 / -1; }
+label {
+  display:block;
+  font-size: 11px;
+  letter-spacing: .8px;
+  color: rgba(220,229,241,.56);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+input, textarea, select {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.045);
+  color: #f3f7fb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+}
+textarea { min-height: 82px; resize: vertical; line-height: 1.5; }
+select option { background: #101722; }
+.switch-row { display:flex; align-items:center; gap: 8px; margin-top: 24px; color: rgba(235,241,248,.76); }
+.switch-row input { width: auto; }
+@media(max-width: 760px) {
+  header { align-items:flex-start; flex-direction:column; }
+  .grid { grid-template-columns: 1fr; }
+  .fields { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">TURKUA <span>Drop Ürün Paneli</span></div>
+  <div class="actions">
+    <button onclick="addProduct()">Ürün Ekle</button>
+    <button class="primary" onclick="downloadData()">shop-data.js İndir</button>
+    <button onclick="copyData()">Kodu Kopyala</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="note">
+    Bu panel statik site için güvenli başlangıç panelidir. Ürünleri düzenle, <strong>shop-data.js İndir</strong> butonuna bas, çıkan dosyayı site klasöründeki eski <strong>shop-data.js</strong> üzerine koy ve GitHub'a gönder. Ödeme entegrasyonu geldiğinde bu paneli doğrudan canlı veritabanına kaydeder hale getiririz.
+  </div>
+  <div class="grid" id="productGrid"></div>
+</main>
+
+<script src="shop-data.js"></script>
+<script>
+let products = JSON.parse(JSON.stringify(window.SHOP_PRODUCTS || []));
+
+function uid() {
+  return 'product-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
+}
+
+function render() {
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = products.map((p, i) => `
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">#${i + 1} ${escapeHtml(p.title?.tr || 'Yeni Ürün')}</div>
+        <button class="danger" onclick="removeProduct(${i})">Sil</button>
+      </div>
+      <div class="fields">
+        ${field(i, 'id', 'Ürün ID', p.id || uid())}
+        ${field(i, 'kind', 'Tip / Kategori', p.kind || 'T-Shirt')}
+        <div>
+          <label>Görsel Tipi</label>
+          <select onchange="setVal(${i}, 'visual', this.value)">
+            ${['tee','watch','gift','glasses'].map(v => `<option value="${v}" ${p.visual === v ? 'selected' : ''}>${v}</option>`).join('')}
+          </select>
+        </div>
+        ${field(i, 'price', 'Fiyat TL', p.price || 0, 'number')}
+        ${field(i, 'baseStock', 'Stok', p.baseStock || 0, 'number')}
+        <label class="switch-row"><input type="checkbox" ${p.active ? 'checked' : ''} onchange="setVal(${i}, 'active', this.checked)"> Aktif satışta</label>
+        ${field(i, 'title.tr', 'Başlık TR', p.title?.tr || '', 'text', true)}
+        ${field(i, 'title.ua', 'Başlık UA', p.title?.ua || '', 'text', true)}
+        ${textarea(i, 'desc.tr', 'Açıklama TR', p.desc?.tr || '')}
+        ${textarea(i, 'desc.ua', 'Açıklama UA', p.desc?.ua || '')}
+      </div>
+    </section>
+  `).join('');
+}
+
+function field(i, path, label, value, type = 'text', full = false) {
+  return `<div class="${full ? 'field full' : ''}">
+    <label>${label}</label>
+    <input type="${type}" value="${escapeAttr(value)}" oninput="setVal(${i}, '${path}', ${type === 'number' ? 'Number(this.value)' : 'this.value'})">
+  </div>`;
+}
+
+function textarea(i, path, label, value) {
+  return `<div class="field full">
+    <label>${label}</label>
+    <textarea oninput="setVal(${i}, '${path}', this.value)">${escapeHtml(value)}</textarea>
+  </div>`;
+}
+
+function setVal(i, path, value) {
+  const parts = path.split('.');
+  let obj = products[i];
+  while (parts.length > 1) {
+    const key = parts.shift();
+    obj[key] = obj[key] || {};
+    obj = obj[key];
+  }
+  obj[parts[0]] = value;
+}
+
+function addProduct() {
+  products.push({
+    id: uid(),
+    kind: 'T-Shirt',
+    visual: 'tee',
+    title: { tr: 'Yeni Ürün', ua: 'Новий Товар' },
+    desc: { tr: 'Ürün açıklaması', ua: 'Опис товару' },
+    price: 0,
+    baseStock: 0,
+    active: false
+  });
+  render();
+}
+
+function removeProduct(i) {
+  if (!confirm('Bu ürünü silmek istiyor musun?')) return;
+  products.splice(i, 1);
+  render();
+}
+
+function makeFileText() {
+  return '// TURKUA DROP ürün verisi\\n// admin-shop.html panelinden üretildi.\\nwindow.SHOP_PRODUCTS = ' + JSON.stringify(products, null, 2) + ';\\n';
+}
+
+function downloadData() {
+  const blob = new Blob([makeFileText()], { type: 'text/javascript;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'shop-data.js';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(a.href);
+}
+
+async function copyData() {
+  await navigator.clipboard.writeText(makeFileText());
+  alert('shop-data.js kodu kopyalandı.');
+}
+
+function escapeHtml(v) {
+  return String(v).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function escapeAttr(v) { return escapeHtml(v); }
+
+render();
+</script>
+</body>
+</html>

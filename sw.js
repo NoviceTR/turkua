@@ -1,10 +1,11 @@
-// TürkUA Service Worker - tamga drop build 2026-06-28
-const CACHE = 'turkua-v4-20260628';
+// TürkUA Service Worker - editable shop build 2026-06-28
+const CACHE = 'turkua-v5-20260628';
 const ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/data.js'
+  '/data.js',
+  '/shop-data.js'
 ];
 
 self.addEventListener('install', event => {
