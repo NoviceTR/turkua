@@ -1786,6 +1786,26 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
   position: relative;
   overflow: hidden;
 }
+.product-visual.has-photo {
+  background: #0b1018;
+}
+.product-visual.has-photo::before {
+  display: none;
+}
+.product-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-visual.has-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3,6,10,.05), rgba(3,6,10,.62));
+  pointer-events: none;
+}
 .product-visual::before {
   content: '';
   position: absolute;
@@ -2906,17 +2926,17 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
         <div class="drop-kicker" data-ua>Перша серія, натхненна давньою тюркською тамгою</div>
         <h2 class="drop-title" data-tr>TURKUA <span>TAMGA</span></h2>
         <h2 class="drop-title" data-ua>TURKUA <span>TAMGA</span></h2>
-        <p class="drop-sub" data-tr>Tişörtle başlayan sınırlı üretim çizgisi. Ardından saat, hediyelik obje ve gözlük gibi ürünlerle büyüyecek. Ödeme entegrasyonu sonraki aşamada eklenecek; şimdilik ön sipariş ve stok takibi çalışır.</p>
-        <p class="drop-sub" data-ua>Лімітована лінія стартує з футболки. Далі з'являться годинники, сувеніри та окуляри. Оплата буде додана пізніше; зараз працює попереднє замовлення та облік запасу.</p>
+        <p class="drop-sub" data-tr>Tişörtle başlayan sınırlı üretim çizgisi. Ardından saat, hediyelik obje ve gözlük gibi ürünlerle büyüyecek. Şimdilik talep alınıyor; stok, beden ve teslimat senin onayından sonra kesinleşir.</p>
+        <p class="drop-sub" data-ua>Лімітована лінія стартує з футболки. Далі з'являться годинники, сувеніри та окуляри. Наразі приймаються заявки; запас, розмір і доставка підтверджуються після вашого схвалення.</p>
       </div>
     </div>
     <div class="shop-toolbar">
       <span class="shop-chip" data-tr>Başlangıç stoku: 10 adet</span>
       <span class="shop-chip" data-ua>Початковий запас: 10 шт.</span>
-      <span class="shop-chip" data-tr>Ödeme: yakında</span>
-      <span class="shop-chip" data-ua>Оплата: незабаром</span>
-      <span class="shop-chip" data-tr>Talep gelince stok düşer</span>
-      <span class="shop-chip" data-ua>Запас зменшується після заявки</span>
+      <span class="shop-chip" data-tr>Ödeme: onay sonrası</span>
+      <span class="shop-chip" data-ua>Оплата: після підтвердження</span>
+      <span class="shop-chip" data-tr>Satış manuel onaylı</span>
+      <span class="shop-chip" data-ua>Продаж після ручного схвалення</span>
     </div>
   </div>
 
@@ -2924,8 +2944,8 @@ section + section { border-top: 1px solid rgba(255,255,255,0.08); }
     <div>
       <div class="shop-grid" id="shopGrid"></div>
       <div class="store-legal">
-        <span data-tr>TURKUA Drop şu anda ön sipariş ve talep toplama aşamasındadır. Bu bölümde görünen fiyat ve stoklar ticari hazırlık amaçlıdır; ödeme alınmadan kesin satış oluşmaz. Nihai fiyat, teslimat, iade ve mesafeli satış koşulları ödeme entegrasyonu açılmadan önce ayrıca yayınlanacaktır.</span>
-        <span data-ua>TURKUA Drop зараз працює як попереднє замовлення та збір заявок. Ціни й запаси мають підготовчий характер; без оплати остаточний продаж не формується. Остаточні ціни, доставка, повернення та умови дистанційного продажу будуть опубліковані перед запуском оплати.</span>
+        <span data-tr>TURKUA Drop şu anda talep toplama aşamasındadır. Form göndermek ödeme veya kesin satış oluşturmaz; ürün, beden, stok, teslimat ve fiyat TURKUA tarafından ayrıca onaylandıktan sonra satış süreci başlar. İade, teslimat ve mesafeli satış koşulları ödeme entegrasyonu açılmadan önce ayrıca yayınlanacaktır.</span>
+        <span data-ua>TURKUA Drop зараз працює на етапі збору заявок. Надсилання форми не є оплатою або остаточним продажем; товар, розмір, запас, доставка і ціна окремо підтверджуються TURKUA. Умови повернення, доставки та дистанційного продажу будуть опубліковані перед запуском оплати.</span>
       </div>
     </div>
 
@@ -3946,14 +3966,14 @@ async function submitAdForm() {
 // ══ TURKUA DROP — ÖN SİPARİŞ/STOK ══════════════════════════
 const DEFAULT_SHOP_PRODUCTS = [
   {
-    id: 'tamga-tee-001', kind: 'T-Shirt', visual: 'tee',
+    id: 'tamga-tee-001', kind: 'T-Shirt', visual: 'tee', image: '',
     title: { tr: 'Tamga Oversize Tişört', ua: 'Tamga Oversize Футболка' },
     desc: { tr: 'İlk seri için yıkamalı siyah kumaş, göğüste TURKUA tamga işareti. Beden notunu talepte yaz.', ua: 'Перший дроп: washed black тканина, знак TURKUA Tamga на грудях. Розмір вкажіть у заявці.' },
     price: 799, baseStock: 10, active: true
   },
-  { id: 'tamga-watch-001', kind: 'Watch', visual: 'watch', title: { tr: 'Tamga Saat', ua: 'Tamga Годинник' }, desc: { tr: 'Metal kasa, koyu kadran, küçük tamga detayı. İkinci seri için hazırlanıyor.', ua: 'Металевий корпус, темний циферблат, маленька деталь Tamga. Готується для другої серії.' }, price: 0, baseStock: 0, active: false },
-  { id: 'tamga-gift-001', kind: 'Object', visual: 'gift', title: { tr: 'Tamga Hediye Obje', ua: 'Tamga Сувенір' }, desc: { tr: 'Masa üstü küçük obje, anahtarlık ve koleksiyon parçaları için ayrılan seri.', ua: 'Серія для настільних обʼєктів, брелоків та колекційних речей.' }, price: 0, baseStock: 0, active: false },
-  { id: 'tamga-glasses-001', kind: 'Glasses', visual: 'glasses', title: { tr: 'Tamga Gözlük', ua: 'Tamga Окуляри' }, desc: { tr: 'Yaz drop için planlanan sade, koyu camlı aksesuar çizgisi.', ua: 'Лаконічна лінія аксесуарів із темними лінзами для літнього drop.' }, price: 0, baseStock: 0, active: false }
+  { id: 'tamga-watch-001', kind: 'Watch', visual: 'watch', image: '', title: { tr: 'Tamga Saat', ua: 'Tamga Годинник' }, desc: { tr: 'Metal kasa, koyu kadran, küçük tamga detayı. İkinci seri için hazırlanıyor.', ua: 'Металевий корпус, темний циферблат, маленька деталь Tamga. Готується для другої серії.' }, price: 0, baseStock: 0, active: false },
+  { id: 'tamga-gift-001', kind: 'Object', visual: 'gift', image: '', title: { tr: 'Tamga Hediye Obje', ua: 'Tamga Сувенір' }, desc: { tr: 'Masa üstü küçük obje, anahtarlık ve koleksiyon parçaları için ayrılan seri.', ua: 'Серія для настільних обʼєктів, брелоків та колекційних речей.' }, price: 0, baseStock: 0, active: false },
+  { id: 'tamga-glasses-001', kind: 'Glasses', visual: 'glasses', image: '', title: { tr: 'Tamga Gözlük', ua: 'Tamga Окуляри' }, desc: { tr: 'Yaz drop için planlanan sade, koyu camlı aksesuar çizgisi.', ua: 'Лаконічна лінія аксесуарів із темними лінзами для літнього drop.' }, price: 0, baseStock: 0, active: false }
 ];
 const SHOP_PRODUCTS = Array.isArray(window.SHOP_PRODUCTS) ? window.SHOP_PRODUCTS : DEFAULT_SHOP_PRODUCTS;
 
@@ -3984,6 +4004,10 @@ function formatTry(amount) {
   return amount.toLocaleString('tr-TR') + ' TL';
 }
 
+function shopEscape(value) {
+  return String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+
 function renderShop() {
   const grid = document.getElementById('shopGrid');
   if (!grid) return;
@@ -3995,8 +4019,10 @@ function renderShop() {
     const disabled = !p.active || left <= 0;
     const status = p.active ? (left > 0 ? (lang === 'ua' ? `${left} шт. доступно` : `${left} adet kaldı`) : (lang === 'ua' ? 'Вичерпано' : 'Tükendi')) : (lang === 'ua' ? 'Скоро' : 'Yakında');
     const button = p.active ? (lang === 'ua' ? 'Talep Ekle' : 'Talep Ekle') : (lang === 'ua' ? 'Yakında' : 'Yakında');
+    const photo = p.image ? `<img class="product-photo" src="${shopEscape(p.image)}" alt="${shopEscape(p.title[lang] || p.title.tr)}">` : '';
     return `<article class="product-card${p.active ? '' : ' soon'}">
-      <div class="product-visual ${p.visual}">
+      <div class="product-visual ${p.visual}${p.image ? ' has-photo' : ''}">
+        ${photo}
         <div class="product-tamga"></div>
         <div class="product-mark">TURKUA</div>
         <div class="product-kind">${p.kind}</div>
@@ -4080,20 +4106,17 @@ function submitShopRequest() {
     alert(lang === 'ua' ? 'Імʼя та контакт обовʼязкові.' : 'Ad ve iletişim bilgisi zorunlu.');
     return;
   }
-  const stock = getShopStock();
   const lines = shopCart.map(item => {
     const p = SHOP_PRODUCTS.find(product => product.id === item.id);
     return `${p.title.tr} - ${item.qty} adet - ${formatTry(p.price * item.qty)}`;
   });
-  for (const item of shopCart) stock[item.id] = Math.max(0, (stock[item.id] || 0) - item.qty);
-  setShopStock(stock);
   const body = encodeURIComponent(
     'TURKUA Drop Talebi\\n' +
     'Ad: ' + name.trim() + '\\n' +
     'Iletisim: ' + contact.trim() + '\\n\\n' +
     'Urunler:\\n' + lines.join('\\n') + '\\n\\n' +
     'Not:\\n' + (note.trim() || '-') + '\\n\\n' +
-    'Not: Odeme alinmadi. Bu bir on siparis/talep kaydidir.'
+    'Not: Odeme alinmadi. Bu bir talep kaydidir; satis TURKUA onayindan sonra kesinlesir.'
   );
   window.open('mailto:who.demir@gmail.com?subject=' + encodeURIComponent('TURKUA Drop Talebi') + '&body=' + body, '_blank');
   shopCart = [];

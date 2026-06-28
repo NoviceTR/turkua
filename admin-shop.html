@@ -85,10 +85,55 @@ textarea { min-height: 82px; resize: vertical; line-height: 1.5; }
 select option { background: #101722; }
 .switch-row { display:flex; align-items:center; gap: 8px; margin-top: 24px; color: rgba(235,241,248,.76); }
 .switch-row input { width: auto; }
+.dropzone {
+  grid-column: 1 / -1;
+  border: 1px dashed rgba(232,199,122,.44);
+  background: rgba(232,199,122,.055);
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.dropzone.drag {
+  border-color: rgba(107,199,255,.8);
+  background: rgba(107,199,255,.08);
+}
+.image-preview {
+  width: 96px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  display: grid;
+  place-items: center;
+  color: rgba(235,241,248,.48);
+  font-size: 11px;
+  text-align: center;
+}
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.image-help {
+  color: rgba(235,241,248,.68);
+  line-height: 1.6;
+  font-size: 12px;
+}
+.file-input { display: none; }
 @media(max-width: 760px) {
   header { align-items:flex-start; flex-direction:column; }
   .grid { grid-template-columns: 1fr; }
   .fields { grid-template-columns: 1fr; }
+  .dropzone { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -137,6 +182,7 @@ function render() {
         ${field(i, 'price', 'Fiyat TL', p.price || 0, 'number')}
         ${field(i, 'baseStock', 'Stok', p.baseStock || 0, 'number')}
         <label class="switch-row"><input type="checkbox" ${p.active ? 'checked' : ''} onchange="setVal(${i}, 'active', this.checked)"> Aktif satışta</label>
+        ${imageDrop(i, p)}
         ${field(i, 'title.tr', 'Başlık TR', p.title?.tr || '', 'text', true)}
         ${field(i, 'title.ua', 'Başlık UA', p.title?.ua || '', 'text', true)}
         ${textarea(i, 'desc.tr', 'Açıklama TR', p.desc?.tr || '')}
@@ -144,6 +190,23 @@ function render() {
       </div>
     </section>
   `).join('');
+}
+
+function imageDrop(i, p) {
+  const preview = p.image ? `<img src="${escapeAttr(p.image)}" alt="">` : 'Fotoğraf<br>Yok';
+  return `<div class="dropzone" id="drop-${i}" ondragover="dragOver(event, ${i})" ondragleave="dragLeave(${i})" ondrop="dropImage(event, ${i})">
+    <div class="image-preview">${preview}</div>
+    <div>
+      <label>Ürün Fotoğrafı</label>
+      <div class="image-help">Fotoğrafı buraya sürükle-bırak veya dosya seç. Panel fotoğrafı otomatik küçültüp ürün verisinin içine koyar.</div>
+      <div class="image-tools">
+        <button type="button" onclick="pickImage(${i})">Fotoğraf Seç</button>
+        <button type="button" onclick="clearImage(${i})">Fotoğrafı Kaldır</button>
+      </div>
+      <input class="file-input" id="file-${i}" type="file" accept="image/*" onchange="useImageFile(this.files[0], ${i})">
+      <input style="margin-top:10px;" type="text" value="${escapeAttr(p.image || '')}" placeholder="İstersen görsel linki de yapıştırabilirsin" oninput="setVal(${i}, 'image', this.value)">
+    </div>
+  </div>`;
 }
 
 function field(i, path, label, value, type = 'text', full = false) {
@@ -176,6 +239,7 @@ function addProduct() {
     id: uid(),
     kind: 'T-Shirt',
     visual: 'tee',
+    image: '',
     title: { tr: 'Yeni Ürün', ua: 'Новий Товар' },
     desc: { tr: 'Ürün açıklaması', ua: 'Опис товару' },
     price: 0,
@@ -189,6 +253,56 @@ function removeProduct(i) {
   if (!confirm('Bu ürünü silmek istiyor musun?')) return;
   products.splice(i, 1);
   render();
+}
+
+function pickImage(i) {
+  document.getElementById('file-' + i).click();
+}
+
+function clearImage(i) {
+  products[i].image = '';
+  render();
+}
+
+function dragOver(event, i) {
+  event.preventDefault();
+  document.getElementById('drop-' + i).classList.add('drag');
+}
+
+function dragLeave(i) {
+  document.getElementById('drop-' + i).classList.remove('drag');
+}
+
+function dropImage(event, i) {
+  event.preventDefault();
+  dragLeave(i);
+  useImageFile(event.dataTransfer.files[0], i);
+}
+
+function useImageFile(file, i) {
+  if (!file || !file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = () => resizeImage(reader.result, 1200, 0.82).then(dataUrl => {
+    products[i].image = dataUrl;
+    render();
+  });
+  reader.readAsDataURL(file);
+}
+
+function resizeImage(src, maxSide, quality) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => {
+      const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL('image/jpeg', quality));
+    };
+    img.src = src;
+  });
 }
 
 function makeFileText() {
