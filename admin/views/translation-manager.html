@@ -1,0 +1,36 @@
+<div class="view" data-view-root="translations">
+  <div class="page-heading">
+    <div><div class="eyebrow">YERELLEŞTİRME</div><h2>Çeviri yönetimi</h2><p>Türkçe ve Ukraynaca içeriklerin tamamlanma durumunu yönetin.</p></div>
+    <button class="primary-button" type="button" data-action="save-translations">Değişiklikleri Kaydet</button>
+  </div>
+
+  <div class="translation-summary" id="translationSummary"></div>
+
+  <section class="admin-panel">
+    <div class="manager-toolbar">
+      <div class="segmented-control">
+        <button class="active" type="button" data-translation-filter="all">Tüm metinler</button>
+        <button type="button" data-translation-filter="missing">Eksik</button>
+        <button type="button" data-translation-filter="review">Kontrol</button>
+      </div>
+      <select id="translationSectionFilter" aria-label="Bölüm seç"></select>
+    </div>
+    <div class="translation-list" id="translationList">
+      <div class="view-loading">Çeviriler hazırlanıyor...</div>
+    </div>
+  </section>
+
+  <section class="admin-panel language-manager">
+    <div>
+      <div class="eyebrow">DİL YÖNETİMİ</div>
+      <h3>Yeni dil ekle</h3>
+    </div>
+    <form id="languageForm" class="language-form">
+      <label class="field"><span>Kod</span><input name="code" maxlength="10" placeholder="en" required></label>
+      <label class="field"><span>Dil adı</span><input name="name" placeholder="English" required></label>
+      <label class="field"><span>Yerel adı</span><input name="native_name" placeholder="English" required></label>
+      <label class="field"><span>HTML kodu</span><input name="html_code" placeholder="en" required></label>
+      <button class="secondary-button" type="submit">Dil ekle</button>
+    </form>
+  </section>
+</div>

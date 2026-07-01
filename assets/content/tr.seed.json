@@ -1,0 +1,1554 @@
+{
+  "ads.span.001": {
+    "type": "text",
+    "value": "Reklam Al"
+  },
+  "ads.span.002": {
+    "type": "text",
+    "value": "Reklam Al"
+  },
+  "ads.sub": {
+    "type": "text",
+    "value": "TürkUA, Türkiye–Ukrayna ve Ukrayna–Türkiye arasında bilgi ve hizmet arayan binlerce kişiye ulaşan bir platformdur. Reklam alanı satın alarak hedef kitlenize doğrudan ulaşabilirsiniz. Başvuru formunu doldurun, 24 saat içinde size dönelim."
+  },
+  "ads.title": {
+    "type": "text",
+    "value": "Hedef Kitlenize Doğrudan Ulaşın"
+  },
+  "ads.validation.file": {
+    "type": "text",
+    "value": "Lütfen PNG, JPG, WEBP veya GIF formatında en fazla 4MB dosya seçin."
+  },
+  "ads.validation.name": {
+    "type": "text",
+    "value": "Lütfen adınızı girin."
+  },
+  "contact.label.001": {
+    "type": "html",
+    "value": "Firma / Kişi Adı <span class=\"required-mark\">*</span>"
+  },
+  "contact.label.002": {
+    "type": "text",
+    "value": "Sektör"
+  },
+  "contact.label.003": {
+    "type": "text",
+    "value": "Reklam Türü"
+  },
+  "contact.label.004": {
+    "type": "text",
+    "value": "Yayın Onayı"
+  },
+  "contact.select.001": {
+    "type": "html",
+    "value": "<option value=\"\">— Seçiniz —</option>\n            \n            <option>Eğitim / Üniversite</option>\n            \n            <option>Taşıma Otobüs / Taşımacılık</option>\n            \n            <option>Vize Vize / Göç Acentesi</option>\n            \n            <option>Ticaret / Lojistik</option>\n            \n            <option>Sağlık</option>\n            \n            <option>Emlak</option>\n            \n            <option>Diğer</option>"
+  },
+  "contact.span.001": {
+    "type": "text",
+    "value": "Reklam İş Birliği"
+  },
+  "contact.span.002": {
+    "type": "html",
+    "value": "TürkUA, Türkiye ile Ukrayna arasında bilgi arayan on binlerce kişiye ulaşan bir platformdur. Reklam alanı satın alarak hedef kitlenize doğrudan ulaşabilirsiniz.<br>Başvuru formunu doldurun, <strong class=\"content-link\">24 saat</strong> içinde size dönelim."
+  },
+  "contact.span.003": {
+    "type": "html",
+    "value": "<strong>Reklam kuralı:</strong> Statik görsel veya GIF kabul edilir. GIF dosyaları yayına alınmadan önce hız, içerik ve marka güvenliği açısından manuel kontrol edilir. Yetişkin içerik, yasa dışı hizmet, yanıltıcı vaat, siyasi propaganda, nefret söylemi ve üçüncü kişi haklarını ihlal eden reklamlar yayınlanmaz."
+  },
+  "contact.span.004": {
+    "type": "html",
+    "value": "İletişim Bilgileri <span class=\"contact-requirement\">* En az 2 kanal zorunlu</span>"
+  },
+  "contact.span.005": {
+    "type": "text",
+    "value": "Ülke koduyla yazın (+90, +380)"
+  },
+  "contact.span.006": {
+    "type": "text",
+    "value": "Ülke koduyla yazın (+90, +380)"
+  },
+  "contact.span.007": {
+    "type": "text",
+    "value": "@ ile başlayan kullanıcı adı"
+  },
+  "contact.span.008": {
+    "type": "text",
+    "value": "İş e-posta adresiniz"
+  },
+  "contact.span.009": {
+    "type": "text",
+    "value": "Uyarı: En az 2 iletişim kanalı doldurmanız gerekiyor."
+  },
+  "contact.span.010": {
+    "type": "text",
+    "value": "Firma Logosu / Görseli (isteğe bağlı)"
+  },
+  "contact.span.011": {
+    "type": "text",
+    "value": "Tıklayarak görsel veya GIF seçin"
+  },
+  "contact.span.012": {
+    "type": "text",
+    "value": "Notlar / Mesaj"
+  },
+  "contact.span.013": {
+    "type": "text",
+    "value": "BAŞVURUYU GÖNDER →"
+  },
+  "contact.span.014": {
+    "type": "html",
+    "value": "En geç <strong>24 saat</strong> içinde dönüş yapılacaktır."
+  },
+  "contact.span.015": {
+    "type": "text",
+    "value": "Başvurunuz Alındı!"
+  },
+  "contact.span.016": {
+    "type": "text",
+    "value": "Kısa süre içinde sizinle iletişime geçeceğiz."
+  },
+  "contact.success": {
+    "type": "text",
+    "value": "Mesajınız alındı! En kısa sürede dönüş yapacağız."
+  },
+  "contact.validation.required": {
+    "type": "text",
+    "value": "Lütfen tüm alanları doldurunuz."
+  },
+  "education.feature.heading.title.001": {
+    "type": "text",
+    "value": "Ukraynalı Öğrenciler için Türkiye Üniversiteleri"
+  },
+  "education.feature.intro.001": {
+    "type": "text",
+    "value": "Ukraynalı öğrenciler Türkiye'deki devlet ve vakıf üniversitelerine başvurabilir. Savaş döneminde özel kolaylıklar tanınmıştır."
+  },
+  "education.h3.001": {
+    "type": "text",
+    "value": "YÖK Denklik İşlemi"
+  },
+  "education.h3.002": {
+    "type": "text",
+    "value": "Türk Öğrenciler için Ukrayna Üniversiteleri"
+  },
+  "education.highlight.box.001": {
+    "type": "html",
+    "value": "<strong>Türkiye Bursları (YTB):</strong> Her yıl yabancı öğrencilere burs verilir. Burs kapsamı: aylık burs + yurt + sağlık sigortası + Türkçe dil kursu. Başvuru: <strong>turkiyeburslari.gov.tr</strong>"
+  },
+  "education.highlight.box.002": {
+    "type": "html",
+    "value": "Uyarı: <strong>Savaş Nedeniyle Önemli Uyarı:</strong> Ukrayna'daki kurumlarla iletişim kurmanın güç olduğu durumlarda belge temininde gecikmeler yaşanabilir. Sürecinizi hızlandırmak için <strong>YÖK'ü doğrudan Türkiye'den aramanız</strong> önerilir.<br><br>\n        \n        <strong>YÖK Denklik Birimi:</strong>  <a class=\"content-link\" href=\"tel:+903122982000\">+90 (312) 298 20 00</a><br>\n        \n        <a class=\"content-link\" href=\"https://denklik.yok.gov.tr\" target=\"_blank\">denklik.yok.gov.tr</a>"
+  },
+  "education.highlight.box.003": {
+    "type": "html",
+    "value": "Uyarı: <strong>Dikkat:</strong> Savaş nedeniyle bazı şehirlerde eğitim sekteye uğrayabilir. Başvurmadan önce üniversitenin güncel durumunu kontrol edin."
+  },
+  "education.p.001": {
+    "type": "text",
+    "value": "Ukrayna'da alınan diplomaların Türkiye'de tanınması için YÖK'e denklik başvurusu yapılmalıdır."
+  },
+  "education.p.002": {
+    "type": "text",
+    "value": "Ukrayna'daki üniversiteler Türk öğrencilere düşük maliyetli tıp, mühendislik ve hukuk eğitimi sunmaktadır."
+  },
+  "education.section.sub.001": {
+    "type": "text",
+    "value": "Ukraynalı öğrenciler için Türk üniversitelerine başvuru rehberi ve Türk öğrenciler için Ukrayna üniversiteleri hakkında kapsamlı bilgi."
+  },
+  "education.section.title.001": {
+    "type": "html",
+    "value": "Türkiye & Ukrayna<br>Üniversite İşlemleri"
+  },
+  "education.span.001": {
+    "type": "text",
+    "value": "ÜNİVERSİTE REHBERİ"
+  },
+  "education.span.002": {
+    "type": "text",
+    "value": "Diploma + transkript Apostil onaylı olmalı"
+  },
+  "education.span.003": {
+    "type": "text",
+    "value": "Yeminli tercüman ile Türkçe'ye çevir"
+  },
+  "education.span.004": {
+    "type": "text",
+    "value": "denklik.yok.gov.tr üzerinden e-başvuru"
+  },
+  "education.span.005": {
+    "type": "text",
+    "value": "Tıp/diş/eczacılık için STS sınavı zorunlu"
+  },
+  "education.span.006": {
+    "type": "text",
+    "value": "90 güne kadar vizesiz giriş (çipli kimlik yeterli)"
+  },
+  "education.span.007": {
+    "type": "text",
+    "value": "Üniversiteye kabul mektubunu al"
+  },
+  "education.span.008": {
+    "type": "text",
+    "value": "90 gün sonrası için D tipi öğrenci vizesi başvur"
+  },
+  "education.span.009": {
+    "type": "text",
+    "value": "Türkiye'ye döndükten sonra YÖK denklik başvurusu yap"
+  },
+  "education.step.list.001": {
+    "type": "html",
+    "value": "<li><span class=\"step-num\">1</span>YÖK Atlas veya üniversite web sitesinden program seç</li>\n          \n          <li><span class=\"step-num\">2</span>Lise/üniversite transkriptini Türkçe'ye tercüme ettir ve noter onaylat</li>\n          \n          <li><span class=\"step-num\">3</span>YÖS sınavına gir (devlet üniv.) veya üniversite sınavına başvur</li>\n          \n          <li><span class=\"step-num\">4</span>Kabul mektubu al, öğrenci vizesi başvurusu yap</li>\n          \n          <li><span class=\"step-num\">5</span>Türkiye'ye geldikten sonra İkamet İzni başvurusu yap</li>"
+  },
+  "education.tag.001": {
+    "type": "text",
+    "value": "Burs İmkânı"
+  },
+  "education.tag.002": {
+    "type": "text",
+    "value": "YÖS Sınavı"
+  },
+  "education.tag.003": {
+    "type": "text",
+    "value": "Apostil Şart"
+  },
+  "education.tag.004": {
+    "type": "text",
+    "value": "3–6 Ay Süreç"
+  },
+  "education.tag.005": {
+    "type": "text",
+    "value": "Online Başvuru"
+  },
+  "footer.legal": {
+    "type": "text",
+    "value": "Yasal not: TürkUA üzerindeki haber, olasılık, vize, eğitim, para transferi ve ticaret içerikleri genel bilgilendirme niteliğindedir; resmi kurum, hukuk, finans, seyahat veya yatırım tavsiyesi değildir. Otomatik haber akışında reklam, marka tanıtımı ve uzun alıntı filtreleri uygulanır. Reklam başvuruları yayın öncesi manuel incelenir; yanıltıcı, yasa dışı veya üçüncü kişi haklarını ihlal eden içerikler kabul edilmez. Üçüncü taraf bağlantılar, başvurular ve nihai kararlar kullanıcının sorumluluğundadır."
+  },
+  "footer.p.001": {
+    "type": "text",
+    "value": "Savaş olasılık tahminleri her 6 saatte güncellenir  ·  Bu site bilgi amaçlıdır, resmi tavsiye değildir"
+  },
+  "footer.span.001": {
+    "type": "text",
+    "value": "Türkiye & Ukrayna Bilgi Merkezi"
+  },
+  "gundem.category.diplomatic": {
+    "type": "text",
+    "value": "DİPLOMASİ"
+  },
+  "gundem.category.economic": {
+    "type": "text",
+    "value": "EKONOMİ"
+  },
+  "gundem.category.general": {
+    "type": "text",
+    "value": "GÜNDEM"
+  },
+  "gundem.category.humanitarian": {
+    "type": "text",
+    "value": "İNSANİ"
+  },
+  "gundem.category.military": {
+    "type": "text",
+    "value": "ASKERİ"
+  },
+  "gundem.category.parliamentary": {
+    "type": "text",
+    "value": "MECLİS"
+  },
+  "gundem.loadError": {
+    "type": "text",
+    "value": "Haberler yüklenemedi — lütfen daha sonra deneyin."
+  },
+  "gundem.section.sub.001": {
+    "type": "text",
+    "value": "Ukrinform RSS akışından derlenen haber başlıkları. Reklam, marka tanıtımı ve uzun alıntı filtreleri uygulanır; 6 saatte bir otomatik güncellenir."
+  },
+  "gundem.section.title.001": {
+    "type": "text",
+    "value": "Ukrayna Gündemi"
+  },
+  "gundem.span.001": {
+    "type": "text",
+    "value": "CANLI GÜNDEM"
+  },
+  "gundem.span.002": {
+    "type": "text",
+    "value": "CANLI"
+  },
+  "gundem.span.003": {
+    "type": "text",
+    "value": "↻ GÜNCELLE"
+  },
+  "gundem.updated.prefix": {
+    "type": "text",
+    "value": "güncellendi: "
+  },
+  "header.a.001": {
+    "type": "text",
+    "value": "Savaş Takip"
+  },
+  "header.a.002": {
+    "type": "text",
+    "value": "Gündem"
+  },
+  "header.a.003": {
+    "type": "text",
+    "value": "Üniversite"
+  },
+  "header.a.004": {
+    "type": "text",
+    "value": "Vize"
+  },
+  "header.a.005": {
+    "type": "text",
+    "value": "Ticaret"
+  },
+  "header.a.006": {
+    "type": "text",
+    "value": "Para Transferi"
+  },
+  "header.a.007": {
+    "type": "text",
+    "value": "TURKUA Drop"
+  },
+  "header.nav.promo.text.001": {
+    "type": "text",
+    "value": "Reklam İş Birliği"
+  },
+  "header.span.001": {
+    "type": "text",
+    "value": "GÜNDEM"
+  },
+  "header.span.002": {
+    "type": "text",
+    "value": "Ukrayna haberleri yükleniyor…"
+  },
+  "header.span.003": {
+    "type": "text",
+    "value": "Reklam Al"
+  },
+  "header.trust.consent.btn.001": {
+    "type": "text",
+    "value": "Reddet ve devam et"
+  },
+  "header.trust.consent.btn.002": {
+    "type": "text",
+    "value": "Kabul et"
+  },
+  "header.trust.consent.text.001": {
+    "type": "text",
+    "value": "Site temel çalışması için gerekli yerel kayıtları kullanır. Reklam/analitik amaçlı takip çerezi çalıştırmıyoruz. Kabul etmeseniz de siteye girebilir ve tüm içerikleri görüntüleyebilirsiniz. İçerikler genel bilgilendirmedir; resmi, hukuki, finansal veya seyahat tavsiyesi değildir."
+  },
+  "header.trust.consent.title.001": {
+    "type": "text",
+    "value": "Çerez ve bilgilendirme tercihi"
+  },
+  "hero.label": {
+    "type": "text",
+    "value": "CANLI TAKİP SİSTEMİ - HER 6 SAATTE GÜNCELLENİR"
+  },
+  "hero.sub": {
+    "type": "text",
+    "value": "YARIN • 1 AY • 1 YIL — CANLI TAHMİN"
+  },
+  "hero.title": {
+    "type": "html",
+    "value": "RUSYA–UKRAYNA SAVAŞI<br>ATEŞKES &amp; BİTİŞ OLASILIĞI"
+  },
+  "legal.h3.001": {
+    "type": "text",
+    "value": "Kullanım Şartları"
+  },
+  "legal.h3.002": {
+    "type": "text",
+    "value": "Gizlilik ve Çerez"
+  },
+  "legal.h3.003": {
+    "type": "text",
+    "value": "Reklam Politikası"
+  },
+  "legal.section.sub.001": {
+    "type": "text",
+    "value": "Bu alan, ziyaretçiye site kurallarını sade şekilde açıklar. Ayrıntılı sözleşmeler ödeme ve üyelik aşamasında ayrıca genişletilebilir."
+  },
+  "legal.section.title.001": {
+    "type": "text",
+    "value": "Kullanım, Gizlilik ve Reklam İlkeleri"
+  },
+  "legal.span.001": {
+    "type": "text",
+    "value": "HUKUKİ BİLGİLENDİRME"
+  },
+  "legal.ul.001": {
+    "type": "html",
+    "value": "<li>Site bilgi, haber özeti, reklam başvurusu ve ön sipariş amacıyla kullanılır.</li>\n        \n        <li>İçerikler resmi tavsiye değildir; nihai karar kullanıcıya aittir.</li>\n        \n        <li>Yanıltıcı, yasa dışı veya hak ihlali içeren talep ve reklamlar reddedilebilir.</li>"
+  },
+  "legal.ul.002": {
+    "type": "html",
+    "value": "<li>Temel site tercihleri tarayıcıda yerel olarak saklanabilir.</li>\n        \n        <li>Reklam/analitik takip çerezi şu an çalıştırılmamaktadır.</li>\n        \n        <li>Formlarla iletilen bilgiler yalnızca başvuruyu yanıtlamak için kullanılır.</li>"
+  },
+  "legal.ul.003": {
+    "type": "html",
+    "value": "<li>Statik görsel ve GIF reklam başvuruları manuel incelenir.</li>\n        \n        <li>Yetişkin, yasa dışı, nefret, propaganda veya yanıltıcı içerik yayınlanmaz.</li>\n        \n        <li>Reklam yayın kararı ve süreleri TürkUA tarafından ayrıca onaylanır.</li>"
+  },
+  "mobile.nav.span.001": {
+    "type": "text",
+    "value": "Savaş"
+  },
+  "mobile.nav.span.002": {
+    "type": "text",
+    "value": "Gündem"
+  },
+  "mobile.nav.span.003": {
+    "type": "text",
+    "value": "Vize"
+  },
+  "mobile.nav.span.004": {
+    "type": "text",
+    "value": "Drop"
+  },
+  "money.li.001": {
+    "type": "text",
+    "value": "Ukrayna'ya getirilen dövizi döviz bürosunda (обмінник) bozdurun — banka kuru daha düşük olabilir"
+  },
+  "money.li.002": {
+    "type": "text",
+    "value": "Rubl kabul edilmez — Ukrayna'da Rus rublesi işlem görmez"
+  },
+  "money.li.003": {
+    "type": "text",
+    "value": "Transfer belgelerini saklayın — gümrükte veya hesap açılışında istenebilir"
+  },
+  "money.li.004": {
+    "type": "text",
+    "value": "Bu bilgiler genel rehber niteliğindedir — güncel limitler için NBU ve resmi banka kanallarını takip edin"
+  },
+  "money.money.card.sub.001": {
+    "type": "text",
+    "value": "Gümrük sınırı & beyan zorunluluğu"
+  },
+  "money.money.card.sub.002": {
+    "type": "text",
+    "value": "Banka & dijital yöntemler"
+  },
+  "money.money.card.sub.003": {
+    "type": "text",
+    "value": "Savaş dönemi kısıtlamaları dahil"
+  },
+  "money.money.card.title.001": {
+    "type": "text",
+    "value": "Ukrayna'ya Nakit Götürme"
+  },
+  "money.money.card.title.002": {
+    "type": "text",
+    "value": "Türkiye → Ukrayna Transfer"
+  },
+  "money.money.card.title.003": {
+    "type": "text",
+    "value": "Ukrayna → Türkiye Transfer"
+  },
+  "money.money.limit.label.001": {
+    "type": "text",
+    "value": "Eşdeğerine kadar beyan zorunluluğu yok. Bu tutarın üzerinde gümrükte yazılı beyan şart."
+  },
+  "money.money.method.detail.001": {
+    "type": "text",
+    "value": "10.000 €'ya kadar serbest"
+  },
+  "money.money.method.detail.002": {
+    "type": "text",
+    "value": "Ukrayna'da kabul sınırlı, dövize çevir"
+  },
+  "money.money.method.detail.003": {
+    "type": "text",
+    "value": "Gümrük CD formu zorunlu"
+  },
+  "money.money.method.detail.004": {
+    "type": "text",
+    "value": "Türkiye'den nakit gönder, Ukrayna'da nakit al"
+  },
+  "money.money.method.detail.005": {
+    "type": "text",
+    "value": "Düşük komisyon, UAH hesabına aktarım"
+  },
+  "money.money.method.detail.006": {
+    "type": "text",
+    "value": "Türk banka → Ukrayna bankası (2-5 iş günü)"
+  },
+  "money.money.method.detail.007": {
+    "type": "text",
+    "value": "PTT şubeleri üzerinden gönderi"
+  },
+  "money.money.method.detail.008": {
+    "type": "text",
+    "value": "Visa/MC çekimlerde ~%3-4 komisyon"
+  },
+  "money.money.method.detail.009": {
+    "type": "text",
+    "value": "Ukrayna'dan uluslararası Visa kart gönderimi"
+  },
+  "money.money.method.detail.010": {
+    "type": "text",
+    "value": "Ukrayna şubelerinden Türkiye'ye nakit gönderim"
+  },
+  "money.money.method.detail.011": {
+    "type": "text",
+    "value": "Belirli tutarlar için NBU onayı gerekebilir"
+  },
+  "money.money.method.detail.012": {
+    "type": "text",
+    "value": "Ukrayna Visa kartı Türkiye'de çalışır (~%2-3 komisyon)"
+  },
+  "money.money.method.name.001": {
+    "type": "text",
+    "value": "USD / EUR nakit"
+  },
+  "money.money.method.name.002": {
+    "type": "text",
+    "value": "Türk Lirası"
+  },
+  "money.money.method.name.003": {
+    "type": "text",
+    "value": "10.000 € üzeri"
+  },
+  "money.money.method.name.004": {
+    "type": "text",
+    "value": "Uluslararası Para Transferi (Nakit)"
+  },
+  "money.money.method.name.005": {
+    "type": "text",
+    "value": "Dijital Transfer Servisi"
+  },
+  "money.money.method.name.006": {
+    "type": "text",
+    "value": "SWIFT Banka Havalesi"
+  },
+  "money.money.method.name.007": {
+    "type": "text",
+    "value": "PTT Para Gönderme"
+  },
+  "money.money.method.name.008": {
+    "type": "text",
+    "value": "Türk banka kartı (Ukrayna ATM)"
+  },
+  "money.money.method.name.009": {
+    "type": "text",
+    "value": "Ukrayna bankası kartı (Visa)"
+  },
+  "money.money.method.name.010": {
+    "type": "text",
+    "value": "Uluslararası para transferi"
+  },
+  "money.money.method.name.011": {
+    "type": "text",
+    "value": "SWIFT (NBU izinli)"
+  },
+  "money.money.method.name.012": {
+    "type": "text",
+    "value": "Ukrayna kartıyla Türkiye ATM"
+  },
+  "money.section.sub.001": {
+    "type": "text",
+    "value": "Türkiye ↔ Ukrayna arasında para taşıma sınırları, banka transferi seçenekleri ve pratik tavsiyeler."
+  },
+  "money.section.title.001": {
+    "type": "text",
+    "value": "Para Transferi & Nakit Kuralları"
+  },
+  "money.span.001": {
+    "type": "text",
+    "value": "FİNANSAL REHBER"
+  },
+  "money.span.002": {
+    "type": "text",
+    "value": "Savaş dönemi kısıtlaması: Ukrayna gümrüğü yabancı döviz çıkışını sıkı denetlemektedir. Giriş serbest ancak çıkışta bankadan alınan dekont veya döviz bozdurma belgesi istenebilir."
+  },
+  "money.span.003": {
+    "type": "text",
+    "value": "DİKKAT"
+  },
+  "money.span.004": {
+    "type": "text",
+    "value": "BEYAN"
+  },
+  "money.span.005": {
+    "type": "text",
+    "value": "Tavsiye: Büyük miktarı nakit taşımak yerine banka kartı (Visa/Mastercard) ya da uluslararası transfer hizmeti kullanmak hem daha güvenli hem de gümrük sorunu yaratmaz."
+  },
+  "money.span.006": {
+    "type": "text",
+    "value": "HIZLI"
+  },
+  "money.span.007": {
+    "type": "text",
+    "value": "DÜŞÜK MALİYET"
+  },
+  "money.span.008": {
+    "type": "text",
+    "value": "KOMİSYON"
+  },
+  "money.span.009": {
+    "type": "text",
+    "value": "Canlı Döviz Kuru"
+  },
+  "money.span.010": {
+    "type": "text",
+    "value": "Savaş dönemi: Ukrayna Merkez Bankası (NBU) yurt dışına döviz transferini kısıtlamıştır. Bireysel transferlerde limit uygulanmakta olup güncel NBU duyurularını takip edin."
+  },
+  "money.span.011": {
+    "type": "text",
+    "value": "LİMİTLİ"
+  },
+  "money.span.012": {
+    "type": "text",
+    "value": "MEVCUT"
+  },
+  "money.span.013": {
+    "type": "text",
+    "value": "ONAY GEREKLİ"
+  },
+  "money.span.014": {
+    "type": "text",
+    "value": "ÇALIŞIYOR"
+  },
+  "money.span.015": {
+    "type": "html",
+    "value": "Tavsiye: NBU'nun güncel transfer limitlerini öğrenmek için <strong class=\"content-link\">bank.gov.ua</strong> adresini veya bankanızın müşteri hizmetlerini arayın. Limitler sık değişiyor."
+  },
+  "money.strong.001": {
+    "type": "text",
+    "value": "Önemli Hatırlatmalar"
+  },
+  "news.section.sub.001": {
+    "type": "text",
+    "value": "Cephe hattı, müzakereler ve insani duruma ilişkin en güncel gelişmeler. Her 6 saatte bir güncellenir."
+  },
+  "news.section.title.001": {
+    "type": "text",
+    "value": "Son Savaş Gelişmeleri"
+  },
+  "news.source.policy.text.001": {
+    "type": "text",
+    "value": "Tüm haberler yalnızca resmi açıklamalar ve uluslararası haber ajanslarından derlenmektedir. Askeri konum veya operasyonel bilgi içermez."
+  },
+  "news.span.001": {
+    "type": "text",
+    "value": "CEPHE & DİPLOMASİ"
+  },
+  "news.span.002": {
+    "type": "text",
+    "value": "Tümü"
+  },
+  "news.span.003": {
+    "type": "text",
+    "value": "Askeri"
+  },
+  "news.span.004": {
+    "type": "text",
+    "value": "Diplomatik"
+  },
+  "news.span.005": {
+    "type": "text",
+    "value": "Ekonomik"
+  },
+  "news.span.006": {
+    "type": "text",
+    "value": "İnsani"
+  },
+  "rates.unavailable": {
+    "type": "text",
+    "value": "kur alınamadı"
+  },
+  "rates.updated": {
+    "type": "text",
+    "value": "güncellendi"
+  },
+  "shop.action.add": {
+    "type": "text",
+    "value": "Talep Ekle"
+  },
+  "shop.action.remove": {
+    "type": "text",
+    "value": "Sil"
+  },
+  "shop.cart.empty": {
+    "type": "text",
+    "value": "Henüz ürün eklenmedi."
+  },
+  "shop.cart.note.001": {
+    "type": "text",
+    "value": "Sepete eklenen ürünler gerçek ödeme almaz. Talep gönderildiğinde sana e-posta hazırlanır ve stok bu cihazda düşer."
+  },
+  "shop.h3.001": {
+    "type": "text",
+    "value": "Drop Talebi"
+  },
+  "shop.kicker": {
+    "type": "text",
+    "value": "Eski Türk tamgasından ilham alan ilk seri"
+  },
+  "shop.product.gift.description": {
+    "type": "text",
+    "value": "Masa üstü küçük obje, anahtarlık ve koleksiyon parçaları için ayrılan seri."
+  },
+  "shop.product.gift.kind": {
+    "type": "text",
+    "value": "Hediyelik"
+  },
+  "shop.product.gift.title": {
+    "type": "text",
+    "value": "Tamga Hediye Obje"
+  },
+  "shop.product.glasses.description": {
+    "type": "text",
+    "value": "Yaz drop için planlanan sade, koyu camlı aksesuar çizgisi."
+  },
+  "shop.product.glasses.kind": {
+    "type": "text",
+    "value": "Gözlük"
+  },
+  "shop.product.glasses.title": {
+    "type": "text",
+    "value": "Tamga Gözlük"
+  },
+  "shop.product.tee.description": {
+    "type": "text",
+    "value": "İlk seri için yıkamalı siyah kumaş, göğüste TURKUA tamga işareti. Beden notunu talepte yaz."
+  },
+  "shop.product.tee.kind": {
+    "type": "text",
+    "value": "Tişört"
+  },
+  "shop.product.tee.title": {
+    "type": "text",
+    "value": "Tamga Oversize Tişört"
+  },
+  "shop.product.watch.description": {
+    "type": "text",
+    "value": "Metal kasa, koyu kadran, küçük tamga detayı. İkinci seri için hazırlanıyor."
+  },
+  "shop.product.watch.kind": {
+    "type": "text",
+    "value": "Saat"
+  },
+  "shop.product.watch.title": {
+    "type": "text",
+    "value": "Tamga Saat"
+  },
+  "shop.shop.btn.001": {
+    "type": "text",
+    "value": "Talep Gönder"
+  },
+  "shop.shop.chip.001": {
+    "type": "text",
+    "value": "Başlangıç stoku: 10 adet"
+  },
+  "shop.shop.chip.002": {
+    "type": "text",
+    "value": "Ödeme: onay sonrası"
+  },
+  "shop.shop.chip.003": {
+    "type": "text",
+    "value": "Satış manuel onaylı"
+  },
+  "shop.span.001": {
+    "type": "text",
+    "value": "TURKUA Drop şu anda talep toplama aşamasındadır. Form göndermek ödeme veya kesin satış oluşturmaz; ürün, beden, stok, teslimat ve fiyat TURKUA tarafından ayrıca onaylandıktan sonra satış süreci başlar. İade, teslimat ve mesafeli satış koşulları ödeme entegrasyonu açılmadan önce ayrıca yayınlanacaktır."
+  },
+  "shop.span.002": {
+    "type": "text",
+    "value": "Tahmini toplam"
+  },
+  "shop.status.available": {
+    "type": "text",
+    "value": "{count} adet kaldı"
+  },
+  "shop.status.soldout": {
+    "type": "text",
+    "value": "Tükendi"
+  },
+  "shop.status.soon": {
+    "type": "text",
+    "value": "Yakında"
+  },
+  "shop.sub": {
+    "type": "text",
+    "value": "Tişörtle başlayan sınırlı üretim çizgisi. Ardından saat, hediyelik obje ve gözlük gibi ürünlerle büyüyecek. Şimdilik talep alınıyor; stok, beden ve teslimat senin onayından sonra kesinleşir."
+  },
+  "shop.title": {
+    "type": "html",
+    "value": "TURKUA <span>TAMGA</span>"
+  },
+  "shop.validation.contact": {
+    "type": "text",
+    "value": "Ad ve iletişim bilgisi zorunlu."
+  },
+  "shop.validation.empty": {
+    "type": "text",
+    "value": "Önce ürün ekleyin."
+  },
+  "shop.validation.stock": {
+    "type": "text",
+    "value": "Bu ürün için görünen stoktan fazla talep eklenemez."
+  },
+  "site.meta.appTitle": {
+    "type": "text",
+    "value": "TürkUA"
+  },
+  "site.meta.description": {
+    "type": "text",
+    "value": "Ukrayna-Rusya savaşı bitiş olasılığı takibi, Türkiye-Ukrayna üniversite, vize ve ticaret rehberi."
+  },
+  "site.meta.keywords": {
+    "type": "text",
+    "value": "ukrayna rusya savaş, türkiye ukrayna vize, ukrayna üniversite, türkiye ukrayna ticaret, STA"
+  },
+  "site.meta.title": {
+    "type": "text",
+    "value": "TürkUA — Türkiye & Ukrayna Bilgi Merkezi"
+  },
+  "sponsored.slot.title.001": {
+    "type": "text",
+    "value": "Premium: Otobüs / Taşımacılık"
+  },
+  "sponsored.slot.title.002": {
+    "type": "text",
+    "value": "Premium: Vize & Göç Acentesi"
+  },
+  "sponsored.slot.title.003": {
+    "type": "text",
+    "value": "Premium: Ticaret / Lojistik"
+  },
+  "sponsored.span.001": {
+    "type": "text",
+    "value": "REKLAM ALANLARI"
+  },
+  "sponsored.sponsor.slot.action.text.001": {
+    "type": "text",
+    "value": "Reklam Ver"
+  },
+  "sponsored.sponsor.slot.action.text.002": {
+    "type": "text",
+    "value": "Reklam Ver"
+  },
+  "sponsored.sponsor.slot.action.text.003": {
+    "type": "text",
+    "value": "Reklam Ver"
+  },
+  "static.ads.div.001": {
+    "type": "text",
+    "value": "300 × 250 px"
+  },
+  "static.ads.div.002": {
+    "type": "text",
+    "value": "300 × 250 px"
+  },
+  "static.contact.img.013.alt": {
+    "type": "text",
+    "value": "Logo"
+  },
+  "static.contact.input.001.placeholder": {
+    "type": "text",
+    "value": "Şirket veya Ad Soyad"
+  },
+  "static.contact.input.005.placeholder": {
+    "type": "text",
+    "value": "+90 5XX XXX XX XX"
+  },
+  "static.contact.input.007.placeholder": {
+    "type": "text",
+    "value": "+38 0XX XXX XX XX"
+  },
+  "static.contact.input.009.placeholder": {
+    "type": "text",
+    "value": "@kullaniciadi"
+  },
+  "static.contact.input.011.placeholder": {
+    "type": "text",
+    "value": "ornek@firma.com"
+  },
+  "static.contact.label.008": {
+    "type": "text",
+    "value": "Telegram"
+  },
+  "static.contact.label.010": {
+    "type": "text",
+    "value": "E-posta"
+  },
+  "static.contact.option.002": {
+    "type": "text",
+    "value": "Statik görsel / Static image"
+  },
+  "static.contact.option.003": {
+    "type": "text",
+    "value": "GIF animasyon / GIF animation"
+  },
+  "static.contact.option.004": {
+    "type": "text",
+    "value": "Metin + görsel / Text + image"
+  },
+  "static.contact.span.006": {
+    "type": "text",
+    "value": "PTT"
+  },
+  "static.contact.span.012": {
+    "type": "text",
+    "value": "PNG, JPG, WEBP, GIF — maks. 4MB"
+  },
+  "static.contact.textarea.014.placeholder": {
+    "type": "text",
+    "value": "Hedef kitle, yayın süresi, bütçe vb. / Цільова аудиторія, термін розміщення, бюджет тощо"
+  },
+  "static.contact.viber": {
+    "type": "text",
+    "value": " Viber"
+  },
+  "static.contact.whatsapp": {
+    "type": "text",
+    "value": " WhatsApp"
+  },
+  "static.education.div.002": {
+    "type": "text",
+    "value": "Banka"
+  },
+  "static.education.div.003": {
+    "type": "text",
+    "value": "TR -> UA"
+  },
+  "static.education.span.001": {
+    "type": "text",
+    "value": "UA -> TR"
+  },
+  "static.footer.brand": {
+    "type": "text",
+    "value": "TürkUA  ·  "
+  },
+  "static.header.a.002": {
+    "type": "text",
+    "value": "TürkUA"
+  },
+  "static.header.button.003.aria.label": {
+    "type": "text",
+    "value": "Menü"
+  },
+  "static.header.div.001.aria.label": {
+    "type": "text",
+    "value": "Bilgilendirme ve onay"
+  },
+  "static.header.div.005": {
+    "type": "text",
+    "value": "728 × 90 px"
+  },
+  "static.header.span.004": {
+    "type": "text",
+    "value": "CANLI"
+  },
+  "static.mobile.nav.button.001.aria.label": {
+    "type": "text",
+    "value": "Dil degistir"
+  },
+  "static.money.div.006": {
+    "type": "text",
+    "value": "Banka"
+  },
+  "static.money.div.017": {
+    "type": "text",
+    "value": "Transfer"
+  },
+  "static.money.rate.prefix": {
+    "type": "text",
+    "value": "Kur "
+  },
+  "static.money.span.001": {
+    "type": "text",
+    "value": "Uyarı:"
+  },
+  "static.money.span.002": {
+    "type": "text",
+    "value": "Nakit"
+  },
+  "static.money.span.003": {
+    "type": "text",
+    "value": "✓ OK"
+  },
+  "static.money.span.004": {
+    "type": "text",
+    "value": "Belge"
+  },
+  "static.money.span.005": {
+    "type": "text",
+    "value": "Not:"
+  },
+  "static.money.span.007": {
+    "type": "text",
+    "value": "Hızlı"
+  },
+  "static.money.span.008": {
+    "type": "text",
+    "value": "Kart"
+  },
+  "static.money.span.009": {
+    "type": "text",
+    "value": "Banka"
+  },
+  "static.money.span.010": {
+    "type": "text",
+    "value": "SWIFT"
+  },
+  "static.money.span.011": {
+    "type": "text",
+    "value": "PTT"
+  },
+  "static.money.span.012": {
+    "type": "text",
+    "value": "OK"
+  },
+  "static.money.span.013": {
+    "type": "text",
+    "value": "Limit"
+  },
+  "static.money.span.014": {
+    "type": "text",
+    "value": "TL → UAH"
+  },
+  "static.money.span.015": {
+    "type": "text",
+    "value": "UAH → TL"
+  },
+  "static.money.span.016": {
+    "type": "text",
+    "value": "USD → UAH"
+  },
+  "static.money.span.018": {
+    "type": "text",
+    "value": "Uyarı:"
+  },
+  "static.money.span.019": {
+    "type": "text",
+    "value": "Limitli"
+  },
+  "static.money.span.020": {
+    "type": "text",
+    "value": "Hızlı"
+  },
+  "static.money.span.021": {
+    "type": "text",
+    "value": "Banka"
+  },
+  "static.money.span.022": {
+    "type": "text",
+    "value": "Kart"
+  },
+  "static.money.span.023": {
+    "type": "text",
+    "value": "Not:"
+  },
+  "static.shop.div.009.aria.label": {
+    "type": "text",
+    "value": "TURKUA tamga logo"
+  },
+  "static.shop.input.011.placeholder": {
+    "type": "text",
+    "value": "Ad Soyad / Ім'я"
+  },
+  "static.shop.input.012.placeholder": {
+    "type": "text",
+    "value": "Telefon veya e-posta / Телефон або e-mail"
+  },
+  "static.shop.span.001": {
+    "type": "text",
+    "value": "TURKUA FIRST DROP"
+  },
+  "static.shop.span.002": {
+    "type": "text",
+    "value": "10 PIECE START"
+  },
+  "static.shop.span.003": {
+    "type": "text",
+    "value": "TAMGA SERIES"
+  },
+  "static.shop.span.004": {
+    "type": "text",
+    "value": "PRE-ORDER MODE"
+  },
+  "static.shop.span.005": {
+    "type": "text",
+    "value": "TURKUA FIRST DROP"
+  },
+  "static.shop.span.006": {
+    "type": "text",
+    "value": "10 PIECE START"
+  },
+  "static.shop.span.007": {
+    "type": "text",
+    "value": "TAMGA SERIES"
+  },
+  "static.shop.span.008": {
+    "type": "text",
+    "value": "PRE-ORDER MODE"
+  },
+  "static.shop.strong.010": {
+    "type": "text",
+    "value": "0 TL"
+  },
+  "static.shop.textarea.013.placeholder": {
+    "type": "text",
+    "value": "Beden, renk, teslimat notu / Розмір, колір, доставка"
+  },
+  "static.trade.div.001": {
+    "type": "text",
+    "value": "$7.5B"
+  },
+  "static.trade.div.002": {
+    "type": "text",
+    "value": "$10B"
+  },
+  "static.trade.div.003": {
+    "type": "text",
+    "value": "4 Eki"
+  },
+  "static.trade.div.004": {
+    "type": "text",
+    "value": "STA"
+  },
+  "static.trade.div.005": {
+    "type": "text",
+    "value": "Sektör"
+  },
+  "static.trade.div.012": {
+    "type": "text",
+    "value": "Not:"
+  },
+  "static.trade.span.006": {
+    "type": "text",
+    "value": "Tekstil"
+  },
+  "static.trade.span.007": {
+    "type": "text",
+    "value": "Otomotiv"
+  },
+  "static.trade.span.008": {
+    "type": "text",
+    "value": "Tarım"
+  },
+  "static.trade.span.009": {
+    "type": "text",
+    "value": "Makina"
+  },
+  "static.trade.span.010": {
+    "type": "text",
+    "value": "Kimya"
+  },
+  "static.trade.span.011": {
+    "type": "text",
+    "value": "İnşaat"
+  },
+  "static.visa.div.001": {
+    "type": "text",
+    "value": "TR / UA"
+  },
+  "static.visa.div.002": {
+    "type": "text",
+    "value": "UA -> TR"
+  },
+  "static.visa.div.003": {
+    "type": "text",
+    "value": "TR -> UA"
+  },
+  "submission.duplicate": {
+    "type": "text",
+    "value": "Bu başvuru kısa süre önce alındı."
+  },
+  "submission.error": {
+    "type": "text",
+    "value": "Başvuru gönderilemedi. Lütfen daha sonra tekrar deneyin."
+  },
+  "submission.rateLimited": {
+    "type": "text",
+    "value": "Çok kısa sürede fazla başvuru yapıldı. Lütfen daha sonra tekrar deneyin."
+  },
+  "submission.success": {
+    "type": "text",
+    "value": "Başvurunuz alındı. En kısa sürede dönüş yapacağız."
+  },
+  "tracker.card.title.001": {
+    "type": "text",
+    "value": "Durum Göstergeleri"
+  },
+  "tracker.card.title.002": {
+    "type": "text",
+    "value": "Son Gelişmeler"
+  },
+  "tracker.card.title.003": {
+    "type": "text",
+    "value": "Analiz & Gerekçe"
+  },
+  "tracker.category.diplomatic": {
+    "type": "text",
+    "value": "DİPLOMASİ"
+  },
+  "tracker.category.economic": {
+    "type": "text",
+    "value": "EKONOMİ"
+  },
+  "tracker.category.humanitarian": {
+    "type": "text",
+    "value": "İNSANİ"
+  },
+  "tracker.category.military": {
+    "type": "text",
+    "value": "ASKERİ"
+  },
+  "tracker.conf.lbl.001": {
+    "type": "text",
+    "value": "Güven:"
+  },
+  "tracker.development.1.date": {
+    "type": "text",
+    "value": "28 Haziran 2026"
+  },
+  "tracker.development.1.text": {
+    "type": "text",
+    "value": "Rus güçleri Dnipropetrovsk bölgesini 40'dan fazla kez vurdu"
+  },
+  "tracker.development.2.date": {
+    "type": "text",
+    "value": "27 Haziran 2026"
+  },
+  "tracker.development.2.text": {
+    "type": "text",
+    "value": "Ukrayna ve Polonya bilim adamları Arktika ve Antarktika'da ortak araştırmalar yapacak"
+  },
+  "tracker.duration.day.few": {
+    "type": "text",
+    "value": "gün"
+  },
+  "tracker.duration.day.many": {
+    "type": "text",
+    "value": "gün"
+  },
+  "tracker.duration.day.one": {
+    "type": "text",
+    "value": "gün"
+  },
+  "tracker.duration.year.few": {
+    "type": "text",
+    "value": "yıl"
+  },
+  "tracker.duration.year.many": {
+    "type": "text",
+    "value": "yıl"
+  },
+  "tracker.duration.year.one": {
+    "type": "text",
+    "value": "yıl"
+  },
+  "tracker.impact.label": {
+    "type": "text",
+    "value": "olasılık etkisi"
+  },
+  "tracker.label.1d": {
+    "type": "text",
+    "value": "Savaşın yoğunluğu"
+  },
+  "tracker.label.1m": {
+    "type": "text",
+    "value": "Savaşın seyri"
+  },
+  "tracker.label.1y": {
+    "type": "text",
+    "value": "Savaşın sonucu"
+  },
+  "tracker.news.1.body": {
+    "type": "text",
+    "value": "Rus güçleri Herson bölgesini vurdu, 7 sivil yaralandı"
+  },
+  "tracker.news.1.date": {
+    "type": "text",
+    "value": "28 Haziran 2026"
+  },
+  "tracker.news.1.title": {
+    "type": "text",
+    "value": "Rus güçleri Herson bölgesini vurdu"
+  },
+  "tracker.news.2.body": {
+    "type": "text",
+    "value": "Ukrayna ve AB, dual-use teknolojileri desteklemek için 343 milyon euroluk bir program başlattı"
+  },
+  "tracker.news.2.date": {
+    "type": "text",
+    "value": "27 Haziran 2026"
+  },
+  "tracker.news.2.title": {
+    "type": "text",
+    "value": "Ukrayna ve AB, dual-use teknolojileri desteklemek için program başlattı"
+  },
+  "tracker.news.empty": {
+    "type": "text",
+    "value": "Bu kategoride gelişme yok."
+  },
+  "tracker.prob.card.badge.001": {
+    "type": "text",
+    "value": "YARIN"
+  },
+  "tracker.prob.card.badge.002": {
+    "type": "text",
+    "value": "1 AY İÇİNDE"
+  },
+  "tracker.prob.card.badge.003": {
+    "type": "text",
+    "value": "1 YIL İÇİNDE"
+  },
+  "tracker.prob.card.sublabel.001": {
+    "type": "text",
+    "value": "Yarın Olasılığı"
+  },
+  "tracker.prob.card.sublabel.002": {
+    "type": "text",
+    "value": "1 Ay İçin Olasılık"
+  },
+  "tracker.prob.card.sublabel.003": {
+    "type": "text",
+    "value": "1 Yıl İçin Olasılık"
+  },
+  "tracker.reasoning": {
+    "type": "text",
+    "value": "Son günlerde savaşın yoğunluğunda artış var"
+  },
+  "tracker.status.key.001": {
+    "type": "text",
+    "value": "Savaş Durumu"
+  },
+  "tracker.status.key.002": {
+    "type": "text",
+    "value": "Müzakereler"
+  },
+  "tracker.status.key.003": {
+    "type": "text",
+    "value": "Süre"
+  },
+  "tracker.status.negotiation": {
+    "type": "text",
+    "value": "DURDU"
+  },
+  "tracker.status.war": {
+    "type": "text",
+    "value": "AKTİF"
+  },
+  "tracker.trend": {
+    "type": "text",
+    "value": "Savaşın yoğunluğunda artış var"
+  },
+  "tracker.trend.label.001": {
+    "type": "text",
+    "value": "Trend:"
+  },
+  "tracker.updated.long": {
+    "type": "text",
+    "value": "SON GÜNCELLEME: "
+  },
+  "tracker.updated.short": {
+    "type": "text",
+    "value": "son güncelleme: "
+  },
+  "trade.h3.001": {
+    "type": "text",
+    "value": "Serbest Ticaret Anlaşması (STA)"
+  },
+  "trade.h3.002": {
+    "type": "text",
+    "value": "Öne Çıkan Sektörler"
+  },
+  "trade.h3.003": {
+    "type": "text",
+    "value": "İş Dünyası için Fırsatlar"
+  },
+  "trade.highlight.box.001": {
+    "type": "html",
+    "value": "<strong>Kapsam:</strong> Tekstil, otomotiv, beyaz eşya, tarım ürünleri, kimya — gümrük vergisi ve kota engelleri kaldırıldı."
+  },
+  "trade.p.001": {
+    "type": "text",
+    "value": "3 Şubat 2022'de imzalanan STA, 4 Ekim 2024'te yürürlüğe girdi. Türk ihracatçılar AB'li rakipleriyle aynı koşullarda Ukrayna pazarına girebiliyor."
+  },
+  "trade.section.copy.spaced.001": {
+    "type": "text",
+    "value": "İki ülke arasında en fazla ticaret yapılan sektörler:"
+  },
+  "trade.section.sub.001": {
+    "type": "text",
+    "value": "4 Ekim 2024'te yürürlüğe giren Serbest Ticaret Anlaşması ile iki ülke arasındaki ticaret yeni bir döneme girdi."
+  },
+  "trade.section.title.001": {
+    "type": "text",
+    "value": "Türkiye–Ukrayna Ticaret Anlaşmaları"
+  },
+  "trade.span.001": {
+    "type": "text",
+    "value": "TİCARİ İLİŞKİLER"
+  },
+  "trade.span.002": {
+    "type": "text",
+    "value": "Tekstil & Hazır Giyim"
+  },
+  "trade.span.003": {
+    "type": "text",
+    "value": "Otomotiv"
+  },
+  "trade.span.004": {
+    "type": "text",
+    "value": "Tarım & Gıda"
+  },
+  "trade.span.005": {
+    "type": "text",
+    "value": "Makina & Ekipman"
+  },
+  "trade.span.006": {
+    "type": "text",
+    "value": "Kimya"
+  },
+  "trade.span.007": {
+    "type": "text",
+    "value": "İnşaat"
+  },
+  "trade.stat.label.001": {
+    "type": "text",
+    "value": "2024 Ticaret Hacmi"
+  },
+  "trade.stat.label.002": {
+    "type": "text",
+    "value": "Hedef Ticaret Hacmi"
+  },
+  "trade.stat.label.003": {
+    "type": "html",
+    "value": "STA Yürürlük Tarihi<br>2024"
+  },
+  "trade.stat.label.004": {
+    "type": "html",
+    "value": "Pek Çok Üründe<br>Gümrük Vergisi"
+  },
+  "trade.step.list.001": {
+    "type": "html",
+    "value": "<li><span class=\"step-num\">▸</span>Ukrayna'nın yeniden yapılanması sürecinde inşaat ve altyapı yatırımları</li>\n        \n        <li><span class=\"step-num\">▸</span>STA ile tekstil ve hazır giyimde yeni ihracat kapıları</li>\n        \n        <li><span class=\"step-num\">▸</span>Tarım ürünleri ve gıda ticaretinde büyüme potansiyeli</li>\n        \n        <li><span class=\"step-num\">▸</span>Ukraynalı şirketler için Türkiye üzerinden üçüncü ülkelere erişim</li>\n        \n        <li><span class=\"step-num\">▸</span>Ortak lojistik ve taşımacılık projeleri</li>"
+  },
+  "visa.h3.001": {
+    "type": "text",
+    "value": "Ukraynalılar için Türkiye"
+  },
+  "visa.h3.002": {
+    "type": "text",
+    "value": "Türkler için Ukrayna"
+  },
+  "visa.highlight.box.001": {
+    "type": "html",
+    "value": "<strong>İkamet İzni için:</strong> İl Göç İdaresi Müdürlüğü'ne başvur. Gerekli: pasaport, kira sözleşmesi, sağlık sigortası, fotoğraf, başvuru harcı."
+  },
+  "visa.highlight.box.002": {
+    "type": "html",
+    "value": "<strong>Kimlik &amp; Pasaport Uyarısı:</strong> Normal koşullarda Türk kimliği (çipli) Ukrayna girişi için yeterlidir. Ancak savaş dolayısıyla alınan olağanüstü tedbirler kapsamında sınır kapılarında ek kontroller uygulanabilmektedir. Güvenli geçiş için <strong>pasaportunuzu yanınızda bulundurmanız kesinlikle tavsiye edilir.</strong> Güncel bilgi için T.C. Büyükelçiliği'ni (Kyiv) arayın."
+  },
+  "visa.highlight.box.003": {
+    "type": "html",
+    "value": "Uyarı: <strong>Önemli:</strong> Aktif çatışma bölgelerine seyahat etmeyiniz. Seyahat öncesi T.C. Dışişleri Bakanlığı'nın güncel seyahat uyarılarını kontrol edin."
+  },
+  "visa.lbl.001": {
+    "type": "text",
+    "value": "Kısa Ziyaret"
+  },
+  "visa.lbl.002": {
+    "type": "text",
+    "value": "Uzun Kalış"
+  },
+  "visa.lbl.003": {
+    "type": "text",
+    "value": "Öğrenci İzni"
+  },
+  "visa.lbl.004": {
+    "type": "text",
+    "value": "Çalışma İzni"
+  },
+  "visa.lbl.005": {
+    "type": "text",
+    "value": "Geçici Koruma"
+  },
+  "visa.lbl.006": {
+    "type": "text",
+    "value": "Kısa Ziyaret"
+  },
+  "visa.lbl.007": {
+    "type": "text",
+    "value": "Pasaport"
+  },
+  "visa.lbl.008": {
+    "type": "text",
+    "value": "Uzun Kalış"
+  },
+  "visa.lbl.009": {
+    "type": "text",
+    "value": "Öğrenci Vizesi"
+  },
+  "visa.lbl.010": {
+    "type": "text",
+    "value": "Savaş Etkisi"
+  },
+  "visa.section.title.001": {
+    "type": "text",
+    "value": "Vize & İkamet İşlemleri"
+  },
+  "visa.span.001": {
+    "type": "text",
+    "value": "VİZE & İKAMET REHBERİ"
+  },
+  "visa.val.001": {
+    "type": "text",
+    "value": "90 gün"
+  },
+  "visa.val.002": {
+    "type": "text",
+    "value": "İkamet İzni Gerekli"
+  },
+  "visa.val.003": {
+    "type": "text",
+    "value": "Üniv. kabul + başvuru"
+  },
+  "visa.val.004": {
+    "type": "text",
+    "value": "İşveren başvurusu"
+  },
+  "visa.val.005": {
+    "type": "text",
+    "value": "Savaş dönemi hakkı"
+  },
+  "visa.val.006": {
+    "type": "text",
+    "value": "90 gün (çipli kimlik)"
+  },
+  "visa.val.007": {
+    "type": "text",
+    "value": "Uyarı: Savaş dönemi — pasaport tavsiye edilir"
+  },
+  "visa.val.008": {
+    "type": "text",
+    "value": "D tipi uzun süreli vize"
+  },
+  "visa.val.009": {
+    "type": "text",
+    "value": "D tipi — konsolosluktan öğrenin"
+  },
+  "visa.val.010": {
+    "type": "text",
+    "value": "Bazı bölgeler kısıtlı"
+  },
+  "visa.visa.free.badge.001": {
+    "type": "text",
+    "value": "VİZESİZ — 90 GÜN"
+  },
+  "visa.visa.hero.copy.001": {
+    "type": "text",
+    "value": "17 Şubat 2012 tarihli anlaşma ile her iki ülke vatandaşları 180 günde 90 güne kadar vizesiz giriş yapabilmektedir."
+  },
+  "visa.visa.hero.title.001": {
+    "type": "text",
+    "value": "Türkiye ↔ Ukrayna Vizesiz Anlaşma"
+  }
+}

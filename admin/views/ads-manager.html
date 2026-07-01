@@ -1,0 +1,63 @@
+<div class="view" data-view-root="ads">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">YAYIN</div>
+      <h2>Reklam yönetimi</h2>
+      <p>Tüm reklam alanlarını, süreleri ve performansı yönetin.</p>
+    </div>
+    <button class="primary-button" type="button" data-ad-action="new">Yeni Reklam</button>
+  </div>
+
+  <div class="manager-metrics" id="adMetrics"></div>
+
+  <section class="admin-panel manager-editor is-hidden" id="adEditor">
+    <div class="editor-heading">
+      <div><div class="eyebrow">KAMPANYA EDİTÖRÜ</div><h3 id="adEditorTitle">Yeni reklam</h3></div>
+      <button class="icon-button" type="button" data-ad-action="close" aria-label="Editörü kapat">×</button>
+    </div>
+    <form id="adForm">
+      <input type="hidden" name="id">
+      <input type="hidden" name="image_path">
+      <input type="hidden" name="image_url">
+      <div class="form-grid">
+        <label class="field"><span>Reklam alanı</span><select name="slot_id" id="adSlot" required></select></label>
+        <label class="field"><span>Kampanya adı</span><input name="name" required></label>
+        <label class="field"><span>Başlık</span><input name="headline"></label>
+        <label class="field"><span>Hedef bağlantı</span><input type="url" name="target_url" placeholder="https://"></label>
+        <label class="field"><span>Başlangıç</span><input type="datetime-local" name="starts_at" required></label>
+        <label class="field"><span>Bitiş</span><input type="datetime-local" name="ends_at" required></label>
+        <label class="field full"><span>Görsel açıklaması</span><input name="alt_text"></label>
+        <label class="field switch-field"><span>Aktif</span><span class="switch"><input type="checkbox" name="is_active"><i></i></span></label>
+        <div class="field full media-field">
+          <span>Reklam görseli</span>
+          <div class="media-drop-zone" id="adDropZone" data-bucket="ads">
+            <input type="file" name="image" accept="image/jpeg,image/png,image/webp,image/gif">
+            <strong>Bannerı buraya sürükleyin veya seçin</strong>
+            <small>JPG, PNG, WEBP veya GIF · en fazla 5 MB</small>
+          </div>
+        </div>
+        <div class="field full media-preview is-hidden" id="adImagePreview"></div>
+      </div>
+      <div class="form-actions">
+        <button class="secondary-button danger-button is-hidden" type="button" id="deleteAdButton" data-ad-action="delete">Reklamı Sil</button>
+        <button class="primary-button" type="submit">Reklamı Kaydet</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <div class="manager-toolbar">
+      <div class="segmented-control" role="group" aria-label="Reklam durumu">
+        <button class="active" type="button" data-ad-filter="all">Tümü</button>
+        <button type="button" data-ad-filter="active">Aktif</button>
+        <button type="button" data-ad-filter="scheduled">Planlandı</button>
+        <button type="button" data-ad-filter="passive">Pasif</button>
+        <button type="button" data-ad-filter="expired">Sona erdi</button>
+      </div>
+      <select id="adTypeFilter" aria-label="Reklam türü seç"></select>
+    </div>
+    <div class="ad-manager-grid" id="adCampaignGrid">
+      <div class="view-loading">Reklamlar hazırlanıyor...</div>
+    </div>
+  </section>
+</div>

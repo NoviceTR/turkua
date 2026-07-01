@@ -1,0 +1,58 @@
+<div class="view" data-view-root="sponsors">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">YAYIN</div>
+      <h2>Sponsor reklamlar</h2>
+      <p>Sponsor kampanyalarını, dillerini ve yayın sürelerini yönetin.</p>
+    </div>
+    <button class="primary-button" type="button" data-sponsor-action="new">Yeni Sponsor</button>
+  </div>
+
+  <div class="manager-metrics" id="sponsorMetrics"></div>
+
+  <section class="admin-panel manager-editor is-hidden" id="sponsorEditor">
+    <div class="editor-heading">
+      <div><div class="eyebrow">SPONSOR EDİTÖRÜ</div><h3 id="sponsorEditorTitle">Yeni sponsor</h3></div>
+      <button class="icon-button" type="button" data-sponsor-action="close" aria-label="Editörü kapat">×</button>
+    </div>
+    <form id="sponsorForm">
+      <input type="hidden" name="id">
+      <input type="hidden" name="campaign_key">
+      <input type="hidden" name="media_asset_id">
+      <div class="form-grid">
+        <label class="field"><span>Dil</span><select name="locale" id="sponsorLocale" required></select></label>
+        <label class="field"><span>Reklam alanı</span><select name="slot_code" id="sponsorSlot" required></select></label>
+        <label class="field"><span>Reklamveren</span><input name="advertiser_name" required></label>
+        <label class="field"><span>Başlık</span><input name="title" required></label>
+        <label class="field full"><span>Açıklama</span><textarea name="body"></textarea></label>
+        <label class="field"><span>Hedef bağlantı</span><input name="target_url" type="url" placeholder="https://"></label>
+        <label class="field"><span>Sıra</span><input name="sort_order" type="number" min="0" step="1" value="100"></label>
+        <label class="field"><span>Başlangıç</span><input name="start_date" type="datetime-local" required></label>
+        <label class="field"><span>Bitiş</span><input name="end_date" type="datetime-local" required></label>
+        <label class="field switch-field"><span>Aktif</span><span class="switch"><input name="is_active" type="checkbox"><i></i></span></label>
+        <div class="field full media-field">
+          <span>Sponsor görseli</span>
+          <div class="media-drop-zone" id="sponsorDropZone" data-bucket="ads">
+            <input name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif">
+            <strong>Logoyu buraya sürükleyin veya seçin</strong>
+            <small>JPG, PNG, WEBP veya GIF · en fazla 5 MB</small>
+          </div>
+        </div>
+        <div class="field full media-preview is-hidden" id="sponsorImagePreview"></div>
+      </div>
+      <div class="form-actions">
+        <button class="secondary-button danger-button is-hidden" type="button" id="deleteSponsorButton" data-sponsor-action="delete">Sponsoru Sil</button>
+        <button class="primary-button" type="submit">Sponsoru Kaydet</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <div class="table-wrap">
+      <table class="admin-table manager-table">
+        <thead><tr><th>Sponsor</th><th>Alan</th><th>Dil</th><th>Yayın</th><th>Durum</th><th></th></tr></thead>
+        <tbody id="sponsorTableBody"><tr><td colspan="6"><div class="view-loading">Sponsorlar hazırlanıyor...</div></td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</div>

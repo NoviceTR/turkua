@@ -1,0 +1,106 @@
+/* Shared visual treatments that span more than one feature module. */
+.info-card-icon,
+.visa-flags,
+.visa-card-flag,
+.sector-item .icon,
+.sponsor-slot .slot-icon,
+.nav-promo-icon,
+.money-card-icon,
+.logo-upload-icon,
+.ad-success-icon,
+.bottom-nav a .bn-icon,
+.bn-lang-toggle .bn-icon {
+  display: none !important;
+}
+
+.trust-consent {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1200;
+  display: none;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.trust-consent.show {
+  display: flex;
+}
+
+.trust-consent-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+  width: min(920px, 100%);
+  padding: 18px;
+  border: var(--panel-border);
+  border-radius: 10px;
+  background: rgba(12, 18, 27, 0.96);
+  box-shadow: 0 22px 90px rgba(0, 0, 0, 0.52);
+  pointer-events: auto;
+  backdrop-filter: blur(14px);
+}
+
+.trust-consent-title {
+  margin-bottom: 6px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.trust-consent-text {
+  color: rgba(220, 229, 241, 0.70);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.trust-consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.trust-consent-btn {
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.trust-consent-btn.primary {
+  border-color: rgba(232, 199, 122, 0.46);
+  background: linear-gradient(135deg, rgba(232, 199, 122, 0.28), rgba(107, 199, 255, 0.12));
+  color: #fff;
+}
+
+.legal-note {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: var(--panel-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(220, 229, 241, 0.66);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.policy-box {
+  margin: 14px 0 18px;
+  padding: 13px 15px;
+  border: 1px solid rgba(232, 199, 122, 0.20);
+  border-radius: 8px;
+  background: rgba(232, 199, 122, 0.055);
+  color: rgba(235, 241, 248, 0.72);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.policy-box strong {
+  color: var(--gold);
+}

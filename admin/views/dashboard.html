@@ -1,0 +1,71 @@
+<div class="view" data-view-root="dashboard">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">GENEL BAKIŞ</div>
+      <h2>İçerik ve yayın durumu</h2>
+      <p>TürkUA operasyonlarının güncel özeti.</p>
+    </div>
+    <div class="page-actions">
+      <button class="secondary-button" type="button" data-action="refresh">Yenile</button>
+      <button class="primary-button" type="button" data-route="news">Yeni Haber</button>
+    </div>
+  </div>
+
+  <div class="metric-grid">
+    <article class="metric-card accent-blue">
+      <div class="metric-label">YAYINDAKİ HABER</div>
+      <strong>24</strong>
+      <span>Son 7 günde +6</span>
+    </article>
+    <article class="metric-card accent-gold">
+      <div class="metric-label">AKTİF REKLAM</div>
+      <strong>3</strong>
+      <span>5 alan kullanılabilir</span>
+    </article>
+    <article class="metric-card accent-green">
+      <div class="metric-label">ÇEVİRİ TAMAMLAMA</div>
+      <strong>%92</strong>
+      <span>18 metin kontrol bekliyor</span>
+    </article>
+    <article class="metric-card accent-red">
+      <div class="metric-label">TASLAK İÇERİK</div>
+      <strong>7</strong>
+      <span>2 içerik bugün güncellendi</span>
+    </article>
+  </div>
+
+  <div class="dashboard-grid">
+    <section class="admin-panel">
+      <div class="panel-heading">
+        <div><h3>Son içerikler</h3><p>Yakın zamanda düzenlenen kayıtlar</p></div>
+        <button class="text-button" type="button" data-route="news">Tümünü Gör</button>
+      </div>
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Başlık</th><th>Tür</th><th>Durum</th><th>Güncelleme</th></tr></thead>
+          <tbody>
+            <tr><td>Türkiye-Ukrayna ticaret görünümü</td><td>Ekonomi</td><td><span class="status-badge published">Yayında</span></td><td>12 dk önce</td></tr>
+            <tr><td>Vize başvuru kontrol listesi</td><td>Rehber</td><td><span class="status-badge review">İncelemede</span></td><td>1 saat önce</td></tr>
+            <tr><td>Üniversite denklik güncellemesi</td><td>Eğitim</td><td><span class="status-badge draft">Taslak</span></td><td>Dün</td></tr>
+            <tr><td>Güncel para transferi limitleri</td><td>Finans</td><td><span class="status-badge published">Yayında</span></td><td>2 gün önce</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="admin-panel activity-panel">
+      <div class="panel-heading"><div><h3>Sistem durumu</h3><p>Yayın bileşenleri</p></div></div>
+      <div class="status-list">
+        <div><span><i class="status-dot"></i>Ana site</span><strong>Çalışıyor</strong></div>
+        <div><span><i class="status-dot"></i>Component yükleyici</span><strong>Çalışıyor</strong></div>
+        <div><span><i class="status-dot warning" data-backend-dot></i>Supabase Database</span><strong data-backend-value>Bekliyor</strong></div>
+        <div><span><i class="status-dot warning" data-backend-dot></i>Supabase Auth</span><strong data-backend-value>Bekliyor</strong></div>
+        <div><span><i class="status-dot warning" data-backend-dot></i>Supabase Storage</span><strong data-backend-value>Bekliyor</strong></div>
+        <div><span><i class="status-dot warning" data-backend-dot></i>Supabase Realtime</span><strong data-backend-value>Bekliyor</strong></div>
+      </div>
+      <div class="activity-divider"></div>
+      <div class="mini-stat"><span>Son içerik güncellemesi</span><strong>Bugün, 12:40</strong></div>
+      <div class="mini-stat"><span>Önbellek sürümü</span><strong>v15</strong></div>
+    </aside>
+  </div>
+</div>

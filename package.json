@@ -1,0 +1,28 @@
+{
+  "name": "turkua-static-site",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "lint": "eslint \"assets/js/**/*.js\" \"admin/assets/js/**/*.js\" \"scripts/**/*.mjs\" data.js shop-data.js sw.js",
+    "build": "node scripts/build.mjs",
+    "check:source": "node scripts/check-source.mjs",
+    "check": "node scripts/check-source.mjs && node scripts/check-release.mjs",
+    "release": "pnpm run lint && node scripts/check-source.mjs && node scripts/build.mjs && node scripts/release.mjs && node scripts/check-release.mjs"
+  },
+  "devDependencies": {
+    "cheerio": "1.2.0",
+    "eslint": "10.6.0",
+    "globals": "17.7.0",
+    "html-minifier-terser": "7.2.0",
+    "lightningcss": "1.32.0",
+    "purgecss": "8.0.0",
+    "sharp": "0.35.2",
+    "terser": "5.48.0",
+    "typescript": "6.0.3"
+  }
+}

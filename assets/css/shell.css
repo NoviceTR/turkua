@@ -1,0 +1,133 @@
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 0;
+  border-top: 1px solid rgba(255, 255, 255, .10);
+  background:
+    linear-gradient(180deg, rgba(7, 9, 15, .24), rgba(10, 15, 23, .82)),
+    linear-gradient(115deg, rgba(0, 91, 187, .055), transparent 40%),
+    linear-gradient(245deg, rgba(232, 199, 122, .045), transparent 38%);
+  color: rgba(220, 229, 241, .42);
+  font-size: 11px;
+  letter-spacing: .8px;
+  text-align: center;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: 18%;
+  left: 18%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-blue), var(--gold), transparent);
+  opacity: .48;
+  box-shadow: 0 0 24px rgba(107, 199, 255, .18);
+}
+
+footer a { color:var(--text-muted); text-decoration:none; }
+
+.cms-contact-info {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.cms-contact-info[hidden],
+.cms-contact-info [hidden] {
+  display: none;
+}
+
+.cms-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+}
+
+.cms-contact-links a {
+  color: var(--gold);
+  overflow-wrap: anywhere;
+}
+
+.cms-contact-info p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.footer-brand {
+  margin-bottom: 8px;
+  color: rgba(243, 247, 251, .88);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: .4px;
+}
+
+footer .legal-note {
+  max-width: 880px;
+  margin: 20px auto 0;
+  background: rgba(255, 255, 255, .025);
+  text-align: left;
+  backdrop-filter: blur(14px);
+}
+
+.scanline {
+  display: none;
+}
+
+
+
+
+/* ── Navbar sağ grup ── */
+.nav-right-group {
+  display: flex; align-items: center; gap: 10px;
+  margin-left: auto; flex-shrink: 0;
+}
+
+.nav-promo-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 8px;
+  border: 1px solid rgba(232,199,122,.34);
+  background: linear-gradient(135deg, rgba(232,199,122,.16), rgba(107,199,255,.08));
+  text-decoration: none; cursor: pointer;
+  transition: all .2s; white-space: nowrap;
+  font-family: inherit;
+  font-size: inherit;
+}
+.nav-promo-btn:hover {
+  background: rgba(255,140,0,0.16);
+  border-color: rgba(255,140,0,0.6);
+  box-shadow: 0 0 12px rgba(255,140,0,0.2);
+}
+.nav-promo-icon { font-size: 14px; }
+.nav-promo-text {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+@media (max-width: 700px) {
+  .nav-promo-text { display: none; }
+  .nav-promo-btn { padding: 6px 8px; }
+}
+
+
+/* ── İkili mid reklam ── */
+.promo-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grid-gap);
+  margin: 24px 0;
+}
+.promo-mid-half {
+  min-height: 250px;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .promo-double { grid-template-columns: 1fr; }
+}

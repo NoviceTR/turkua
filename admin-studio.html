@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>TURKUA Studio</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; background: #080a0e; color: #f3f7fb; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 18px; border-bottom: 1px solid rgba(232,199,122,.22); background: rgba(8,10,14,.96); }
+.brand { font-weight: 950; letter-spacing: .8px; }
+.brand span { color: #e8c77a; }
+.actions, .tabs, .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+button { border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; border-radius: 8px; padding: 9px 12px; cursor: pointer; font-weight: 800; }
+button.primary { background: linear-gradient(135deg, rgba(232,199,122,.28), rgba(107,199,255,.12)); border-color: rgba(232,199,122,.48); }
+button.active { border-color: rgba(232,199,122,.7); color: #e8c77a; }
+button.danger { color: #ff7384; border-color: rgba(255,95,117,.35); }
+.layout { display: grid; grid-template-columns: minmax(360px, 520px) 1fr; min-height: calc(100vh - 67px); }
+.panel { border-right: 1px solid rgba(255,255,255,.09); padding: 16px; overflow: auto; max-height: calc(100vh - 67px); }
+.preview { background: #05070b; min-height: calc(100vh - 67px); }
+iframe { width: 100%; height: calc(100vh - 67px); border: 0; background: #080a0e; }
+.note { border: 1px solid rgba(232,199,122,.22); background: rgba(232,199,122,.07); border-radius: 8px; padding: 12px; color: rgba(235,241,248,.72); line-height: 1.6; font-size: 13px; margin-bottom: 14px; }
+.section { display: none; }
+.section.active { display: block; }
+.card { background: linear-gradient(180deg, rgba(18,27,40,.96), rgba(10,15,22,.96)); border: 1px solid rgba(255,255,255,.10); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; }
+.card-title { color: #e8c77a; font-weight: 900; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.field.full { grid-column: 1 / -1; }
+label { display: block; font-size: 11px; letter-spacing: .8px; color: rgba(220,229,241,.58); margin-bottom: 6px; text-transform: uppercase; }
+input, textarea, select { width: 100%; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.045); color: #f3f7fb; border-radius: 8px; padding: 10px; font: inherit; }
+textarea { min-height: 88px; resize: vertical; line-height: 1.5; }
+select option { background: #101722; }
+.switch-row { display: flex; align-items: center; gap: 8px; margin-top: 24px; color: rgba(235,241,248,.76); }
+.switch-row input { width: auto; }
+.dropzone { grid-column: 1 / -1; border: 1px dashed rgba(232,199,122,.44); background: rgba(232,199,122,.055); border-radius: 8px; padding: 12px; display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: center; }
+.dropzone.drag { border-color: rgba(107,199,255,.8); background: rgba(107,199,255,.08); }
+.image-preview { width: 96px; aspect-ratio: 1; border-radius: 8px; overflow: hidden; background: rgba(255,255,255,.06); display: grid; place-items: center; color: rgba(235,241,248,.48); font-size: 11px; text-align: center; }
+.image-preview img { width: 100%; height: 100%; object-fit: cover; }
+.image-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.help { color: rgba(235,241,248,.66); line-height: 1.55; font-size: 12px; }
+.file-input { display: none; }
+@media(max-width: 980px) {
+  .layout { grid-template-columns: 1fr; }
+  .panel { max-height: none; border-right: 0; }
+  iframe { height: 70vh; }
+}
+@media(max-width: 660px) {
+  header { align-items: flex-start; flex-direction: column; }
+  .fields { grid-template-columns: 1fr; }
+  .dropzone { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">TURKUA <span>Studio</span></div>
+  <div class="actions">
+    <button class="primary" onclick="downloadAll()">Tüm Dosyaları İndir</button>
+    <button onclick="downloadSiteContent()">site-content.js</button>
+    <button onclick="downloadShopData()">shop-data.js</button>
+    <button onclick="refreshPreview()">Önizle</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="panel">
+    <div class="note">
+      Bu panel sitenin düzenleme merkezidir. Metinleri, reklamları ve ürünleri değiştir; fotoğrafı sürükle-bırak; sonra dosyaları indirip site klasöründeki aynı isimli dosyaların üzerine koy. Bir sonraki aşamada bunu şifreli giriş + otomatik kaydetme sistemine bağlarız.
+    </div>
+    <div class="tabs">
+      <button class="active" data-tab="texts" onclick="showTab('texts')">Metinler</button>
+      <button data-tab="ads" onclick="showTab('ads')">Reklamlar</button>
+      <button data-tab="products" onclick="showTab('products')">Ürünler</button>
+    </div>
+    <div style="height:14px"></div>
+    <section id="tab-texts" class="section active"></section>
+    <section id="tab-ads" class="section"></section>
+    <section id="tab-products" class="section"></section>
+  </aside>
+  <main class="preview"><iframe id="previewFrame" src="index.html"></iframe></main>
+</div>
+
+<script src="shop-data.js"></script>
+<script>
+let siteContent = { texts: {}, ads: {} };
+let products = JSON.parse(JSON.stringify(window.SHOP_PRODUCTS || []));
+
+const textGroups = [
+  ['hero.label', 'Hero Üst Etiket'],
+  ['hero.title', 'Hero Başlık'],
+  ['hero.sub', 'Hero Alt Başlık'],
+  ['shop.kicker', 'Mağaza Üst Etiket'],
+  ['shop.title', 'Mağaza Başlık'],
+  ['shop.sub', 'Mağaza Açıklama'],
+  ['ads.title', 'Reklam Bölümü Başlık'],
+  ['ads.sub', 'Reklam Bölümü Açıklama'],
+  ['footer.legal', 'Footer Yasal Not']
+];
+const adNames = {
+  top: 'Üst Şerit',
+  midLeft: 'Orta Sol',
+  midRight: 'Orta Sağ',
+  sponsor1: 'Alt Reklam 1',
+  sponsor2: 'Alt Reklam 2',
+  sponsor3: 'Alt Reklam 3'
+};
+
+function showTab(name) {
+  document.querySelectorAll('.tabs button').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === name));
+  document.querySelectorAll('.section').forEach(sec => sec.classList.toggle('active', sec.id === 'tab-' + name));
+}
+
+function renderAll() {
+  renderTexts();
+  renderAds();
+  renderProducts();
+}
+
+function renderTexts() {
+  const box = document.getElementById('tab-texts');
+  box.innerHTML = textGroups.map(([path, label]) => {
+    const tr = getPath(siteContent.texts, path + '.tr') || '';
+    const ua = getPath(siteContent.texts, path + '.ua') || '';
+    return `<div class="card">
+      <div class="card-head"><div class="card-title">${escapeHtml(label)}</div></div>
+      <div class="fields">
+        ${textareaField('TR', tr, `setText('${path}', 'tr', this.value)`)}
+        ${textareaField('UA', ua, `setText('${path}', 'ua', this.value)`)}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderAds() {
+  const box = document.getElementById('tab-ads');
+  const ads = siteContent.ads || {};
+  box.innerHTML = Object.keys(adNames).map(key => {
+    const ad = ads[key] || {};
+    return `<div class="card">
+      <div class="card-head"><div class="card-title">${adNames[key]}</div></div>
+      <div class="fields">
+        <label class="switch-row"><input type="checkbox" ${ad.active ? 'checked' : ''} onchange="setAd('${key}', 'active', this.checked)"> Reklam aktif</label>
+        ${field(`Başlık`, ad.title || '', `setAd('${key}', 'title', this.value)`)}
+        ${field(`Link`, ad.link || '', `setAd('${key}', 'link', this.value)`, 'text', true)}
+        ${field(`Alan Adı`, ad.slot || '', `setAd('${key}', 'slot', this.value)`)}
+        ${field(`Boyut / Kategori`, ad.size || '', `setAd('${key}', 'size', this.value)`)}
+        ${textareaField('Açıklama', ad.desc || '', `setAd('${key}', 'desc', this.value)`, true)}
+        ${imageDrop('ad', key, ad.image || '')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderProducts() {
+  const box = document.getElementById('tab-products');
+  box.innerHTML = `<div class="tools" style="margin-bottom:12px;"><button onclick="addProduct()">Ürün Ekle</button></div>` + products.map((p, i) => `
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">#${i + 1} ${escapeHtml(p.title?.tr || 'Yeni Ürün')}</div>
+        <button class="danger" onclick="removeProduct(${i})">Sil</button>
+      </div>
+      <div class="fields">
+        ${field('Ürün ID', p.id || uid(), `setProduct(${i}, 'id', this.value)`)}
+        ${field('Tip / Kategori', p.kind || 'T-Shirt', `setProduct(${i}, 'kind', this.value)`)}
+        <div><label>Görsel Tipi</label><select onchange="setProduct(${i}, 'visual', this.value)">${['tee','watch','gift','glasses'].map(v => `<option value="${v}" ${p.visual === v ? 'selected' : ''}>${v}</option>`).join('')}</select></div>
+        ${field('Fiyat TL', p.price || 0, `setProduct(${i}, 'price', Number(this.value))`, 'number')}
+        ${field('Stok', p.baseStock || 0, `setProduct(${i}, 'baseStock', Number(this.value))`, 'number')}
+        <label class="switch-row"><input type="checkbox" ${p.active ? 'checked' : ''} onchange="setProduct(${i}, 'active', this.checked)"> Aktif satışta</label>
+        ${imageDrop('product', i, p.image || '')}
+        ${field('Başlık TR', p.title?.tr || '', `setProductNested(${i}, 'title', 'tr', this.value)`, 'text', true)}
+        ${field('Başlık UA', p.title?.ua || '', `setProductNested(${i}, 'title', 'ua', this.value)`, 'text', true)}
+        ${textareaField('Açıklama TR', p.desc?.tr || '', `setProductNested(${i}, 'desc', 'tr', this.value)`, true)}
+        ${textareaField('Açıklama UA', p.desc?.ua || '', `setProductNested(${i}, 'desc', 'ua', this.value)`, true)}
+      </div>
+    </div>
+  `).join('');
+}
+
+function field(label, value, handler, type = 'text', full = false) {
+  return `<div class="${full ? 'field full' : ''}"><label>${label}</label><input type="${type}" value="${escapeAttr(value)}" oninput="${handler}"></div>`;
+}
+
+function textareaField(label, value, handler, full = false) {
+  return `<div class="${full ? 'field full' : ''}"><label>${label}</label><textarea oninput="${handler}">${escapeHtml(value)}</textarea></div>`;
+}
+
+function imageDrop(type, key, image) {
+  const id = `${type}-${key}`;
+  const preview = image ? `<img src="${escapeAttr(image)}" alt="">` : 'Fotoğraf<br>Yok';
+  return `<div class="dropzone" id="drop-${id}" ondragover="dragOver(event, '${id}')" ondragleave="dragLeave('${id}')" ondrop="dropImage(event, '${type}', '${key}')">
+    <div class="image-preview">${preview}</div>
+    <div>
+      <label>Görsel</label>
+      <div class="help">Fotoğrafı buraya sürükle-bırak veya dosya seç. Büyük görseller otomatik küçülür.</div>
+      <div class="image-tools">
+        <button type="button" onclick="pickImage('${type}', '${key}')">Fotoğraf Seç</button>
+        <button type="button" onclick="clearImage('${type}', '${key}')">Kaldır</button>
+      </div>
+      <input class="file-input" id="file-${id}" type="file" accept="image/*" onchange="useImageFile(this.files[0], '${type}', '${key}')">
+      <input style="margin-top:10px;" type="text" value="${escapeAttr(image || '')}" placeholder="İstersen görsel linki de yapıştırabilirsin" oninput="setImage('${type}', '${key}', this.value)">
+    </div>
+  </div>`;
+}
+
+function setText(path, lang, value) { setPath(siteContent.texts, path + '.' + lang, value); }
+function setAd(key, prop, value) { siteContent.ads[key] = siteContent.ads[key] || {}; siteContent.ads[key][prop] = value; }
+function setProduct(i, prop, value) { products[i][prop] = value; }
+function setProductNested(i, group, lang, value) { products[i][group] = products[i][group] || {}; products[i][group][lang] = value; }
+function setImage(type, key, value) {
+  if (type === 'ad') setAd(key, 'image', value);
+  else products[Number(key)].image = value;
+}
+
+function addProduct() {
+  products.push({ id: uid(), kind: 'T-Shirt', visual: 'tee', image: '', title: { tr: 'Yeni Ürün', ua: 'Новий Товар' }, desc: { tr: 'Ürün açıklaması', ua: 'Опис товару' }, price: 0, baseStock: 0, active: false });
+  renderProducts();
+}
+
+function removeProduct(i) {
+  if (!confirm('Bu ürünü silmek istiyor musun?')) return;
+  products.splice(i, 1);
+  renderProducts();
+}
+
+function pickImage(type, key) { document.getElementById(`file-${type}-${key}`).click(); }
+function clearImage(type, key) { setImage(type, key, ''); renderAll(); }
+function dragOver(event, id) { event.preventDefault(); document.getElementById('drop-' + id).classList.add('drag'); }
+function dragLeave(id) { document.getElementById('drop-' + id).classList.remove('drag'); }
+function dropImage(event, type, key) {
+  event.preventDefault();
+  dragLeave(`${type}-${key}`);
+  useImageFile(event.dataTransfer.files[0], type, key);
+}
+function useImageFile(file, type, key) {
+  if (!file || !file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = () => resizeImage(reader.result, 1200, 0.82).then(dataUrl => {
+    setImage(type, key, dataUrl);
+    renderAll();
+  });
+  reader.readAsDataURL(file);
+}
+function resizeImage(src, maxSide, quality) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => {
+      const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL('image/jpeg', quality));
+    };
+    img.src = src;
+  });
+}
+
+function makeSiteContentText() {
+  return '// TURKUA site yönetim verisi\\n// admin-studio.html panelinden üretildi.\\nwindow.SITE_CONTENT = ' + JSON.stringify(siteContent, null, 2) + ';\\n';
+}
+function makeShopDataText() {
+  return '// TURKUA DROP ürün verisi\\n// admin-studio.html panelinden üretildi.\\nwindow.SHOP_PRODUCTS = ' + JSON.stringify(products, null, 2) + ';\\n';
+}
+function downloadFile(name, text) {
+  const blob = new Blob([text], { type: 'text/javascript;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(a.href);
+}
+function downloadSiteContent() { downloadFile('site-content.js', makeSiteContentText()); }
+function downloadShopData() { downloadFile('shop-data.js', makeShopDataText()); }
+function downloadAll() { downloadSiteContent(); setTimeout(downloadShopData, 300); }
+function refreshPreview() {
+  sessionStorage.setItem('turkuaStudioSiteContent', JSON.stringify(siteContent));
+  sessionStorage.setItem('turkuaStudioProducts', JSON.stringify(products));
+  document.getElementById('previewFrame').contentWindow.location.reload();
+}
+
+function getPath(obj, path) { return path.split('.').reduce((acc, key) => acc && acc[key], obj); }
+function setPath(obj, path, value) {
+  const parts = path.split('.');
+  let target = obj;
+  while (parts.length > 1) {
+    const key = parts.shift();
+    target[key] = target[key] || {};
+    target = target[key];
+  }
+  target[parts[0]] = value;
+}
+function uid() { return 'product-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7); }
+function escapeHtml(v) { return String(v).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+function escapeAttr(v) { return escapeHtml(v); }
+
+async function loadStudioContent() {
+  try {
+    const response = await fetch('assets/content/tr.seed.json');
+    if (response.ok) {
+      const seed = await response.json();
+      textGroups.forEach(([contentKey]) => {
+        const record = seed[contentKey];
+        if (record) setPath(siteContent.texts, contentKey + '.tr', record.value);
+      });
+    }
+  } catch (error) {
+    // The legacy studio remains usable with empty fields when opened offline.
+  }
+  renderAll();
+}
+
+loadStudioContent();
+</script>
+</body>
+</html>

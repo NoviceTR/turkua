@@ -1,0 +1,213 @@
+/*
+ * Shared premium polish
+ * Visual-only refinements for the public experience.
+ */
+
+body > nav:not(.bottom-nav) {
+  border-bottom-color: rgba(255, 255, 255, .09);
+  background:
+    linear-gradient(180deg, rgba(10, 15, 23, .92), rgba(7, 10, 16, .78));
+  box-shadow:
+    inset 0 -1px 0 rgba(107, 199, 255, .035),
+    0 18px 54px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(22px) saturate(145%);
+}
+
+body > nav:not(.bottom-nav)::after {
+  content: '';
+  position: absolute;
+  right: 12%;
+  bottom: -1px;
+  left: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(107, 199, 255, .24), rgba(232, 199, 122, .18), transparent);
+  pointer-events: none;
+}
+
+main > section:not(#tracker) {
+  position: relative;
+  isolation: isolate;
+}
+
+main > section:not(#tracker)::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: 8%;
+  left: 8%;
+  z-index: -1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(107, 199, 255, .14), rgba(232, 199, 122, .16), transparent);
+  pointer-events: none;
+}
+
+main > section:not(#tracker):nth-of-type(even) {
+  background:
+    linear-gradient(120deg, rgba(0, 91, 187, .025), transparent 36%),
+    linear-gradient(250deg, rgba(232, 199, 122, .022), transparent 34%);
+}
+
+.info-card,
+.visa-card,
+.money-card,
+.news-card,
+.gundem-card,
+.stat-card,
+.sponsor-slot,
+.legal-card,
+.product-card,
+.shop-cart {
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .045), transparent 34%),
+    rgba(13, 20, 30, .72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .065),
+    0 20px 64px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(18px) saturate(120%);
+}
+
+.info-card,
+.visa-card,
+.money-card,
+.news-card,
+.gundem-card,
+.stat-card,
+.sponsor-slot,
+.legal-card,
+.product-card {
+  transition:
+    transform .3s cubic-bezier(.2, .8, .2, 1),
+    border-color .3s,
+    box-shadow .3s,
+    background .3s;
+}
+
+.info-card:hover,
+.visa-card:hover,
+.money-card:hover,
+.news-card:hover,
+.gundem-card:hover,
+.stat-card:hover,
+.sponsor-slot:hover,
+.legal-card:hover,
+.product-card:hover {
+  border-color: rgba(232, 199, 122, .30);
+  background:
+    linear-gradient(145deg, rgba(232, 199, 122, .07), transparent 34%),
+    rgba(14, 22, 32, .78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .09),
+    0 28px 84px rgba(0, 0, 0, .38),
+    0 0 36px rgba(107, 199, 255, .04);
+  transform: translateY(-3px);
+}
+
+.status-item,
+.sector-item,
+.money-method,
+.info-row,
+.cart-item {
+  transition: border-color .22s, background .22s, transform .22s;
+}
+
+.status-item:hover,
+.sector-item:hover,
+.money-method:hover,
+.cart-item:hover {
+  border-color: rgba(107, 199, 255, .20);
+  background: rgba(107, 199, 255, .055);
+  transform: translateY(-1px);
+}
+
+.tag,
+.shop-chip,
+.news-cat,
+.money-method-badge {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .045);
+  transition: border-color .2s, background .2s, color .2s, transform .2s;
+}
+
+.tag:hover,
+.shop-chip:hover {
+  border-color: rgba(232, 199, 122, .34);
+  background: rgba(232, 199, 122, .085);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.nav-promo-btn,
+.news-filter-btn,
+.gundem-refresh-btn,
+.shop-btn,
+.trust-consent-btn,
+.ad-modal-submit,
+.promo-cta-btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 12px 30px rgba(0, 0, 0, .18);
+  transition:
+    transform .22s cubic-bezier(.2, .8, .2, 1),
+    border-color .22s,
+    background .22s,
+    color .22s,
+    box-shadow .22s;
+}
+
+.nav-promo-btn:hover,
+.news-filter-btn:hover,
+.gundem-refresh-btn:hover,
+.shop-btn:hover,
+.trust-consent-btn:hover,
+.ad-modal-submit:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .10), 0 16px 38px rgba(0, 0, 0, .26);
+  transform: translateY(-2px);
+}
+
+.nav-promo-btn:active,
+.news-filter-btn:active,
+.gundem-refresh-btn:active,
+.shop-btn:active,
+.trust-consent-btn:active,
+.ad-modal-submit:active {
+  transform: translateY(0) scale(.985);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.checkout-form input,
+.checkout-form textarea,
+.product-actions input {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.checkout-form input:focus,
+.checkout-form textarea:focus,
+.product-actions input:focus {
+  border-color: rgba(107, 199, 255, .42);
+  background: rgba(107, 199, 255, .045);
+  box-shadow: 0 0 0 3px rgba(107, 199, 255, .08);
+  outline: none;
+}
+
+@media (hover: none) {
+  .info-card:hover,
+  .visa-card:hover,
+  .money-card:hover,
+  .news-card:hover,
+  .gundem-card:hover,
+  .stat-card:hover,
+  .sponsor-slot:hover,
+  .legal-card:hover,
+  .product-card:hover,
+  .prob-card:hover,
+  .card:hover,
+  .promo-slot:hover {
+    transform: none;
+  }
+}

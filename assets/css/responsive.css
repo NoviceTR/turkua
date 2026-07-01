@@ -1,0 +1,192 @@
+/*
+ * Wide-screen layout
+ * Fixed breakpoint steps keep the interface proportionate without tying
+ * typography to viewport width.
+ */
+
+@media (min-width: 1600px) {
+  :root {
+    --container-max: 1440px;
+    --container-gutter: 32px;
+    --reading-width: 820px;
+    --section-space: 84px;
+    --grid-gap: 24px;
+    --card-padding: 26px;
+    --font-hero: 64px;
+    --font-section-title: 48px;
+    --font-shop-display: 92px;
+  }
+
+  #tracker .container {
+    max-width: 1320px;
+  }
+
+  .hero-copy {
+    max-width: 1200px;
+  }
+
+  .hero-title {
+    max-width: 1160px;
+  }
+
+  .section-sub,
+  .drop-sub {
+    max-width: var(--reading-width);
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 640px));
+    justify-content: center;
+  }
+
+  .money-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 480px));
+    justify-content: center;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 450px));
+    justify-content: center;
+  }
+
+  .gundem-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .product-visual {
+    min-height: 290px;
+  }
+}
+
+@media (min-width: 2200px) {
+  :root {
+    --container-max: 1680px;
+    --container-gutter: 40px;
+    --reading-width: 880px;
+    --section-space: 92px;
+    --grid-gap: 26px;
+    --card-padding: 28px;
+    --font-hero: 68px;
+    --font-section-title: 50px;
+    --font-shop-display: 98px;
+  }
+
+  #tracker .container {
+    max-width: 1500px;
+  }
+
+  .hero-copy {
+    max-width: 1420px;
+  }
+
+  .hero-title {
+    max-width: 1360px;
+  }
+
+  .prob-card {
+    padding-block: 26px 22px;
+  }
+
+  .prob-card-tube-wrap {
+    height: 210px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 680px));
+  }
+
+  .money-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 520px));
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 480px));
+  }
+
+  .shop-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 390px);
+  }
+
+  .product-visual {
+    min-height: 320px;
+  }
+
+  .ad-modal {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 3200px) {
+  :root {
+    --container-max: 2080px;
+    --container-gutter: 48px;
+    --reading-width: 960px;
+    --section-space: 104px;
+    --grid-gap: 28px;
+    --card-padding: 30px;
+    --font-hero: 76px;
+    --font-section-title: 54px;
+    --font-shop-display: 108px;
+  }
+
+  #tracker .container {
+    max-width: 1760px;
+  }
+
+  .hero-copy {
+    max-width: 1660px;
+  }
+
+  .hero-title {
+    max-width: 1580px;
+  }
+
+  .prob-card {
+    padding-block: 30px 26px;
+  }
+
+  .prob-card-tube-wrap {
+    height: 230px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 640px));
+  }
+
+  .money-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 600px));
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 520px));
+  }
+
+  .shop-shell {
+    grid-template-columns: minmax(0, 1fr) 420px;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
+
+  .product-visual {
+    min-height: 350px;
+  }
+
+  .trade-stats {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .sector-grid {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  }
+}
+
+@media (min-width: 3700px) {
+  :root {
+    --container-max: 2160px;
+    --font-hero: 80px;
+    --font-section-title: 56px;
+    --font-shop-display: 112px;
+  }
+}

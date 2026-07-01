@@ -1,0 +1,64 @@
+<div class="view" data-view-root="news">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">İÇERİK</div>
+      <h2>Haber yönetimi</h2>
+      <p>Haberleri, yayın durumlarını ve çok dilli içerikleri yönetin.</p>
+    </div>
+    <button class="primary-button" type="button" data-news-action="new">Yeni Haber</button>
+  </div>
+
+  <div class="manager-metrics" id="newsMetrics"></div>
+
+  <section class="admin-panel manager-editor is-hidden" id="newsEditor">
+    <div class="editor-heading">
+      <div><div class="eyebrow">HABER EDİTÖRÜ</div><h3 id="newsEditorTitle">Yeni haber</h3></div>
+      <button class="icon-button" type="button" data-news-action="close" aria-label="Editörü kapat">×</button>
+    </div>
+    <form id="newsForm">
+      <input type="hidden" name="id">
+      <input type="hidden" name="image_path">
+      <input type="hidden" name="image_url">
+      <div class="form-grid">
+        <label class="field"><span>Kategori</span><select name="category_id" id="newsCategory" required></select></label>
+        <label class="field"><span>Yayın durumu</span><select name="status"><option value="draft">Taslak</option><option value="published">Yayında</option></select></label>
+        <label class="field"><span>Yayın tarihi</span><input type="datetime-local" name="published_at" required></label>
+        <label class="field"><span>Kaynak bağlantısı</span><input type="url" name="source_url" placeholder="https://"></label>
+        <label class="field switch-field"><span>Öne çıkan haber</span><span class="switch"><input type="checkbox" name="is_featured"><i></i></span></label>
+        <label class="field switch-field"><span>Canlı haber</span><span class="switch"><input type="checkbox" name="is_live"><i></i></span></label>
+        <div class="field full media-field">
+          <span>Haber görseli</span>
+          <div class="media-drop-zone" id="newsDropZone" data-bucket="media">
+            <input type="file" name="image" accept="image/jpeg,image/png,image/webp">
+            <strong>Görseli buraya sürükleyin veya seçin</strong>
+            <small>JPG, PNG veya WEBP · en fazla 5 MB</small>
+          </div>
+        </div>
+        <div class="field full media-preview is-hidden" id="newsImagePreview"></div>
+      </div>
+      <div class="locale-editor" id="newsLocaleFields"></div>
+      <div class="form-actions">
+        <button class="secondary-button danger-button is-hidden" type="button" id="deleteNewsButton" data-news-action="delete">Haberi Sil</button>
+        <button class="primary-button" type="submit">Haberi Kaydet</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <div class="manager-toolbar">
+      <div class="segmented-control" role="group" aria-label="Haber durumu">
+        <button class="active" type="button" data-news-filter="all">Tümü</button>
+        <button type="button" data-news-filter="published">Yayında</button>
+        <button type="button" data-news-filter="draft">Taslak</button>
+        <button type="button" data-news-filter="live">Canlı</button>
+      </div>
+      <select id="newsCategoryFilter" aria-label="Kategori seç"></select>
+    </div>
+    <div class="table-wrap">
+      <table class="admin-table manager-table">
+        <thead><tr><th>Haber</th><th>Kategori</th><th>Özellik</th><th>Durum</th><th>Yayın</th><th></th></tr></thead>
+        <tbody id="newsTableBody"><tr><td colspan="6"><div class="view-loading">Haberler hazırlanıyor...</div></td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</div>

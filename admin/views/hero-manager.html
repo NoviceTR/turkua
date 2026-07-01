@@ -1,0 +1,33 @@
+<div class="view" data-view-root="hero">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">ANA SAYFA</div>
+      <h2>Hero içeriği</h2>
+      <p>Ana ekran başlıklarını ve yönlendirme düğmelerini dil bazında yönetin.</p>
+    </div>
+  </div>
+
+  <section class="admin-panel manager-editor">
+    <form id="heroForm">
+      <input type="hidden" name="background_media_id">
+      <div class="form-grid">
+        <div class="field full media-field">
+          <span>Hero arka plan görseli</span>
+          <div class="media-drop-zone" id="heroDropZone" data-bucket="media">
+            <input name="background_image" type="file" accept="image/jpeg,image/png,image/webp">
+            <strong>Arka planı buraya sürükleyin veya seçin</strong>
+            <small>JPG, PNG veya WEBP · en fazla 5 MB</small>
+          </div>
+        </div>
+        <div class="field full media-preview is-hidden" id="heroImagePreview"></div>
+      </div>
+      <div class="locale-editor" id="heroLocaleFields">
+        <div class="view-loading">Hero içerikleri hazırlanıyor...</div>
+      </div>
+      <div class="form-actions">
+        <span></span>
+        <button class="primary-button" type="submit">Hero İçeriğini Kaydet</button>
+      </div>
+    </form>
+  </section>
+</div>

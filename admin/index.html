@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>TürkUA Yönetim</title>
+  <link rel="icon" href="../assets/img/icon-192.png" sizes="192x192" type="image/png">
+</head>
+<body>
+  <script type="module">
+    import {
+      getSupabaseStatus,
+      supabaseReady,
+      supabaseServices
+    } from '../assets/js/supabase/index.js';
+
+    await supabaseReady;
+    const status = getSupabaseStatus();
+
+    if (!status.connected) {
+      window.location.replace('login.html');
+    } else {
+      const { data } = await supabaseServices.auth.getSession();
+      window.location.replace(data.session ? 'dashboard.html' : 'login.html');
+    }
+  </script>
+</body>
+</html>

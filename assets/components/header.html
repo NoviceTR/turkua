@@ -1,0 +1,72 @@
+<div class="scanline"></div>
+
+<div class="trust-consent" id="trustConsent" role="dialog" aria-live="polite" aria-label="" data-content-key="static.header.div.001.aria.label" data-content-attr="aria-label">
+  <div class="trust-consent-card">
+    <div>
+      <div class="trust-consent-title" data-tr data-content-key="header.trust.consent.title.001" data-locale="tr"></div>
+      <div class="trust-consent-title" data-ua data-content-key="header.trust.consent.title.001" data-locale="ua"></div>
+      <div class="trust-consent-text" data-tr data-content-key="header.trust.consent.text.001" data-locale="tr"></div>
+      <div class="trust-consent-text" data-ua data-content-key="header.trust.consent.text.001" data-locale="ua"></div>
+    </div>
+    <div class="trust-consent-actions">
+      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-tr data-content-key="header.trust.consent.btn.001" data-locale="tr"></button>
+      <button class="trust-consent-btn" type="button" onclick="dismissConsent(false)" data-ua data-content-key="header.trust.consent.btn.001" data-locale="ua"></button>
+      <button class="trust-consent-btn primary" type="button" onclick="dismissConsent(true)" data-tr data-content-key="header.trust.consent.btn.002" data-locale="tr"></button>
+      <button class="trust-consent-btn primary" type="button" onclick="dismissConsent(true)" data-ua data-content-key="header.trust.consent.btn.002" data-locale="ua"></button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ NAVBAR ══ -->
+<nav aria-label="Ana navigasyon">
+  <a class="nav-logo" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-content-key="static.header.a.002"></a>
+  <button class="hamburger" id="hamburgerBtn" type="button" aria-label="" aria-controls="navLinks" aria-expanded="false" onclick="toggleMobileMenu()" data-content-key="static.header.button.003.aria.label" data-content-attr="aria-label">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#tracker" data-tr data-content-key="header.a.001" data-locale="tr"></a><a href="#tracker" data-ua data-content-key="header.a.001" data-locale="ua"></a></li>
+    <li><a href="#gundem" data-tr data-content-key="header.a.002" data-locale="tr"></a><a href="#gundem" data-ua data-content-key="header.a.002" data-locale="ua"></a></li>
+    <li><a href="#university" data-tr data-content-key="header.a.003" data-locale="tr"></a><a href="#university" data-ua data-content-key="header.a.003" data-locale="ua"></a></li>
+    <li><a href="#visa" data-tr data-content-key="header.a.004" data-locale="tr"></a><a href="#visa" data-ua data-content-key="header.a.004" data-locale="ua"></a></li>
+    <li><a href="#trade" data-tr data-content-key="header.a.005" data-locale="tr"></a><a href="#trade" data-ua data-content-key="header.a.005" data-locale="ua"></a></li>
+    <li><a href="#money" data-tr data-content-key="header.a.006" data-locale="tr"></a><a href="#money" data-ua data-content-key="header.a.006" data-locale="ua"></a></li>
+    <li><a href="#shop" data-tr data-content-key="header.a.007" data-locale="tr"></a><a href="#shop" data-ua data-content-key="header.a.007" data-locale="ua"></a></li>
+  </ul>
+  <div class="nav-right-group">
+    <!-- Reklam iş birliği butonu -->
+    <button type="button" onclick="openAdModal('Reklam Başvurusu','','',false)" class="nav-promo-btn">
+      <span class="nav-promo-icon"></span>
+      <span class="nav-promo-text" data-tr data-content-key="header.nav.promo.text.001" data-locale="tr"></span>
+      <span class="nav-promo-text" data-ua data-content-key="header.nav.promo.text.001" data-locale="ua"></span>
+    </button>
+
+    <!-- Dil toggle -->
+    <div class="lang-toggle">
+    <button class="lang-btn tr active" type="button" data-language="tr" aria-label="Türkçe" onclick="setLang('tr')">TR</button>
+    <button class="lang-btn ua" type="button" data-language="ua" aria-label="Українська" onclick="setLang('ua')">UA</button>
+    </div><!-- /lang-toggle -->
+  </div><!-- /nav-right-group -->
+</nav>
+
+
+<!-- ══ HABER BANDI ══ -->
+<div class="news-ticker-wrap" id="newsTicker" role="region" aria-label="Canlı haber bandı">
+  <div class="ticker-badge">
+    <div class="ticker-live-dot"></div>
+    <span data-tr data-content-key="header.span.001" data-locale="tr"></span><span data-ua data-content-key="header.span.001" data-locale="ua"></span>
+  </div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <span class="ticker-item"><span class="ticker-item-cat general" data-content-key="static.header.span.004"></span><span data-tr data-content-key="header.span.002" data-locale="tr"></span><span data-ua data-content-key="header.span.002" data-locale="ua"></span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOP AD ══ -->
+<div class="container">
+  <div class="promo-slot promo-leaderboard" data-ad-slot="top" onclick="openAdModal('Üst Şerit','728×90 px','Sayfanın en üstünde, ziyaretçinin ilk gördüğü alan — maksimum görünürlük')">
+    <!-- AdSense alanı: yayın sonrası aktif edilecek -->
+    <div class="promo-overlay"><div class="promo-cta-btn"><span data-tr data-content-key="header.span.003" data-locale="tr"></span><span data-ua data-content-key="header.span.003" data-locale="ua"></span></div><div class="promo-size-tag" data-content-key="static.header.div.005"></div></div>
+  </div>
+</div>

@@ -1,10 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /admin.html
+Disallow: /admin-shop.html
+Disallow: /admin-studio.html
+Disallow: /backend/
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /index.template.html
+
 Sitemap: https://www.turkua.net/sitemap.xml
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: AhrefsBot
-User-agent: SemrushBot
-Disallow: /

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#07090f">
+  <title>TürkUA Yönetim Girişi</title>
+  <link rel="icon" href="../assets/img/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="login-body">
+  <main class="login-layout">
+    <section class="login-panel" aria-labelledby="loginTitle">
+      <a class="login-brand" href="../index.html" aria-label="TürkUA ana sayfa">
+        <span class="brand-mark">T</span>
+        <span><strong>TürkUA</strong><small>Yönetim Merkezi</small></span>
+      </a>
+
+      <div class="login-heading">
+        <div class="eyebrow">YÖNETİCİ OTURUMU</div>
+        <h1 id="loginTitle">Panele giriş yap</h1>
+        <p>İçerik, reklam ve sayfa yönetimi için yönetici giriş alanı.</p>
+      </div>
+
+      <form class="login-form" id="loginForm">
+        <label class="field">
+          <span>E-posta</span>
+          <input id="loginEmail" type="email" autocomplete="username" placeholder="yonetici@turkua.com" required>
+        </label>
+
+        <label class="field">
+          <span>Şifre</span>
+          <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Şifreniz" required>
+        </label>
+
+        <label class="check-row">
+          <input id="showPassword" type="checkbox">
+          <span>Şifreyi göster</span>
+        </label>
+
+        <button class="primary-button login-submit" type="submit">Giriş Yap</button>
+        <div class="form-message" id="loginMessage" role="alert"></div>
+      </form>
+
+      <div class="login-status">
+        <span class="status-dot warning" id="backendStatusDot"></span>
+        <span id="backendStatusLabel">Supabase</span>
+        <span class="status-separator"></span>
+        <span id="backendStatusDetail">Yapılandırma bekleniyor</span>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* ══════════════════════════════════════════
+   HUKUKI MERKEZ
+══════════════════════════════════════════ */
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.legal-card {
+  background: var(--panel-background);
+  border: var(--panel-border);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: var(--panel-shadow);
+}
+.legal-card h3 { font-size: 16px; margin-bottom: 10px; }
+.legal-card p, .legal-card li {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(220,229,241,.66);
+}
+.legal-card ul { padding-left: 18px; display:flex; flex-direction:column; gap: 6px; }
+
+@media (max-width: 900px) {
+  .legal-grid { grid-template-columns: 1fr; }
+}

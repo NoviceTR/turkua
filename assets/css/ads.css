@@ -1,0 +1,428 @@
+/* ══════════════════════════════════════════
+   REKLAM BAŞVURU SİSTEMİ
+══════════════════════════════════════════ */
+
+/* Ad slot tıklanabilir overlay */
+.promo-slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 90px;
+  margin: 24px 0;
+  border: 1px solid rgba(232, 199, 122, .34);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(232, 199, 122, .11), rgba(107, 199, 255, .08));
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .26), inset 0 1px 0 rgba(255, 255, 255, .08);
+  color: rgba(255, 255, 255, .38);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+.promo-slot:hover {
+  border-color: rgba(232, 199, 122, .62);
+  box-shadow: 0 26px 90px rgba(0, 0, 0, .36), 0 0 32px rgba(232, 199, 122, .10);
+  transform: translateY(-2px);
+}
+.promo-slot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -28%;
+  z-index: 1;
+  width: 22%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .12), transparent);
+  transform: skewX(-18deg);
+  transition: left .65s cubic-bezier(.2, .8, .2, 1);
+  pointer-events: none;
+}
+.promo-slot:hover::before {
+  left: 108%;
+}
+.promo-slot .promo-overlay {
+  position: absolute; inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(232, 199, 122, .12), rgba(255, 255, 255, .04));
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+  opacity: 0.85; transition: opacity .25s, background .25s;
+  pointer-events: none;
+}
+.promo-slot:hover .promo-overlay {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(232, 199, 122, .18), rgba(255, 255, 255, .06));
+}
+.promo-cta-btn {
+  background: rgba(7, 9, 15, .64);
+  border: 1px solid rgba(232, 199, 122, .48);
+  border-radius: 8px; padding: 7px 18px;
+  color: #f5d58b; font-size: 12px;
+  font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  pointer-events: none;
+}
+.promo-size-tag {
+  font-size: 9px; color: rgba(245, 213, 139, .62);
+  letter-spacing: 2px;
+}
+
+/* Modal backdrop */
+.ad-modal-backdrop {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s;
+}
+.ad-modal-backdrop.open {
+  opacity: 1; pointer-events: all;
+}
+
+/* Modal kutu */
+.ad-modal {
+  background: #0d0d20;
+  border: 1px solid rgba(0,243,255,.15);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%; max-width: 520px;
+  box-shadow: 0 0 60px rgba(0,0,0,.6);
+  transform: translateY(20px);
+  transition: transform .25s;
+  max-height: 90vh; overflow-y: auto;
+}
+.ad-modal-backdrop.open .ad-modal {
+  transform: translateY(0);
+}
+
+.ad-modal-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 22px;
+}
+.ad-modal-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 700;
+  background: linear-gradient(135deg,#fff,var(--neon-orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1.3;
+}
+.ad-modal-sub {
+  font-size: 12px; color: var(--text-muted); margin-top: 4px;
+}
+.ad-modal-close {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 16px; color: var(--text-muted);
+  flex-shrink: 0; margin-left: 16px; transition: all .2s;
+}
+.ad-modal-close:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+/* Boyut bilgi kutusu */
+.promo-info-box {
+  background: rgba(255,140,0,.06);
+  border: 1px solid rgba(255,140,0,.2);
+  border-radius: 8px; padding: 12px 14px;
+  margin-bottom: 20px;
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+}
+.promo-badge {
+  font-family: 'Inter', sans-serif; font-size: 10px;
+  color: var(--neon-orange); letter-spacing: 2px;
+  background: rgba(255,140,0,.1); border: 1px solid rgba(255,140,0,.25);
+  border-radius: 6px; padding: 4px 10px;
+}
+.promo-desc { font-size: 11px; color: var(--text-muted); }
+
+/* Form içi */
+.ad-modal .form-group { margin-bottom: 14px; }
+.ad-modal .form-group label {
+  display: block; font-size: 10px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;
+}
+.ad-modal .form-group input,
+.ad-modal .form-group textarea,
+.ad-modal .form-group select {
+  width: 100%; background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1); border-radius: 8px;
+  padding: 9px 13px; color: var(--text);
+  font-family: 'Inter', sans-serif; font-size: 13px; outline: none;
+  transition: border-color .2s;
+}
+.ad-modal .form-group input:focus,
+.ad-modal .form-group textarea:focus { border-color: rgba(255,140,0,.4); }
+.ad-modal .form-group textarea { resize: vertical; min-height: 70px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+/* Logo yükleme alanı */
+.logo-upload-area {
+  border: 1px dashed rgba(255,255,255,.15); border-radius: 8px;
+  padding: 16px; text-align: center; cursor: pointer;
+  transition: all .2s; background: rgba(255,255,255,.02);
+}
+.logo-upload-area:hover { border-color: rgba(255,140,0,.4); background: rgba(255,140,0,.04); }
+.logo-upload-area input[type="file"] { display: none; }
+.logo-upload-icon { font-size: 24px; margin-bottom: 6px; }
+.logo-upload-text { font-size: 11px; color: var(--text-muted); }
+.logo-preview {
+  max-width: 80px; max-height: 60px; border-radius: 6px;
+  margin: 8px auto 0; display: none;
+}
+
+/* Submit */
+.ad-modal-submit {
+  width: 100%; padding: 12px;
+  background: linear-gradient(135deg,rgba(255,140,0,.2),rgba(255,36,66,.1));
+  border: 1px solid rgba(255,140,0,.4); border-radius: 8px;
+  color: var(--neon-orange); font-size: 12px; font-weight: 700;
+  letter-spacing: .5px; cursor: pointer;
+  transition: all .2s; margin-top: 6px;
+}
+.ad-modal-submit:hover {
+  background: linear-gradient(135deg,rgba(255,140,0,.32),rgba(255,36,66,.18));
+  border-color: rgba(255,140,0,.7);
+}
+
+.ad-modal-note {
+  font-size: 11px; color: var(--text-muted); text-align: center;
+  margin-top: 12px; line-height: 1.6;
+}
+.ad-modal-note a { color: var(--neon-blue); }
+
+/* Başarı mesajı */
+.ad-success {
+  display: none; text-align: center; padding: 20px 0;
+}
+.ad-success-icon { font-size: 48px; margin-bottom: 12px; }
+.ad-success-title { font-size: 16px; font-weight: 600; color: var(--neon-green); margin-bottom: 8px; }
+.ad-success-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+.promo-slot.has-managed-ad,
+.sponsor-slot.has-managed-ad {
+  position: relative;
+  overflow: hidden;
+  border-style: solid;
+}
+
+.promo-slot.has-managed-ad > :not(.managed-ad-media),
+.sponsor-slot.has-managed-ad > :not(.managed-ad-media) {
+  visibility: hidden;
+}
+
+.managed-ad-media {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  place-items: end start;
+  border: 0;
+  background: #0b1018;
+  color: #fff;
+  cursor: default;
+  text-align: left;
+}
+
+button.managed-ad-media {
+  cursor: pointer;
+}
+
+.managed-ad-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.managed-ad-media span {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 12px;
+  background: rgba(6, 9, 15, 0.78);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.managed-sidebar-ad {
+  position: fixed;
+  right: 14px;
+  top: 84px;
+  z-index: 170;
+  width: min(300px, calc(100vw - 28px));
+  height: min(600px, calc(100vh - 112px));
+}
+
+.managed-popup-ad {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: grid;
+  padding: 20px;
+  place-items: center;
+  background: rgba(3, 5, 9, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.managed-dynamic-ad-panel {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 500px;
+  overflow: hidden;
+  place-items: end start;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  box-shadow: var(--panel-shadow);
+  cursor: pointer;
+}
+
+.managed-dynamic-ad-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.managed-dynamic-ad-panel strong {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 16px;
+  background: rgba(6, 9, 15, 0.82);
+  font-size: 14px;
+}
+
+.managed-ad-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  background: rgba(6, 9, 15, 0.86);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media (max-width: 1100px) {
+  .managed-sidebar-ad {
+    display: none;
+  }
+}
+
+.ad-intro {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 243, 255, .12);
+  border-radius: 10px;
+  background: rgba(0, 243, 255, .05);
+  color: rgba(200, 200, 255, .8);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.content-link {
+  color: var(--neon-blue);
+}
+
+.required-mark,
+.contact-requirement {
+  color: var(--neon-red);
+}
+
+.review-input {
+  opacity: .75;
+}
+
+.contact-heading {
+  margin: 4px 0 8px;
+  color: rgba(200, 200, 255, .9);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contact-requirement {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.ad-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ad-contact-grid .form-group {
+  margin: 0;
+}
+
+.contact-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.contact-label-icon {
+  font-size: 16px;
+}
+
+.contact-input {
+  font-size: 13px;
+}
+
+.contact-help {
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.contact-error {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 36, 66, .2);
+  border-radius: 8px;
+  background: rgba(255, 36, 66, .08);
+  color: var(--neon-red);
+  font-size: 11px;
+}
+
+.file-help {
+  font-size: 10px;
+  opacity: .6;
+}
+
+.ad-modal-note--centered {
+  text-align: center;
+}
+
+.spam-trap {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

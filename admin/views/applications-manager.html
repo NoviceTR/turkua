@@ -1,0 +1,62 @@
+<div class="view" data-view-root="applications">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">İLETİŞİM</div>
+      <h2>Başvuru yönetimi</h2>
+      <p>İletişim, reklam ve ürün taleplerini tek merkezden yönetin.</p>
+    </div>
+    <button class="secondary-button" type="button" data-application-action="refresh">Yenile</button>
+  </div>
+
+  <div class="manager-metrics" id="applicationMetrics"></div>
+
+  <section class="admin-panel manager-editor is-hidden" id="applicationEditor">
+    <div class="editor-heading">
+      <div><div class="eyebrow">BAŞVURU DETAYI</div><h3 id="applicationEditorTitle">Başvuru</h3></div>
+      <button class="icon-button" type="button" data-application-action="close" aria-label="Detayı kapat">×</button>
+    </div>
+    <div class="application-detail-grid">
+      <dl class="application-details" id="applicationDetails"></dl>
+      <div class="application-message">
+        <span>Mesaj</span>
+        <p id="applicationMessage"></p>
+        <pre id="applicationMetadata"></pre>
+      </div>
+    </div>
+    <div class="form-grid application-actions">
+      <label class="field"><span>Durum</span><select id="applicationStatus"><option value="new">Yeni</option><option value="read">Okundu</option><option value="closed">Kapatıldı</option><option value="spam">Spam</option></select></label>
+      <label class="field"><span>İç not</span><textarea id="applicationNotes"></textarea></label>
+    </div>
+    <div class="form-actions">
+      <div>
+        <button class="secondary-button danger-button" type="button" data-application-action="delete">Başvuruyu Sil</button>
+        <button class="secondary-button is-hidden" id="applicationAttachment" type="button" data-application-action="attachment">Dosyayı Aç</button>
+      </div>
+      <button class="primary-button" type="button" data-application-action="save">Değişiklikleri Kaydet</button>
+    </div>
+  </section>
+
+  <section class="admin-panel">
+    <div class="manager-toolbar">
+      <div class="segmented-control" role="group" aria-label="Başvuru durumu">
+        <button class="active" type="button" data-application-status="all">Tümü</button>
+        <button type="button" data-application-status="new">Yeni</button>
+        <button type="button" data-application-status="read">Okundu</button>
+        <button type="button" data-application-status="closed">Kapalı</button>
+        <button type="button" data-application-status="spam">Spam</button>
+      </div>
+      <select id="applicationTypeFilter" aria-label="Başvuru türü">
+        <option value="all">Tüm başvuru türleri</option>
+        <option value="contact">İletişim</option>
+        <option value="advertising">Reklam</option>
+        <option value="shop">Ürün talebi</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table class="admin-table manager-table">
+        <thead><tr><th>Başvuru</th><th>Tür</th><th>İletişim</th><th>Telegram</th><th>Durum</th><th>Tarih</th><th></th></tr></thead>
+        <tbody id="applicationTableBody"><tr><td colspan="7"><div class="view-loading">Başvurular hazırlanıyor...</div></td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</div>

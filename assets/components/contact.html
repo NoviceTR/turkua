@@ -1,0 +1,130 @@
+<!-- ══ REKLAM BAŞVURU MODAL ══ -->
+<div class="ad-modal-backdrop" id="adModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="adModalTitle" onclick="closeAdModal(event)">
+  <div class="ad-modal">
+
+    <div class="ad-modal-header">
+      <div>
+        <div class="ad-modal-title" id="adModalTitle"><span data-tr data-content-key="contact.span.001" data-locale="tr"></span><span data-ua data-content-key="contact.span.001" data-locale="ua"></span></div>
+        <div class="ad-modal-sub" id="modalSlotName">—</div>
+      </div>
+      <button class="ad-modal-close" type="button" onclick="closeAdModalDirect()" aria-label="Kapat">✕</button>
+    </div>
+
+    <div id="adFormSection">
+      <input class="spam-trap" id="ad-website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <!-- Slot bilgisi -->
+      <div class="promo-info-box" id="adSlotInfoBox">
+        <span class="promo-badge" id="modalSlotBadge">—</span>
+        <span class="promo-desc" id="modalSlotDesc">—</span>
+      </div>
+
+      <!-- Açıklama kutusu -->
+      <div class="ad-intro">
+        <span data-tr data-content-key="contact.span.002" data-locale="tr"></span>
+        <span data-ua data-content-key="contact.span.002" data-locale="ua"></span>
+      </div>
+      <div class="policy-box">
+        <span data-tr data-content-key="contact.span.003" data-locale="tr"></span>
+        <span data-ua data-content-key="contact.span.003" data-locale="ua"></span>
+      </div>
+
+      <!-- Form -->
+      <div class="form-row">
+        <div class="form-group">
+          <label data-tr data-content-key="contact.label.001" data-locale="tr"></label>
+          <label data-ua data-content-key="contact.label.001" data-locale="ua"></label>
+          <input type="text" id="ad-name" placeholder="" data-content-key="static.contact.input.001.placeholder" data-content-attr="placeholder">
+        </div>
+        <div class="form-group">
+          <label data-tr data-content-key="contact.label.002" data-locale="tr"></label><label data-ua data-content-key="contact.label.002" data-locale="ua"></label>
+          <select id="ad-sector-tr" data-tr data-content-key="contact.select.001" data-locale="tr"></select>
+          <select id="ad-sector-ua" data-ua data-content-key="contact.select.001" data-locale="ua"></select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label data-tr data-content-key="contact.label.003" data-locale="tr"></label><label data-ua data-content-key="contact.label.003" data-locale="ua"></label>
+          <select id="ad-format">
+            <option value="Statik görsel" data-content-key="static.contact.option.002"></option>
+            <option value="GIF animasyon" data-content-key="static.contact.option.003"></option>
+            <option value="Metin + görsel" data-content-key="static.contact.option.004"></option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-tr data-content-key="contact.label.004" data-locale="tr"></label><label data-ua data-content-key="contact.label.004" data-locale="ua"></label>
+          <input class="review-input" type="text" value="Yayın öncesi manuel kontrol zorunlu" readonly>
+        </div>
+      </div>
+
+      <!-- İletişim başlığı -->
+      <div class="contact-heading">
+        <span data-tr data-content-key="contact.span.004" data-locale="tr"></span>
+        <span data-ua data-content-key="contact.span.004" data-locale="ua"></span>
+      </div>
+
+      <!-- 4 iletişim alanı -->
+      <div class="ad-contact-grid">
+        <div class="form-group">
+          <label class="contact-label"><span class="contact-label-icon"></span><span data-content-key="static.contact.whatsapp"></span></label>
+          <input class="contact-input" type="tel" id="ad-whatsapp" placeholder="" data-content-key="static.contact.input.005.placeholder" data-content-attr="placeholder">
+          <div class="contact-help"><span data-tr data-content-key="contact.span.005" data-locale="tr"></span><span data-ua data-content-key="contact.span.005" data-locale="ua"></span></div>
+        </div>
+        <div class="form-group">
+          <label class="contact-label"><span class="contact-label-icon" data-content-key="static.contact.span.006"></span><span data-content-key="static.contact.viber"></span></label>
+          <input class="contact-input" type="tel" id="ad-viber" placeholder="" data-content-key="static.contact.input.007.placeholder" data-content-attr="placeholder">
+          <div class="contact-help"><span data-tr data-content-key="contact.span.006" data-locale="tr"></span><span data-ua data-content-key="contact.span.006" data-locale="ua"></span></div>
+        </div>
+        <div class="form-group">
+          <label class="contact-label" data-content-key="static.contact.label.008"></label>
+          <input class="contact-input" type="text" id="ad-telegram" placeholder="" data-content-key="static.contact.input.009.placeholder" data-content-attr="placeholder">
+          <div class="contact-help"><span data-tr data-content-key="contact.span.007" data-locale="tr"></span><span data-ua data-content-key="contact.span.007" data-locale="ua"></span></div>
+        </div>
+        <div class="form-group">
+          <label class="contact-label" data-content-key="static.contact.label.010"></label>
+          <input class="contact-input" type="email" id="ad-email" placeholder="" data-content-key="static.contact.input.011.placeholder" data-content-attr="placeholder">
+          <div class="contact-help"><span data-tr data-content-key="contact.span.008" data-locale="tr"></span><span data-ua data-content-key="contact.span.008" data-locale="ua"></span></div>
+        </div>
+      </div>
+
+      <div id="ad-contact-error" class="contact-error" style="display:none;">
+        <span data-tr data-content-key="contact.span.009" data-locale="tr"></span>
+        <span data-ua data-content-key="contact.span.009" data-locale="ua"></span>
+      </div>
+
+      <!-- Logo yükleme -->
+      <div class="form-group">
+        <label><span data-tr data-content-key="contact.span.010" data-locale="tr"></span><span data-ua data-content-key="contact.span.010" data-locale="ua"></span></label>
+        <div class="logo-upload-area" role="button" tabindex="0" aria-controls="ad-logo" onclick="document.getElementById('ad-logo').click()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('ad-logo').click();}">
+          <input type="file" id="ad-logo" accept="image/png,image/jpeg,image/webp,image/gif" onchange="previewLogo(this)">
+          <div class="logo-upload-icon"></div>
+          <div class="logo-upload-text"><span data-tr data-content-key="contact.span.011" data-locale="tr"></span><span data-ua data-content-key="contact.span.011" data-locale="ua"></span><br><span class="file-help" data-content-key="static.contact.span.012"></span></div>
+          <img class="logo-preview" id="logoPreview" width="80" height="60" loading="lazy" decoding="async" alt="" data-content-key="static.contact.img.013.alt" data-content-attr="alt">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label><span data-tr data-content-key="contact.span.012" data-locale="tr"></span><span data-ua data-content-key="contact.span.012" data-locale="ua"></span></label>
+        <textarea id="ad-message" placeholder="" data-content-key="static.contact.textarea.014.placeholder" data-content-attr="placeholder"></textarea>
+      </div>
+
+      <button class="ad-modal-submit" onclick="submitAdForm()"><span data-tr data-content-key="contact.span.013" data-locale="tr"></span><span data-ua data-content-key="contact.span.013" data-locale="ua"></span></button>
+
+      <p class="ad-modal-note ad-modal-note--centered">
+        <span data-tr data-content-key="contact.span.014" data-locale="tr"></span>
+        <span data-ua data-content-key="contact.span.014" data-locale="ua"></span>
+      </p>
+    </div>
+
+    <!-- Başarı mesajı -->
+    <div class="ad-success" id="adSuccess" role="status" aria-live="polite">
+      <div class="ad-success-icon"></div>
+      <div class="ad-success-title"><span data-tr data-content-key="contact.span.015" data-locale="tr"></span><span data-ua data-content-key="contact.span.015" data-locale="ua"></span></div>
+      <div class="ad-success-text">
+        <span data-tr data-content-key="contact.span.016" data-locale="tr"></span>
+        <span data-ua data-content-key="contact.span.016" data-locale="ua"></span>
+      </div>
+    </div>
+
+  </div>
+</div>

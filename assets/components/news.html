@@ -1,0 +1,49 @@
+<!-- ══════════════════════════════════════════
+     SAVAŞ GELİŞMELERİ / ВОЄННІ НОВИНИ
+══════════════════════════════════════════ -->
+<section id="news-section">
+<div class="container">
+
+  <div class="section-header">
+    <div class="section-badge"><span class="dot"></span>
+      <span data-tr data-content-key="news.span.001" data-locale="tr"></span>
+      <span data-ua data-content-key="news.span.001" data-locale="ua"></span>
+    </div>
+    <h2 class="section-title" data-tr data-content-key="news.section.title.001" data-locale="tr"></h2>
+    <h2 class="section-title" data-ua data-content-key="news.section.title.001" data-locale="ua"></h2>
+    <p class="section-sub" data-tr data-content-key="news.section.sub.001" data-locale="tr"></p>
+    <p class="section-sub" data-ua data-content-key="news.section.sub.001" data-locale="ua"></p>
+    <div id="newsLastUpdate" class="news-last-update">—</div>
+
+  <div class="source-policy">
+    <span class="source-policy-icon">✓</span>
+    <span class="source-policy-text" data-tr data-content-key="news.source.policy.text.001" data-locale="tr"></span>
+    <span class="source-policy-text" data-ua data-content-key="news.source.policy.text.001" data-locale="ua"></span>
+  </div>
+  </div>
+
+  <!-- Filtre butonları -->
+  <div class="news-filter-row" id="newsFilters">
+    <button class="news-filter-btn active" data-filter="all" onclick="filterNews('all')">
+      <span data-tr data-content-key="news.span.002" data-locale="tr"></span><span data-ua data-content-key="news.span.002" data-locale="ua"></span>
+    </button>
+    <button class="news-filter-btn military" data-filter="military" onclick="filterNews('military')">
+      <span data-tr data-content-key="news.span.003" data-locale="tr"></span><span data-ua data-content-key="news.span.003" data-locale="ua"></span>
+    </button>
+    <button class="news-filter-btn diplomatic" data-filter="diplomatic" onclick="filterNews('diplomatic')">
+      <span data-tr data-content-key="news.span.004" data-locale="tr"></span><span data-ua data-content-key="news.span.004" data-locale="ua"></span>
+    </button>
+    <button class="news-filter-btn economic" data-filter="economic" onclick="filterNews('economic')">
+      <span data-tr data-content-key="news.span.005" data-locale="tr"></span><span data-ua data-content-key="news.span.005" data-locale="ua"></span>
+    </button>
+    <button class="news-filter-btn humanitarian" data-filter="humanitarian" onclick="filterNews('humanitarian')">
+      <span data-tr data-content-key="news.span.006" data-locale="tr"></span><span data-ua data-content-key="news.span.006" data-locale="ua"></span>
+    </button>
+  </div>
+
+  <div class="news-grid" id="newsGrid">
+    <!-- JS ile doldurulur -->
+  </div>
+
+</div>
+</section>

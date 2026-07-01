@@ -1,0 +1,58 @@
+<!-- ══════════════════════════════════════════
+     UKRAYNA GÜNDEMİ — CANLI HABERLER
+══════════════════════════════════════════ -->
+<section id="gundem">
+<div class="container">
+
+  <div class="gundem-header-row">
+    <div>
+      <div class="section-badge section-badge--tight">
+        <span class="dot"></span>
+        <span data-tr data-content-key="gundem.span.001" data-locale="tr"></span>
+        <span data-ua data-content-key="gundem.span.001" data-locale="ua"></span>
+      </div>
+      <h2 class="section-title" data-tr data-content-key="gundem.section.title.001" data-locale="tr"></h2>
+      <h2 class="section-title" data-ua data-content-key="gundem.section.title.001" data-locale="ua"></h2>
+      <p class="section-sub" data-tr data-content-key="gundem.section.sub.001" data-locale="tr"></p>
+      <p class="section-sub" data-ua data-content-key="gundem.section.sub.001" data-locale="ua"></p>
+    </div>
+    <div class="gundem-header-actions">
+      <div class="gundem-live-badge">
+        <div class="gundem-live-dot"></div>
+        <span data-tr data-content-key="gundem.span.002" data-locale="tr"></span><span data-ua data-content-key="gundem.span.002" data-locale="ua"></span>
+      </div>
+      <div class="gundem-update-info" id="gundemUpdateInfo">—</div>
+    </div>
+  </div>
+
+  <!-- İskelet (loading) -->
+  <div id="gundemLoading">
+    <div class="gundem-featured">
+      <div class="gundem-skeleton"></div>
+      <div class="gundem-skeleton"></div>
+    </div>
+    <div class="gundem-grid">
+      <div class="gundem-skeleton"></div>
+      <div class="gundem-skeleton"></div>
+      <div class="gundem-skeleton"></div>
+    </div>
+  </div>
+  <div id="gundemError" class="gundem-error" role="status" aria-live="polite" style="display:none;">
+    <span data-tr data-content-key="gundem.loadError" data-locale="tr"></span>
+    <span data-ua data-content-key="gundem.loadError" data-locale="ua"></span>
+  </div>
+
+  <!-- Haberler buraya doldurulur -->
+  <div id="gundemFeatured" class="gundem-featured" style="display:none;"></div>
+  <div id="gundemGrid" class="gundem-grid" style="display:none;"></div>
+
+  <div class="gundem-source-bar">
+    <span class="gundem-source-txt">
+    </span>
+    <button class="gundem-refresh-btn" onclick="Turkua.runFeature('live','fetchGundem',true).catch(() => {})">
+      <span data-tr data-content-key="gundem.span.003" data-locale="tr"></span><span data-ua data-content-key="gundem.span.003" data-locale="ua"></span>
+    </button>
+  </div>
+
+</div>
+</section>

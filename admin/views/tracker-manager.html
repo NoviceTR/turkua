@@ -1,0 +1,34 @@
+<div class="view" data-view-root="tracker">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">CANLI TAKİP</div>
+      <h2>Savaş takip verileri</h2>
+      <p>Olasılık, güven, trend ve takip detaylarını güncelleyin.</p>
+    </div>
+  </div>
+
+  <section class="admin-panel manager-editor">
+    <form id="trackerForm">
+      <input type="hidden" name="id">
+      <div class="form-grid">
+        <label class="field"><span>Yarın olasılığı (%)</span><input name="probability_1d" type="number" min="0" max="100" step="0.01" required></label>
+        <label class="field"><span>1 ay olasılığı (%)</span><input name="probability_1m" type="number" min="0" max="100" step="0.01" required></label>
+        <label class="field"><span>1 yıl olasılığı (%)</span><input name="probability_1y" type="number" min="0" max="100" step="0.01" required></label>
+        <label class="field"><span>Güven seviyesi</span><input name="confidence" type="number" min="0" max="5" step="1" required></label>
+        <label class="field"><span>Trend yüzdesi</span><input name="trend_percent" type="number" step="0.01" required></label>
+        <label class="field"><span>Veri zamanı</span><input name="observed_at" type="datetime-local" required></label>
+        <label class="field"><span>Savaş durumu çeviri anahtarı</span><input name="war_status_key" placeholder="tracker.status.war"></label>
+        <label class="field"><span>Müzakere durumu çeviri anahtarı</span><input name="negotiation_status_key" placeholder="tracker.status.negotiation"></label>
+        <label class="field"><span>Trend çeviri anahtarı</span><input name="trend_key" placeholder="tracker.trend"></label>
+        <label class="field"><span>Değerlendirme çeviri anahtarı</span><input name="reasoning_key" placeholder="tracker.reasoning"></label>
+        <label class="field full"><span>Gelişmeler (JSON liste)</span><textarea class="body-editor" name="developments" spellcheck="false">[]</textarea></label>
+        <label class="field full"><span>Takip haberleri (JSON liste)</span><textarea class="body-editor" name="news_items" spellcheck="false">[]</textarea></label>
+        <label class="field switch-field"><span>Takip verisi aktif</span><span class="switch"><input name="is_active" type="checkbox"><i></i></span></label>
+      </div>
+      <div class="form-actions">
+        <span></span>
+        <button class="primary-button" type="submit">Takip Verilerini Kaydet</button>
+      </div>
+    </form>
+  </section>
+</div>

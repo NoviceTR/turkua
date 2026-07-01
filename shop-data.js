@@ -3,56 +3,44 @@
 window.SHOP_PRODUCTS = [
   {
     id: 'tamga-tee-001',
-    kind: 'T-Shirt',
+    kindKey: 'shop.product.tee.kind',
     visual: 'tee',
     image: '',
-    title: { tr: 'Tamga Oversize Tişört', ua: 'Tamga Oversize Футболка' },
-    desc: {
-      tr: 'İlk seri için yıkamalı siyah kumaş, göğüste TURKUA tamga işareti. Beden notunu talepte yaz.',
-      ua: 'Перший дроп: washed black тканина, знак TURKUA Tamga на грудях. Розмір вкажіть у заявці.'
-    },
+    titleKey: 'shop.product.tee.title',
+    descKey: 'shop.product.tee.description',
     price: 799,
     baseStock: 10,
     active: true
   },
   {
     id: 'tamga-watch-001',
-    kind: 'Watch',
+    kindKey: 'shop.product.watch.kind',
     visual: 'watch',
     image: '',
-    title: { tr: 'Tamga Saat', ua: 'Tamga Годинник' },
-    desc: {
-      tr: 'Metal kasa, koyu kadran, küçük tamga detayı. İkinci seri için hazırlanıyor.',
-      ua: 'Металевий корпус, темний циферблат, маленька деталь Tamga. Готується для другої серії.'
-    },
+    titleKey: 'shop.product.watch.title',
+    descKey: 'shop.product.watch.description',
     price: 0,
     baseStock: 0,
     active: false
   },
   {
     id: 'tamga-gift-001',
-    kind: 'Object',
+    kindKey: 'shop.product.gift.kind',
     visual: 'gift',
     image: '',
-    title: { tr: 'Tamga Hediye Obje', ua: 'Tamga Сувенір' },
-    desc: {
-      tr: 'Masa üstü küçük obje, anahtarlık ve koleksiyon parçaları için ayrılan seri.',
-      ua: 'Серія для настільних обʼєктів, брелоків та колекційних речей.'
-    },
+    titleKey: 'shop.product.gift.title',
+    descKey: 'shop.product.gift.description',
     price: 0,
     baseStock: 0,
     active: false
   },
   {
     id: 'tamga-glasses-001',
-    kind: 'Glasses',
+    kindKey: 'shop.product.glasses.kind',
     visual: 'glasses',
     image: '',
-    title: { tr: 'Tamga Gözlük', ua: 'Tamga Окуляри' },
-    desc: {
-      tr: 'Yaz drop için planlanan sade, koyu camlı aksesuar çizgisi.',
-      ua: 'Лаконічна лінія аксесуарів із темними лінзами для літнього drop.'
-    },
+    titleKey: 'shop.product.glasses.title',
+    descKey: 'shop.product.glasses.description',
     price: 0,
     baseStock: 0,
     active: false

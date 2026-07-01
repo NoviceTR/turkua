@@ -1,0 +1,60 @@
+<!-- ══ TURKUA DROP ══ -->
+<section id="shop">
+<div class="container">
+  <div class="drop-marquee" aria-hidden="true">
+    <div class="drop-marquee-inner">
+      <span data-content-key="static.shop.span.001"></span><span data-content-key="static.shop.span.002"></span><span data-content-key="static.shop.span.003"></span><span data-content-key="static.shop.span.004"></span>
+      <span data-content-key="static.shop.span.005"></span><span data-content-key="static.shop.span.006"></span><span data-content-key="static.shop.span.007"></span><span data-content-key="static.shop.span.008"></span>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="drop-brand">
+      <div class="tamga-logo" aria-label="" data-content-key="static.shop.div.009.aria.label" data-content-attr="aria-label"><div class="tamga-symbol"></div></div>
+      <div>
+        <div class="drop-kicker" data-content-key="shop.kicker" data-tr data-locale="tr"></div>
+        <div class="drop-kicker" data-content-key="shop.kicker" data-ua data-locale="ua"></div>
+        <h2 class="drop-title" data-content-key="shop.title" data-tr data-locale="tr"></h2>
+        <h2 class="drop-title" data-content-key="shop.title" data-ua data-locale="ua"></h2>
+        <p class="drop-sub" data-content-key="shop.sub" data-tr data-locale="tr"></p>
+        <p class="drop-sub" data-content-key="shop.sub" data-ua data-locale="ua"></p>
+      </div>
+    </div>
+    <div class="shop-toolbar">
+      <span class="shop-chip" data-tr data-content-key="shop.shop.chip.001" data-locale="tr"></span>
+      <span class="shop-chip" data-ua data-content-key="shop.shop.chip.001" data-locale="ua"></span>
+      <span class="shop-chip" data-tr data-content-key="shop.shop.chip.002" data-locale="tr"></span>
+      <span class="shop-chip" data-ua data-content-key="shop.shop.chip.002" data-locale="ua"></span>
+      <span class="shop-chip" data-tr data-content-key="shop.shop.chip.003" data-locale="tr"></span>
+      <span class="shop-chip" data-ua data-content-key="shop.shop.chip.003" data-locale="ua"></span>
+    </div>
+  </div>
+
+  <div class="shop-shell">
+    <div>
+      <div class="shop-grid" id="shopGrid"></div>
+      <div class="store-legal">
+        <span data-tr data-content-key="shop.span.001" data-locale="tr"></span>
+        <span data-ua data-content-key="shop.span.001" data-locale="ua"></span>
+      </div>
+    </div>
+
+    <aside class="shop-cart" aria-live="polite">
+      <h3 data-tr data-content-key="shop.h3.001" data-locale="tr"></h3>
+      <h3 data-ua data-content-key="shop.h3.001" data-locale="ua"></h3>
+      <p class="cart-note" data-tr data-content-key="shop.cart.note.001" data-locale="tr"></p>
+      <p class="cart-note" data-ua data-content-key="shop.cart.note.001" data-locale="ua"></p>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-total"><span data-tr data-content-key="shop.span.002" data-locale="tr"></span><span data-ua data-content-key="shop.span.002" data-locale="ua"></span><strong id="cartTotal" data-content-key="static.shop.strong.010"></strong></div>
+      <div class="checkout-form">
+        <input class="spam-trap" id="shopWebsite" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input id="shopName" type="text" placeholder="" data-content-key="static.shop.input.011.placeholder" data-content-attr="placeholder">
+        <input id="shopContact" type="text" placeholder="" data-content-key="static.shop.input.012.placeholder" data-content-attr="placeholder">
+        <textarea id="shopNote" placeholder="" data-content-key="static.shop.textarea.013.placeholder" data-content-attr="placeholder"></textarea>
+        <button class="shop-btn" type="button" onclick="Turkua.runFeature('services','submitShopRequest').catch(() => {})" data-tr data-content-key="shop.shop.btn.001" data-locale="tr"></button>
+        <button class="shop-btn" type="button" onclick="Turkua.runFeature('services','submitShopRequest').catch(() => {})" data-ua data-content-key="shop.shop.btn.001" data-locale="ua"></button>
+      </div>
+    </aside>
+  </div>
+</div>
+</section>

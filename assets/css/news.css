@@ -1,0 +1,455 @@
+/* ══════════════════════════════════════════
+   SAVAŞ GELİŞMELERİ — NEWS SECTION
+══════════════════════════════════════════ */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.news-card {
+  background: var(--panel-background);
+  border: var(--panel-border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: border-color .3s, box-shadow .3s;
+  position: relative; overflow: hidden;
+  box-shadow: var(--panel-shadow);
+}
+.news-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--nc, rgba(0,243,255,.4));
+  border-radius: 0 2px 2px 0;
+}
+.news-card.military   { --nc: var(--neon-red); }
+.news-card.diplomatic { --nc: var(--neon-blue); }
+.news-card.economic   { --nc: var(--neon-green); }
+.news-card.humanitarian { --nc: var(--neon-orange); }
+.news-card:hover {
+  border-color: var(--panel-hover-border);
+  box-shadow: var(--panel-shadow-hover);
+}
+
+.news-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+.news-cat {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 20px; font-weight: 600;
+  border: 1px solid currentColor;
+}
+.news-card.military   .news-cat { color: var(--neon-red);    background: rgba(255,36,66,.08); }
+.news-card.diplomatic .news-cat { color: var(--neon-blue);   background: rgba(0,243,255,.07); }
+.news-card.economic   .news-cat { color: var(--neon-green);  background: rgba(0,255,136,.07); }
+.news-card.humanitarian .news-cat { color: var(--neon-orange); background: rgba(255,140,0,.07); }
+
+.news-date { font-family: 'Inter', sans-serif; font-size: 8px; color: var(--text-muted); letter-spacing: 1px; }
+
+.news-title {
+  font-size: 14px; font-weight: 600; line-height: 1.4;
+  color: rgba(220,220,255,.92);
+}
+
+.news-body {
+  font-size: 12px; color: var(--text-muted); line-height: 1.7;
+}
+
+.news-impact {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px; align-self: flex-start;
+}
+.news-impact.pos { color: var(--neon-green); background: rgba(0,255,136,.08); }
+.news-impact.neg { color: var(--neon-red);   background: rgba(255,36,66,.08); }
+.news-impact.neu { color: var(--neon-orange); background: rgba(255,140,0,.08); }
+
+.news-filter-row {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;
+}
+.news-filter-btn {
+  font-size: 10px; letter-spacing: .5px;
+  padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(0,243,255,.15);
+  background: transparent; color: var(--text-muted); cursor: pointer;
+  transition: all .2s; font-family: 'Inter', sans-serif;
+}
+.news-filter-btn:hover,
+.news-filter-btn.active {
+  border-color: rgba(232, 199, 122, .36);
+  background: rgba(232, 199, 122, .10);
+  color: var(--gold);
+}
+.news-filter-btn.military.active   { background: rgba(255,36,66,.1);  color: var(--neon-red);    border-color: rgba(255,36,66,.4); }
+.news-filter-btn.diplomatic.active { background: rgba(0,243,255,.1);  color: var(--neon-blue);   border-color: rgba(0,243,255,.4); }
+.news-filter-btn.economic.active   { background: rgba(0,255,136,.1);  color: var(--neon-green);  border-color: rgba(0,255,136,.4); }
+.news-filter-btn.humanitarian.active { background: rgba(255,140,0,.1); color: var(--neon-orange); border-color: rgba(255,140,0,.4); }
+
+
+/* ══════════════════════════════════════════
+   PARA TRANSFERİ SECTION
+══════════════════════════════════════════ */
+.money-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.money-card {
+  background: var(--panel-background);
+  border: var(--panel-border);
+  border-radius: 14px;
+  padding: 24px;
+  transition: border-color .3s, box-shadow .3s;
+  box-shadow: var(--panel-shadow);
+}
+.money-card:hover {
+  border-color: var(--panel-hover-border);
+  box-shadow: var(--panel-shadow-hover);
+}
+
+.money-card-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.money-card-icon { font-size: 28px; }
+.money-card-title { font-size: 15px; font-weight: 600; }
+.money-card-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.money-limit-box {
+  background: rgba(0,255,136,.06);
+  border: 1px solid rgba(0,255,136,.15);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.money-limit-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px; font-weight: 900;
+  color: var(--neon-green);
+  text-shadow: 0 0 12px rgba(0,255,136,.4);
+  white-space: nowrap;
+}
+.money-limit-label { font-size: 11px; color: rgba(200,200,255,.7); line-height: 1.5; }
+
+.money-warn-box {
+  background: rgba(255,140,0,.06);
+  border: 1px solid rgba(255,140,0,.15);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 11px;
+  color: rgba(255,180,80,.8);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+
+.money-method-list {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.money-method {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 8px;
+  font-size: 12px;
+  transition: border-color .2s;
+}
+.money-method:hover { border-color: rgba(0,243,255,.15); }
+.money-method-name { font-weight: 600; color: rgba(220,220,255,.9); flex: 1; }
+.money-method-detail { font-size: 10px; color: var(--text-muted); }
+.money-method-badge {
+  font-size: 9px; padding: 2px 7px; border-radius: 10px;
+  letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+}
+.badge-fast  { background: rgba(0,255,136,.1); color: var(--neon-green); border: 1px solid rgba(0,255,136,.2); }
+.badge-bank  { background: rgba(0,243,255,.08); color: var(--neon-blue); border: 1px solid rgba(0,243,255,.2); }
+.badge-limit { background: rgba(255,140,0,.1); color: var(--neon-orange); border: 1px solid rgba(255,140,0,.2); }
+.badge-warn  { background: rgba(255,36,66,.1); color: var(--neon-red); border: 1px solid rgba(255,36,66,.2); }
+
+.money-rate-box {
+  background: rgba(0,243,255,.04);
+  border: 1px solid rgba(0,243,255,.1);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+.money-rate-title { font-size: 9px; letter-spacing: 3px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 8px; }
+.money-rate-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,.04); font-size: 12px; }
+.money-rate-row:last-child { border-bottom: none; }
+.money-rate-pair { color: rgba(200,200,255,.7); }
+.money-rate-val { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--neon-green); }
+
+.money-tip {
+  display: flex; gap: 8px; align-items: flex-start;
+  padding: 10px 12px;
+  background: rgba(0,243,255,.03);
+  border-radius: 8px;
+  font-size: 11px;
+  color: rgba(180,180,230,.7);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+
+/* ══ HABER BANDI (TICKER) ══════════════════════════════════ */
+.news-ticker-wrap {
+  position: sticky; top: var(--nav-height); z-index: 190;
+  background: rgba(4,4,12,0.97);
+  border-bottom: 1px solid rgba(255,36,66,0.35);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; height: 38px;
+  overflow: hidden;
+}
+.ticker-badge {
+  flex-shrink: 0;
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 14px;
+  height: 100%;
+  background: #cc0022;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 900; letter-spacing: 2px;
+  color: #fff;
+  white-space: nowrap;
+  position: relative;
+}
+.ticker-badge::after {
+  content: '';
+  position: absolute; right: -8px; top: 0; bottom: 0; width: 8px;
+  background: linear-gradient(90deg, #cc0022, transparent);
+}
+.ticker-live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #fff;
+  animation: tickerPulse 1s ease-in-out infinite;
+}
+@keyframes tickerPulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.4;transform:scale(.7);} }
+
+.ticker-track {
+  flex: 1; overflow: hidden; position: relative;
+}
+.ticker-inner {
+  display: flex; align-items: center;
+  white-space: nowrap;
+  animation: tickerScroll 60s linear infinite;
+  will-change: transform;
+}
+.ticker-inner:hover { animation-play-state: paused; }
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 28px; font-size: 12px; color: rgba(220,220,255,.85);
+  cursor: pointer; transition: color .2s;
+}
+.ticker-item:hover { color: var(--neon-blue); }
+.ticker-item-sep { color: rgba(255,36,66,.5); font-size: 14px; }
+.ticker-item-cat {
+  font-size: 9px; font-family: 'Inter', sans-serif; letter-spacing: 1px;
+  padding: 1px 5px; border-radius: 3px; font-weight: 700;
+}
+.ticker-item-cat.diplomatic { background: rgba(0,100,255,.25); color: #5bbfff; }
+.ticker-item-cat.military   { background: rgba(255,36,66,.2);  color: #ff6080; }
+.ticker-item-cat.humanitarian { background: rgba(0,200,100,.2); color: #40e090; }
+.ticker-item-cat.economic   { background: rgba(255,180,0,.2);  color: #ffcc40; }
+.ticker-item-cat.general    { background: rgba(150,150,255,.15); color: #aab0ff; }
+
+/* ══ GÜNDEM BÖLÜMÜ ═════════════════════════════════════════ */
+.gundem-header-row {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 32px;
+}
+.gundem-live-badge {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 14px; border-radius: 20px;
+  background: rgba(200,0,30,.15);
+  border: 1px solid rgba(200,0,30,.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; letter-spacing: 2px; color: #ff4060;
+}
+.gundem-live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ff2442;
+  box-shadow: 0 0 8px #ff2442;
+  animation: tickerPulse .9s ease-in-out infinite;
+}
+.gundem-update-info {
+  margin-top: 6px;
+  font-size: 11px; color: var(--text-muted); letter-spacing: 1px;
+}
+
+/* Feature card (büyük) */
+.gundem-featured {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;
+}
+@media(max-width:720px){ .gundem-featured{ grid-template-columns:1fr; } }
+
+.gundem-card {
+  background: var(--panel-background);
+  border: var(--panel-border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  position: relative; overflow: hidden;
+  text-decoration: none; display: block; color: var(--text);
+  box-shadow: var(--panel-shadow);
+}
+
+.gundem-card-image {
+  display: block;
+  width: calc(100% + 44px);
+  height: 170px;
+  margin: -20px -22px 14px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gundem-card.featured .gundem-card-image {
+  height: 220px;
+}
+
+.gundem-item-live {
+  margin-right: auto;
+  padding: 3px 6px;
+  border: 1px solid rgba(255, 95, 117, 0.35);
+  border-radius: 4px;
+  background: rgba(255, 95, 117, 0.1);
+  color: var(--neon-red);
+  font-size: 8px;
+  font-weight: 800;
+}
+.gundem-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--neon-red), var(--neon-blue));
+  opacity: 0; transition: opacity .25s;
+}
+.gundem-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--panel-hover-border);
+  box-shadow: var(--panel-shadow-hover);
+}
+.gundem-card:hover::before { opacity: 1; }
+
+.gundem-card.featured {
+  grid-column: span 1;
+  border-color: rgba(0,243,255,.18);
+  background: linear-gradient(135deg, rgba(0,20,50,.95), var(--bg-card));
+}
+.gundem-card-top {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+}
+.gundem-cat {
+  font-size: 9px; font-family: 'Inter', sans-serif; letter-spacing: 1.5px;
+  font-weight: 700; padding: 3px 8px; border-radius: 4px;
+}
+.gundem-cat.diplomatic   { background: rgba(0,100,255,.2);  color: #5bbfff; border: 1px solid rgba(0,100,255,.25); }
+.gundem-cat.military     { background: rgba(255,36,66,.15); color: #ff6080; border: 1px solid rgba(255,36,66,.25); }
+.gundem-cat.humanitarian { background: rgba(0,200,100,.15); color: #40e090; border: 1px solid rgba(0,200,100,.25); }
+.gundem-cat.economic     { background: rgba(255,180,0,.15); color: #ffcc40; border: 1px solid rgba(255,180,0,.25); }
+.gundem-cat.general      { background: rgba(150,150,255,.1); color: #aab0ff; border: 1px solid rgba(150,150,255,.2); }
+.gundem-cat.parliamentary { background: rgba(160,0,255,.15); color: #cc88ff; border: 1px solid rgba(160,0,255,.3); }
+.gundem-cat.education     { background: rgba(107,199,255,.12); color: var(--neon-blue); border: 1px solid rgba(107,199,255,.28); }
+.gundem-cat.visa          { background: rgba(232,199,122,.12); color: var(--gold); border: 1px solid rgba(232,199,122,.28); }
+.gundem-cat.trade         { background: rgba(53,212,152,.12); color: var(--neon-green); border: 1px solid rgba(53,212,152,.28); }
+
+.gundem-card-date { font-size: 10px; color: var(--text-muted); }
+.gundem-card-title {
+  font-size: 15px; font-weight: 600; line-height: 1.45;
+  margin-bottom: 10px; color: var(--text);
+}
+.gundem-card.featured .gundem-card-title { font-size: 17px; }
+.gundem-card-body { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.gundem-card-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 12px; font-size: 10px; color: var(--neon-blue);
+  font-family: 'Inter', sans-serif; letter-spacing: 1px;
+  opacity: .7; transition: opacity .2s;
+}
+.gundem-card:hover .gundem-card-link { opacity: 1; }
+
+@media (max-width: 720px) {
+  .gundem-card-image {
+    width: calc(100% + 32px);
+    margin: -16px -16px 14px;
+  }
+}
+
+/* Alt grid */
+.gundem-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 14px;
+}
+@media(max-width:900px){ .gundem-grid{ grid-template-columns: repeat(2,1fr); } }
+@media(max-width:580px){ .gundem-grid{ grid-template-columns: 1fr; } }
+
+.gundem-skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,.04) 25%, rgba(255,255,255,.07) 50%, rgba(255,255,255,.04) 75%);
+  background-size: 400% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 10px; height: 130px;
+}
+@keyframes skeletonShimmer { 0%{background-position:100% 0} 100%{background-position:-100% 0} }
+
+.gundem-error {
+  color: var(--text-muted);
+  text-align: center;
+  background: rgba(107,199,255,.035);
+  border: 1px solid rgba(107,199,255,.12);
+  border-radius: 8px;
+  margin-block: 18px;
+  padding: 30px 18px;
+  font-size: 13px;
+}
+
+.gundem-source-bar {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+.gundem-source-txt { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
+.gundem-refresh-btn {
+  background: rgba(0,243,255,.08); border: 1px solid rgba(0,243,255,.2);
+  color: var(--neon-blue); font-size: 10px; font-family: 'Inter', sans-serif;
+  letter-spacing: .5px; padding: 5px 12px; border-radius: 8px; cursor: pointer;
+  transition: all .2s;
+}
+.gundem-refresh-btn:hover { background: rgba(0,243,255,.15); }
+
+.gundem-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.news-last-update {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.source-policy {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(0, 243, 255, 0.04);
+}
+
+.source-policy-icon {
+  color: var(--neon-green);
+  font-size: 10px;
+}
+
+.source-policy-text {
+  color: var(--text-muted);
+  font-size: 11px;
+}

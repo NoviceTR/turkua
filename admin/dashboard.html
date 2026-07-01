@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#07090f">
+  <title>TürkUA Yönetim Paneli</title>
+  <link rel="icon" href="../assets/img/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <div data-admin-component="sidebar"></div>
+
+    <div class="admin-main">
+      <div data-admin-component="header"></div>
+      <main class="admin-content" id="adminView" tabindex="-1">
+        <div class="view-loading">Panel hazırlanıyor...</div>
+      </main>
+    </div>
+  </div>
+
+  <button class="sidebar-overlay" id="sidebarOverlay" type="button" aria-label="Menüyü kapat"></button>
+  <div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="assets/js/admin-app.js"></script>
+</body>
+</html>

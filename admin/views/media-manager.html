@@ -1,0 +1,54 @@
+<div class="view" data-view-root="media">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">MEDYA</div>
+      <h2>Medya kütüphanesi</h2>
+      <p>Haber, Hero, sponsor ve reklam görsellerini tek yerden yönetin.</p>
+    </div>
+  </div>
+
+  <section class="admin-panel media-setup-notice is-hidden" id="mediaSetupNotice">
+    <div class="panel-heading"><div><h3>Storage kurulumu gerekli</h3><p>Supabase bağlantısı veya medya tabloları henüz hazır değil.</p></div></div>
+    <ol>
+      <li>Supabase migration dosyalarını belirtilen sırayla çalıştırın.</li>
+      <li><strong>media</strong> ve <strong>ads</strong> bucket’larının oluştuğunu kontrol edin.</li>
+      <li>Yönetici kullanıcısına <strong>app_metadata.role = admin</strong> yetkisi verin.</li>
+      <li>Release sırasında Supabase URL ve publishable key değerlerini tanımlayın.</li>
+    </ol>
+  </section>
+
+  <div class="manager-metrics" id="mediaMetrics"></div>
+
+  <section class="admin-panel manager-editor" id="mediaUploadPanel">
+    <div class="editor-heading"><div><div class="eyebrow">YENİ MEDYA</div><h3>Görsel yükle</h3></div></div>
+    <form id="mediaUploadForm">
+      <div class="form-grid">
+        <label class="field"><span>Kullanım alanı</span>
+          <select name="usage">
+            <option value="news">Haber görseli</option>
+            <option value="hero">Hero arka planı</option>
+            <option value="sponsor">Sponsor logosu</option>
+            <option value="banner">Reklam bannerı</option>
+          </select>
+        </label>
+        <label class="field"><span>Görsel açıklaması</span><input name="alt_text" maxlength="240"></label>
+        <div class="field full media-drop-zone" id="mediaLibraryDropZone" data-bucket="media">
+          <input name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif">
+          <strong>Görseli buraya sürükleyin veya seçin</strong>
+          <small id="mediaSelectedName">Dosya seçilmedi</small>
+          <span>JPG, PNG, WEBP veya GIF · en fazla 5 MB</span>
+        </div>
+        <div class="field full media-preview is-hidden" id="mediaUploadPreview"></div>
+      </div>
+      <div class="form-actions"><span></span><button class="primary-button" type="submit">Medya Yükle</button></div>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <div class="panel-heading"><div><h3>Yüklenen görseller</h3><p>Kullanımdaki görseller silinmeye karşı korunur.</p></div></div>
+    <div class="media-library-grid" id="mediaLibraryGrid">
+      <div class="view-loading">Medya kütüphanesi hazırlanıyor...</div>
+    </div>
+  </section>
+  <input class="is-hidden" id="mediaReplaceInput" type="file">
+</div>
