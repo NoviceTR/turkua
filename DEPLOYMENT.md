@@ -4,9 +4,14 @@
 
 ```bash
 pnpm install --frozen-lockfile
+cp .env.local.example .env.local
 pnpm release
 pnpm check
 ```
+
+`.env.local` dosyasına `SUPABASE_URL` ve `SUPABASE_PUBLISHABLE_KEY`
+değerlerini yazın. Release bu değerleri `dist/assets/js/supabase/config.js`
+dosyasına otomatik olarak enjekte eder; `.env.local` yayın paketine girmez.
 
 Yayınlanacak tek klasör `dist/` klasörüdür. Yerel kontrol:
 

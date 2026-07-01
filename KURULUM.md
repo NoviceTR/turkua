@@ -20,10 +20,13 @@ production paketine alınmaz.
 4. Public bağlantı bilgileriyle release üret:
 
 ```bash
-SUPABASE_URL="https://proje.supabase.co" \
-SUPABASE_PUBLISHABLE_KEY="sb_publishable_..." \
+cp .env.local.example .env.local
 pnpm release
 ```
+
+`.env.local` içindeki iki örnek değeri gerçek proje URL'si ve publishable key
+ile değiştir. Bu dosya Git tarafından yok sayılır ve production paketine
+kopyalanmaz.
 
 Secret veya `service_role` anahtarı hiçbir zaman bu komuta ya da tarayıcı
 dosyalarına eklenmez.

@@ -35,6 +35,11 @@ SUPABASE_PUBLISHABLE_KEY="sb_publishable_..." \
 pnpm release
 ```
 
+Yerel kullanımda aynı değerler proje kökündeki `.env.local` dosyasından da
+otomatik okunur. Başlangıç için `.env.local.example` dosyasını örnek alın.
+Shell veya GitHub Actions tarafından verilen değerler `.env.local`
+değerlerinden önceliklidir.
+
 Bu iki değer birlikte verilmezse release durur. Değerler verilmediğinde site
 statik içerikle çalışır; yönetim girişi ve veri yazan formlar kapalı kalır.
 

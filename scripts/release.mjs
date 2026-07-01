@@ -17,6 +17,10 @@ const root = process.cwd();
 const dist = path.join(root, 'dist');
 const fromRoot = (...parts) => path.join(root, ...parts);
 const fromDist = (...parts) => path.join(dist, ...parts);
+const localEnvKeys = new Set([
+  'SUPABASE_URL',
+  'SUPABASE_PUBLISHABLE_KEY'
+]);
 
 const publicFiles = [
   '.htaccess',
@@ -34,6 +38,35 @@ const adminHtmlFiles = [
   'admin/login.html',
   'admin/dashboard.html'
 ];
+
+async function loadLocalEnv() {
+  let source;
+  try {
+    source = await readFile(fromRoot('.env.local'), 'utf8');
+  } catch (error) {
+    if (error.code === 'ENOENT') return;
+    throw error;
+  }
+
+  for (const rawLine of source.split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith('#')) continue;
+
+    const match = line.match(/^(?:export\s+)?([A-Z0-9_]+)\s*=\s*(.*)$/);
+    if (!match || !localEnvKeys.has(match[1])) continue;
+
+    let value = match[2].trim();
+    if (
+      value.length >= 2
+      && ((value.startsWith('"') && value.endsWith('"'))
+        || (value.startsWith("'") && value.endsWith("'")))
+    ) {
+      value = value.slice(1, -1);
+    }
+
+    if (!process.env[match[1]]) process.env[match[1]] = value;
+  }
+}
 
 async function ensureParent(file) {
   await mkdir(path.dirname(file), { recursive: true });
@@ -69,17 +102,34 @@ async function writeMinifiedHtml(relativePath) {
 async function writeMinifiedModule(relativePath) {
   let source = await readFile(fromRoot(relativePath), 'utf8');
   if (relativePath === 'assets/js/supabase/config.js') {
-    const url = process.env.SUPABASE_URL || '';
-    const publishableKey = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+    const url = (process.env.SUPABASE_URL || '').trim();
+    const publishableKey = (process.env.SUPABASE_PUBLISHABLE_KEY || '').trim();
+    const configRequired = process.env.REQUIRE_SUPABASE_CONFIG === 'true';
+    if (configRequired && (!url || !publishableKey)) {
+      throw new Error(
+        'Production release requires SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY.'
+      );
+    }
     if (Boolean(url) !== Boolean(publishableKey)) {
       throw new Error('SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY must be provided together.');
     }
-    if (url && (!/^https:\/\/[^/]+$/i.test(url) || !/^sb_publishable_/i.test(publishableKey))) {
+    if (
+      url
+      && (
+        !/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(url)
+        || !/^sb_publishable_/i.test(publishableKey)
+      )
+    ) {
       throw new Error('Invalid public Supabase release configuration.');
     }
-    source = source
-      .replace("url: ''", `url: ${JSON.stringify(url)}`)
-      .replace("publishableKey: ''", `publishableKey: ${JSON.stringify(publishableKey)}`);
+    if (url && publishableKey) {
+      source = source
+        .replace(/url:\s*'[^']*'/, `url: ${JSON.stringify(url)}`)
+        .replace(
+          /publishableKey:\s*'[^']*'/,
+          `publishableKey: ${JSON.stringify(publishableKey)}`
+        );
+    }
   }
   const result = await minifyJs(source, {
     module: true,
@@ -122,6 +172,7 @@ async function writeAdminCss(adminContentFiles) {
   return purged.rejected.length;
 }
 
+await loadLocalEnv();
 await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 
