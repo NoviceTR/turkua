@@ -2,7 +2,7 @@
 // Only use a publishable key here. Never add a secret or service_role key.
 export const supabaseConfig = Object.freeze({
   url: "https://fadxptyoqmhquxesurtp.supabase.co",
-  publishableKey: "sb_publishable_xxxxxxxxxxxxxxxxx",
+  publishableKey: "sb_publishable_ZetgePtcA4KTRCm17n2gTw_UesqfSoP",
   schema: 'public',
   auth: Object.freeze({
     persistSession: true,
